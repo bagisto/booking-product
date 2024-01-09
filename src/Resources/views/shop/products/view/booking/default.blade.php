@@ -1,0 +1,1 @@
+@include('booking::shop.products.view.booking.slots', ['bookingProduct' => $bookingProduct])
