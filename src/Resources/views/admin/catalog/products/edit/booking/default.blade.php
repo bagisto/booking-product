@@ -115,7 +115,7 @@
                             <div class="grid gap-1.5 place-content-start">
                                 <!-- From day with Time -->
                                 <p class="text-gray-800 dark:text-white">
-                                    @{{ slot.from_day }} - @{{ slot.from }}
+                                    @{{ convertIndexToDay(slot.from_day) }} - @{{ slot.from }}
                                 </p>
 
                                 <!-- Hidden Field Id -->
@@ -141,7 +141,7 @@
 
                                 <!-- To day Whith Time -->
                                 <p class="text-gray-800 dark:text-white">
-                                    @{{ slot.to_day }} - @{{ slot.to }}
+                                    @{{ convertIndexToDay(slot.from_day) }} - @{{ slot.to }}
                                 </p>
 
                                 <!-- Hiiden Field TO Day -->
@@ -731,18 +731,6 @@
                             params.id = 'option_' + this.optionRowCount;
                         }
 
-                        Object.keys(params)?.map((key) => {
-                            if (key == 'from_day') {
-                                params.from_day = this.days[params.from_day];
-                            }
-
-                            if (key == 'to_day') {
-                                params.to_day = this.days[params.to_day];
-                            }
-
-                            return key;
-                        });
-
                         let foundIndex = this.slots.one?.findIndex(item => item.id === params.id);
 
                         if (foundIndex !== -1) {
@@ -780,6 +768,10 @@
                             this.$refs.drawerform.toggle();
                         }
                     }
+                },
+
+                convertIndexToDay(day) {
+                    return this.days[day];
                 },
 
                 edit(element) {

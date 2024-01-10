@@ -30,10 +30,7 @@ class DefaultSlot extends Booking
     {
         $bookingProductSlot = $this->typeRepositories[$bookingProduct->type]->findOneByField('booking_product_id', $bookingProduct->id);
 
-        if (
-            ! is_array($bookingProductSlot->slots)
-            || ! count($bookingProductSlot->slots)
-        ) {
+        if (empty($bookingProductSlot->slots)) {
             return [];
         }
 
@@ -56,8 +53,6 @@ class DefaultSlot extends Booking
             return [];
         }
 
-        $slots = [];
-
         return $bookingProductSlot->booking_type == 'one'
             ? $this->getOneBookingForManyDaysSlots($bookingProductSlot, $requestedDate)
             : $this->getManyBookingsForOneDaySlots($bookingProductSlot, $requestedDate);
@@ -74,10 +69,8 @@ class DefaultSlot extends Booking
     {
         $slots = [];
 
-        $dayOfWeek = $requestedDate->dayOfWeek;
-
-        foreach ($bookingProductSlot->slots as $timeDuration) {
-            if ($dayOfWeek != $timeDuration['from_day']) {
+        foreach ($bookingProductSlot->slots as $key => $timeDuration) {
+            if ($requestedDate->dayOfWeek != $timeDuration['from_day']) {
                 continue;
             }
 
@@ -120,10 +113,10 @@ class DefaultSlot extends Booking
             ? Carbon::createFromTimeString($bookingProduct->available_to)
             : Carbon::createFromTimeString('2080-01-01 00:00:00');
 
-        $timeDuration = $bookingProductSlot->slots[$requestedDate->format('w')] ?? [];
+        $timeDuration = $bookingProductSlot->slots[0][$requestedDate->format('w')] ?? [];
 
         if (
-            ! count($timeDuration)
+            empty($timeDuration)
             || ! $timeDuration['status']
         ) {
             return [];
@@ -134,12 +127,12 @@ class DefaultSlot extends Booking
         $fromChunks = explode(':', $timeDuration['from']);
         $toChunks = explode(':', $timeDuration['to']);
 
-        $startDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d') . ' 00:00:00');
-        $startDayTime->addMinutes(($fromChunks[0] * 60) + $fromChunks[1]);
+        $startDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d') . ' 00:00:00')
+            ->addMinutes(($fromChunks[0] * 60) + $fromChunks[1]);
         $tempStartDayTime = clone $startDayTime;
 
-        $endDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d') . ' 00:00:00');
-        $endDayTime->addMinutes(($toChunks[0] * 60) + $toChunks[1]);
+        $endDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d') . ' 00:00:00')
+            ->addMinutes(($toChunks[0] * 60) + $toChunks[1]);
 
         $isFirstIteration = true;
 
