@@ -4,13 +4,14 @@
 
 ### Requirements:
 
-* **Bagisto**: v2.0
+-   **Bagisto**: v2.0
 
 ### Installation:
 
 To install the Booking Product Extension, follow these steps:
 
 ##### 1. Unzip the respective extension zip and then merge "packages" and "storage" folders into project root directory.
+
 ##### 2. Open the composer.json file and add the following line under the 'psr-4' section:
 
 ~~~
@@ -47,7 +48,7 @@ php artisan migrate
 php artisan optimize:clear
 ~~~
 
-##### 6. Run the following commands under the path packages/Webkul/Marketplace to generate the assets build file.
+##### 6. Run the following commands under the path packages/Webkul/BookingProduct to generate the assets build file.
 
 ~~~
 npm i
