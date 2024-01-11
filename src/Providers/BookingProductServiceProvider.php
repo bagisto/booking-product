@@ -2,6 +2,7 @@
 
 namespace Webkul\BookingProduct\Providers;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class BookingProductServiceProvider extends ServiceProvider
@@ -18,6 +19,8 @@ class BookingProductServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'booking');
 
         $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'booking');
+
+        Blade::anonymousComponentPath(__DIR__ . '/../Resources/views/components', 'booking');
 
         $this->app->register(EventServiceProvider::class);
 

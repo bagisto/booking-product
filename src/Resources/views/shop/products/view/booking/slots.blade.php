@@ -7,7 +7,7 @@
                 {{ $title  ?? trans('booking::app.shop.products.view.booking.slots.book-an-appointment') }}
             </x-shop::form.control-group.label>
 
-            <div class="grid grid-cols-2 gap-2.5">
+            <div class="grid grid-cols-2 gap-4">
                 <x-shop::form.control-group class="!mb-0">
                     <x-shop::form.control-group.label class="hidden">
                         @lang('booking::app.shop.products.view.booking.slots.date')

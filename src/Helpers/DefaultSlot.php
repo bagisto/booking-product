@@ -38,13 +38,15 @@ class DefaultSlot extends Booking
 
         $currentTime = Carbon::now();
 
-        $availableFrom = $bookingProduct->available_from
-            ? Carbon::createFromTimeString($bookingProduct->available_from)
-            : Carbon::createFromTimeString($currentTime->format('Y-m-d 00:00:00'));
+        $availableFrom = Carbon::createFromTimeString($currentTime->format('Y-m-d 00:00:00'));
 
-        $availableTo = $bookingProduct->available_to
-            ? Carbon::createFromTimeString($bookingProduct->available_to)
-            : Carbon::createFromTimeString('2080-01-01 00:00:00');
+        $availableTo = Carbon::createFromTimeString('2080-01-01 00:00:00');
+
+        if (! $bookingProduct->available_every_week && $bookingProduct->available_from) {
+            $availableFrom = Carbon::createFromTimeString($bookingProduct->available_from);
+
+            $availableTo = Carbon::createFromTimeString($bookingProduct->available_to);
+        }
 
         if (
             $requestedDate < $availableFrom

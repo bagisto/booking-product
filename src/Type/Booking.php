@@ -114,10 +114,7 @@ class Booking extends Virtual
      */
     public function prepareForCart($data)
     {
-        if (
-            ! isset($data['booking'])
-            || ! count($data['booking'])
-        ) {
+        if (empty($data['booking'])) {
             return trans('booking::app.shop.products.booking.cart.integrity.missing_options');
         }
 

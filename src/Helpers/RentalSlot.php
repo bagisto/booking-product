@@ -35,6 +35,7 @@ class RentalSlot extends Booking
 
         if (! $bookingProduct->available_every_week && $bookingProduct->available_from) {
             $availableFrom = Carbon::createFromTimeString($bookingProduct->available_from);
+
             $availableTo = Carbon::createFromTimeString($bookingProduct->available_to);
         }
 
