@@ -3,11 +3,11 @@
         $bookingProduct = app('\Webkul\BookingProduct\Repositories\BookingProductRepository')->findOneByField('product_id', $product->id)
     @endphp
 
-    {!! view_render_event('bagisto.admin.catalog.product.edit_form_accordian.booking.before', ['product' => $product]) !!}
+    {!! view_render_event('bagisto.admin.catalog.product.edit.types.booking.before', ['product' => $product]) !!}
 
     <v-booking-information></v-booking-information>
 
-    {!! view_render_event('bagisto.admin.catalog.product.edit_form_accordian.booking.after', ['product' => $product]) !!}
+    {!! view_render_event('bagisto.admin.catalog.product.edit.types.booking.after', ['product' => $product]) !!}
 
     @pushOnce('scripts')
         <script type="text/x-template" id="v-booking-information-template">

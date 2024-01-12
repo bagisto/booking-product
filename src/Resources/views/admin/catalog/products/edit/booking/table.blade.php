@@ -1,4 +1,4 @@
-{!! view_render_event('bagisto.admin.catalog.product.edit.before', ['product' => $product]) !!}
+{!! view_render_event('bagisto.admin.catalog.product.edit.table.before', ['product' => $product]) !!}
 
 <v-table-booking></v-table-booking>
 

@@ -172,19 +172,18 @@
                                 @lang('booking::app.admin.catalog.products.edit.booking.slots.title')
                             </p>
 
-                            <div class="flex gap-2">
+                            <div class="flex gap-2 ltr:mr-11 rtl:ml-11">
                                 <button
                                     type="submit"
                                     class="primary-button"
-                                    :class="! parseInt(sameSlotAllDays) ? 'mr-11' : ''"
                                 >
                                     @lang('booking::app.admin.catalog.products.edit.booking.slots.save')
                                 </button>
 
                                 <div
-                                    class="mr-11 primary-button"
+                                    class="primary-button"
                                     v-if="parseInt(sameSlotAllDays)"
-                                    @click="addSlot()"
+                                    @click="addSlot"
                                 >
                                     @lang('booking::app.admin.catalog.products.edit.booking.slots.add')
                                 </div>
@@ -283,12 +282,14 @@
                                 @lang('booking::app.admin.catalog.products.edit.booking.slots.title')
                             </p>
 
-                            <button
-                                type="submit"
-                                class="mr-11 primary-button"
-                            >
-                                @lang('booking::app.admin.catalog.products.edit.booking.slots.save')
-                            </button>
+                            <div class="ltr:mr-11 rtl:ml-11">
+                                <button
+                                    type="submit"
+                                    class="primary-button"
+                                >
+                                    @lang('booking::app.admin.catalog.products.edit.booking.slots.save')
+                                </button>
+                            </div>
                         </div>
                     </x-slot:header>
 
