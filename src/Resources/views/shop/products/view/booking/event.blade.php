@@ -54,10 +54,10 @@
                         v-text="ticket.formatted_price_text"
                     >
                     </p>
-
+    
                     <div class="text-[#6E6E6E]" v-text="ticket.description"></div>
                 </div>
-
+    
                 <div class="place-items-end">
                     <x-shop::quantity-changer
                         ::name="'booking[qty][' + ticket.id + ']'"
@@ -70,6 +70,7 @@
                 </div>
             </div>
         </div>
+
     </script>
 
     <script type="module">

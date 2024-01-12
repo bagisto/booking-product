@@ -308,10 +308,10 @@
                                 @lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.title')
                             </p>
 
-                            <div class="flex gap-2">
+                            <div class="ltr:mr-11 rtl:ml-11">
                                 <button
                                     type="submit"
-                                    class="primary-button mr-11"
+                                    class="primary-button"
                                 >
                                     @lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.save')
                                 </button>
@@ -572,10 +572,10 @@
                                 @lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.edit-title')
                             </p>
 
-                            <div class="flex gap-2">
+                            <div class="ltr:mr-11 rtl:ml-11">
                                 <button
                                     type="submit"
-                                    class="primary-button mr-11"
+                                    class="primary-button"
                                 >
                                     @lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.save')
                                 </button>
