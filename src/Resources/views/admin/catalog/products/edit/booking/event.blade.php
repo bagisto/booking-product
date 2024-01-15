@@ -395,7 +395,11 @@
                 },
 
                 remove(id) {
-                    this.tickets = this.tickets.filter(option => option.id !== id);
+                    this.$emitter.emit('open-confirm-modal', {
+                        agree: () => {
+                            this.tickets = this.tickets.filter(option => option.id !== id);
+                        },
+                    });
                 },
             }
         });

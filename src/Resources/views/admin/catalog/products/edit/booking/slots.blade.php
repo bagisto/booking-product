@@ -183,7 +183,7 @@
                                 <div
                                     class="primary-button"
                                     v-if="parseInt(sameSlotAllDays)"
-                                    @click="addSlot"
+                                    @click="addSlot()"
                                 >
                                     @lang('booking::app.admin.catalog.products.edit.booking.slots.add')
                                 </div>
@@ -520,17 +520,21 @@
                         });
                     }
                 },
-    
+
                 remove(slot, dayIndex = null) {
-                    if (dayIndex != null) {
-                        let index = this.slots['different_for_week'][dayIndex].indexOf(slot)
-    
-                        this.slots['different_for_week'][dayIndex].splice(index, 1)
-                    } else {
-                        let index = this.slots['same_for_week'].indexOf(slot)
-    
-                        this.slots['same_for_week'].splice(index, 1)
-                    }
+                    this.$emitter.emit('open-confirm-modal', {
+                        agree: () => {
+                            if (dayIndex != null) {
+                                let index = this.slots['different_for_week'][dayIndex].indexOf(slot)
+            
+                                this.slots['different_for_week'][dayIndex].splice(index, 1)
+                            } else {
+                                let index = this.slots['same_for_week'].indexOf(slot)
+            
+                                this.slots['same_for_week'].splice(index, 1)
+                            }
+                        },
+                    });
                 },
 
                 storeSlot(params) {
@@ -577,15 +581,20 @@
                 },
 
                 removeSlot(element) {
-                    if (parseInt(this.sameSlotAllDays)) {
+                    this.$emitter.emit('open-confirm-modal', {
+                        agree: () => {
+                            console.log(element);
+                            if (parseInt(this.sameSlotAllDays)) {
 
-                    } else {
-                        this.different_for_week.forEach(element => {
-                            if (element.hasOwnProperty(this.currentWeek)) {
-                                element[this.currentWeek][this.currentTime] = {id: element.id, from: '00:00', to: '00:00'}
+                            } else {
+                                this.different_for_week.forEach(element => {
+                                    if (element.hasOwnProperty(this.currentWeek)) {
+                                        element[this.currentWeek][this.currentTime] = {id: element.id, from: '00:00', to: '00:00'}
+                                    }
+                                });
                             }
-                        });
-                    }
+                        },
+                    });
                 },
 
                 slotData(params) {

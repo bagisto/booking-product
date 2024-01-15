@@ -787,15 +787,19 @@
                 },
 
                 remove(element) {
-                    if (this.default_booking.booking_type == 'one') {
-                        const index = this.slots.one.findIndex((item, index) => index === element);
-    
-                        if (index !== -1) {
-                            this.slots.one.splice(index, 1);
-                        }
-                    } else {
-                        console.log(element);
-                    }
+                    this.$emitter.emit('open-confirm-modal', {
+                        agree: () => {
+                            if (this.default_booking.booking_type == 'one') {
+                                const index = this.slots.one.findIndex((item, index) => index === element);
+            
+                                if (index !== -1) {
+                                    this.slots.one.splice(index, 1);
+                                }
+                            } else {
+                                console.log(element);
+                            }
+                        },
+                    });
                 },
             }
         });
