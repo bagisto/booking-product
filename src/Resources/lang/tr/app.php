@@ -23,7 +23,7 @@ return [
                             'delete'         => 'Sil',
                             'description'    => 'Rezervasyon Bilgisi',
                             'edit'           => 'Düzenle',
-                            'many'           => 'Çoklu',
+                            'many'           => 'Bir Gün İçin Çok Sayıda Rezervasyon',
 
                             'modal'          => [
                                 'slot' => [
@@ -50,7 +50,7 @@ return [
                                 ],
                             ],
 
-                            'one'            => 'Bir',
+                            'one'            => 'Günlerce Tek Rezervasyon',
                             'open'           => 'Açık',
                             'slot-duration'  => 'Slot Süresi (Dakika)',
                             'title'          => 'Varsayılan',

@@ -23,7 +23,7 @@ return [
                             'delete'         => 'Löschen',
                             'description'    => 'Buchungsinformationen',
                             'edit'           => 'Bearbeiten',
-                            'many'           => 'Viele',
+                            'many'           => 'Viele Buchungen für einen Tag',
 
                             'modal'          => [
                                 'slot' => [
@@ -50,7 +50,7 @@ return [
                                 ],
                             ],
 
-                            'one'            => 'Eins',
+                            'one'            => 'Eine Buchung für viele Tage',
                             'open'           => 'Öffnen',
                             'slot-duration'  => 'Slot-Dauer (Minuten)',
                             'title'          => 'Standard',

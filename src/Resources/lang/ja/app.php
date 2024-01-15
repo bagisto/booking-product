@@ -23,7 +23,7 @@ return [
                             'delete'         => '削除',
                             'description'    => '予約情報',
                             'edit'           => '編集',
-                            'many'           => 'たくさん',
+                            'many'           => '日帰り予約多数',
 
                             'modal'          => [
                                 'slot' => [
@@ -50,7 +50,7 @@ return [
                                 ],
                             ],
 
-                            'one'            => '1つ',
+                            'one'            => '1 回の予約で何日も利用可能',
                             'open'           => 'オープン',
                             'slot-duration'  => 'スロットの期間（分）',
                             'title'          => 'デフォルト',

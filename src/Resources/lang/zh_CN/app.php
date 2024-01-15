@@ -23,7 +23,7 @@ return [
                             'delete'         => '删除',
                             'description'    => '预订信息',
                             'edit'           => '编辑',
-                            'many'           => '多',
+                            'many'           => '一日多次预订',
 
                             'modal'          => [
                                 'slot' => [
@@ -50,7 +50,7 @@ return [
                                 ],
                             ],
 
-                            'one'            => '一',
+                            'one'            => '一次预订多日',
                             'open'           => '打开',
                             'slot-duration'  => 'Slot持续时间（分钟）',
                             'title'          => '默认',

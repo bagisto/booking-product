@@ -23,7 +23,7 @@ return [
                             'delete'         => 'Usuń',
                             'description'    => 'Informacje o rezerwacji',
                             'edit'           => 'Edytuj',
-                            'many'           => 'Wiele',
+                            'many'           => 'Wiele rezerwacji na jeden dzień',
 
                             'modal'          => [
                                 'slot' => [
@@ -50,7 +50,7 @@ return [
                                 ],
                             ],
 
-                            'one'            => 'Jeden',
+                            'one'            => 'Jedna rezerwacja na wiele dni',
                             'open'           => 'Otwórz',
                             'slot-duration'  => 'Czas trwania slotu (minuty)',
                             'title'          => 'Domyślny',
