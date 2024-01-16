@@ -25,7 +25,7 @@
                                 <a
                                     href="https://maps.google.com/maps?q={{ $bookingProduct->location }}"
                                     target="_blank"
-                                    class="text-blue-600"
+                                    class="w-1/4 text-blue-600"
                                 >
                                     @lang('booking::app.shop.products.view.types.booking.view-on-map')
                                 </a>
