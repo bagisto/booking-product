@@ -1,5 +1,5 @@
 {
-    "name": "bagisto/laravel-booking-product",
+    "name": "bagisto/booking-product",
     "license": "MIT",
     "description": "Booking Product package",
     "authors": [
@@ -11,15 +11,14 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Webkul\\Admin\\": "src/"
+            "Webkul\\BookingProduct\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Webkul\\Admin\\Providers\\BookingProductServiceProvider"
-            ],
-            "aliases": {}
+                "Webkul\\BookingProduct\\Providers\\BookingProductServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev"
