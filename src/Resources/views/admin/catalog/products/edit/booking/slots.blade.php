@@ -586,11 +586,15 @@
                             }
                         });
 
-                        if (this.same_for_week?.length) {
-                            this.same_for_week = this.same_for_week.concat(item);
-                        } else {
-                            this.same_for_week = item;
-                        }
+                        Object.values(item).forEach(element => {
+                            if (Object.keys(element).length) {
+                                if (this.same_for_week?.length) {
+                                    this.same_for_week = this.same_for_week.concat(element);
+                                } else {
+                                    this.same_for_week = element;
+                                }
+                            }
+                        });
 
                         this.slots.same_for_week = [];
                     } else {
