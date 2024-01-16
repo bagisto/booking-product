@@ -5,7 +5,8 @@
 
     {!! view_render_event('bagisto.admin.catalog.product.edit.types.booking.before', ['product' => $product]) !!}
 
-    <v-booking-information></v-booking-information>
+    <!-- Vue Component -->
+    <v-booking-information />
 
     {!! view_render_event('bagisto.admin.catalog.product.edit.types.booking.after', ['product' => $product]) !!}
 
@@ -22,16 +23,15 @@
                         class="hidden"
                         name="booking[type]"
                         ::value="booking.type"
-                    >
-                    </x-admin::form.control-group.control>
+                    />
 
                     <x-admin::form.control-group.control
                         type="select"
                         name="booking[type]"
                         rules="required"
                         ::value="booking.type"
-                        :label="trans('booking::app.admin.catalog.products.edit.types.booking.title')"
                         v-model="booking.type"
+                        :label="trans('booking::app.admin.catalog.products.edit.types.booking.title')"
                         ::disabled="! is_new"
                     >
                         @foreach (['default', 'appointment', 'event', 'rental', 'table'] as $item)
@@ -41,10 +41,7 @@
                         @endforeach
                     </x-admin::form.control-group.control>
 
-                    <x-admin::form.control-group.error 
-                        control-name="booking[type]"
-                    >
-                    </x-admin::form.control-group.error>
+                    <x-admin::form.control-group.error  control-name="booking[type]" />
                 </x-admin::form.control-group>
 
                 <!-- Location -->
@@ -56,15 +53,11 @@
                     <x-admin::form.control-group.control
                         type="text"
                         name="booking[location]"
-                        :label="trans('booking::app.admin.catalog.products.edit.types.booking.location')"
                         v-model="booking.location"
-                    >
-                    </x-admin::form.control-group.control>
+                        :label="trans('booking::app.admin.catalog.products.edit.types.booking.location')"
+                    />
 
-                    <x-admin::form.control-group.error 
-                        control-name="booking[location]"
-                    >
-                    </x-admin::form.control-group.error>
+                    <x-admin::form.control-group.error  control-name="booking[location]" />
                 </x-admin::form.control-group>
 
                 <!-- QTY -->
@@ -81,16 +74,12 @@
                     <x-admin::form.control-group.control
                         type="text"
                         name="booking[qty]"
-                        :label="trans('booking::app.admin.catalog.products.edit.types.booking.qty')"
-                        required="required|numeric|min:0"
+                        rules="required|numeric|min:0"
                         v-model="booking.qty"
-                    >
-                    </x-admin::form.control-group.control>
+                        :label="trans('booking::app.admin.catalog.products.edit.types.booking.qty')"
+                    />
 
-                    <x-admin::form.control-group.error 
-                        control-name="booking[qty]"
-                    >
-                    </x-admin::form.control-group.error>
+                    <x-admin::form.control-group.error  control-name="booking[qty]" />
                 </x-admin::form.control-group>
 
                 <!-- Available Every Week -->
@@ -106,8 +95,8 @@
                         type="select"
                         name="booking[available_every_week]"
                         rules="required"
-                        :label="trans('booking::app.admin.catalog.products.edit.types.booking.available-every-week.title')"
                         v-model="booking.available_every_week"
+                        :label="trans('booking::app.admin.catalog.products.edit.types.booking.available-every-week.title')"
                         @change="booking.availableEveryWeekSwatch= ! booking.availableEveryWeekSwatch"
                     >
                         <option value="1">
@@ -119,10 +108,7 @@
                         </option>
                     </x-admin::form.control-group.control>
 
-                    <x-admin::form.control-group.error 
-                        control-name="booking[available_every_week]"
-                    >
-                    </x-admin::form.control-group.error>
+                    <x-admin::form.control-group.error  control-name="booking[available_every_week]" />
                 </x-admin::form.control-group>
 
                 <!-- Available From  -->
@@ -147,13 +133,9 @@
                         :label="trans('booking::app.admin.catalog.products.edit.types.booking.available-from')"
                         :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.available-from')"
                         ref="available_from"
-                    >
-                    </x-admin::form.control-group.control>
+                    />
 
-                    <x-admin::form.control-group.error 
-                        control-name="booking[available_from]"
-                    >
-                    </x-admin::form.control-group.error>
+                    <x-admin::form.control-group.error  control-name="booking[available_from]" />
                 </x-admin::form.control-group>
 
                 <!-- Available To -->
@@ -170,16 +152,12 @@
                         name="booking[available_to]"
                         rules="required"
                         v-model="booking.available_to"
-                        ref="available_to"
                         :label="trans('booking::app.admin.catalog.products.edit.types.booking.available-to')"
                         :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.available-to')"
-                    >
-                    </x-admin::form.control-group.control>
+                        ref="available_to"
+                    />
 
-                    <x-admin::form.control-group.error 
-                        control-name="booking[available_to]"
-                    >
-                    </x-admin::form.control-group.error>
+                    <x-admin::form.control-group.error  control-name="booking[available_to]" />
                 </x-admin::form.control-group>
 
                 @php

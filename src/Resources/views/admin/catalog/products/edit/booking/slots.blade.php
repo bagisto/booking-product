@@ -209,13 +209,12 @@
                                         :control-name="'booking[slots][' + index + ']'"
                                         :slot-item="slot"
                                         @onRemoveSlot="remove($event)"
-                                    >
-                                    </v-slot-item>
+                                    />
                                 </template>
                             </template>
 
                             <div v-else>
-                                <v-empty-info ::type="bookingType"></v-empty-info>
+                                <v-empty-info ::type="bookingType" />
                             </div>
                         </template>
 
@@ -253,8 +252,7 @@
                                             :slot-item="slot"
                                             :id="index"
                                             @onRemoveSlot="remove($event, dayIndex)"
-                                        >
-                                        </v-slot-item>
+                                        />
                                     </template>
                                 </template>
                             </div>
@@ -309,8 +307,7 @@
                             <x-admin::form.control-group.control
                                 type="hidden"
                                 name="id"
-                            >
-                            </x-admin::form.control-group.control>
+                            />
 
                             <!-- From Input Field -->
                             <x-booking::form.control-group class="w-full">
@@ -324,13 +321,9 @@
                                     rules="required"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')"
-                                >
-                                </x-booking::form.control-group.control>
+                                />
 
-                                <x-booking::form.control-group.error 
-                                    control-name="from"
-                                >
-                                </x-booking::form.control-group.error>
+                                <x-booking::form.control-group.error control-name="from" />
                             </x-booking::form.control-group>
                 
                             <!-- To Input Field -->
@@ -345,19 +338,12 @@
                                     rules="required"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.to')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.to')"
-                                >
-                                </x-booking::form.control-group.control>
+                                />
 
                                 <!-- For Avoiding object value in last input field -->
-                                <x-booking::form.control-group.control
-                                    type="hidden"
-                                >
-                                </x-booking::form.control-group.control>
+                                <x-booking::form.control-group.control type="hidden" />
 
-                                <x-booking::form.control-group.error 
-                                    control-name="to"
-                                >
-                                </x-booking::form.control-group.error>
+                                <x-booking::form.control-group.error control-name="to" />
                             </x-booking::form.control-group>
                         </div>
                     </x-slot:content>
@@ -387,18 +373,14 @@
 
                 <x-booking::form.control-group.control
                     type="time"
-                    ::name="controlName + '[from]'"
                     ::id="controlName + '[from]'"
+                    ::name="controlName + '[from]'"
                     rules="required"
                     :label="trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')"
                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')"
-                >
-                </x-booking::form.control-group.control>
+                />
 
-                <x-booking::form.control-group.error 
-                    ::control-name="controlName + '[from]'"
-                >
-                </x-booking::form.control-group.error>
+                <x-booking::form.control-group.error ::control-name="controlName + '[from]'" />
             </x-booking::form.control-group>
 
             <!-- To -->
@@ -409,24 +391,17 @@
 
                 <x-booking::form.control-group.control
                     type="time"
-                    ::name="controlName + '[to]'"
                     ::id="controlName + '[to]'"
+                    ::name="controlName + '[to]'"
                     rules="required"
                     :label="trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.to')"
                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.to')"
-                >
-                </x-booking::form.control-group.control>
+                />
 
                 <!-- Form Avoiding object value in last input field -->
-                <x-booking::form.control-group.control
-                    type="hidden"
-                >
-                </x-booking::form.control-group.control>
+                <x-booking::form.control-group.control type="hidden" />
 
-                <x-booking::form.control-group.error 
-                    ::control-name="controlName + '[to]'"
-                >
-                </x-booking::form.control-group.error>
+                <x-booking::form.control-group.error ::control-name="controlName + '[to]'" />
             </x-booking::form.control-group>
 
             <div
@@ -520,7 +495,7 @@
                         });
                     }
                 },
-    
+
                 remove(slot, dayIndex = null) {
                     if (dayIndex != null) {
                         let index = this.slots['different_for_week'][dayIndex].indexOf(slot)

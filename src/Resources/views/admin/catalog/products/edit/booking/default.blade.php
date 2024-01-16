@@ -1,6 +1,7 @@
 {!! view_render_event('bagisto.admin.catalog.product.edit.before', ['product' => $product]) !!}
 
-<v-default-booking></v-default-booking>
+<!-- Vue Component -->
+<v-default-booking />
 
 {!! view_render_event('bagisto.admin.catalog.product.edit.after', ['product' => $product]) !!}
 
@@ -19,8 +20,8 @@
                 type="select"
                 name="booking[booking_type]"
                 rules="required"
-                :label="trans('booking::app.admin.catalog.products.edit.booking.default.description')"
                 v-model="default_booking.booking_type"
+                :label="trans('booking::app.admin.catalog.products.edit.booking.default.description')"
                 @change="slots.one=[];slots.many=[];optionRowCount=0"
             >
                 @foreach (['many', 'one'] as $item)
@@ -30,10 +31,7 @@
                 @endforeach
             </x-admin::form.control-group.control>
 
-            <x-admin::form.control-group.error 
-                control-name="booking[booking_type]"
-            >
-            </x-admin::form.control-group.error>
+            <x-admin::form.control-group.error control-name="booking[booking_type]" />
         </x-admin::form.control-group>
 
         <div v-if="default_booking.booking_type == 'many'">
@@ -46,16 +44,12 @@
                 <x-admin::form.control-group.control
                     type="text"
                     name="booking[duration]"
-                    required="required|min_value:1"
+                    rules="required|min_value:1"
                     v-model="default_booking.duration"
                     :label="trans('booking::app.admin.catalog.products.edit.booking.default.slot-duration')"
-                >
-                </x-admin::form.control-group.control>
+                />
 
-                <x-admin::form.control-group.error 
-                    control-name="booking[duration]"
-                >
-                </x-admin::form.control-group.error>
+                <x-admin::form.control-group.error control-name="booking[duration]" />
             </x-admin::form.control-group>
 
             <!-- Break Time -->
@@ -67,16 +61,12 @@
                 <x-admin::form.control-group.control
                     type="text"
                     name="booking[break_time]"
-                    required="required|min_value:1"
+                    rules="required|min_value:1"
                     v-model="default_booking.break_time"
                     :label="trans('booking::app.admin.catalog.products.edit.booking.default.break-duration')"
-                >
-                </x-admin::form.control-group.control>
+                />
 
-                <x-admin::form.control-group.error 
-                    control-name="booking[break_time]"
-                >
-                </x-admin::form.control-group.error>
+                <x-admin::form.control-group.error control-name="booking[break_time]" />
             </x-admin::form.control-group>
         </div>
 
@@ -275,7 +265,7 @@
             </template>
 
             <template v-else>
-                <v-empty-info type="default"></v-empty-info>
+                <v-empty-info type="default" />
             </template>
         </div>
 
@@ -308,10 +298,10 @@
                                 @lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.title')
                             </p>
 
-                            <div class="flex gap-2">
+                            <div class="ltr:mr-11 rtl:ml-11">
                                 <button
                                     type="submit"
-                                    class="primary-button mr-11"
+                                    class="primary-button"
                                 >
                                     @lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.save')
                                 </button>
@@ -333,15 +323,13 @@
                                         type="hidden"
                                         name="booking_type"
                                         value="one"
-                                    >
-                                    </x-admin::form.control-group.control>
+                                    />
 
                                     <!-- Hidden Id Input -->
                                     <x-admin::form.control-group.control
                                         type="hidden"
                                         name="id"
-                                    >
-                                    </x-admin::form.control-group.control>
+                                    />
 
                                     <x-admin::form.control-group.control
                                         type="select"
@@ -364,10 +352,7 @@
                                         </option>
                                     </x-admin::form.control-group.control>
                     
-                                    <x-admin::form.control-group.error 
-                                        control-name="from_day"
-                                    >
-                                    </x-admin::form.control-group.error>
+                                    <x-admin::form.control-group.error control-name="from_day" />
                                 </x-admin::form.control-group>
                     
                                 <!-- From -->
@@ -382,13 +367,9 @@
                                         rules="required"
                                         :label="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.from')"
                                         :placeholder="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.from')"
-                                    >
-                                    </x-booking::form.control-group.control>
+                                    />
                     
-                                    <x-booking::form.control-group.error 
-                                        control-name="from"
-                                    >
-                                    </x-booking::form.control-group.error>
+                                    <x-booking::form.control-group.error control-name="from" />
                                 </x-booking::form.control-group>
                             </div>
                     
@@ -420,10 +401,7 @@
                                         </option>
                                     </x-admin::form.control-group.control>
                     
-                                    <x-admin::form.control-group.error 
-                                        control-name="to_day"
-                                    >
-                                    </x-admin::form.control-group.error>
+                                    <x-admin::form.control-group.error control-name="to_day" />
                                 </x-admin::form.control-group>
                     
                                 <!-- TO Time -->
@@ -438,13 +416,9 @@
                                         rules="required"
                                         :label="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.to')"
                                         :placeholder="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.to')"
-                                    >
-                                    </x-booking::form.control-group.control>
+                                    />
                     
-                                    <x-booking::form.control-group.error 
-                                        control-name="to"
-                                    >
-                                    </x-booking::form.control-group.error>
+                                    <x-booking::form.control-group.error control-name="to" />
                                 </x-booking::form.control-group>
                             </div>
                         </template>
@@ -469,16 +443,14 @@
                                     <x-admin::form.control-group.control
                                         type="hidden"
                                         name="[{{ $key }}]id"
-                                    >
-                                    </x-admin::form.control-group.control>
+                                    />
 
                                     <!-- Hidden Days Field -->
                                     <x-admin::form.control-group.control
                                         type="hidden"
                                         name="[{{ $key }}]day"
                                         value="{{ $day }}"
-                                    >
-                                    </x-admin::form.control-group.control>
+                                    />
 
                                     <!-- Slots From -->
                                     <x-booking::form.control-group class="w-full">
@@ -491,13 +463,9 @@
                                             name="[{{ $key }}]from"
                                             ::rules="slotsStatus[{{ $key }}] ? 'required' : ''"
                                             :label="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.from')"
-                                        >
-                                        </x-booking::form.control-group.control>
+                                        />
 
-                                        <x-booking::form.control-group.error 
-                                            control-name="[{{ $key }}]from"
-                                        >
-                                        </x-booking::form.control-group.error>
+                                        <x-booking::form.control-group.error control-name="[{{ $key }}]from" />
                                     </x-booking::form.control-group>
 
                                     <!-- Slots To -->
@@ -511,13 +479,9 @@
                                             name="[{{ $key }}]to"
                                             {{-- rules="{ slots.many[index].status ? {required: true, time_min: slots.many[index].from } : '' }" --}}
                                             :label="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.to')"
-                                        >
-                                        </x-booking::form.control-group.control>
+                                        />
 
-                                        <x-booking::form.control-group.error 
-                                            control-name="[{{ $key }}]to"
-                                        >
-                                        </x-booking::form.control-group.error>
+                                        <x-booking::form.control-group.error control-name="[{{ $key }}]to" />
                                     </x-booking::form.control-group>
 
                                     <!-- Status -->
@@ -542,10 +506,7 @@
                                             </option>
                                         </x-admin::form.control-group.control>
 
-                                        <x-admin::form.control-group.error 
-                                            control-name="[{{ $key }}]status"
-                                        >
-                                        </x-admin::form.control-group.error>
+                                        <x-admin::form.control-group.error control-name="[{{ $key }}]status" />
                                     </x-admin::form.control-group>
                                 </div>
                             @endforeach
@@ -572,10 +533,10 @@
                                 @lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.edit-title')
                             </p>
 
-                            <div class="flex gap-2">
+                            <div class="ltr:mr-11 rtl:ml-11">
                                 <button
                                     type="submit"
-                                    class="primary-button mr-11"
+                                    class="primary-button"
                                 >
                                     @lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.save')
                                 </button>
@@ -589,8 +550,8 @@
                             <x-admin::form.control-group.control
                                 type="hidden"
                                 name="id"
-                            >
-                            </x-admin::form.control-group.control>
+                            />
+
                             <!-- From Time -->
                             <x-booking::form.control-group class="w-full">
                                 <x-booking::form.control-group.label class="required">
@@ -603,13 +564,9 @@
                                     rules="required"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.from')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.from')"
-                                >
-                                </x-booking::form.control-group.control>
+                                />
                 
-                                <x-booking::form.control-group.error 
-                                    control-name="from"
-                                >
-                                </x-booking::form.control-group.error>
+                                <x-booking::form.control-group.error control-name="from" />
                             </x-booking::form.control-group>
 
                             <!-- TO Time -->
@@ -624,13 +581,9 @@
                                     rules="required"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.to')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.to')"
-                                >
-                                </x-booking::form.control-group.control>
-                
-                                <x-booking::form.control-group.error 
-                                    control-name="to"
-                                >
-                                </x-booking::form.control-group.error>
+                                />
+
+                                <x-booking::form.control-group.error control-name="to" />
                             </x-booking::form.control-group>
 
                             <!-- Status -->

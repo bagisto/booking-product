@@ -1,28 +1,61 @@
-<div>
-    <span class="icon-calendar font-bold"></span>
-                        
-    <span class="text-[#6E6E6E]">
-        @lang('booking::app.shop.products.view.types.booking.slot-duration') :
+<div class="grid grid-cols-1 gap-6">
+    <div class="flex gap-3">
+        <span class="icon-calendar text-2xl"></span>
 
-        @lang('booking::app.shop.products.view.types.booking.slot-duration-in-minutes', ['minutes' => $bookingProduct->table_slot->duration])
-    </span>
-</div>
+        <div class="grid grid-cols-1 gap-1.5 text-sm font-medium">
+            <p class="text-[#6E6E6E]">
+                @lang('booking::app.shop.products.view.types.booking.slot-duration') :
+            </p>
 
-@inject ('bookingSlotHelper', 'Webkul\BookingProduct\Helpers\TableSlot')
+            <div>
+                @lang('booking::app.shop.products.view.types.booking.slot-duration-in-minutes', ['minutes' => $bookingProduct->table_slot->duration])
+            </div>
+        </div>
+    </div>
 
-<div>
-    <span class="icon-calendar font-bold"></span>
+    @inject ('bookingSlotHelper', 'Webkul\BookingProduct\Helpers\TableSlot')
 
-    <span>
-        @lang('booking::app.shop.products.view.booking.table.today-availability')
-    </span>
+    <div class="flex gap-3">
+        <span class="icon-calendar text-2xl"></span>
 
-    <span>
-        {!! $bookingSlotHelper->getTodaySlotsHtml($bookingProduct) !!}
-    </span>
+        <div class="grid grid-cols-1 gap-4">
+            <div class="grid grid-cols-1 gap-1.5 text-sm font-medium">
+                <p class="text-[#6E6E6E]">
+                    @lang('booking::app.shop.products.view.booking.table.today-availability')
+                </p>
+    
+                <span>
+                    {!! $bookingSlotHelper->getTodaySlotsHtml($bookingProduct) !!}
+                </span>
+            </div>
 
-    <!-- Toggler Vue Component -->
-    <v-toggler></v-toggler>
+            <!-- Toggler Vue Component -->
+            <v-toggler />
+        </div>
+    </div>
+
+    @include ('booking::shop.products.view.booking.slots', [
+        'bookingProduct' => $bookingProduct, 
+        'title' => trans('booking::app.shop.products.view.booking.table.book-a-table')
+    ])
+
+    <!-- Notes -->
+    <x-shop::form.control-group class="w-full !mb-0">
+        <x-shop::form.control-group.label class="required">
+            @lang('booking::app.shop.products.view.booking.table.special-notes')
+        </x-shop::form.control-group.label>
+
+        <x-shop::form.control-group.control
+            type="textarea"
+            class="!mb-0"
+            name="booking[note]"
+            rules="required"
+            :label="trans('booking::app.shop.products.view.booking.table.special-notes')"
+            :placeholder="trans('booking::app.shop.products.view.booking.table.special-notes')"
+        />
+
+        <x-shop::form.control-group.error control-name="booking[note]" />
+    </x-shop::form.control-group>
 </div>
 
 @pushOnce('scripts')
@@ -30,16 +63,16 @@
         type="text/x-template"
         id="v-toggler-template"
     >
-        <div class="grid gap-x-2.5 gap-y-1.5 select-none">
+        <div class="grid gap-3 w-max select-none">
             <!-- Details Toggler -->
             <p
-                class="flex gap-x-[15px] items-center text-base cursor-pointer"
+                class="flex gap-x-[15px] items-center text-blue-600 text-sm font-medium cursor-pointer"
                 @click="showDaysAvailability = ! showDaysAvailability"
             >
                 @lang('booking::app.shop.products.view.booking.table.slots-for-all-days')
 
                 <span
-                    class="text-2xl"
+                    class="text-xl font-bold"
                     :class="{'icon-arrow-up': showDaysAvailability, 'icon-arrow-down': ! showDaysAvailability}"
                 >
                 </span>
@@ -47,28 +80,27 @@
 
             <!-- Option Details -->
             <div
-                class="grid gap-2"
+                class="grid grid-cols-2 gap-3"
                 v-show="showDaysAvailability"
+                v-for="day in days"
             >
-                <template v-for="day in days">
-                    <p
-                        class="text-sm font-medium"
-                        v-text="day.name"
-                    >
-                    </p>
+                <p
+                    class="text-sm text-gray font-medium"
+                    v-text="day.name"
+                >
+                </p>
 
-                    <p class="text-sm">
-                        <template v-if="day.slots && day.slots?.length">
-                            <div v-for="slot in day.slots">
-                                @{{ slot.from }} - @{{ slot.to }}
-                            </div>
-                        </template>
-
-                        <div v-else class="label-canceled">
-                            @lang('booking::app.shop.products.view.booking.table.closed')
+                <p class="text-sm text-gray-600">
+                    <template v-if="day.slots && day.slots?.length">
+                        <div v-for="slot in day.slots">
+                            @{{ slot.from }} - @{{ slot.to }}
                         </div>
-                    </p>
-                </template>
+                    </template>
+
+                    <div v-else class="label-canceled">
+                        @lang('booking::app.shop.products.view.booking.table.closed')
+                    </div>
+                </p>
             </div>
         </div>
     </script>
@@ -87,29 +119,3 @@
         })
     </script>
 @endpushOnce
-
-@include ('booking::shop.products.view.booking.slots', [
-    'bookingProduct' => $bookingProduct, 
-    'title' => trans('booking::app.shop.products.view.booking.table.book-a-table')
-])
-
-<!-- Notes -->
-<x-shop::form.control-group class="w-full">
-    <x-shop::form.control-group.label class="required">
-        @lang('booking::app.shop.products.view.booking.table.special-notes')
-    </x-shop::form.control-group.label>
-
-    <x-shop::form.control-group.control
-        type="textarea"
-        name="booking[note]"
-        rules="required"
-        :label="trans('booking::app.shop.products.view.booking.table.special-notes')"
-        :placeholder="trans('booking::app.shop.products.view.booking.table.special-notes')"
-    >
-    </x-shop::form.control-group.control>
-
-    <x-shop::form.control-group.error
-        control-name="booking[note]"
-    >
-    </x-shop::form.control-group.error>
-</x-shop::form.control-group>

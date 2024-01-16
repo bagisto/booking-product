@@ -86,17 +86,13 @@
                                         type="date"
                                         name="booking[date]"
                                         rules="required"
-                                        data-min-date="today"
                                         :label="trans('booking::app.shop.products.view.booking.rental.select-date')"
                                         :placeholder="trans('booking::app.shop.products.view.booking.rental.select-date')"
+                                        data-min-date="today"
                                         @change="dateSelected($event)"
-                                    >
-                                    </x-shop::form.control-group.control>
+                                    />
 
-                                    <x-shop::form.control-group.error
-                                        control-name="booking[date]"
-                                    >
-                                    </x-shop::form.control-group.error>
+                                    <x-shop::form.control-group.error control-name="booking[date]" />
                                 </x-shop::form.control-group>
 
                                 <x-shop::form.control-group class="w-full !mb-0">
@@ -106,8 +102,8 @@
 
                                     <x-shop::form.control-group.control
                                         type="select"
-                                        name="booking[slot]"
                                         class="!mb-1"
+                                        name="booking[slot]"
                                         rules="required"
                                         v-model="selected_slot"
                                         :label="trans('booking::app.shop.products.view.booking.rental.select-date')"
@@ -121,10 +117,7 @@
                                         </option>
                                     </x-shop::form.control-group.control>
 
-                                    <x-shop::form.control-group.error
-                                        control-name="booking[slot]"
-                                    >
-                                    </x-shop::form.control-group.error>
+                                    <x-shop::form.control-group.error control-name="booking[slot]" />
                                 </x-shop::form.control-group>
                             </div>
                         </div>
@@ -156,10 +149,7 @@
                                         </option>
                                     </x-shop::form.control-group.control>
 
-                                    <x-shop::form.control-group.error
-                                        control-name="booking[slot][from]"
-                                    >
-                                    </x-shop::form.control-group.error>
+                                    <x-shop::form.control-group.error control-name="booking[slot][from]" />
                                 </x-shop::form.control-group>
 
                                 <x-shop::form.control-group class="w-full !mb-0">
@@ -183,10 +173,7 @@
                                         </option>
                                     </x-shop::form.control-group.control>
 
-                                    <x-shop::form.control-group.error
-                                        control-name="booking[slot][to]"
-                                    >
-                                    </x-shop::form.control-group.error>
+                                    <x-shop::form.control-group.error control-name="booking[slot][to]" />
                                 </x-shop::form.control-group>
                             </div>
                         </div>
@@ -213,13 +200,9 @@
                                     :label="trans('booking::app.shop.products.view.booking.rental.from')"
                                     :placeholder="trans('booking::app.shop.products.view.booking.rental.from')"
                                     @change="dateSelected($event)"
-                                >
-                                </x-shop::form.control-group.control>
+                                />
         
-                                <x-shop::form.control-group.error
-                                    control-name="booking[date_from]"
-                                >
-                                </x-shop::form.control-group.error>
+                                <x-shop::form.control-group.error control-name="booking[date_from]" />
                             </x-shop::form.control-group>
 
                             <x-shop::form.control-group class="w-full">
@@ -232,17 +215,14 @@
                                     name="booking[date_to]"
                                     {{-- rules="required|date_format:yyyy-MM-dd|after_or_equal:date_from" --}}
                                     v-model="date_from"
-                                    ref="date_from"
-                                    data-min-date="today"
                                     :label="trans('booking::app.shop.products.view.booking.rental.to')"
                                     :placeholder="trans('booking::app.shop.products.view.booking.rental.to')"
+                                    data-min-date="today"
+                                    ref="date_from"
                                     @change="dateSelected($event)"
-                                >
-                                </x-shop::form.control-group.control>
+                                />
         
-                                <x-shop::form.control-group.error
-                                    control-name="booking[date_to]"
-                                >
+                                <x-shop::form.control-group.error control-name="booking[date_to]" />
                                 </x-shop::form.control-group.error>
                             </x-shop::form.control-group>
                         </div>

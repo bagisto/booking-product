@@ -1,4 +1,4 @@
-<v-book-slots :bookingProduct = "{{ $bookingProduct }}"></v-book-slots>
+<v-book-slots :bookingProduct = "{{ $bookingProduct }}" />
 
 @pushOnce('scripts')
     <script type="text/x-template" id="v-book-slots-template">
@@ -8,6 +8,7 @@
             </x-shop::form.control-group.label>
 
             <div class="grid grid-cols-2 gap-4">
+                <!-- Select Date -->
                 <x-shop::form.control-group class="!mb-0">
                     <x-shop::form.control-group.label class="hidden">
                         @lang('booking::app.shop.products.view.booking.slots.date')
@@ -15,23 +16,20 @@
 
                     <x-shop::form.control-group.control
                         type="date"
-                        name="booking[date]"
                         class="py-4"
-                        minDate="{{ $bookingProduct->available_from }}"
-                        maxDate="{{ $bookingProduct->available_to }}"
+                        name="booking[date]"
                         rules="required"
                         :label="trans('booking::app.shop.products.view.booking.slots.date')"
                         :placeholder="trans('YYYY-MM-DD')"
+                        minDate="{{ $bookingProduct->available_from }}"
+                        maxDate="{{ $bookingProduct->available_to }}"
                         @change="getAvailableSlots"
-                    >
-                    </x-shop::form.control-group.control>
+                    />
 
-                    <x-shop::form.control-group.error
-                        control-name="booking[date]"
-                    >
-                    </x-shop::form.control-group.error>
+                    <x-shop::form.control-group.error control-name="booking[date]" />
                 </x-shop::form.control-group>
 
+                <!-- Select Slots -->
                 <x-shop::form.control-group class="!mb-0">
                     <x-shop::form.control-group.label class="hidden">
                         @lang('booking::app.shop.products.view.booking.slots.title')
@@ -39,8 +37,8 @@
 
                     <x-shop::form.control-group.control
                         type="select"
-                        name="booking[slot]"
                         class="py-4"
+                        name="booking[slot]"
                         rules="required"
                         :label="trans('booking::app.shop.products.view.booking.slots.title')"
                         :placeholder="trans('booking::app.shop.products.view.booking.slots.title')"
@@ -57,10 +55,7 @@
                         </option>
                     </x-shop::form.control-group.control>
 
-                    <x-shop::form.control-group.error
-                        control-name="booking[slot]"
-                    >
-                    </x-shop::form.control-group.error>
+                    <x-shop::form.control-group.error control-name="booking[slot]" />
                 </x-shop::form.control-group>
             </div>
         </div>

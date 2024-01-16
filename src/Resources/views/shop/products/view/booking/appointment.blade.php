@@ -1,30 +1,39 @@
-<div>
-    <span class="icon-calendar font-bold"></span>
-                        
-    <span class="text-[#6E6E6E]">
-        @lang('booking::app.shop.products.view.types.booking.slot-duration') :
+<div class="grid grid-cols-1 gap-6">
+    <div class="flex gap-3">
+        <span class="icon-calendar text-2xl"></span>
 
-        @lang('booking::app.shop.products.view.types.booking.slot-duration-in-minutes', ['minutes' => $bookingProduct->appointment_slot->duration])
-    </span>
-</div>
+        <div class="grid grid-cols-1 gap-1.5 text-sm font-medium">
+            <p class="text-[#6E6E6E]">
+                @lang('booking::app.shop.products.view.types.booking.slot-duration') :
+            </p>
 
-@inject ('bookingSlotHelper', 'Webkul\BookingProduct\Helpers\AppointmentSlot')
-
-<div class="grid grid-cols-1 gap-2.5">
-    <div>
-        <span class="icon-calendar font-bold"></span>
-
-        <span>
-            @lang('booking::app.shop.products.view.booking.appointment.today-availability')
-        </span>
-
-        <span>
-            {!! $bookingSlotHelper->getTodaySlotsHtml($bookingProduct) !!}
-        </span>
+            <div>
+                @lang('booking::app.shop.products.view.types.booking.slot-duration-in-minutes', ['minutes' => $bookingProduct->appointment_slot->duration])
+            </div>
+        </div>
     </div>
 
-    <v-toggler></v-toggler>
+    @inject ('bookingSlotHelper', 'Webkul\BookingProduct\Helpers\AppointmentSlot')
 
+    <div class="flex gap-3">
+        <span class="icon-calendar text-2xl"></span>
+
+        <div class="grid grid-cols-1 gap-4">
+            <div class="grid grid-cols-1 gap-1.5 text-sm font-medium">
+                <p class="text-[#6E6E6E]">
+                    @lang('booking::app.shop.products.view.booking.appointment.today-availability')
+                </p>
+    
+                <span>
+                    {!! $bookingSlotHelper->getTodaySlotsHtml($bookingProduct) !!}
+                </span>
+            </div>
+
+            <!-- Toggler Vue Component -->
+            <v-toggler />
+        </div>
+    </div>
+    
     @include ('booking::shop.products.view.booking.slots', ['bookingProduct' => $bookingProduct])
 </div>
 
@@ -33,16 +42,16 @@
         type="text/x-template"
         id="v-toggler-template"
     >
-        <div class="grid gap-2.5 w-max select-none">
+        <div class="grid gap-3 w-max select-none">
             <!-- Details Toggler -->
             <p
-                class="flex gap-x-[15px] items-center text-base cursor-pointer"
+                class="flex gap-x-[15px] items-center text-blue-600 text-sm font-medium cursor-pointer"
                 @click="showDaysAvailability = ! showDaysAvailability"
             >
                 @lang('shop::app.checkout.cart.mini-cart.see-details')
 
                 <span
-                    class="text-2xl"
+                    class="text-xl font-bold"
                     :class="{'icon-arrow-up': showDaysAvailability, 'icon-arrow-down': ! showDaysAvailability}"
                 >
                 </span>
@@ -50,28 +59,27 @@
 
             <!-- Option Details -->
             <div
-                class="grid gap-2"
+                class="grid grid-cols-2 gap-3"
                 v-show="showDaysAvailability"
+                v-for="day in days"
             >
-                <template v-for="day in days">
-                    <p
-                        class="text-sm text-gray font-medium"
-                        v-text="day.name"
-                    >
-                    </p>
+                <p
+                    class="text-sm text-gray font-medium"
+                    v-text="day.name"
+                >
+                </p>
 
-                    <p class="text-sm">
-                        <div v-if="day.slots && day.slots?.length">
-                            <div v-for="slot in day.slots">
-                                @{{ slot.from }} - @{{ slot.to }}
-                            </div>
+                <p class="text-sm text-gray-600">
+                    <template v-if="day.slots && day.slots?.length">
+                        <div v-for="slot in day.slots">
+                            @{{ slot.from }} - @{{ slot.to }}
                         </div>
+                    </template>
 
-                        <div v-else class="text-danger">
-                            @lang('booking::app.shop.products.view.booking.appointment.closed')
-                        </div>
-                    </p>
-                </template>
+                    <div v-else class="label-canceled">
+                        @lang('booking::app.shop.products.view.booking.appointment.closed')
+                    </div>
+                </p>
             </div>
         </div>
     </script>
