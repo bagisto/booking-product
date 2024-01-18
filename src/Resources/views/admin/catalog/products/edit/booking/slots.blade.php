@@ -19,7 +19,7 @@
                 <div
                     class="secondary-button"
                     v-if="parseInt(sameSlotAllDays)"
-                    @click="toggle"
+                    @click="toggle()"
                 >
                     @lang('booking::app.admin.catalog.products.edit.booking.slots.add')
                 </div>
@@ -85,13 +85,13 @@
                                 <!-- Hidden Inputs -->
                                 <input
                                     type="hidden"
-                                    :name="'booking[slots][' + dayIndex + '][' + index + '][from]'"
+                                    :name="'booking[slots][' + dayIndex + '][' + itemIndex + '][from]'"
                                     :value="item.from"
                                 />
 
                                 <input
                                     type="hidden"
-                                    :name="'booking[slots][' + dayIndex + '][' + index + '][to]'"
+                                    :name="'booking[slots][' + dayIndex + '][' + itemIndex + '][to]'"
                                     :value="item.to"
                                 />
 
@@ -116,7 +116,7 @@
 
                         <p
                             class="place-content-start text-right text-blue-600 cursor-pointer transition-all hover:underline"
-                            @click="currentIndex=dayIndex;toggle"
+                            @click="currentIndex=dayIndex;toggle()"
                         >
                             @lang('Add')
                         </p>
