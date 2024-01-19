@@ -113,7 +113,7 @@ return [
                         'slots'       => [
                             'add'              => 'Add Slots',
                             'delete'           => 'Delete',
-                            'description-info' => 'Available Slots with time Duration.',
+                            'description-info' => 'According to slots the time duration will be created and visible.',
                             'description'      => 'There is no slots available.',
                             'edit'             => 'Edit',
 
@@ -132,7 +132,7 @@ return [
                             ],
 
                             'save'             => 'Save',
-                            'title'            => 'Slots',
+                            'title'            => 'Slots Time Duration',
                         ],
 
                         'table'       => [

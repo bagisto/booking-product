@@ -15,10 +15,12 @@
             </div>
 
             <!-- Add Slots Button -->
-            <div class="flex gap-x-1 items-center">
+            <div
+                class="flex gap-x-1 items-center"
+                v-if="parseInt(sameSlotAllDays)"
+            >
                 <div
                     class="secondary-button"
-                    v-if="parseInt(sameSlotAllDays)"
                     @click="toggle()"
                 >
                     @lang('booking::app.admin.catalog.products.edit.booking.slots.add')
@@ -71,11 +73,12 @@
             
             <template v-else>
                 <div
-                    class="grid border-b border-slate-300 dark:border-gray-800 last:border-b-0"
+                    class="grid py-2 border-b border-slate-300 dark:border-gray-800 last:border-b-0"
                     v-for="(day, dayIndex) in week_days"
                 >
-                    <div class="flex grid-cols-3 gap-10 p-4 items-center justify-between">
-                        <p v-text="day"></p>
+                    <p class="font-medium" v-text="day"></p>
+
+                    <div class="flex grid-cols-2 items-center justify-between">
 
                         <div class="flex flex-wrap gap-1 items-center min-h-[38px] dark:border-gray-800">
                             <template
@@ -108,7 +111,7 @@
                             </template>
 
                             <template v-else>
-                                <p class="rounded-xl px-2.5 py-1.5 bg-gray-300">
+                                <p class="text-gray-500">
                                     @lang('Unavailalable')
                                 </p>
                             </template>
@@ -162,7 +165,7 @@
 
                     <x-slot:content>
                         <template v-if="field['same_for_week']?.length">
-                            <div class="grid grid-cols-3 gap-2.5 mx-2.5 py-2.5 text-gray-800 dark:text-white">
+                            <div class="grid grid-cols-3 gap-2.5 mx-2.5 pb-2.5 text-gray-800 dark:text-white">
                                 <div class="w-full">
                                     @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')
                                 </div>
@@ -183,7 +186,7 @@
                         </template>
 
                         <template v-else-if="field['different_for_week'][currentIndex]?.length">
-                            <div class="grid grid-cols-3 gap-2.5 mx-2.5 py-2.5 text-gray-800 dark:text-white">
+                            <div class="grid grid-cols-3 gap-2.5 mx-2.5 pb-2.5 text-gray-800 dark:text-white">
                                 <div class="w-full">
                                     @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')
                                 </div>
@@ -196,7 +199,7 @@
                             <template v-for="(slot, index) in field['different_for_week'][currentIndex]">
                                 <v-slot-item
                                     :control-name="'booking[slots][' + currentIndex + '][' + index + ']'"
-                                    :index="currentIndex + '_' + slotIndex"
+                                    :index="currentIndex + '_' + index"
                                     :slot-item="slot"
                                     @onRemoveSlot="remove($event, currentIndex)"
                                 />
@@ -294,13 +297,13 @@
                     },
 
                     week_days: [
-                        "{{ trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.sunday') }}",
-                        "{{ trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.monday') }}",
-                        "{{ trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.tuesday') }}",
-                        "{{ trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.wednesday') }}",
-                        "{{ trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.thursday') }}",
-                        "{{ trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.friday') }}",
-                        "{{ trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.saturday') }}"
+                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.sunday')",
+                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.monday')",
+                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.tuesday')",
+                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.wednesday')",
+                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.thursday')",
+                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.friday')",
+                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.saturday')"
                     ],
 
                     currentIndex: '',
@@ -403,8 +406,6 @@
                         for (let i = 0; i < this.slots['different_for_week'][this.currentIndex].length; i++) {
                             this.slots['different_for_week'][this.currentIndex][i].id = i + 1;
                         }
-
-                        
                     }
                 },
 

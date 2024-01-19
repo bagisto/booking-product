@@ -105,7 +105,7 @@
                             <div class="grid gap-1.5 place-content-start">
                                 <!-- From day with Time -->
                                 <p class="text-gray-800 dark:text-white">
-                                    @{{ convertIndexToDay(slot.from_day) }} - @{{ slot.from }}
+                                    <span class="font-bold">@{{ convertIndexToDay(slot.from_day) }}</span> - <span>@{{ slot.from }}</span>
                                 </p>
 
                                 <!-- Hidden Field Id -->
@@ -131,7 +131,7 @@
 
                                 <!-- To day Whith Time -->
                                 <p class="text-gray-800 dark:text-white">
-                                    @{{ convertIndexToDay(slot.from_day) }} - @{{ slot.to }}
+                                    <span class="font-bold">@{{ convertIndexToDay(slot.to_day) }}</span> - <span>@{{ slot.to }}</span>
                                 </p>
 
                                 <!-- Hiiden Field TO Day -->
@@ -188,13 +188,21 @@
                                 :value="item.day"
                             />
 
-                            <div class="flex gap-2.5 justify-between py-3 cursor-pointer">
+                            <div class="flex gap-2.5 justify-between py-1 cursor-pointer">
                                 <div class="grid gap-1.5 place-content-start">
                                     <!-- From Detailes with hidden fields -->
-                                    <p class="text-gray-800 dark:text-white">
-                                        <span>From - </span>
+                                    <p class="flex gap-2.5">
+                                        <p class="text-gray-800 dark:text-white">
+                                            <span>From - </span>
 
-                                        <span v-text="item.from ? item.from : '00:00'"></span>
+                                            <span v-text="item.from ? item.from : '00:00'"></span>
+                                        </p>
+
+                                        <p class="text-gray-800 dark:text-white">
+                                            <span>To - </span>
+
+                                            <span v-text="item.to ? item.to : '00:00'"></span>
+                                        </p>
                                     </p>
 
                                     <input
@@ -210,12 +218,6 @@
                                     />
 
                                     <!-- To Detailes With Hidden Fields -->
-                                    <p class="text-gray-800 dark:text-white">
-                                        <span>To - </span>
-
-                                        <span v-text="item.to ? item.to : '00:00'"></span>
-                                    </p>
-                
                                     <input
                                         type="hidden"
                                         :name="'booking[slots][' + slotIndex + '][' + itemIndex + '][to]'"
@@ -224,8 +226,6 @@
 
                                     <!-- Status Detailes With Hidden Fields -->
                                     <div class="flex gap-1 text-gray-800 dark:text-white">
-                                        <p>Status - </p>
-
                                         <p
                                             :class="parseInt(item.status) ? 'label-active' : 'label-canceled'"
                                             v-text="parseInt(item.status) 
@@ -270,7 +270,7 @@
         </div>
 
         @php
-            $days =  [
+            $week_days =  [
                 'sunday',
                 'monday',
                 'tuesday',
@@ -345,7 +345,7 @@
                                         </option>
 
                                         <option
-                                            v-for="(day, index) in days"
+                                            v-for="(day, index) in week_days"
                                             :value="index"
                                             v-text="'@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.week')'.replace(':day', day)"
                                         >
@@ -394,7 +394,7 @@
                                         </option>
 
                                         <option
-                                            v-for="(day, index) in days"
+                                            v-for="(day, index) in week_days"
                                             :value="index"
                                             v-text="'@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.week')'.replace(':day', day)"
                                         >
@@ -433,7 +433,7 @@
                                 @endforeach
                             </div>
 
-                            @foreach ($days as $key => $day)
+                            @foreach ($week_days as $key => $day)
                                 <div class="grid grid-cols-4 gap-2.5">
                                     <div class="text-gray-800 dark:text-white">
                                         @lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.' . $day)
@@ -646,14 +646,14 @@
                         6: false,
                     },
 
-                    days: {
-                        0: '@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.monday')',
-                        1: '@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.tuesday')',
-                        2: '@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.wednesday')',
-                        3: '@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.tuesday')',
-                        4: '@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.friday')',
-                        5: '@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.saturday')',
-                        6: '@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.sunday')',
+                    week_days: {
+                        "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.monday')",
+                        "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.tuesday')",
+                        "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.wednesday')",
+                        "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.tuesday')",
+                        "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.friday')",
+                        "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.saturday')",
+                        "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.sunday')",
                     },
                 }
             },
@@ -724,7 +724,7 @@
                 },
 
                 convertIndexToDay(day) {
-                    return this.days[day];
+                    return this.week_days[day];
                 },
 
                 edit(element) {
