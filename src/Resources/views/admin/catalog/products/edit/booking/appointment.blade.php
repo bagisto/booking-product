@@ -1,9 +1,9 @@
-{!! view_render_event('bagisto.admin.catalog.product.edit.before', ['product' => $product]) !!}
+{!! view_render_event('bagisto.admin.catalog.product.edit.booking.appointment.before', ['product' => $product]) !!}
 
 <!-- Vue Component -->
 <v-appointment-booking :bookingProduct = "$bookingProduct ?? []" />
 
-{!! view_render_event('bagisto.admin.catalog.product.edit.after', ['product' => $product]) !!}
+{!! view_render_event('bagisto.admin.catalog.product.edit.booking.appointment.after', ['product' => $product]) !!}
 
 
 @pushOnce('scripts')

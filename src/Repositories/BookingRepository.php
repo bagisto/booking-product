@@ -17,7 +17,9 @@ class BookingRepository extends Repository
     }
 
     /**
-     * @return \Webkul\BookingProduct\Contracts\Booking
+     * Create Method.
+     *
+     * @return \Webkul\BookingProduct\Contracts\Booking|void
      */
     public function create(array $data)
     {
@@ -32,28 +34,20 @@ class BookingRepository extends Repository
 
             $from = $to = null;
 
-            if (isset($item->additional['booking']['slot'])) {
-                if (
-                    isset($item->additional['booking']['slot']['from'])
-                    && isset($item->additional['booking']['slot']['to'])
-                ) {
-                    $from = $item->additional['booking']['slot']['from'];
+            $bookingItem = $item->additional['booking'];
 
-                    $to = $item->additional['booking']['slot']['to'];
-                } else {
-                    $timestamps = explode('-', $item->additional['booking']['slot']);
+            if (isset($bookingItem['slot'])) {
+                if (is_array($bookingItem['slot'])) {
+                    $timestamps = explode('-', $bookingItem['slot']);
 
-                    $from = current($timestamps);
+                    $from = $bookingItem['slot']['from'] ?? current($timestamps);
 
-                    $to = end($timestamps);
+                    $to = $bookingItem['slot']['to'] ?? end($timestamps);
                 }
-            } elseif (
-                isset($item->additional['booking']['date_from'])
-                && isset($item->additional['booking']['date_to'])
-            ) {
-                $from = Carbon::createFromTimeString($item->additional['booking']['date_from'] . ' 00:00:00')->getTimestamp();
+            } elseif (isset($bookingItem['date_from']) && isset($bookingItem['date_to'])) {
+                $from = Carbon::createFromTimeString($bookingItem['date_from'] . ' 00:00:00')->getTimestamp();
 
-                $to = Carbon::createFromTimeString($item->additional['booking']['date_to'] . ' 23:59:59')->getTimestamp();
+                $to = Carbon::createFromTimeString($bookingItem['date_to'] . ' 23:59:59')->getTimestamp();
             }
 
             $booking = parent::create([
@@ -63,7 +57,7 @@ class BookingRepository extends Repository
                 'order_id'                        => $order->id,
                 'order_item_id'                   => $item->id,
                 'product_id'                      => $item->product_id,
-                'booking_product_event_ticket_id' => $item->additional['booking']['ticket_id'] ?? null,
+                'booking_product_event_ticket_id' => $bookingItem['ticket_id'] ?? null,
             ]);
 
             Event::dispatch('marketplace.booking.save.after', $booking);

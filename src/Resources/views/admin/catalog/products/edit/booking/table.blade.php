@@ -1,9 +1,9 @@
-{!! view_render_event('bagisto.admin.catalog.product.edit.table.before', ['product' => $product]) !!}
+{!! view_render_event('bagisto.admin.catalog.product.edit.booking.table.before', ['product' => $product]) !!}
 
 <!-- Vue Component -->
 <v-table-booking />
 
-{!! view_render_event('bagisto.admin.catalog.product.edit.after', ['product' => $product]) !!}
+{!! view_render_event('bagisto.admin.catalog.product.edit.booking.table.after', ['product' => $product]) !!}
 
 @pushOnce('scripts')
     <script
@@ -139,7 +139,6 @@
                 rules="required"
                 v-model="table_booking.same_slot_all_days"
                 :label="trans('booking::app.admin.catalog.products.edit.booking.table.same-slot-for-all-days.title')"
-                @change="slots.one=[];slots.many=[];"
             >
                 <option value="1">
                     @lang('booking::app.admin.catalog.products.edit.booking.table.same-slot-for-all-days.yes')

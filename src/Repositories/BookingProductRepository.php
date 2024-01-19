@@ -100,10 +100,9 @@ class BookingProductRepository extends Repository
     }
 
     /**
-     * @param  array  $data
      * @return array
      */
-    public function formatSlots($data)
+    public function formatSlots(array $data)
     {
         if (
             isset($data['same_slot_all_days'])

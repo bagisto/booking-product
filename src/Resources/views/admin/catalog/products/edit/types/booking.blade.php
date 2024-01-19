@@ -11,7 +11,10 @@
     {!! view_render_event('bagisto.admin.catalog.product.edit.types.booking.after', ['product' => $product]) !!}
 
     @pushOnce('scripts')
-        <script type="text/x-template" id="v-booking-information-template">
+        <script
+            type="text/x-template"
+            id="v-booking-information-template"
+        >
             <div class="relative p-4 bg-white dark:bg-gray-900 rounded box-shadow">
                 <!-- Booking Type -->
                 <x-admin::form.control-group class="w-full">
@@ -184,23 +187,25 @@
         <script type="module">
             defineRule('required_if', (value, { condition = true } = {}) => {
                 if (condition) {
-                    if (value === null || value === undefined || value === '') {
+                    if (
+                        value === null
+                        || value === undefined
+                        || value === ''
+                    ) {
                         return false;
                     }
                 }
+
                 return true;
             });
 
             defineRule('after', (value, [target]) => {
                 console.log(value, target);
-                if (!value || !target) {
+                if (! value || ! target) {
                     return false;
                 }
 
-                const valueDate = new Date(value);
-                const targetDate = new Date(target);
-
-                return valueDate > targetDate;
+                return new Date(value) > new Date(target);
             });
 
             app.component('v-booking-information', {

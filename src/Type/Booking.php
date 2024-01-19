@@ -26,7 +26,7 @@ class Booking extends Virtual
      *
      * @return void
      */
-    public function __construct(
+    public function __construct (
         protected CustomerRepository $customerRepository,
         protected AttributeRepository $attributeRepository,
         protected ProductRepository $productRepository,
@@ -80,10 +80,8 @@ class Booking extends Virtual
 
     /**
      * Return true if this product can have inventory
-     *
-     * @return bool
      */
-    public function showQuantityBox()
+    public function showQuantityBox(): bool
     {
         $bookingProduct = $this->getBookingProduct($this->product->id);
 
@@ -92,9 +90,8 @@ class Booking extends Virtual
 
     /**
      * @param  \Webkul\Checkout\Contracts\CartItem  $cartItem
-     * @return bool
      */
-    public function isItemHaveQuantity($cartItem)
+    public function isItemHaveQuantity($cartItem): bool
     {
         $bookingProduct = $this->getBookingProduct($this->product->id);
 
@@ -125,6 +122,7 @@ class Booking extends Virtual
         if ($bookingProduct->type == 'rental') {
             if (isset($data['booking']['slot']['from'])) {
                 $time = $data['booking']['slot']['to'] - $data['booking']['slot']['from'];
+
                 $hours = floor($time / 60) / 60;
 
                 if ($hours > 1) {
@@ -187,9 +185,8 @@ class Booking extends Virtual
     /**
      * @param  array  $options1
      * @param  array  $options2
-     * @return bool
      */
-    public function compareOptions($options1, $options2)
+    public function compareOptions($options1, $options2): bool
     {
         if ($this->product->id !== (int) $options2['product_id']) {
             return false;
@@ -210,9 +207,8 @@ class Booking extends Virtual
      * Returns additional information for items
      *
      * @param  array  $data
-     * @return array
      */
-    public function getAdditionalOptions($data)
+    public function getAdditionalOptions($data): array
     {
         return $this->bookingHelper->getCartItemOptions($data);
     }
@@ -230,9 +226,7 @@ class Booking extends Virtual
             return $result;
         }
 
-        $bookingProduct = $this->getBookingProduct($item->product_id);
-
-        if (! $bookingProduct) {
+        if (! $bookingProduct = $this->getBookingProduct($item->product_id)) {
             $result->cartIsInvalid();
 
             return $result;
@@ -243,10 +237,8 @@ class Booking extends Virtual
 
     /**
      * Returns price indexer class for a specific product type
-     *
-     * @return string
      */
-    public function getPriceIndexer()
+    public function getPriceIndexer(): string
     {
         return app(VirtualIndexer::class);
     }

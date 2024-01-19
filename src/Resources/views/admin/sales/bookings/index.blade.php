@@ -17,5 +17,4 @@
 
     <!-- Datagrid -->
     <x-admin::datagrid src="{{ route('admin.sales.bookings.index') }}" />
-
 </x-admin::layouts>

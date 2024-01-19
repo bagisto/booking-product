@@ -73,13 +73,12 @@
             
             <template v-else>
                 <div
-                    class="grid py-2 border-b border-slate-300 dark:border-gray-800 last:border-b-0"
+                    class="grid grid-cols-[1fr_2fr] items-center py-2 border-b border-slate-300 dark:border-gray-800 last:border-b-0"
                     v-for="(day, dayIndex) in week_days"
                 >
                     <p class="font-medium" v-text="day"></p>
 
                     <div class="flex grid-cols-2 items-center justify-between">
-
                         <div class="flex flex-wrap gap-1 items-center min-h-[38px] dark:border-gray-800">
                             <template
                                 v-if="slots['different_for_week'][dayIndex].length"

@@ -1,8 +1,9 @@
-{!! view_render_event('bagisto.admin.catalog.product.edit.before', ['product' => $product]) !!}
+{!! view_render_event('bagisto.admin.catalog.product.edit.booking.rental.before', ['product' => $product]) !!}
 
+<!-- Vue Component -->
 <v-rental-booking />
 
-{!! view_render_event('bagisto.admin.catalog.product.edit.after', ['product' => $product]) !!}
+{!! view_render_event('bagisto.admin.catalog.product.edit.booking.rental.after', ['product' => $product]) !!}
 
 @pushOnce('scripts')
     <script
@@ -88,7 +89,6 @@
                     rules="required"
                     v-model="rental_booking.same_slot_all_days"
                     :label="trans('booking::app.admin.catalog.products.edit.booking.rental.same-slot-for-all-days.title')"
-                    @change="slots.one=[];slots.many=[];"
                 >
                     <option value="1">
                         @lang('booking::app.admin.catalog.products.edit.booking.rental.same-slot-for-all-days.yes')
