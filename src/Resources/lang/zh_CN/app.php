@@ -7,52 +7,53 @@ return [
                 'edit' => [
                     'booking' => [
                         'appointment' => [
-                            'break-duration'         => 'Slot之间的休息时间（分钟）',
-                            'slot-duration'          => 'Slot持续时间（分钟）',
+                            'break-duration'         => '时间间隔（分钟）',
+                            'slot-duration'          => '时隙时长（分钟）',
 
                             'same-slot-for-all-days' => [
                                 'no'    => '否',
-                                'title' => '所有天都相同的Slot',
+                                'title' => '所有天使用相同时隙',
                                 'yes'   => '是',
                             ],
                         ],
 
                         'default'     => [
-                            'break-duration' => 'Slot之间的休息时间（分钟）',
+                            'add'            => '添加',
+                            'break-duration' => '时间间隔（分钟）',
                             'close'          => '关闭',
-                            'delete'         => '删除',
-                            'description'    => '预订信息',
+                            'description'    => '预约信息',
                             'edit'           => '编辑',
-                            'many'           => '多',
+                            'many'           => '一天内的多次预约',
 
                             'modal'          => [
                                 'slot' => [
+                                    'add-title'  => '添加时隙',
                                     'close'      => '关闭',
                                     'day'        => '天',
-                                    'edit-title' => '编辑Slots',
+                                    'edit-title' => '编辑时隙',
                                     'friday'     => '星期五',
-                                    'from-day'   => '从天开始',
+                                    'from-day'   => '从天',
                                     'from'       => '从',
                                     'monday'     => '星期一',
-                                    'open'       => '打开',
+                                    'open'       => '开放',
                                     'saturday'   => '星期六',
-                                    'save'       => '保存Slot',
+                                    'save'       => '保存时隙',
                                     'select'     => '选择',
                                     'status'     => '状态',
                                     'sunday'     => '星期天',
                                     'thursday'   => '星期四',
-                                    'time'       => '时间',
-                                    'title'      => '添加Slots',
-                                    'to'         => '到',
+                                    'to'         => '至',
                                     'tuesday'    => '星期二',
                                     'wednesday'  => '星期三',
                                     'week'       => ':day',
                                 ],
                             ],
 
-                            'one'            => '一',
-                            'open'           => '打开',
-                            'slot-duration'  => 'Slot持续时间（分钟）',
+                            'one'            => '一天内的一次预约',
+                            'open'           => '开放',
+                            'slot-add'       => '添加时隙',
+                            'slot-title'     => '时隙',
+                            'slot-duration'  => '时隙时长（分钟）',
                             'title'          => '默认',
                         ],
 
@@ -64,18 +65,18 @@ return [
                             'edit'               => '编辑',
 
                             'modal'              => [
-                                'ticket' => [
-                                    'save' => '保存门票',
-                                ],
+                                'save' => '保存门票',
                             ],
 
                             'name'               => '名称',
                             'price'              => '价格',
                             'qty'                => '数量',
-                            'special-price-from' => '特价从',
-                            'special-price-to'   => '特价到',
+                            'special-price-from' => '特价开始时间',
+                            'special-price-to'   => '特价结束时间',
                             'special-price'      => '特价',
                             'title'              => '门票',
+                            'valid-from'         => '有效开始时间',
+                            'valid-until'        => '有效结束时间',
                         ],
 
                         'empty-info'  => [
@@ -84,22 +85,21 @@ return [
                             ],
 
                             'slots'   => [
-                                'add'         => '添加Slots',
-                                'delete'      => '删除',
-                                'description' => '具有时间持续时间的可用Slots。',
+                                'add'         => '添加时隙',
+                                'description' => '可用时隙及时长。',
                             ],
                         ],
 
                         'rental'      => [
-                            'daily_hourly'           => '每日和每小时基础',
+                            'daily-hourly'           => '日常和每小时',
                             'daily-price'            => '每日价格',
-                            'daily'                  => '每日基础',
+                            'daily'                  => '每日',
                             'hourly-price'           => '每小时价格',
-                            'hourly'                 => '每小时基础',
+                            'hourly'                 => '每小时',
 
                             'same-slot-for-all-days' => [
                                 'no'    => '否',
-                                'title' => '所有天都相同的Slot',
+                                'title' => '所有天使用相同时隙',
                                 'yes'   => '是',
                             ],
 
@@ -107,47 +107,49 @@ return [
                         ],
 
                         'slots'       => [
-                            'add'              => '添加Slots',
-                            'delete'           => '删除',
-                            'description-info' => '具有时间持续时间的可用Slots。',
-                            'description'      => '没有可用的Slots。',
-                            'edit'             => '编辑',
+                            'add'              => '添加时隙',
 
+                            'action'           => [
+                                'add' => '添加',
+                            ],
+
+                            'description-info' => '根据时隙将创建并显示时间段。',
                             'modal'            => [
                                 'slot' => [
-                                    'friday'    => '星期五',
-                                    'from'      => '从',
-                                    'monday'    => '星期一',
-                                    'saturday'  => '星期六',
-                                    'sunday'    => '星期天',
-                                    'thursday'  => '星期四',
-                                    'to'        => '到',
-                                    'tuesday'   => '星期二',
-                                    'wednesday' => '星期三',
+                                    'friday'     => '星期五',
+                                    'from'       => '从',
+                                    'monday'     => '星期一',
+                                    'saturday'   => '星期六',
+                                    'sunday'     => '星期天',
+                                    'thursday'   => '星期四',
+                                    'to'         => '至',
+                                    'tuesday'    => '星期二',
+                                    'wednesday'  => '星期三',
                                 ],
                             ],
 
                             'save'             => '保存',
-                            'title'            => 'Slots',
+                            'title'            => '时隙时长',
+                            'unavailable'      => '不可用',
                         ],
 
                         'table'       => [
-                            'break-duration'            => 'Slot之间的休息时间（分钟）',
+                            'break-duration'            => '时间间隔（分钟）',
 
                             'charged-per'               => [
-                                'guest' => '客人',
-                                'table' => '桌子',
-                                'title' => '每个收费',
+                                'guest'  => '客人',
+                                'table'  => '桌子',
+                                'title'  => '计费方式',
                             ],
 
                             'guest-capacity'            => '客人容量',
                             'guest-limit'               => '每桌客人限制',
-                            'prevent-scheduling-before' => '在预订之前防止安排',
-                            'slot-duration'             => 'Slot持续时间（分钟）',
+                            'prevent-scheduling-before' => '在此之前禁止预订',
+                            'slot-duration'             => '时隙时长（分钟）',
 
                             'same-slot-for-all-days'    => [
                                 'no'    => '否',
-                                'title' => '所有天都相同的Slot',
+                                'title' => '所有天使用相同时隙',
                                 'yes'   => '是',
                             ],
                         ],

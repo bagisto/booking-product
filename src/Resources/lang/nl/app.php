@@ -7,26 +7,27 @@ return [
                 'edit' => [
                     'booking' => [
                         'appointment' => [
-                            'break-duration' => 'Pauzeduur tussen slots (minuten)',
-                            'slot-duration'  => 'Slotduur (minuten)',
+                            'break-duration'         => 'Pauzetijd tussen slots (minuten)',
+                            'slot-duration'          => 'Slotduur (minuten)',
 
                             'same-slot-for-all-days' => [
                                 'no'    => 'Nee',
-                                'title' => 'Hetzelfde slot voor alle dagen',
+                                'title' => 'Zelfde slot voor alle dagen',
                                 'yes'   => 'Ja',
                             ],
                         ],
 
                         'default'     => [
-                            'break-duration' => 'Pauzeduur tussen slots (minuten)',
+                            'add'            => 'Toevoegen',
+                            'break-duration' => 'Pauzetijd tussen slots (minuten)',
                             'close'          => 'Sluiten',
-                            'delete'         => 'Verwijderen',
                             'description'    => 'Boekingsinformatie',
                             'edit'           => 'Bewerken',
-                            'many'           => 'Vele',
+                            'many'           => 'Veel boekingen voor één dag',
 
                             'modal'          => [
                                 'slot' => [
+                                    'add-title'  => 'Slots toevoegen',
                                     'close'      => 'Sluiten',
                                     'day'        => 'Dag',
                                     'edit-title' => 'Slots bewerken',
@@ -34,15 +35,13 @@ return [
                                     'from-day'   => 'Vanaf dag',
                                     'from'       => 'Van',
                                     'monday'     => 'Maandag',
-                                    'open'       => 'Openen',
+                                    'open'       => 'Open',
                                     'saturday'   => 'Zaterdag',
                                     'save'       => 'Slot opslaan',
-                                    'select'     => 'Selecteren',
+                                    'select'     => 'Selecteer',
                                     'status'     => 'Status',
                                     'sunday'     => 'Zondag',
                                     'thursday'   => 'Donderdag',
-                                    'time'       => 'Tijd',
-                                    'title'      => 'Slots toevoegen',
                                     'to'         => 'Tot',
                                     'tuesday'    => 'Dinsdag',
                                     'wednesday'  => 'Woensdag',
@@ -50,8 +49,10 @@ return [
                                 ],
                             ],
 
-                            'one'            => 'Een',
-                            'open'           => 'Openen',
+                            'one'            => 'Eén boeking voor meerdere dagen',
+                            'open'           => 'Open',
+                            'slot-add'       => 'Slots toevoegen',
+                            'slot-title'     => 'Slots',
                             'slot-duration'  => 'Slotduur (minuten)',
                             'title'          => 'Standaard',
                         ],
@@ -60,22 +61,22 @@ return [
                             'add'                => 'Tickets toevoegen',
                             'delete'             => 'Verwijderen',
                             'description-info'   => 'Er zijn geen tickets beschikbaar.',
-                            'description'        => 'Beschrijving',
+                            'description'        => 'Omschrijving',
                             'edit'               => 'Bewerken',
 
                             'modal'              => [
-                                'ticket' => [
-                                    'save' => 'Tickets opslaan',
-                                ],
+                                'save' => 'Tickets opslaan',
                             ],
 
                             'name'               => 'Naam',
                             'price'              => 'Prijs',
                             'qty'                => 'Hoeveelheid',
-                            'special-price-from' => 'Speciale prijs van',
+                            'special-price-from' => 'Speciale prijs vanaf',
                             'special-price-to'   => 'Speciale prijs tot',
                             'special-price'      => 'Speciale prijs',
                             'title'              => 'Tickets',
+                            'valid-from'         => 'Geldig vanaf',
+                            'valid-until'        => 'Geldig tot',
                         ],
 
                         'empty-info'  => [
@@ -85,21 +86,20 @@ return [
 
                             'slots'   => [
                                 'add'         => 'Slots toevoegen',
-                                'delete'      => 'Verwijderen',
                                 'description' => 'Beschikbare slots met tijdsduur.',
                             ],
                         ],
 
                         'rental'      => [
-                            'daily_hourly'           => 'Beide (dagelijks en per uur)',
+                            'daily-hourly'           => 'Beide (dagelijks en per uur)',
                             'daily-price'            => 'Dagprijs',
-                            'daily'                  => 'Dagelijkse basis',
+                            'daily'                  => 'Dagbasis',
                             'hourly-price'           => 'Uurprijs',
-                            'hourly'                 => 'Uurlijkse basis',
+                            'hourly'                 => 'Uurbasis',
 
                             'same-slot-for-all-days' => [
                                 'no'    => 'Nee',
-                                'title' => 'Hetzelfde slot voor alle dagen',
+                                'title' => 'Zelfde slot voor alle dagen',
                                 'yes'   => 'Ja',
                             ],
 
@@ -108,46 +108,49 @@ return [
 
                         'slots'       => [
                             'add'              => 'Slots toevoegen',
-                            'delete'           => 'Verwijderen',
-                            'description-info' => 'Beschikbare slots met tijdsduur.',
-                            'description'      => 'Er zijn geen slots beschikbaar.',
-                            'edit'             => 'Bewerken',
+
+                            'action'           => [
+                                'add' => 'Toevoegen',
+                            ],
+
+                            'description-info' => 'Volgens slots wordt de tijdsduur gecreëerd en zichtbaar.',
 
                             'modal'            => [
                                 'slot' => [
-                                    'friday'    => 'Vrijdag',
-                                    'from'      => 'Van',
-                                    'monday'    => 'Maandag',
-                                    'saturday'  => 'Zaterdag',
-                                    'sunday'    => 'Zondag',
-                                    'thursday'  => 'Donderdag',
-                                    'to'        => 'Tot',
-                                    'tuesday'   => 'Dinsdag',
-                                    'wednesday' => 'Woensdag',
+                                    'friday'     => 'Vrijdag',
+                                    'from'       => 'Van',
+                                    'monday'     => 'Maandag',
+                                    'saturday'   => 'Zaterdag',
+                                    'sunday'     => 'Zondag',
+                                    'thursday'   => 'Donderdag',
+                                    'to'         => 'Tot',
+                                    'tuesday'    => 'Dinsdag',
+                                    'wednesday'  => 'Woensdag',
                                 ],
                             ],
 
                             'save'             => 'Opslaan',
-                            'title'            => 'Slots',
+                            'title'            => 'Tijdsduur van slots',
+                            'unavailable'      => 'Niet beschikbaar',
                         ],
 
                         'table'       => [
-                            'break-duration'            => 'Pauzeduur tussen slots (minuten)',
+                            'break-duration'            => 'Pauzetijd tussen slots (minuten)',
 
                             'charged-per'               => [
-                                'guest' => 'Gast',
-                                'table' => 'Tafel',
-                                'title' => 'In rekening brengen per',
+                                'guest'  => 'Gast',
+                                'table'  => 'Tafel',
+                                'title'  => 'In rekening brengen per',
                             ],
 
-                            'guest-capacity'            => 'Gastcapaciteit',
-                            'guest-limit'               => 'Gastlimiet per tafel',
-                            'prevent-scheduling-before' => 'Voorkom planning voor',
+                            'guest-capacity'            => 'Gastencapaciteit',
+                            'guest-limit'               => 'Gastenlimiet per tafel',
+                            'prevent-scheduling-before' => 'Voorkom plannen voor',
                             'slot-duration'             => 'Slotduur (minuten)',
 
                             'same-slot-for-all-days'    => [
                                 'no'    => 'Nee',
-                                'title' => 'Hetzelfde slot voor alle dagen',
+                                'title' => 'Zelfde slot voor alle dagen',
                                 'yes'   => 'Ja',
                             ],
                         ],

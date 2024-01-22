@@ -12,21 +12,22 @@ return [
 
                             'same-slot-for-all-days' => [
                                 'no'    => 'いいえ',
-                                'title' => 'すべての日の同じスロット',
+                                'title' => '全ての日で同じスロット',
                                 'yes'   => 'はい',
                             ],
                         ],
 
                         'default'     => [
+                            'add'            => '追加',
                             'break-duration' => 'スロット間の休憩時間（分）',
                             'close'          => '閉じる',
-                            'delete'         => '削除',
                             'description'    => '予約情報',
                             'edit'           => '編集',
-                            'many'           => 'たくさん',
+                            'many'           => '1日に複数の予約',
 
                             'modal'          => [
                                 'slot' => [
+                                    'add-title'  => 'スロットを追加',
                                     'close'      => '閉じる',
                                     'day'        => '日',
                                     'edit-title' => 'スロットを編集',
@@ -34,15 +35,13 @@ return [
                                     'from-day'   => '開始日',
                                     'from'       => '開始',
                                     'monday'     => '月曜日',
-                                    'open'       => 'オープン',
+                                    'open'       => '開く',
                                     'saturday'   => '土曜日',
                                     'save'       => 'スロットを保存',
                                     'select'     => '選択',
                                     'status'     => 'ステータス',
                                     'sunday'     => '日曜日',
                                     'thursday'   => '木曜日',
-                                    'time'       => '時間',
-                                    'title'      => 'スロットを追加',
                                     'to'         => '終了',
                                     'tuesday'    => '火曜日',
                                     'wednesday'  => '水曜日',
@@ -50,8 +49,10 @@ return [
                                 ],
                             ],
 
-                            'one'            => '1つ',
-                            'open'           => 'オープン',
+                            'one'            => '複数日のための1つの予約',
+                            'open'           => '開く',
+                            'slot-add'       => 'スロットを追加',
+                            'slot-title'     => 'スロット',
                             'slot-duration'  => 'スロットの期間（分）',
                             'title'          => 'デフォルト',
                         ],
@@ -64,9 +65,7 @@ return [
                             'edit'               => '編集',
 
                             'modal'              => [
-                                'ticket' => [
-                                    'save' => 'チケットを保存',
-                                ],
+                                'save' => 'チケットを保存',
                             ],
 
                             'name'               => '名前',
@@ -76,6 +75,8 @@ return [
                             'special-price-to'   => '特別価格 終了',
                             'special-price'      => '特別価格',
                             'title'              => 'チケット',
+                            'valid-from'         => '有効開始日',
+                            'valid-until'        => '有効終了日',
                         ],
 
                         'empty-info'  => [
@@ -85,21 +86,20 @@ return [
 
                             'slots'   => [
                                 'add'         => 'スロットを追加',
-                                'delete'      => '削除',
-                                'description' => '利用可能な時間帯のスロット。',
+                                'description' => '利用可能なスロットと時間の期間。',
                             ],
                         ],
 
                         'rental'      => [
-                            'daily_hourly'           => '両方（日次および時間毎）',
-                            'daily-price'            => '日次価格',
-                            'daily'                  => '日次ベース',
-                            'hourly-price'           => '時間毎価格',
-                            'hourly'                 => '時間毎ベース',
+                            'daily-hourly'           => '両方（デイリーおよび時間単位）',
+                            'daily-price'            => 'デイリープライス',
+                            'daily'                  => 'デイリーベース',
+                            'hourly-price'           => '時間単位の価格',
+                            'hourly'                 => '時間単位のベース',
 
                             'same-slot-for-all-days' => [
                                 'no'    => 'いいえ',
-                                'title' => 'すべての日の同じスロット',
+                                'title' => '全ての日で同じスロット',
                                 'yes'   => 'はい',
                             ],
 
@@ -108,46 +108,49 @@ return [
 
                         'slots'       => [
                             'add'              => 'スロットを追加',
-                            'delete'           => '削除',
-                            'description-info' => '利用可能な時間帯のスロット。',
-                            'description'      => '利用可能なスロットはありません。',
-                            'edit'             => '編集',
+
+                            'action'           => [
+                                'add' => '追加',
+                            ],
+
+                            'description-info' => 'スロットに基づいて時間の期間が作成され、表示されます。',
 
                             'modal'            => [
                                 'slot' => [
-                                    'friday'    => '金曜日',
-                                    'from'      => '開始',
-                                    'monday'    => '月曜日',
-                                    'saturday'  => '土曜日',
-                                    'sunday'    => '日曜日',
-                                    'thursday'  => '木曜日',
-                                    'to'        => '終了',
-                                    'tuesday'   => '火曜日',
-                                    'wednesday' => '水曜日',
+                                    'friday'     => '金曜日',
+                                    'from'       => '開始',
+                                    'monday'     => '月曜日',
+                                    'saturday'   => '土曜日',
+                                    'sunday'     => '日曜日',
+                                    'thursday'   => '木曜日',
+                                    'to'         => '終了',
+                                    'tuesday'    => '火曜日',
+                                    'wednesday'  => '水曜日',
                                 ],
                             ],
 
                             'save'             => '保存',
-                            'title'            => 'スロット',
+                            'title'            => 'スロットの時間の期間',
+                            'unavailable'      => '利用不可',
                         ],
 
                         'table'       => [
                             'break-duration'            => 'スロット間の休憩時間（分）',
 
                             'charged-per'               => [
-                                'guest' => 'ゲスト',
-                                'table' => 'テーブル',
-                                'title' => '単価',
+                                'guest'  => 'ゲスト',
+                                'table'  => 'テーブル',
+                                'title'  => 'プライトチャージ',
                             ],
 
                             'guest-capacity'            => 'ゲスト収容人数',
-                            'guest-limit'               => 'テーブル毎のゲスト制限',
-                            'prevent-scheduling-before' => 'スケジューリング前の制限',
+                            'guest-limit'               => 'テーブルごとのゲスト制限',
+                            'prevent-scheduling-before' => '前日予約防止',
                             'slot-duration'             => 'スロットの期間（分）',
 
                             'same-slot-for-all-days'    => [
                                 'no'    => 'いいえ',
-                                'title' => 'すべての日の同じスロット',
+                                'title' => '全ての日で同じスロット',
                                 'yes'   => 'はい',
                             ],
                         ],
