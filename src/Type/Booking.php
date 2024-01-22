@@ -26,7 +26,7 @@ class Booking extends Virtual
      *
      * @return void
      */
-    public function __construct (
+    public function __construct(
         protected CustomerRepository $customerRepository,
         protected AttributeRepository $attributeRepository,
         protected ProductRepository $productRepository,
@@ -237,7 +237,7 @@ class Booking extends Virtual
 
     /**
      * Returns price indexer class for a specific product type
-     * 
+     *
      * @return string
      */
     public function getPriceIndexer()

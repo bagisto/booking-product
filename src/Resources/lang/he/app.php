@@ -7,52 +7,53 @@ return [
                 'edit'  => [
                     'booking' => [
                         'appointment' => [
-                            'break-duration'         => 'זמן המנוחה בין המקטעים (דקות)',
-                            'slot-duration'          => 'משך המקטע (דקות)',
+                            'break-duration'         => 'זמן הפסק בין המקומות (דקות)',
+                            'slot-duration'          => 'משך זמן המקום (דקות)',
 
                             'same-slot-for-all-days' => [
                                 'no'    => 'לא',
-                                'title' => 'אותו מקטע לכל הימים',
+                                'title' => 'אותו מקום לכל הימים',
                                 'yes'   => 'כן',
                             ],
                         ],
 
                         'default'     => [
-                            'break-duration' => 'זמן המנוחה בין המקטעים (דקות)',
+                            'add'            => 'הוסף',
+                            'break-duration' => 'זמן הפסק בין המקומות (דקות)',
                             'close'          => 'סגור',
-                            'delete'         => 'מחק',
                             'description'    => 'מידע על ההזמנה',
                             'edit'           => 'ערוך',
-                            'many'           => 'הרבה',
+                            'many'           => 'המון הזמנות ליום אחד',
 
                             'modal'          => [
                                 'slot' => [
+                                    'add-title'  => 'הוסף מקומות',
                                     'close'      => 'סגור',
                                     'day'        => 'יום',
-                                    'edit-title' => 'ערוך מקטעים',
+                                    'edit-title' => 'ערוך מקומות',
                                     'friday'     => 'יום שישי',
                                     'from-day'   => 'מיום',
-                                    'from'       => 'מתוך',
+                                    'from'       => 'מ',
                                     'monday'     => 'יום שני',
                                     'open'       => 'פתח',
                                     'saturday'   => 'יום שבת',
-                                    'save'       => 'שמור מקטע',
+                                    'save'       => 'שמור מקום',
                                     'select'     => 'בחר',
-                                    'status'     => 'מצב',
+                                    'status'     => 'סטטוס',
                                     'sunday'     => 'יום ראשון',
                                     'thursday'   => 'יום חמישי',
-                                    'time'       => 'זמן',
-                                    'title'      => 'הוסף מקטעים',
-                                    'to'         => 'אל',
+                                    'to'         => 'עד',
                                     'tuesday'    => 'יום שלישי',
                                     'wednesday'  => 'יום רביעי',
-                                    'week'       => ':יום',
+                                    'week'       => ':day',
                                 ],
                             ],
 
-                            'one'            => 'אחד',
-                            'open'           => 'פתוח',
-                            'slot-duration'  => 'משך המקטע (דקות)',
+                            'one'            => 'הזמנה אחת למספר ימים',
+                            'open'           => 'פתח',
+                            'slot-add'       => 'הוסף מקומות',
+                            'slot-title'     => 'מקומות',
+                            'slot-duration'  => 'משך זמן המקום (דקות)',
                             'title'          => 'ברירת מחדל',
                         ],
 
@@ -64,18 +65,18 @@ return [
                             'edit'               => 'ערוך',
 
                             'modal'              => [
-                                'ticket' => [
-                                    'save' => 'שמור כרטיסים',
-                                ],
+                                'save' => 'שמור כרטיסים',
                             ],
 
                             'name'               => 'שם',
                             'price'              => 'מחיר',
                             'qty'                => 'כמות',
-                            'special-price-from' => 'מחיר מיוחד מתאריך',
+                            'special-price-from' => 'מחיר מיוחד מ',
                             'special-price-to'   => 'מחיר מיוחד עד',
                             'special-price'      => 'מחיר מיוחד',
                             'title'              => 'כרטיסים',
+                            'valid-from'         => 'בתוקף מ',
+                            'valid-until'        => 'בתוקף עד',
                         ],
 
                         'empty-info'  => [
@@ -84,22 +85,21 @@ return [
                             ],
 
                             'slots'   => [
-                                'add'         => 'הוסף מקטעים',
-                                'delete'      => 'מחק',
-                                'description' => 'מקטעים זמינים עם משך זמן.',
+                                'add'         => 'הוסף מקומות',
+                                'description' => 'מקומות זמינים עם משך זמן.',
                             ],
                         ],
 
                         'rental'      => [
-                            'daily_hourly'           => 'שניים (יומי ולפי שעות)',
+                            'daily-hourly'           => 'שניים (יומי ושעתי)',
                             'daily-price'            => 'מחיר יומי',
-                            'daily'                  => 'מדי יום',
-                            'hourly-price'           => 'מחיר לשעה',
-                            'hourly'                 => 'לפי שעות',
+                            'daily'                  => 'לפי יום',
+                            'hourly-price'           => 'מחיר שעתי',
+                            'hourly'                 => 'לפי שעה',
 
                             'same-slot-for-all-days' => [
                                 'no'    => 'לא',
-                                'title' => 'אותו מקטע לכל הימים',
+                                'title' => 'אותו מקום לכל הימים',
                                 'yes'   => 'כן',
                             ],
 
@@ -107,47 +107,50 @@ return [
                         ],
 
                         'slots'       => [
-                            'add'              => 'הוסף מקטעים',
-                            'delete'           => 'מחק',
-                            'description-info' => 'מקטעים זמינים עם משך זמן.',
-                            'description'      => 'אין מקטעים זמינים.',
-                            'edit'             => 'ערוך',
+                            'add'              => 'הוסף מקומות',
+
+                            'action'           => [
+                                'add' => 'הוסף',
+                            ],
+
+                            'description-info' => 'על פי המקומות, ייצר זמן המקום שיהיה גלוי.',
 
                             'modal'            => [
                                 'slot' => [
                                     'friday'     => 'יום שישי',
-                                    'from'       => 'מתוך',
+                                    'from'       => 'מ',
                                     'monday'     => 'יום שני',
                                     'saturday'   => 'יום שבת',
                                     'sunday'     => 'יום ראשון',
                                     'thursday'   => 'יום חמישי',
-                                    'to'         => 'אל',
+                                    'to'         => 'עד',
                                     'tuesday'    => 'יום שלישי',
                                     'wednesday'  => 'יום רביעי',
                                 ],
                             ],
 
                             'save'             => 'שמור',
-                            'title'            => 'מקטעים',
+                            'title'            => 'משך זמן המקומות',
+                            'unavailable'      => 'לא זמין',
                         ],
 
                         'table'       => [
-                            'break-duration'            => 'זמן המנוחה בין המקטעים (דקות)',
+                            'break-duration'            => 'זמן הפסק בין המקומות (דקות)',
 
                             'charged-per'               => [
                                 'guest'  => 'אורח',
                                 'table'  => 'שולחן',
-                                'title'  => 'מחויב ל',
+                                'title'  => 'חייב בכל',
                             ],
 
                             'guest-capacity'            => 'קיבולת אורחים',
-                            'guest-limit'               => 'הגבלת אורחים לשולחן',
+                            'guest-limit'               => 'מגבלת אורחים לכל שולחן',
                             'prevent-scheduling-before' => 'מנע קביעת תור לפני',
-                            'slot-duration'             => 'משך המקטע (דקות)',
+                            'slot-duration'             => 'משך זמן המקום (דקות)',
 
                             'same-slot-for-all-days'    => [
                                 'no'    => 'לא',
-                                'title' => 'אותו מקטע לכל הימים',
+                                'title' => 'אותו מקום לכל הימים',
                                 'yes'   => 'כן',
                             ],
                         ],

@@ -18,15 +18,16 @@ return [
                         ],
 
                         'default'     => [
+                            'add'            => 'Add',
                             'break-duration' => 'Break Time b/w Slots (Mins)',
                             'close'          => 'Close',
-                            'delete'         => 'Delete',
                             'description'    => 'Booking Information',
                             'edit'           => 'Edit',
-                            'many'           => 'Many',
+                            'many'           => 'Many Bookings For One Days',
 
                             'modal'          => [
                                 'slot' => [
+                                    'add-title'  => 'Add Slots',
                                     'close'      => 'Close',
                                     'day'        => 'Day',
                                     'edit-title' => 'Edit Slots',
@@ -41,8 +42,6 @@ return [
                                     'status'     => 'Status',
                                     'sunday'     => 'Sunday',
                                     'thursday'   => 'Thursday',
-                                    'time'       => 'Time',
-                                    'title'      => 'Add Slots',
                                     'to'         => 'To',
                                     'tuesday'    => 'Tuesday',
                                     'wednesday'  => 'Wednesday',
@@ -50,7 +49,7 @@ return [
                                 ],
                             ],
 
-                            'one'            => 'One',
+                            'one'            => 'One Booking For Many Days',
                             'open'           => 'Open',
                             'slot-add'       => 'Add Slots',
                             'slot-title'     => 'Slots',
@@ -66,9 +65,7 @@ return [
                             'edit'               => 'Edit',
 
                             'modal'              => [
-                                'ticket' => [
-                                    'save' => 'Save Tickets',
-                                ],
+                                'save' => 'Save Tickets',
                             ],
 
                             'name'               => 'Name',
@@ -89,13 +86,12 @@ return [
 
                             'slots'   => [
                                 'add'         => 'Add Slots',
-                                'delete'      => 'Delete',
                                 'description' => 'Available Slots with time Duration.',
                             ],
                         ],
 
                         'rental'      => [
-                            'daily_hourly'           => 'Both (Daily and Hourly Basis)',
+                            'daily-hourly'           => 'Both (Daily and Hourly Basis)',
                             'daily-price'            => 'Daily Price',
                             'daily'                  => 'Daily Basis',
                             'hourly-price'           => 'Hourly Price',
@@ -112,10 +108,12 @@ return [
 
                         'slots'       => [
                             'add'              => 'Add Slots',
-                            'delete'           => 'Delete',
+
+                            'action'           => [
+                                'add' => 'Add',
+                            ],
+
                             'description-info' => 'According to slots the time duration will be created and visible.',
-                            'description'      => 'There is no slots available.',
-                            'edit'             => 'Edit',
 
                             'modal'            => [
                                 'slot' => [
@@ -133,6 +131,7 @@ return [
 
                             'save'             => 'Save',
                             'title'            => 'Slots Time Duration',
+                            'unavailable'      => 'Unavailable',
                         ],
 
                         'table'       => [

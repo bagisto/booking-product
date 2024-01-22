@@ -7,8 +7,8 @@ return [
                 'edit'  => [
                     'booking' => [
                         'appointment' => [
-                            'break-duration'         => 'स्लॉट्स के बीच ब्रेक समय (मिनट)',
-                            'slot-duration'          => 'स्लॉट अवधि (मिनट)',
+                            'break-duration'         => 'स्लॉट के बीच विराम समय (मिनट)',
+                            'slot-duration'          => 'स्लॉट की अवधि (मिनट)',
 
                             'same-slot-for-all-days' => [
                                 'no'    => 'नहीं',
@@ -18,41 +18,42 @@ return [
                         ],
 
                         'default'     => [
-                            'break-duration' => 'स्लॉट्स के बीच ब्रेक समय (मिनट)',
+                            'add'            => 'जोड़ें',
+                            'break-duration' => 'स्लॉट के बीच विराम समय (मिनट)',
                             'close'          => 'बंद करें',
-                            'delete'         => 'हटाएं',
-                            'description'    => 'बुकिंग सूचना',
+                            'description'    => 'बुकिंग जानकारी',
                             'edit'           => 'संपादित करें',
-                            'many'           => 'बहुत सारे',
+                            'many'           => 'एक दिन के लिए कई बुकिंगें',
 
                             'modal'          => [
                                 'slot' => [
+                                    'add-title'  => 'स्लॉट जोड़ें',
                                     'close'      => 'बंद करें',
                                     'day'        => 'दिन',
                                     'edit-title' => 'स्लॉट संपादित करें',
                                     'friday'     => 'शुक्रवार',
-                                    'from-day'   => 'दिन से',
+                                    'from-day'   => 'से दिन',
                                     'from'       => 'से',
                                     'monday'     => 'सोमवार',
-                                    'open'       => 'खुला',
+                                    'open'       => 'खोलें',
                                     'saturday'   => 'शनिवार',
                                     'save'       => 'स्लॉट सहेजें',
-                                    'select'     => 'चुनें',
+                                    'select'     => 'चयन करें',
                                     'status'     => 'स्थिति',
                                     'sunday'     => 'रविवार',
-                                    'thursday'   => 'गुरूवार',
-                                    'time'       => 'समय',
-                                    'title'      => 'स्लॉट जोड़ें',
-                                    'to'         => 'तक',
+                                    'thursday'   => 'गुरुवार',
+                                    'to'         => 'से',
                                     'tuesday'    => 'मंगलवार',
                                     'wednesday'  => 'बुधवार',
                                     'week'       => ':day',
                                 ],
                             ],
 
-                            'one'            => 'एक',
-                            'open'           => 'खुला',
-                            'slot-duration'  => 'स्लॉट अवधि (मिनट)',
+                            'one'            => 'एक दिन के लिए एक बुकिंग',
+                            'open'           => 'खोलें',
+                            'slot-add'       => 'स्लॉट जोड़ें',
+                            'slot-title'     => 'स्लॉट्स',
+                            'slot-duration'  => 'स्लॉट की अवधि (मिनट)',
                             'title'          => 'डिफ़ॉल्ट',
                         ],
 
@@ -64,9 +65,7 @@ return [
                             'edit'               => 'संपादित करें',
 
                             'modal'              => [
-                                'ticket' => [
-                                    'save' => 'टिकट सहेजें',
-                                ],
+                                'save' => 'टिकट सहेजें',
                             ],
 
                             'name'               => 'नाम',
@@ -75,7 +74,9 @@ return [
                             'special-price-from' => 'विशेष मूल्य से',
                             'special-price-to'   => 'विशेष मूल्य तक',
                             'special-price'      => 'विशेष मूल्य',
-                            'title'              => 'टिकट',
+                            'title'              => 'टिकट्स',
+                            'valid-from'         => 'मान्यता प्राप्त होने की तिथि',
+                            'valid-until'        => 'मान्यता रखने की तिथि',
                         ],
 
                         'empty-info'  => [
@@ -85,17 +86,16 @@ return [
 
                             'slots'   => [
                                 'add'         => 'स्लॉट जोड़ें',
-                                'delete'      => 'हटाएं',
-                                'description' => 'समय अवधि के साथ उपलब्ध स्लॉट।',
+                                'description' => 'उपलब्ध स्लॉट्स समय अवधि के साथ।',
                             ],
                         ],
 
                         'rental'      => [
-                            'daily_hourly'           => 'दोनों (दैनिक और प्रति घंटा आधार)',
+                            'daily-hourly'           => 'दोनों (दैनिक और प्रति घंटा)',
                             'daily-price'            => 'दैनिक मूल्य',
-                            'daily'                  => 'दैनिक आधार',
+                            'daily'                  => 'दैनिक आधार पर',
                             'hourly-price'           => 'प्रति घंटा मूल्य',
-                            'hourly'                 => 'प्रति घंटा आधार',
+                            'hourly'                 => 'प्रति घंटा आधार पर',
 
                             'same-slot-for-all-days' => [
                                 'no'    => 'नहीं',
@@ -108,10 +108,12 @@ return [
 
                         'slots'       => [
                             'add'              => 'स्लॉट जोड़ें',
-                            'delete'           => 'हटाएं',
-                            'description-info' => 'समय अवधि के साथ उपलब्ध स्लॉट।',
-                            'description'      => 'कोई स्लॉट उपलब्ध नहीं है।',
-                            'edit'             => 'संपादित करें',
+
+                            'action'           => [
+                                'add' => 'जोड़ें',
+                            ],
+
+                            'description-info' => 'स्लॉट्स के अनुसार समय अवधि बनाई जाएगी और दिखाई जाएगी।',
 
                             'modal'            => [
                                 'slot' => [
@@ -120,7 +122,7 @@ return [
                                     'monday'     => 'सोमवार',
                                     'saturday'   => 'शनिवार',
                                     'sunday'     => 'रविवार',
-                                    'thursday'   => 'गुरूवार',
+                                    'thursday'   => 'गुरुवार',
                                     'to'         => 'तक',
                                     'tuesday'    => 'मंगलवार',
                                     'wednesday'  => 'बुधवार',
@@ -128,22 +130,23 @@ return [
                             ],
 
                             'save'             => 'सहेजें',
-                            'title'            => 'स्लॉट्स',
+                            'title'            => 'स्लॉट समय अवधि',
+                            'unavailable'      => 'अनुपलब्ध',
                         ],
 
                         'table'       => [
-                            'break-duration'            => 'स्लॉट्स के बीच ब्रेक समय (मिनट)',
+                            'break-duration'            => 'स्लॉट के बीच विराम समय (मिनट)',
 
                             'charged-per'               => [
-                                'guest'  => 'मेहमान',
-                                'table'  => 'तालिका',
-                                'title'  => 'प्रति शुल्क',
+                                'guest'  => 'अतिथि',
+                                'table'  => 'मेज़',
+                                'title'  => 'प्रति चार्ज',
                             ],
 
-                            'guest-capacity'            => 'मेहमान क्षमता',
-                            'guest-limit'               => 'प्रति तालिका मेहमान सीमा',
-                            'prevent-scheduling-before' => 'पहले निर्धारित करें',
-                            'slot-duration'             => 'स्लॉट अवधि (मिनट)',
+                            'guest-capacity'            => 'अतिथि क्षमता',
+                            'guest-limit'               => 'प्रति मेज़ अतिथि सीमा',
+                            'prevent-scheduling-before' => 'पहले निर्धारित करने से रोकें',
+                            'slot-duration'             => 'स्लॉट की अवधि (मिनट)',
 
                             'same-slot-for-all-days'    => [
                                 'no'    => 'नहीं',

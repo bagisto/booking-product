@@ -24,11 +24,17 @@
                 :label="trans('booking::app.admin.catalog.products.edit.booking.rental.title')"
                 :placeholder="trans('booking::app.admin.catalog.products.edit.booking.rental.title')"
             >
-                @foreach (['daily', 'hourly', 'daily_hourly'] as $item)
-                    <option value="{{ $item }}">
-                        @lang('booking::app.admin.catalog.products.edit.booking.rental.' . $item)
-                    </option>
-                @endforeach
+                <option value="daily">
+                    @lang('booking::app.admin.catalog.products.edit.booking.rental.daily')
+                </option>
+
+                <option value="hourly">
+                    @lang('booking::app.admin.catalog.products.edit.booking.rental.hourly')
+                </option>
+
+                <option value="daily_hourly">
+                    @lang('booking::app.admin.catalog.products.edit.booking.rental.daily-hourly')
+                </option>
             </x-admin::form.control-group.control>
 
             <x-admin::form.control-group.error control-name="booking[renting_type]" />

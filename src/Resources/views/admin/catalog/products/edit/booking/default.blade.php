@@ -225,7 +225,7 @@
                             v-if="!slots['many'][dayIndex]?.length"
                             @click="currentIndex=dayIndex;toggle()"
                         >
-                            @lang('Add')
+                            @lang('booking::app.admin.catalog.products.edit.booking.default.add')
                         </p>
 
                         <p
@@ -233,7 +233,7 @@
                             v-else
                             @click="currentIndex=dayIndex;toggle(dayIndex)"
                         >
-                            @lang('Edit')
+                            @lang('booking::app.admin.catalog.products.edit.booking.default.edit')
                         </p>
 
                     </div>
@@ -254,8 +254,12 @@
                 <x-admin::drawer ref="drawerform">
                     <x-slot:header>
                         <div class="flex justify-between items-center">
-                            <p class="text-lg text-gray-800 dark:text-white font-bold">
-                                @lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.edit-title')
+                            <p
+                                class="text-lg text-gray-800 dark:text-white font-bold"
+                                v-text="slots['many'][currentIndex]?.length 
+                                    ? '@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.edit-title')'
+                                    : '@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.add-title')'"
+                            >
                             </p>
 
                             <div class="ltr:mr-11 rtl:ml-11">

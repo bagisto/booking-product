@@ -175,7 +175,7 @@
                                     type="submit"
                                     class="primary-button"
                                 >
-                                    @lang('booking::app.admin.catalog.products.edit.booking.event.modal.ticket.save')
+                                    @lang('booking::app.admin.catalog.products.edit.booking.event.modal.save')
                                 </button>
                             </div>
                         </div>

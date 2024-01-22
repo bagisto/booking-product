@@ -76,7 +76,11 @@
                     class="grid grid-cols-[1fr_2fr] items-center py-2 border-b border-slate-300 dark:border-gray-800 last:border-b-0"
                     v-for="(day, dayIndex) in week_days"
                 >
-                    <p class="font-medium" v-text="day"></p>
+                    <p
+                        class="font-medium"
+                        v-text="day"
+                    >
+                    </p>
 
                     <div class="flex grid-cols-2 items-center justify-between">
                         <div class="flex flex-wrap gap-1 items-center min-h-[38px] dark:border-gray-800">
@@ -111,7 +115,7 @@
 
                             <template v-else>
                                 <p class="text-gray-500">
-                                    @lang('Unavailalable')
+                                    @lang('booking::app.admin.catalog.products.edit.booking.slots.unavailable')
                                 </p>
                             </template>
                         </div>
@@ -120,7 +124,7 @@
                             class="place-content-start text-right text-blue-600 cursor-pointer transition-all hover:underline"
                             @click="currentIndex=dayIndex;toggle()"
                         >
-                            @lang('Add')
+                            @lang('booking::app.admin.catalog.products.edit.booking.slots.action.add')
                         </p>
                     </div>
                 </div>
@@ -393,7 +397,6 @@
                                     'to': params[`booking[slots][${this.currentIndex}][${i}][to]`],
                                 });
                             } else {
-                                console.log(this.slots['different_for_week'][this.currentIndex]);
                                 this.slots['different_for_week'][this.currentIndex].push({ 
                                     'id': i + 1, 
                                     'from': params[`booking[slots][${this.currentIndex}][${i}][from]`],

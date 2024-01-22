@@ -23,7 +23,7 @@ return [
                             'delete'         => 'Supprimer',
                             'description'    => 'Informations de réservation',
                             'edit'           => 'Modifier',
-                            'many'           => 'Beaucoup',
+                            'many'           => 'De nombreuses réservations pour une journée',
 
                             'modal'          => [
                                 'slot' => [
@@ -50,7 +50,7 @@ return [
                                 ],
                             ],
 
-                            'one'            => 'Un',
+                            'one'            => 'Une réservation pour plusieurs jours',
                             'open'           => 'Ouvert',
                             'slot-duration'  => 'Durée du créneau (minutes)',
                             'title'          => 'Défaut',
