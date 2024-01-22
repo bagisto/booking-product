@@ -22,7 +22,7 @@
                 rules="required"
                 v-model="default_booking.booking_type"
                 :label="trans('booking::app.admin.catalog.products.edit.booking.default.description')"
-                @change="slots.one=[];slots.many=[];optionRowCount=0"
+                @change="change"
             >
                 @foreach (['many', 'one'] as $item)
                     <option value="{{ $item }}">
@@ -158,100 +158,59 @@
                     class="grid grid-cols-[1fr_2fr] items-center py-2 border-b border-slate-300 dark:border-gray-800 last:border-b-0"
                     v-for="(day, dayIndex) in week_days"
                 >
-                    <p v-text="day"></p>
+                    <div class="flex gap-4">
+                        <p v-text="day"></p>
+
+                        <template v-for="(slot, slotIndex) in slots['many'][dayIndex]">
+                            <p
+                                :class="parseInt(slot.status) ? 'label-active' : 'label-canceled'"
+                                v-text="parseInt(slot.status) 
+                                    ? '@lang('booking::app.admin.catalog.products.edit.booking.default.open')'
+                                    : '@lang('booking::app.admin.catalog.products.edit.booking.default.close')'"
+                            >
+                            </p>
+                        </template>
+                    </div>
 
                     <div class="flex grid-cols-2 items-center justify-between">
                         <div class="flex flex-wrap gap-1 items-center min-h-[38px] dark:border-gray-800">
-                            <template v-if="slots['many'].length">
-                                {{-- <template v-for="(item, itemIndex) in slots['many']">
-                                    <template v-for="(item, itemIndex) in slot">
-                                        <div class="grid py-2 border-b border-slate-300 dark:border-gray-800 last:border-b-0">
-                                            <div
-                                                class="text-base text-gray-800 dark:text-white font-semibold"
-                                                v-text="item.day.charAt(0).toUpperCase() + item.day.slice(1)"
-                                            >
-                                            </div>
+                            <template v-if="slots['many'][dayIndex].length">
+                                <template v-for="(slot, slotIndex) in slots['many'][dayIndex]">
+                                    <!-- Hidden Inputs -->
+                                    <input
+                                        type="hidden"
+                                        :name="'booking[slots][' + dayIndex + '][' + slotIndex + '][id]'"
+                                        :value="slot.id"
+                                    />
 
-                                            <input
-                                                type="hidden"
-                                                :name="'booking[slots][' + slotIndex + '][' + itemIndex + '][day]'"
-                                                :value="item.day"
-                                            />
+                                    <input
+                                        type="hidden"
+                                        :name="'booking[slots][' + dayIndex + '][' + slotIndex + '][from]'"
+                                        :value="slot.from"
+                                    />
 
-                                            <div class="flex gap-2.5 justify-between py-1 cursor-pointer">
-                                                <div class="grid gap-1.5 place-content-start">
-                                                    <!-- From Detailes with hidden fields -->
-                                                    <p class="flex gap-2.5">
-                                                        <p class="text-gray-800 dark:text-white">
-                                                            <span>From - </span>
+                                    <input
+                                        type="hidden"
+                                        :name="'booking[slots][' + dayIndex + '][' + slotIndex + '][to]'"
+                                        :value="slot.to"
+                                    />
 
-                                                            <span v-text="item.from ? item.from : '00:00'"></span>
-                                                        </p>
+                                    <input
+                                        type="hidden"
+                                        :name="'booking[slots][' + dayIndex + '][' + slotIndex + '][status]'"
+                                        :value="slot.status"
+                                    />
 
-                                                        <p class="text-gray-800 dark:text-white">
-                                                            <span>To - </span>
-
-                                                            <span v-text="item.to ? item.to : '00:00'"></span>
-                                                        </p>
-                                                    </p>
-
-                                                    <input
-                                                        type="hidden"
-                                                        :name="'booking[slots][' + slotIndex + '][' + itemIndex + '][id]'"
-                                                        :value="item.id"
-                                                    />
-
-                                                    <input
-                                                        type="hidden"
-                                                        :name="'booking[slots][' + slotIndex + '][' + itemIndex + '][from]'"
-                                                        :value="item.from"
-                                                    />
-
-                                                    <!-- To Detailes With Hidden Fields -->
-                                                    <input
-                                                        type="hidden"
-                                                        :name="'booking[slots][' + slotIndex + '][' + itemIndex + '][to]'"
-                                                        :value="item.to"
-                                                    />
-
-                                                    <!-- Status Detailes With Hidden Fields -->
-                                                    <div class="flex gap-1 text-gray-800 dark:text-white">
-                                                        <p
-                                                            :class="parseInt(item.status) ? 'label-active' : 'label-canceled'"
-                                                            v-text="parseInt(item.status) 
-                                                                ? '@lang('booking::app.admin.catalog.products.edit.booking.default.open')'
-                                                                : '@lang('booking::app.admin.catalog.products.edit.booking.default.close')'"
-                                                        >
-                                                        </p>
-                                                    </div>
-
-                                                    <input
-                                                        type="hidden"
-                                                        :name="'booking[slots][' + slotIndex + '][' + itemIndex + '][status]'"
-                                                        :value="item.status"
-                                                    />
-                                                </div>
-
-                                                <!-- Actions -->
-                                                <div class="flex gap-x-5 place-content-start text-right">
-                                                    <p
-                                                        class="text-blue-600 hover:underline"
-                                                        @click="edit(item)"
-                                                    >
-                                                        @lang('booking::app.admin.catalog.products.edit.booking.default.edit')
-                                                    </p>
-                                                    
-                                                    <p
-                                                        class="text-red-600 hover:underline"
-                                                        @click="remove(item)"
-                                                    >
-                                                        @lang('booking::app.admin.catalog.products.edit.booking.default.delete')
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </template>
-                                </template> --}}
+                                    <p class="flex items-center py-1 px-2 bg-gray-600 rounded text-white font-semibold">
+                                        @{{ slot.from }} - @{{ slot.to }}
+        
+                                        <span
+                                            class="icon-cross text-white text-lg ltr:ml-1.5 rtl:mr-1.5 cursor-pointer"
+                                            @click="removeIndex(dayIndex,slotIndex)"
+                                        >
+                                        </span>
+                                    </p>
+                                </template>
                             </template>
 
                             <template v-else>
@@ -263,10 +222,20 @@
 
                         <p
                             class="place-content-start text-right text-blue-600 cursor-pointer transition-all hover:underline"
+                            v-if="!slots['many'][dayIndex].length"
                             @click="currentIndex=dayIndex;toggle()"
                         >
                             @lang('Add')
                         </p>
+
+                        <p
+                            class="place-content-start text-right text-red-600 cursor-pointer transition-all hover:underline"
+                            v-else
+                            @click="currentIndex=dayIndex;toggle(dayIndex)"
+                        >
+                            @lang('Edit')
+                        </p>
+
                     </div>
                 </div>
             </template>
@@ -466,7 +435,7 @@
                                     <x-admin::form.control-group.control
                                         type="select"
                                         name="status"
-                                        value="0"
+                                        ::value="selectedStatus[currentIndex] ? selectedStatus[currentIndex] : 0"
                                         :label="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.status')"
                                     >
                                         <option value="1">
@@ -511,17 +480,7 @@
                     slots: {
                         one: [],
 
-                        many: [],
-                    },
-
-                    slotsStatus: {
-                        0: false,
-                        1: false,
-                        2: false,
-                        3: false,
-                        4: false,
-                        5: false,
-                        6: false,
+                        many: [[], [], [], [], [], [], [], []],
                     },
 
                     week_days: [
@@ -533,6 +492,8 @@
                         "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.saturday')",
                         "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.sunday')",
                     ],
+
+                    selectedStatus : [],
                 }
             },
 
@@ -548,7 +509,7 @@
                 if (this.default_booking.booking_type === 'one') {
                     this.slots['one'] = this.default_booking.slots;
                 } else {
-                    if (this.default_booking.slots) {
+                    if (this.default_booking.slots.length) {
                         this.slots['many'] = this.default_booking.slots;
                     }
                 }
@@ -579,11 +540,15 @@
                     } else {
                         params.id = this.currentIndex;
 
-                        this.slots.many.push(params);
+                        if (! this.slots['many'][this.currentIndex].length) {
+                            this.slots['many'][this.currentIndex].push(params);
+                        } else {
+                            this.slots['many'][this.currentIndex].splice(0, 1, params);
+                        }
+
+                        this.selectedStatus[this.currentIndex]  = params.status;
 
                         this.$refs.drawerform.toggle();
-
-                        console.log(params);
                     }
                 },
 
@@ -591,36 +556,34 @@
                     return this.week_days[day];
                 },
 
-                edit(element) {
-                    if (this.default_booking.booking_type === 'one') {
-                        this.$refs.modelForm.setValues(this.slots.one[element]);
+                removeIndex(dayIndex, timeIndex) {
+                    this.$emitter.emit('open-confirm-modal', {
+                        agree: () => {
+                            if (this.default_booking.booking_type == 'one') {
+                                this.slots.one.splice(dayIndex, 1);
+                            } else {
+                                this.slots.many[dayIndex].splice(timeIndex, 1);
 
-                        this.$refs.drawerform.toggle();
-                    } else {
-                        this.$refs.ManyOptionsModelForm.setValues(element);
-
-                        this.$refs.addManyOptionsRow.toggle();
-                    }
+                                this.selectedStatus[dayIndex] = '';
+                            }
+                        },
+                    });
                 },
 
-                remove(element) {
-                    if (this.default_booking.booking_type == 'one') {
-                        const index = this.slots.one.findIndex((item, index) => index === element);
-    
-                        if (index !== -1) {
-                            this.slots.one.splice(index, 1);
-                        }
-                    } else {
-                        console.log(element);
+                toggle(element) {
+                    if (element != undefined) {
+                        this.$refs.modelForm.setValues(this.slots['many'][element][0]);
                     }
-                },
-
-                toggle() {
-                    // this.default_booking.slots['one'] = [];
-
-                    // this.default_booking.slots['many'] = [[], [], [], [], [], [], []];
 
                     this.$refs.drawerform.toggle();
+                },
+
+                change() {
+                    this.slots['one'] = [];
+
+                    this.slots['many'] = [[], [], [], [], [], [], []];
+
+                    this.optionRowCount = 0;
                 }
             }
         });
