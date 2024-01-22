@@ -237,8 +237,10 @@ class Booking extends Virtual
 
     /**
      * Returns price indexer class for a specific product type
+     * 
+     * @return string
      */
-    public function getPriceIndexer(): string
+    public function getPriceIndexer()
     {
         return app(VirtualIndexer::class);
     }

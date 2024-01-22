@@ -174,7 +174,7 @@
 
                     <div class="flex grid-cols-2 items-center justify-between">
                         <div class="flex flex-wrap gap-1 items-center min-h-[38px] dark:border-gray-800">
-                            <template v-if="slots['many'][dayIndex].length">
+                            <template v-if="slots['many'][dayIndex]?.length">
                                 <template v-for="(slot, slotIndex) in slots['many'][dayIndex]">
                                     <!-- Hidden Inputs -->
                                     <input
@@ -222,7 +222,7 @@
 
                         <p
                             class="place-content-start text-right text-blue-600 cursor-pointer transition-all hover:underline"
-                            v-if="!slots['many'][dayIndex].length"
+                            v-if="!slots['many'][dayIndex]?.length"
                             @click="currentIndex=dayIndex;toggle()"
                         >
                             @lang('Add')
@@ -509,8 +509,10 @@
                 if (this.default_booking.booking_type === 'one') {
                     this.slots['one'] = this.default_booking.slots;
                 } else {
-                    if (this.default_booking.slots.length) {
+                    if (this.default_booking.slots?.length) {
                         this.slots['many'] = this.default_booking.slots;
+
+                        this.selectedStatus = this.slots['many'].map(subArray => subArray.map(obj => obj.status));
                     }
                 }
             },
