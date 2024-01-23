@@ -140,7 +140,6 @@
                             v-model="booking.available_from"
                             :label="trans('booking::app.admin.catalog.products.edit.types.booking.available-from')"
                             :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.available-from')"
-                            ref="available_from"
                         />
     
                         <x-admin::form.control-group.error  control-name="booking[available_from]" />
@@ -158,11 +157,10 @@
                         <x-admin::form.control-group.control
                             type="datetime"
                             name="booking[available_to]"
-                            rules="required|after:available_from"
+                            ::rules="'required|after:' + booking.available_from"
                             v-model="booking.available_to"
                             :label="trans('booking::app.admin.catalog.products.edit.types.booking.available-to')"
                             :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.available-to')"
-                            ref="available_to"
                         />
     
                         <x-admin::form.control-group.error  control-name="booking[available_to]" />

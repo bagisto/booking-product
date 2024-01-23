@@ -214,6 +214,7 @@
                                     type="text"
                                     name="price"
                                     rules="required"
+                                    v-model="tickets.price"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.price')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.price')"
                                 />
@@ -247,9 +248,9 @@
                                 </x-admin::form.control-group.label>
             
                                 <x-admin::form.control-group.control
-                                    type="text"
+                                    type="number"
                                     name="special_price"
-                                    {{-- required="{decimal: true, min_value:0, ..(ticketItem.price ? {max_value: ticketItem.price} : {})}" --}}
+                                    ::rules="'min_value:0|max_value:' + tickets.price"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.special-price')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.special-price')"
                                 />
@@ -273,7 +274,7 @@
                                     type="datetime"
                                     name="special_price_from"
                                     :rules="'after:' . $dateMin"
-                                    v-model="special_price_from"
+                                    v-model="tickets.special_price_from"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.valid-from')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.valid-from')"
                                 />
@@ -290,7 +291,7 @@
                                 <x-admin::form.control-group.control
                                     type="datetime"
                                     name="special_price_to"
-                                    {{-- :rules="'after:special_price_from'" --}}
+                                    ::rules="'after:' + tickets.special_price_from"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.valid-until')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.valid-until')"
                                     ref="special_price_to"
