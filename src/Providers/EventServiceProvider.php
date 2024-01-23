@@ -40,5 +40,11 @@ class EventServiceProvider extends ServiceProvider
                 $viewRenderEventManager->addTemplate('booking::shop.products.view.types.booking');
             }
         });
+
+        Event::listen('bagisto.admin.catalog.product.edit.form.inventories.controls.before', static function (ViewRenderEventManager $viewRenderEventManager) {
+            if (View::exists('booking::admin.catalog.products.edit.inventories')) {
+                $viewRenderEventManager->addTemplate('booking::admin.catalog.products.edit.inventories');
+            }
+        });
     }
 }

@@ -47,7 +47,7 @@
 
                             <input
                                 type="hidden"
-                                :name="'booking[slots][' + index + '][from]'"
+                                :name="'booking[slots][' + index + '][to]'"
                                 :value="data.to"
                             />
 
@@ -73,7 +73,7 @@
             
             <template v-else>
                 <div
-                    class="grid grid-cols-[1fr_2fr] items-center py-2 border-b border-slate-300 dark:border-gray-800 last:border-b-0"
+                    class="grid grid-cols-[0.5fr_2fr] gap-2.5 items-center py-2 border-b border-slate-300 dark:border-gray-800 last:border-b-0"
                     v-for="(day, dayIndex) in week_days"
                 >
                     <p
@@ -148,14 +148,6 @@
                             </p>
 
                             <div class="flex gap-2 ltr:mr-11 rtl:ml-11">
-                                <!-- Add Slots Button -->
-                                <div
-                                    class="secondary-button w-fit"
-                                    @click="add"
-                                >
-                                    @lang('booking::app.admin.catalog.products.edit.booking.slots.add')
-                                </div>
-
                                 <button
                                     type="submit"
                                     class="primary-button"
@@ -168,7 +160,7 @@
 
                     <x-slot:content>
                         <template v-if="field['same_for_week']?.length">
-                            <div class="grid grid-cols-3 gap-2.5 mx-2.5 pb-2.5 text-gray-800 dark:text-white">
+                            <div class="flex gap-2.5 pb-2.5 text-gray-800 dark:text-white">
                                 <div class="w-full">
                                     @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')
                                 </div>
@@ -186,10 +178,18 @@
                                     @onRemoveSlot="remove($event)"
                                 />
                             </template>
+                            
+                            <!-- Add Slots Button -->
+                            <div
+                                class="secondary-button w-fit"
+                                @click="add"
+                            >
+                                @lang('booking::app.admin.catalog.products.edit.booking.slots.add')
+                            </div>
                         </template>
 
                         <template v-else-if="field['different_for_week'][currentIndex]?.length">
-                            <div class="grid grid-cols-3 gap-2.5 mx-2.5 pb-2.5 text-gray-800 dark:text-white">
+                            <div class="flex gap-2.5 mx-2.5 pb-2.5 text-gray-800 dark:text-white">
                                 <div class="w-full">
                                     @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')
                                 </div>
@@ -207,6 +207,14 @@
                                     @onRemoveSlot="remove($event, currentIndex)"
                                 />
                             </template>
+
+                            <!-- Add Slots Button -->
+                            <div
+                                class="secondary-button w-fit"
+                                @click="add"
+                            >
+                                @lang('booking::app.admin.catalog.products.edit.booking.slots.add')
+                            </div>
                         </template>
 
                         <template v-else>
@@ -224,7 +232,7 @@
         type="text/x-template"
         id="v-slot-item-template"
     >
-        <div class="grid grid-cols-3 gap-2.5 mx-2.5">
+        <div class="flex gap-2.5">
             <!-- From -->
             <input
                 type="hidden"
@@ -427,6 +435,8 @@
                     this.field['same_for_week'] = [];
 
                     this.field['different_for_week'] = [[], [], [], [], [], [], []];
+
+                    this.add();
 
                     this.$refs.drawerform.toggle();
                 },

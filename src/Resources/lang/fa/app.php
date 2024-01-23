@@ -27,15 +27,16 @@ return [
 
                             'modal'          => [
                                 'slot' => [
-                                    'add-title'  => 'افزودن اسلات‌ها',
+                                    'add-title'  => 'افزودن اسلات',
                                     'close'      => 'بستن',
                                     'day'        => 'روز',
                                     'edit-title' => 'ویرایش اسلات‌ها',
                                     'friday'     => 'جمعه',
-                                    'from-day'   => 'از روز',
                                     'from'       => 'از',
+                                    'from-day'   => 'از روز',
+                                    'from-time'  => 'از زمان',
                                     'monday'     => 'دوشنبه',
-                                    'open'       => 'باز',
+                                    'open'       => 'باز کردن',
                                     'saturday'   => 'شنبه',
                                     'save'       => 'ذخیره اسلات',
                                     'select'     => 'انتخاب',
@@ -43,6 +44,8 @@ return [
                                     'sunday'     => 'یک‌شنبه',
                                     'thursday'   => 'پنج‌شنبه',
                                     'to'         => 'تا',
+                                    'to-day'     => 'تا روز',
+                                    'to-time'    => 'تا زمان',
                                     'tuesday'    => 'سه‌شنبه',
                                     'wednesday'  => 'چهارشنبه',
                                     'week'       => ':day',

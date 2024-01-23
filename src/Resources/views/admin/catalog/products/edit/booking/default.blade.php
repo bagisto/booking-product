@@ -71,7 +71,7 @@
         </div>
 
         <!-- Slots Component -->
-        <div class="flex gap-5 justify-between py-4">
+        <div class="flex gap-5 justify-between py-2 items-center">
             <div class="flex flex-col gap-2">
                 <p class="text-base text-gray-800 dark:text-white font-semibold">
                     @lang('booking::app.admin.catalog.products.edit.booking.default.slot-title')
@@ -93,7 +93,7 @@
         </div>
 
         <!-- Table Information -->
-        <div class="overflow-x-auto">
+        <div class="overflow-x-auto py-2.5">
             <template v-if="default_booking.booking_type == 'one'">
                 <template v-if="slots.one?.length">
                     <div class="flex flex-wrap gap-x-2.5">
@@ -134,7 +134,7 @@
 
                             <!-- Pannel detailes -->
                             <p class="flex items-center py-1 px-2 bg-gray-600 rounded text-white font-semibold">
-                                @{{ convertIndexToDay(slot.from_day) }} : @{{ slot.from }} - @{{ convertIndexToDay(slot.to_day) }} : @{{ slot.to }}
+                                @{{ convertIndexToDay(slot.from_day) }} @{{ slot.from }} - @{{ convertIndexToDay(slot.to_day) }} @{{ slot.to }}
 
                                 <span
                                     class="icon-cross text-white text-lg ltr:ml-1.5 rtl:mr-1.5 cursor-pointer"
@@ -155,10 +155,10 @@
              <!-- For Not Same Slot All Days -->
              <template v-else>
                 <div
-                    class="grid grid-cols-[1fr_2fr] items-center py-2 border-b border-slate-300 dark:border-gray-800 last:border-b-0"
+                    class="grid grid-cols-[0.5fr_2fr] gap-2.5  items-center py-2 border-b border-slate-300 dark:border-gray-800 last:border-b-0"
                     v-for="(day, dayIndex) in week_days"
                 >
-                    <div class="flex gap-4">
+                    <div class="flex gap-2">
                         <p v-text="day"></p>
 
                         <template v-for="(slot, slotIndex) in slots['many'][dayIndex]">
@@ -322,15 +322,15 @@
                                 <!-- From -->
                                 <x-booking::form.control-group class="w-full">
                                     <x-booking::form.control-group.label class="required">
-                                        @lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.from')
+                                        @lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.from-time')
                                     </x-booking::form.control-group.label>
                     
                                     <x-booking::form.control-group.control
                                         type="time"
                                         name="from"
                                         rules="required"
-                                        :label="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.from')"
-                                        :placeholder="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.from')"
+                                        :label="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.from-time')"
+                                        :placeholder="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.from-time')"
                                     />
                     
                                     <x-booking::form.control-group.error control-name="from" />
@@ -341,14 +341,14 @@
                                 <!-- TO Day -->
                                 <x-admin::form.control-group class="w-full">
                                     <x-admin::form.control-group.label class="required">
-                                        @lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.to')
+                                        @lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.to-day')
                                     </x-admin::form.control-group.label>
                     
                                     <x-admin::form.control-group.control
                                         type="select"
                                         name="to_day"
                                         rules="required"
-                                        :label="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.to')"
+                                        :label="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.to-day')"
                                     >
                                         <option
                                             value=""
@@ -371,15 +371,15 @@
                                 <!-- TO Time -->
                                 <x-booking::form.control-group class="w-full">
                                     <x-booking::form.control-group.label class="required">
-                                        @lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.to')
+                                        @lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.to-time')
                                     </x-booking::form.control-group.label>
                     
                                     <x-booking::form.control-group.control
                                         type="time"
                                         name="to"
                                         rules="required"
-                                        :label="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.to')"
-                                        :placeholder="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.to')"
+                                        :label="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.to-time')"
+                                        :placeholder="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.to-time')"
                                     />
                     
                                     <x-booking::form.control-group.error control-name="to" />
@@ -491,7 +491,7 @@
                         "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.monday')",
                         "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.tuesday')",
                         "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.wednesday')",
-                        "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.tuesday')",
+                        "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.thursday')",
                         "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.friday')",
                         "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.saturday')",
                         "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.sunday')",
@@ -559,7 +559,7 @@
                 },
 
                 convertIndexToDay(day) {
-                    return this.week_days[day];
+                    return this.week_days[day].slice(0, 3);
                 },
 
                 removeIndex(dayIndex, timeIndex) {

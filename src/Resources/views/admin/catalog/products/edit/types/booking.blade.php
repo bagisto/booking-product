@@ -1,3 +1,7 @@
+@push('styles')
+    @bagistoVite(['src/Resources/assets/css/admin.css'], 'booking')
+@endpush
+
 @if ($product->type == 'booking')
     @php
         $bookingProduct = app('\Webkul\BookingProduct\Repositories\BookingProductRepository')->findOneByField('product_id', $product->id)
@@ -114,54 +118,56 @@
                     <x-admin::form.control-group.error  control-name="booking[available_every_week]" />
                 </x-admin::form.control-group>
 
-                <!-- Available From  -->
-                <x-admin::form.control-group
-                    class="w-full"
-                    v-if="(booking.availableEveryWeekSwatch && booking.available_every_week == 0) || booking.type == 'default'"
-                >
-                    <x-admin::form.control-group.label class="required">
-                        @lang('booking::app.admin.catalog.products.edit.types.booking.available-from')
-                    </x-admin::form.control-group.label>
+                <div class="flex gap-2.5">    
+                    <!-- Available From  -->
+                    <x-admin::form.control-group
+                        class="w-full"
+                        v-if="(booking.availableEveryWeekSwatch && booking.available_every_week == 0) || booking.type == 'default'"
+                    >
+                        <x-admin::form.control-group.label class="required">
+                            @lang('booking::app.admin.catalog.products.edit.types.booking.available-from')
+                        </x-admin::form.control-group.label>
+    
+                        @php
+                            $dateMin = \Carbon\Carbon::yesterday()->format('Y-m-d 23:59:59');
+                        @endphp
+    
+                        <x-admin::form.control-group.control
+                            type="datetime"
+                            name="booking[available_from]"
+                            :rules="'required|after:' . $dateMin"
+                            rules="required"
+                            v-model="booking.available_from"
+                            :label="trans('booking::app.admin.catalog.products.edit.types.booking.available-from')"
+                            :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.available-from')"
+                            ref="available_from"
+                        />
+    
+                        <x-admin::form.control-group.error  control-name="booking[available_from]" />
+                    </x-admin::form.control-group>
 
-                    @php
-                        $dateMin = \Carbon\Carbon::yesterday()->format('Y-m-d 23:59:59');
-                    @endphp
-
-                    <x-admin::form.control-group.control
-                        type="datetime"
-                        name="booking[available_from]"
-                        :rules="'required|after:' . $dateMin"
-                        rules="required"
-                        v-model="booking.available_from"
-                        :label="trans('booking::app.admin.catalog.products.edit.types.booking.available-from')"
-                        :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.available-from')"
-                        ref="available_from"
-                    />
-
-                    <x-admin::form.control-group.error  control-name="booking[available_from]" />
-                </x-admin::form.control-group>
-
-                <!-- Available To -->
-                <x-admin::form.control-group
-                    class="w-full"
-                    v-if="(booking.availableEveryWeekSwatch && booking.available_every_week == 0) || booking.type == 'default'"
-                >
-                    <x-admin::form.control-group.label class="required">
-                        @lang('booking::app.admin.catalog.products.edit.types.booking.available-to')
-                    </x-admin::form.control-group.label>
-
-                    <x-admin::form.control-group.control
-                        type="datetime"
-                        name="booking[available_to]"
-                        rules="required"
-                        v-model="booking.available_to"
-                        :label="trans('booking::app.admin.catalog.products.edit.types.booking.available-to')"
-                        :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.available-to')"
-                        ref="available_to"
-                    />
-
-                    <x-admin::form.control-group.error  control-name="booking[available_to]" />
-                </x-admin::form.control-group>
+                    <!-- Available To -->
+                    <x-admin::form.control-group
+                        class="w-full"
+                        v-if="(booking.availableEveryWeekSwatch && booking.available_every_week == 0) || booking.type == 'default'"
+                    >
+                        <x-admin::form.control-group.label class="required">
+                            @lang('booking::app.admin.catalog.products.edit.types.booking.available-to')
+                        </x-admin::form.control-group.label>
+    
+                        <x-admin::form.control-group.control
+                            type="datetime"
+                            name="booking[available_to]"
+                            rules="required"
+                            v-model="booking.available_to"
+                            :label="trans('booking::app.admin.catalog.products.edit.types.booking.available-to')"
+                            :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.available-to')"
+                            ref="available_to"
+                        />
+    
+                        <x-admin::form.control-group.error  control-name="booking[available_to]" />
+                    </x-admin::form.control-group>
+                </div>
 
                 @php
                     $bookingTypes = [
