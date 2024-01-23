@@ -2,7 +2,7 @@
     $product->type == 'booking'
     && $bookingProduct = app('\Webkul\BookingProduct\Repositories\BookingProductRepository')->findOneByField('product_id', $product->id)
 )
-    <v-booking-information></v-booking-information>
+    <v-booking-information />
 
     @pushOnce('scripts')
         <script
@@ -12,7 +12,7 @@
             <div class="grid grid-cols-1 gap-6 w-full max-w-[470px] mt-6">
                 @if ($bookingProduct->location)
                     <div class="flex gap-4">
-                        <span class="icon-location font-bold"></span>
+                        <span class="icon-location text-2xl"></span>
 
                         <div class="grid grid-cols-1 gap-1.5 text-sm font-medium">
                             <p class="text-[#6E6E6E]">
@@ -25,7 +25,7 @@
                                 <a
                                     href="https://maps.google.com/maps?q={{ $bookingProduct->location }}"
                                     target="_blank"
-                                    class="text-blue-600"
+                                    class="w-1/4 text-blue-600"
                                 >
                                     @lang('booking::app.shop.products.view.types.booking.view-on-map')
                                 </a>

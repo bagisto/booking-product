@@ -2,7 +2,7 @@
 
 <div class="grid grid-cols-1 gap-6">
     <div class="flex gap-3">
-        <span class="icon-calendar font-bold"></span>
+        <span class="icon-calendar text-2xl"></span>
 
         <div class="grid grid-cols-1 gap-1.5 text-sm font-medium">
             <p class="text-[#6E6E6E]">
@@ -16,7 +16,7 @@
     </div>
 
     <!-- Event Vue Component -->
-    <v-event-tickets></v-event-tickets>
+    <v-event-tickets />
 </div>
 
 @pushOnce('scripts')
@@ -55,18 +55,21 @@
                     >
                     </p>
     
-                    <div class="text-[#6E6E6E]" v-text="ticket.description"></div>
+                    <div
+                        class="text-[#6E6E6E]"
+                        v-text="ticket.description"
+                    >
+                    </div>
                 </div>
     
                 <div class="place-items-end">
                     <x-shop::quantity-changer
+                        class="gap-x-4 w-max rounded-xl py-2.5 px-4 mt-5 !border-[#E9E9E9]"
                         ::name="'booking[qty][' + ticket.id + ']'"
                         rules="required|numeric|min_value:0"
                         ::value="defaultQty"
                         ::min-quantity="defaultQty"
-                        class="gap-x-4 w-max rounded-xl py-2.5 px-4 mt-5 !border-[#E9E9E9]"
-                    >
-                    </x-shop::quantity-changer>
+                    />
                 </div>
             </div>
         </div>

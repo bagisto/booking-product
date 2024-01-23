@@ -1,6 +1,6 @@
 {!! view_render_event('bagisto.admin.catalog.product.edit.before', ['product' => $product]) !!}
 
-<v-rental-booking></v-rental-booking>
+<v-rental-booking />
 
 {!! view_render_event('bagisto.admin.catalog.product.edit.after', ['product' => $product]) !!}
 
@@ -30,10 +30,7 @@
                 @endforeach
             </x-admin::form.control-group.control>
 
-            <x-admin::form.control-group.error 
-                control-name="booking[renting_type]"
-            >
-            </x-admin::form.control-group.error>
+            <x-admin::form.control-group.error control-name="booking[renting_type]" />
         </x-admin::form.control-group>
 
         <!-- Daily Price -->
@@ -52,13 +49,9 @@
                 v-model="rental_booking.daily_price"
                 :label="trans('booking::app.admin.catalog.products.edit.booking.rental.daily-price')"
                 :placeholder="trans('booking::app.admin.catalog.products.edit.booking.rental.daily-price')"
-            >
-            </x-admin::form.control-group.control>
+            />
 
-            <x-admin::form.control-group.error 
-                control-name="booking[renting_type]"
-            >
-            </x-admin::form.control-group.error>
+            <x-admin::form.control-group.error control-name="booking[renting_type]" />
         </x-admin::form.control-group>
 
         <!-- Hourly Price -->
@@ -77,13 +70,9 @@
                 v-model="rental_booking.hourly_price"
                 :label="trans('booking::app.admin.catalog.products.edit.booking.rental.hourly-price')"
                 :placeholder="trans('booking::app.admin.catalog.products.edit.booking.rental.hourly-price')"
-            >
-            </x-admin::form.control-group.control>
+            />
 
-            <x-admin::form.control-group.error 
-                control-name="booking[hourly_price]"
-            >
-            </x-admin::form.control-group.error>
+            <x-admin::form.control-group.error control-name="booking[hourly_price]" />
         </x-admin::form.control-group>
 
         <div v-if="rental_booking.renting_type == 'hourly' || rental_booking.renting_type == 'daily_hourly'">
@@ -110,10 +99,7 @@
                     </option>
                 </x-admin::form.control-group.control>
 
-                <x-admin::form.control-group.error 
-                    control-name="booking[same_slot_all_days]"
-                >
-                </x-admin::form.control-group.error>
+                <x-admin::form.control-group.error control-name="booking[same_slot_all_days]" />
             </x-admin::form.control-group>
         </div>
 
@@ -123,8 +109,7 @@
             :booking-product="rental_booking"
             :booking-type="'rental_slot'"
             :same-slot-all-days="rental_booking.same_slot_all_days"
-        >
-        </v-slots>
+        />
     </script>
 
     <script type="module">

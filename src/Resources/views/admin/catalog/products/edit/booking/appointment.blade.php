@@ -1,6 +1,7 @@
 {!! view_render_event('bagisto.admin.catalog.product.edit.before', ['product' => $product]) !!}
 
-<v-appointment-booking :bookingProduct = "$bookingProduct ?? []"></v-appointment-booking>
+<!-- Vue Component -->
+<v-appointment-booking :bookingProduct = "$bookingProduct ?? []" />
 
 {!! view_render_event('bagisto.admin.catalog.product.edit.after', ['product' => $product]) !!}
 
@@ -19,17 +20,13 @@
             <x-admin::form.control-group.control
                 type="text"
                 name="booking[duration]"
-                required="required|min_value:1"
+                rules="required|min_value:1"
                 v-model="appointment_booking.duration"
                 :label="trans('booking::app.admin.catalog.products.edit.booking.slot-duration')"
                 :placeholder="trans('booking::app.admin.catalog.products.edit.booking.appointment.slot-duration')"
-            >
-            </x-admin::form.control-group.control>
+            />
 
-            <x-admin::form.control-group.error 
-                control-name="booking[duration]"
-            >
-            </x-admin::form.control-group.error>
+            <x-admin::form.control-group.error control-name="booking[duration]" />
         </x-admin::form.control-group>
 
         <!-- Break Time -->
@@ -41,17 +38,13 @@
             <x-admin::form.control-group.control
                 type="text"
                 name="booking[break_time]"
-                required="required|min_value:1"
+                rules="required|min_value:1"
                 v-model="appointment_booking.break_time"
                 :label="trans('booking::app.admin.catalog.products.edit.booking.appointment.break-duration')"
                 :placeholder="trans('booking::app.admin.catalog.products.edit.booking.appointment.break-duration')"
-            >
-            </x-admin::form.control-group.control>
+            />
 
-            <x-admin::form.control-group.error 
-                control-name="booking[break_time]"
-            >
-            </x-admin::form.control-group.error>
+            <x-admin::form.control-group.error control-name="booking[break_time]" />
         </x-admin::form.control-group>
 
         <!-- Same slot for all days -->
@@ -77,10 +70,7 @@
                 </option>
             </x-admin::form.control-group.control>
 
-            <x-admin::form.control-group.error 
-                control-name="booking[same_slot_all_days]"
-            >
-            </x-admin::form.control-group.error>
+            <x-admin::form.control-group.error control-name="booking[same_slot_all_days]" />
         </x-admin::form.control-group>
 
         <!-- Slots Vue Component -->
@@ -88,8 +78,7 @@
             :booking-product="appointment_booking"
             :booking-type="'appointment_slot'"
             :same-slot-all-days="appointment_booking.same_slot_all_days"
-        >
-        </v-slots>
+        />
     </script>
 
     <script type="module">
