@@ -18,12 +18,13 @@ return [
                         ],
 
                         'default'     => [
-                            'add'            => 'Adicionar',
-                            'break-duration' => 'Tempo de Intervalo entre Slots (minutos)',
-                            'close'          => 'Fechar',
-                            'description'    => 'Informações de Reserva',
-                            'edit'           => 'Editar',
-                            'many'           => 'Muitas Reservas Para Um Dia',
+                            'add'              => 'Adicionar',
+                            'break-duration'   => 'Tempo de Intervalo entre Slots (minutos)',
+                            'close'            => 'Fechar',
+                            'description'      => 'Informações de Reserva',
+                            'description-info' => 'Conforme os slots, a duração do tempo será criada e visível.',
+                            'edit'             => 'Editar',
+                            'many'             => 'Muitas Reservas Para Um Dia',
 
                             'modal'          => [
                                 'slot' => [
@@ -32,17 +33,20 @@ return [
                                     'day'        => 'Dia',
                                     'edit-title' => 'Editar Slots',
                                     'friday'     => 'Sexta-feira',
-                                    'from-day'   => 'Do Dia',
                                     'from'       => 'De',
+                                    'from-day'   => 'Do Dia',
+                                    'from-time'  => 'Do Horário',
                                     'monday'     => 'Segunda-feira',
                                     'open'       => 'Abrir',
                                     'saturday'   => 'Sábado',
-                                    'save'       => 'Salvar Slot',
+                                    'save'       => 'Salvar',
                                     'select'     => 'Selecionar',
                                     'status'     => 'Status',
                                     'sunday'     => 'Domingo',
                                     'thursday'   => 'Quinta-feira',
                                     'to'         => 'Até',
+                                    'to-day'     => 'Até o Dia',
+                                    'to-time'    => 'Até o Horário',
                                     'tuesday'    => 'Terça-feira',
                                     'wednesday'  => 'Quarta-feira',
                                     'week'       => ':day',
@@ -52,7 +56,7 @@ return [
                             'one'            => 'Uma Reserva Para Muitos Dias',
                             'open'           => 'Abrir',
                             'slot-add'       => 'Adicionar Slots',
-                            'slot-title'     => 'Slots',
+                            'slot-title'     => 'Duração do Tempo dos Slots',
                             'slot-duration'  => 'Duração do Slot (minutos)',
                             'title'          => 'Padrão',
                         ],
@@ -65,7 +69,7 @@ return [
                             'edit'               => 'Editar',
 
                             'modal'              => [
-                                'save' => 'Salvar Ingressos',
+                                'save' => 'Salvar',
                             ],
 
                             'name'               => 'Nome',

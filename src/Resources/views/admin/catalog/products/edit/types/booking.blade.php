@@ -158,7 +158,7 @@
                         <x-admin::form.control-group.control
                             type="datetime"
                             name="booking[available_to]"
-                            rules="required"
+                            rules="required|after:available_from"
                             v-model="booking.available_to"
                             :label="trans('booking::app.admin.catalog.products.edit.types.booking.available-to')"
                             :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.available-to')"
@@ -206,7 +206,6 @@
             });
 
             defineRule('after', (value, [target]) => {
-                console.log(value, target);
                 if (! value || ! target) {
                     return false;
                 }

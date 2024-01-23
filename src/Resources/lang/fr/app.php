@@ -18,14 +18,15 @@ return [
                         ],
 
                         'default'     => [
-                            'break-duration' => 'Temps de pause entre les créneaux (minutes)',
-                            'close'          => 'Fermer',
-                            'delete'         => 'Supprimer',
-                            'description'    => 'Informations de réservation',
-                            'edit'           => 'Modifier',
-                            'many'           => 'De nombreuses réservations pour une journée',
+                            'add'              => 'Ajouter',
+                            'break-duration'   => 'Temps de pause entre les créneaux (minutes)',
+                            'close'            => 'Fermer',
+                            'description'      => 'Informations sur la réservation',
+                            'description-info' => 'Selon les créneaux, la durée sera créée et visible.',
+                            'edit'             => 'Modifier',
+                            'many'             => 'Nombreuses réservations pour un jour',
 
-                            'modal'          => [
+                            'modal'            => [
                                 'slot' => [
                                     'add-title'  => 'Ajouter des créneaux',
                                     'close'      => 'Fermer',
@@ -38,7 +39,7 @@ return [
                                     'monday'     => 'Lundi',
                                     'open'       => 'Ouvrir',
                                     'saturday'   => 'Samedi',
-                                    'save'       => 'Enregistrer la plage',
+                                    'save'       => 'Enregistrer',
                                     'select'     => 'Sélectionner',
                                     'status'     => 'Statut',
                                     'sunday'     => 'Dimanche',
@@ -52,10 +53,12 @@ return [
                                 ],
                             ],
 
-                            'one'            => 'Une réservation pour plusieurs jours',
-                            'open'           => 'Ouvert',
-                            'slot-duration'  => 'Durée du créneau (minutes)',
-                            'title'          => 'Défaut',
+                            'one'              => 'Une réservation pour plusieurs jours',
+                            'open'             => 'Ouvrir',
+                            'slot-add'         => 'Ajouter des créneaux',
+                            'slot-title'       => 'Durée des créneaux',
+                            'slot-duration'    => 'Durée du créneau (minutes)',
+                            'title'            => 'Par défaut',
                         ],
 
                         'event'       => [
@@ -66,18 +69,18 @@ return [
                             'edit'               => 'Modifier',
 
                             'modal'              => [
-                                'ticket' => [
-                                    'save' => 'Enregistrer les billets',
-                                ],
+                                'save' => 'Enregistrer',
                             ],
 
                             'name'               => 'Nom',
                             'price'              => 'Prix',
                             'qty'                => 'Quantité',
                             'special-price-from' => 'Prix spécial à partir de',
-                            'special-price-to'   => 'Prix spécial jusqu’à',
+                            'special-price-to'   => 'Prix spécial jusqu\'à',
                             'special-price'      => 'Prix spécial',
                             'title'              => 'Billets',
+                            'valid-from'         => 'Valable à partir du',
+                            'valid-until'        => 'Valable jusqu\'au',
                         ],
 
                         'empty-info'  => [
@@ -87,13 +90,12 @@ return [
 
                             'slots'   => [
                                 'add'         => 'Ajouter des créneaux',
-                                'delete'      => 'Supprimer',
                                 'description' => 'Créneaux disponibles avec une durée.',
                             ],
                         ],
 
                         'rental'      => [
-                            'daily_hourly'           => 'Les deux (quotidien et horaire)',
+                            'daily-hourly'           => 'Les deux (quotidien et horaire)',
                             'daily-price'            => 'Prix quotidien',
                             'daily'                  => 'Quotidien',
                             'hourly-price'           => 'Prix horaire',
@@ -110,10 +112,12 @@ return [
 
                         'slots'       => [
                             'add'              => 'Ajouter des créneaux',
-                            'delete'           => 'Supprimer',
-                            'description-info' => 'Créneaux disponibles avec une durée.',
-                            'description'      => 'Aucun créneau disponible.',
-                            'edit'             => 'Modifier',
+
+                            'action'           => [
+                                'add' => 'Ajouter',
+                            ],
+
+                            'description-info' => 'Selon les créneaux, la durée sera créée et visible.',
 
                             'modal'            => [
                                 'slot' => [
@@ -130,7 +134,8 @@ return [
                             ],
 
                             'save'             => 'Enregistrer',
-                            'title'            => 'Créneaux',
+                            'title'            => 'Durée des créneaux',
+                            'unavailable'      => 'Indisponible',
                         ],
 
                         'table'       => [
@@ -142,8 +147,8 @@ return [
                                 'title'  => 'Facturé par',
                             ],
 
-                            'guest-capacity'            => 'Capacité d’invités',
-                            'guest-limit'               => 'Limite d’invités par table',
+                            'guest-capacity'            => 'Capacité d\'accueil des invités',
+                            'guest-limit'               => 'Limite d\'invités par table',
                             'prevent-scheduling-before' => 'Empêcher la planification avant',
                             'slot-duration'             => 'Durée du créneau (minutes)',
 

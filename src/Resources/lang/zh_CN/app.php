@@ -18,31 +18,35 @@ return [
                         ],
 
                         'default'     => [
-                            'add'            => '添加',
-                            'break-duration' => '时间间隔（分钟）',
-                            'close'          => '关闭',
-                            'description'    => '预约信息',
-                            'edit'           => '编辑',
-                            'many'           => '一天内的多次预约',
+                            'add'              => '添加',
+                            'break-duration'   => '时间间隔（分钟）',
+                            'close'            => '关闭',
+                            'description'      => '预约信息',
+                            'description-info' => '根据时隙将创建并显示时间段。',
+                            'edit'             => '编辑',
+                            'many'             => '一天内的多次预约',
 
                             'modal'          => [
                                 'slot' => [
-                                    'add-title'  => '添加时隙',
+                                    'add-title'  => '添加时间段',
                                     'close'      => '关闭',
-                                    'day'        => '天',
-                                    'edit-title' => '编辑时隙',
+                                    'day'        => '日期',
+                                    'edit-title' => '编辑时间段',
                                     'friday'     => '星期五',
-                                    'from-day'   => '从天',
                                     'from'       => '从',
+                                    'from-day'   => '从日期',
+                                    'from-time'  => '从时间',
                                     'monday'     => '星期一',
                                     'open'       => '开放',
                                     'saturday'   => '星期六',
-                                    'save'       => '保存时隙',
+                                    'save'       => '保存',
                                     'select'     => '选择',
                                     'status'     => '状态',
                                     'sunday'     => '星期天',
                                     'thursday'   => '星期四',
                                     'to'         => '至',
+                                    'to-day'     => '至日期',
+                                    'to-time'    => '至时间',
                                     'tuesday'    => '星期二',
                                     'wednesday'  => '星期三',
                                     'week'       => ':day',
@@ -52,7 +56,7 @@ return [
                             'one'            => '一天内的一次预约',
                             'open'           => '开放',
                             'slot-add'       => '添加时隙',
-                            'slot-title'     => '时隙',
+                            'slot-title'     => '时隙时长',
                             'slot-duration'  => '时隙时长（分钟）',
                             'title'          => '默认',
                         ],
@@ -65,7 +69,7 @@ return [
                             'edit'               => '编辑',
 
                             'modal'              => [
-                                'save' => '保存门票',
+                                'save' => '保存',
                             ],
 
                             'name'               => '名称',
@@ -114,6 +118,7 @@ return [
                             ],
 
                             'description-info' => '根据时隙将创建并显示时间段。',
+
                             'modal'            => [
                                 'slot' => [
                                     'friday'     => '星期五',

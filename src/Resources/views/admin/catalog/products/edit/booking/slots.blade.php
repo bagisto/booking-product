@@ -3,7 +3,7 @@
         type="text/x-template"
         id="v-slots-template"
     >
-        <div class="flex gap-5 justify-between py-4">
+        <div class="flex gap-5 justify-between items-center py-2">
             <div class="flex flex-col gap-1">
                 <p class="text-base text-gray-800 dark:text-white font-semibold">
                     @lang('booking::app.admin.catalog.products.edit.booking.slots.title')
@@ -147,7 +147,15 @@
                                 @lang('booking::app.admin.catalog.products.edit.booking.slots.title')
                             </p>
 
-                            <div class="flex gap-2 ltr:mr-11 rtl:ml-11">
+                            <div class="flex gap-4 items-center ltr:mr-11 rtl:ml-11">
+                                <!-- Add Slots Button -->
+                                <div
+                                    class="cursor-pointer font-medium text-blue-600 dark:text-white w-fit"
+                                    @click="add"
+                                >
+                                    @lang('booking::app.admin.catalog.products.edit.booking.slots.add')
+                                </div>
+
                                 <button
                                     type="submit"
                                     class="primary-button"
@@ -178,14 +186,6 @@
                                     @onRemoveSlot="remove($event)"
                                 />
                             </template>
-                            
-                            <!-- Add Slots Button -->
-                            <div
-                                class="secondary-button w-fit"
-                                @click="add"
-                            >
-                                @lang('booking::app.admin.catalog.products.edit.booking.slots.add')
-                            </div>
                         </template>
 
                         <template v-else-if="field['different_for_week'][currentIndex]?.length">
@@ -207,14 +207,6 @@
                                     @onRemoveSlot="remove($event, currentIndex)"
                                 />
                             </template>
-
-                            <!-- Add Slots Button -->
-                            <div
-                                class="secondary-button w-fit"
-                                @click="add"
-                            >
-                                @lang('booking::app.admin.catalog.products.edit.booking.slots.add')
-                            </div>
                         </template>
 
                         <template v-else>

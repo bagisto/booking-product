@@ -18,43 +18,47 @@ return [
                         ],
 
                         'default'     => [
-                            'add'            => '追加',
-                            'break-duration' => 'スロット間の休憩時間（分）',
-                            'close'          => '閉じる',
-                            'description'    => '予約情報',
-                            'edit'           => '編集',
-                            'many'           => '1日に複数の予約',
+                            'add'              => '追加',
+                            'break-duration'   => 'スロット間の休憩時間（分）',
+                            'close'            => '閉じる',
+                            'description'      => '予約情報',
+                            'description-info' => 'スロットに基づいて時間の期間が作成され、表示されます。',
+                            'edit'             => '編集',
+                            'many'             => '1日に複数の予約',
 
-                            'modal'          => [
+                            'modal'            => [
                                 'slot' => [
                                     'add-title'  => 'スロットを追加',
                                     'close'      => '閉じる',
-                                    'day'        => '日',
+                                    'day'        => '曜日',
                                     'edit-title' => 'スロットを編集',
                                     'friday'     => '金曜日',
-                                    'from-day'   => '開始日',
                                     'from'       => '開始',
+                                    'from-day'   => '開始日',
+                                    'from-time'  => '開始時間',
                                     'monday'     => '月曜日',
-                                    'open'       => '開く',
+                                    'open'       => '開始',
                                     'saturday'   => '土曜日',
-                                    'save'       => 'スロットを保存',
+                                    'save'       => '保存する',
                                     'select'     => '選択',
                                     'status'     => 'ステータス',
                                     'sunday'     => '日曜日',
                                     'thursday'   => '木曜日',
                                     'to'         => '終了',
+                                    'to-day'     => '終了日',
+                                    'to-time'    => '終了時間',
                                     'tuesday'    => '火曜日',
                                     'wednesday'  => '水曜日',
                                     'week'       => ':day',
                                 ],
                             ],
 
-                            'one'            => '複数日のための1つの予約',
-                            'open'           => '開く',
-                            'slot-add'       => 'スロットを追加',
-                            'slot-title'     => 'スロット',
-                            'slot-duration'  => 'スロットの期間（分）',
-                            'title'          => 'デフォルト',
+                            'one'              => '複数日のための1つの予約',
+                            'open'             => '開く',
+                            'slot-add'         => 'スロットを追加',
+                            'slot-title'       => 'スロットの時間の期間',
+                            'slot-duration'    => 'スロットの期間（分）',
+                            'title'            => 'デフォルト',
                         ],
 
                         'event'       => [
@@ -65,7 +69,7 @@ return [
                             'edit'               => '編集',
 
                             'modal'              => [
-                                'save' => 'チケットを保存',
+                                'save' => '保存する',
                             ],
 
                             'name'               => '名前',

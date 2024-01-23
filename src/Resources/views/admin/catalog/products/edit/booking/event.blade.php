@@ -10,7 +10,7 @@
         id="v-event-booking-template"
     >
         <!-- Tickets Component -->
-        <div class="flex gap-5 justify-between py-4">
+        <div class="flex gap-5 justify-between items-center py-2">
             <div class="flex flex-col gap-2">
                 <p class="text-base text-gray-800 dark:text-white font-semibold">
                     @lang('booking::app.admin.catalog.products.edit.booking.event.title')
@@ -84,7 +84,7 @@
                             <p class="flex gap-2">
                                 <!-- Price -->
                                 <span
-                                    class="text-sm text-gray-600 dark:text-gray-300"
+                                    class="text-sm font-normal dark:text-gray-300"
                                     v-if="element.price"
                                 >
                                     @lang('booking::app.admin.catalog.products.edit.booking.event.price') - @{{ element.price }},
@@ -92,14 +92,14 @@
 
                                 <!-- Special Price -->
                                 <span
-                                    class="text-sm text-gray-600 dark:text-gray-300"
+                                    class="text-sm font-normal dark:text-gray-300"
                                     v-if="element.special_price"
                                 >
                                     @lang('booking::app.admin.catalog.products.edit.booking.event.special-price') - @{{ element.special_price }},
                                 </span>
     
                                  <!-- Qty -->
-                                <span class="text-sm text-gray-600 dark:text-gray-300">
+                                <span class="text-sm font-normal dark:text-gray-300">
                                     @lang('booking::app.admin.catalog.products.edit.booking.event.qty') - @{{ element.qty }}
                                 </span>
                             </p>
@@ -123,10 +123,8 @@
                             </p>
 
                             <!-- Description -->
-                            <p
-                                class="text-gray-600 dark:text-gray-300"
-                                v-text="element.description"
-                            >
+                            <p class="text-gray-600 dark:text-gray-300">
+                                @lang('booking::app.admin.catalog.products.edit.booking.event.description') - @{{ element.description }}
                             </p>
                         </div>
                         

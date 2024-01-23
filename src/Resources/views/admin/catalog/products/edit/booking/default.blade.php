@@ -71,11 +71,15 @@
         </div>
 
         <!-- Slots Component -->
-        <div class="flex gap-5 justify-between py-2 items-center">
+        <div class="flex gap-5 justify-between items-center py-2">
             <div class="flex flex-col gap-2">
                 <p class="text-base text-gray-800 dark:text-white font-semibold">
                     @lang('booking::app.admin.catalog.products.edit.booking.default.slot-title')
                 </p>
+
+                <p class="text-xs text-gray-500 dark:text-gray-300 font-medium">
+                    @lang('booking::app.admin.catalog.products.edit.booking.default.description-info')
+                 </p>
             </div>
 
             <!-- Add Slot Button -->

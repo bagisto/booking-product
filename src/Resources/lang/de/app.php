@@ -18,14 +18,15 @@ return [
                         ],
 
                         'default'     => [
-                            'add'            => 'Hinzufügen',
-                            'break-duration' => 'Pause zwischen den Slots (Minuten)',
-                            'close'          => 'Schließen',
-                            'description'    => 'Buchungsinformationen',
-                            'edit'           => 'Bearbeiten',
-                            'many'           => 'Viele Buchungen an einem Tag',
+                            'add'              => 'Hinzufügen',
+                            'break-duration'   => 'Pause zwischen den Slots (Minuten)',
+                            'close'            => 'Schließen',
+                            'description'      => 'Buchungsinformationen',
+                            'description-info' => 'Gemäß den Slots wird die Zeitdauer erstellt und sichtbar.',
+                            'edit'             => 'Bearbeiten',
+                            'many'             => 'Viele Buchungen an einem Tag',
 
-                            'modal'          => [
+                            'modal'            => [
                                 'slot' => [
                                     'add-title'  => 'Slots hinzufügen',
                                     'close'      => 'Schließen',
@@ -38,7 +39,7 @@ return [
                                     'monday'     => 'Montag',
                                     'open'       => 'Öffnen',
                                     'saturday'   => 'Samstag',
-                                    'save'       => 'Slot speichern',
+                                    'save'       => 'Speichern',
                                     'select'     => 'Auswählen',
                                     'status'     => 'Status',
                                     'sunday'     => 'Sonntag',
@@ -52,12 +53,12 @@ return [
                                 ],
                             ],
 
-                            'one'            => 'Eine Buchung für viele Tage',
-                            'open'           => 'Öffnen',
-                            'slot-add'       => 'Slots hinzufügen',
-                            'slot-title'     => 'Slots',
-                            'slot-duration'  => 'Slot-Dauer (Minuten)',
-                            'title'          => 'Standard',
+                            'one'              => 'Eine Buchung für viele Tage',
+                            'open'             => 'Öffnen',
+                            'slot-add'         => 'Slots hinzufügen',
+                            'slot-title'       => 'Slot-Zeitdauer',
+                            'slot-duration'    => 'Slot-Dauer (Minuten)',
+                            'title'            => 'Standard',
                         ],
 
                         'event'       => [
@@ -68,7 +69,7 @@ return [
                             'edit'               => 'Bearbeiten',
 
                             'modal'              => [
-                                'save' => 'Tickets speichern',
+                                'save' => 'Speichern',
                             ],
 
                             'name'               => 'Name',
