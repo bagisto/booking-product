@@ -62,7 +62,7 @@ class BookingProductRepository extends Repository
     }
 
     /**
-     * Undocumented function
+     * Update method.
      *
      * @param int $id
      * @param string $attribute
