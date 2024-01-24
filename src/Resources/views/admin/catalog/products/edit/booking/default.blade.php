@@ -413,7 +413,7 @@
                                     <x-booking::form.control-group.control
                                         type="time"
                                         name="from"
-                                        {{-- ::rules="slotsStatus[currentIndex] ? 'required' : ''" --}}
+                                        ::rules="selectedStatus[currentIndex] ? 'required' : ''"
                                         :label="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.from')"
                                         :placeholder="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.from')"
                                     />
@@ -430,7 +430,7 @@
                                     <x-booking::form.control-group.control
                                         type="time"
                                         name="to"
-                                        {{-- rules="{ slots.many[index].status ? {required: true, time_min: slots.many[index].from } : '' }" --}}
+                                        ::rules="selectedStatus[currentIndex] ? 'required' : ''"
                                         :label="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.to')"
                                         :placeholder="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.to')"
                                     />
@@ -447,6 +447,7 @@
                                     <x-admin::form.control-group.control
                                         type="select"
                                         name="status"
+                                        v-model="selectedStatus[currentIndex]"
                                         ::value="selectedStatus[currentIndex] ? selectedStatus[currentIndex] : 0"
                                         :label="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.status')"
                                     >
@@ -554,13 +555,15 @@
                     } else {
                         params.id = this.currentIndex;
 
-                        if (! this.slots['many'][this.currentIndex].length) {
-                            this.slots['many'][this.currentIndex].push(params);
-                        } else {
-                            this.slots['many'][this.currentIndex].splice(0, 1, params);
+                        if (params.from && params.to) {
+                            if (! this.slots['many'][this.currentIndex].length) {
+                                this.slots['many'][this.currentIndex].push(params);
+                            } else {
+                                this.slots['many'][this.currentIndex].splice(0, 1, params);
+                            }
+    
+                            this.selectedStatus[this.currentIndex]  = params.status;
                         }
-
-                        this.selectedStatus[this.currentIndex]  = params.status;
 
                         this.$refs.drawerform.toggle();
                     }
