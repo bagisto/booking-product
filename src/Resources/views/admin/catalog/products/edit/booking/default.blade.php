@@ -131,7 +131,7 @@
 
                                 <!-- To day Whith Time -->
                                 <p class="text-gray-800 dark:text-white">
-                                    @{{ convertIndexToDay(slot.from_day) }} - @{{ slot.to }}
+                                    @{{ convertIndexToDay(slot.to_day) }} - @{{ slot.to }}
                                 </p>
 
                                 <!-- Hiiden Field TO Day -->
