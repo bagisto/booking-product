@@ -32,7 +32,7 @@
         <div class="overflow-x-auto">
             <!-- For Same Slot All Days -->
             <template v-if="parseInt(bookingProduct.same_slot_all_days)">
-                <template v-if="slots['same_for_week'].length">
+                <template v-if="slots['same_for_week']?.length">
                     <div class="flex flex-wrap gap-x-2.5">
                         <div
                             class="flex flex-wrap gap-1 items-center min-h-[38px] dark:border-gray-800"
@@ -77,7 +77,7 @@
                     v-for="(day, dayIndex) in week_days"
                 >
                     <p
-                        class="font-medium"
+                        class="font-medium dark:text-gray-300"
                         v-text="day"
                     >
                     </p>
@@ -85,7 +85,7 @@
                     <div class="flex grid-cols-2 items-center justify-between">
                         <div class="flex flex-wrap gap-1 items-center min-h-[38px] dark:border-gray-800">
                             <template
-                                v-if="slots['different_for_week'][dayIndex].length"
+                                v-if="slots['different_for_week'][dayIndex]?.length"
                                 v-for="(item, itemIndex) in slots['different_for_week'][dayIndex]"
                             >
                                 <!-- Hidden Inputs -->

@@ -163,7 +163,11 @@
                     v-for="(day, dayIndex) in week_days"
                 >
                     <div class="flex gap-2">
-                        <p v-text="day"></p>
+                        <p
+                            class="font-medium dark:text-gray-300"
+                            v-text="day"
+                        >
+                        </p>
 
                         <template v-for="(slot, slotIndex) in slots['many'][dayIndex]">
                             <p
