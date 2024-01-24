@@ -242,8 +242,7 @@
                             @click="currentIndex=dayIndex;toggle(dayIndex)"
                         >
                             @lang('booking::app.admin.catalog.products.edit.booking.default.edit')
-                        </p>
-
+                        </p>    
                     </div>
                 </div>
             </template>

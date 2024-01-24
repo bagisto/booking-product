@@ -352,10 +352,10 @@
                         this.field['same_for_week'].splice(index, 1)
                     }
                 },
-                
+
                 store(params) {
                     let formDataObj = {};
-                    
+
                     let formData = new FormData(this.$refs.createOptionsForm);
 
                     formData.forEach((value, key) => (formDataObj[key] = value));
