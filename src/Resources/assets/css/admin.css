@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "booking";
+    src: url("../fonts/booking.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: block;
+}
+
+@layer components {
+
+    [class^="icon-"], [class*=" icon-"] {
+        /* use !important to prevent issues with browser extensions that change fonts */
+        font-family: 'booking' !important;
+        speak: never;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        color: #6b7280;
+        
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1 !important;
+      }
+
+    html.dark [class^="icon-"],
+    html.dark [class*=" icon-"]{
+        color: #d1d5db;
+    }
+
+    .icon-clock:before {
+        content: "\e952";
+    }
+}
+

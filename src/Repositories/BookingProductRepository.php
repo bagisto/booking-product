@@ -62,9 +62,11 @@ class BookingProductRepository extends Repository
     }
 
     /**
-     * @param  int  $id
-     * @param  string  $attribute
-     * @return \Webkul\BookingProduct\Contracts\BookingProduct
+     * Update method.
+     *
+     * @param int $id
+     * @param string $attribute
+     * @return \Webkul\BookingProduct\Contracts\BookingProduct|void
      */
     public function update(array $data, $id, $attribute = 'id')
     {
@@ -98,10 +100,9 @@ class BookingProductRepository extends Repository
     }
 
     /**
-     * @param  array  $data
      * @return array
      */
-    public function formatSlots($data)
+    public function formatSlots(array $data)
     {
         if (
             isset($data['same_slot_all_days'])

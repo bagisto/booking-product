@@ -73,7 +73,6 @@
                 </div>
             </div>
         </div>
-
     </script>
 
     <script type="module">

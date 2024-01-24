@@ -7,66 +7,69 @@ return [
                 'edit'  => [
                     'booking' => [
                         'appointment' => [
-                            'break-duration'         => 'Tiempo de descanso entre espacios (minutos)',
-                            'slot-duration'          => 'Duración del espacio (minutos)',
+                            'break-duration'         => 'Tiempo de descanso entre slots (minutos)',
+                            'slot-duration'          => 'Duración del slot (minutos)',
 
                             'same-slot-for-all-days' => [
                                 'no'    => 'No',
-                                'title' => 'Mismo espacio para todos los días',
+                                'title' => 'Mismo slot para todos los días',
                                 'yes'   => 'Sí',
                             ],
                         ],
 
                         'default'     => [
-                            'break-duration' => 'Tiempo de descanso entre espacios (minutos)',
-                            'close'          => 'Cerrar',
-                            'delete'         => 'Eliminar',
-                            'description'    => 'Información de reserva',
-                            'edit'           => 'Editar',
-                            'many'           => 'Muchas reservas para un día.',
+                            'add'              => 'Agregar',
+                            'break-duration'   => 'Tiempo de descanso entre slots (minutos)',
+                            'close'            => 'Cerrar',
+                            'description'      => 'Información de la reserva',
+                            'description-info' => 'Según los slots, se creará y será visible la duración del tiempo.',
+                            'edit'             => 'Editar',
+                            'many'             => 'Muchas reservas para un día',
 
-                            'modal'          => [
+                            'modal'            => [
                                 'slot' => [
+                                    'add-title'  => 'Agregar intervalos',
                                     'close'      => 'Cerrar',
                                     'day'        => 'Día',
-                                    'edit-title' => 'Editar espacios',
+                                    'edit-title' => 'Editar intervalos',
                                     'friday'     => 'Viernes',
-                                    'from-day'   => 'Desde el día',
                                     'from'       => 'Desde',
+                                    'from-day'   => 'Desde el día',
+                                    'from-time'  => 'Desde la hora',
                                     'monday'     => 'Lunes',
                                     'open'       => 'Abrir',
                                     'saturday'   => 'Sábado',
-                                    'save'       => 'Guardar espacio',
+                                    'save'       => 'Guardar',
                                     'select'     => 'Seleccionar',
                                     'status'     => 'Estado',
                                     'sunday'     => 'Domingo',
                                     'thursday'   => 'Jueves',
-                                    'time'       => 'Hora',
-                                    'title'      => 'Agregar espacios',
                                     'to'         => 'Hasta',
+                                    'to-day'     => 'Hasta el día',
+                                    'to-time'    => 'Hasta la hora',
                                     'tuesday'    => 'Martes',
                                     'wednesday'  => 'Miércoles',
-                                    'week'       => ':día',
+                                    'week'       => ':day',
                                 ],
                             ],
 
-                            'one'            => 'Una reserva para muchos días',
-                            'open'           => 'Abrir',
-                            'slot-duration'  => 'Duración del espacio (minutos)',
-                            'title'          => 'Por defecto',
+                            'one'              => 'Una reserva para muchos días',
+                            'open'             => 'Abrir',
+                            'slot-add'         => 'Agregar slots',
+                            'slot-title'       => 'Duración del tiempo del slot',
+                            'slot-duration'    => 'Duración del slot (minutos)',
+                            'title'            => 'Predeterminado',
                         ],
 
                         'event'       => [
-                            'add'                => 'Agregar entradas',
+                            'add'                => 'Agregar tickets',
                             'delete'             => 'Eliminar',
-                            'description-info'   => 'No hay entradas disponibles.',
+                            'description-info'   => 'No hay tickets disponibles.',
                             'description'        => 'Descripción',
                             'edit'               => 'Editar',
 
                             'modal'              => [
-                                'ticket' => [
-                                    'save' => 'Guardar entradas',
-                                ],
+                                'save' => 'Guardar',
                             ],
 
                             'name'               => 'Nombre',
@@ -75,31 +78,32 @@ return [
                             'special-price-from' => 'Precio especial desde',
                             'special-price-to'   => 'Precio especial hasta',
                             'special-price'      => 'Precio especial',
-                            'title'              => 'Entradas',
+                            'title'              => 'Tickets',
+                            'valid-from'         => 'Válido desde',
+                            'valid-until'        => 'Válido hasta',
                         ],
 
                         'empty-info'  => [
                             'tickets' => [
-                                'add' => 'Agregar entradas',
+                                'add' => 'Agregar tickets',
                             ],
 
                             'slots'   => [
-                                'add'         => 'Agregar espacios',
-                                'delete'      => 'Eliminar',
-                                'description' => 'Espacios disponibles con duración de tiempo.',
+                                'add'         => 'Agregar slots',
+                                'description' => 'Slots disponibles con duración del tiempo.',
                             ],
                         ],
 
                         'rental'      => [
-                            'daily_hourly'           => 'Ambos (Diario y por hora)',
+                            'daily-hourly'           => 'Ambos (Diario y por hora)',
                             'daily-price'            => 'Precio diario',
-                            'daily'                  => 'Por día',
+                            'daily'                  => 'Diario',
                             'hourly-price'           => 'Precio por hora',
                             'hourly'                 => 'Por hora',
 
                             'same-slot-for-all-days' => [
                                 'no'    => 'No',
-                                'title' => 'Mismo espacio para todos los días',
+                                'title' => 'Mismo slot para todos los días',
                                 'yes'   => 'Sí',
                             ],
 
@@ -107,11 +111,13 @@ return [
                         ],
 
                         'slots'       => [
-                            'add'              => 'Agregar espacios',
-                            'delete'           => 'Eliminar',
-                            'description-info' => 'Espacios disponibles con duración de tiempo.',
-                            'description'      => 'No hay espacios disponibles.',
-                            'edit'             => 'Editar',
+                            'add'              => 'Agregar slots',
+
+                            'action'           => [
+                                'add' => 'Agregar',
+                            ],
+
+                            'description-info' => 'Según los slots, se creará y será visible la duración del tiempo.',
 
                             'modal'            => [
                                 'slot' => [
@@ -128,26 +134,27 @@ return [
                             ],
 
                             'save'             => 'Guardar',
-                            'title'            => 'Espacios',
+                            'title'            => 'Duración del tiempo del slot',
+                            'unavailable'      => 'No disponible',
                         ],
 
                         'table'       => [
-                            'break-duration'            => 'Tiempo de descanso entre espacios (minutos)',
+                            'break-duration'            => 'Tiempo de descanso entre slots (minutos)',
 
                             'charged-per'               => [
                                 'guest'  => 'Invitado',
                                 'table'  => 'Mesa',
-                                'title'  => 'Cobrado por',
+                                'title'  => 'Cargado por',
                             ],
 
                             'guest-capacity'            => 'Capacidad de invitados',
                             'guest-limit'               => 'Límite de invitados por mesa',
-                            'prevent-scheduling-before' => 'Prevenir programación antes de',
-                            'slot-duration'             => 'Duración del espacio (minutos)',
+                            'prevent-scheduling-before' => 'Evitar programación antes de',
+                            'slot-duration'             => 'Duración del slot (minutos)',
 
                             'same-slot-for-all-days'    => [
                                 'no'    => 'No',
-                                'title' => 'Mismo espacio para todos los días',
+                                'title' => 'Mismo slot para todos los días',
                                 'yes'   => 'Sí',
                             ],
                         ],

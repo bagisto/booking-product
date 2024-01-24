@@ -1,8 +1,8 @@
-{!! view_render_event('bagisto.admin.catalog.product.edit.before', ['product' => $product]) !!}
+{!! view_render_event('bagisto.admin.catalog.product.edit.booking.event.before', ['product' => $product]) !!}
 
-<v-event-booking></v-event-booking>
+<v-event-booking />
 
-{!! view_render_event('bagisto.admin.catalog.product.edit.after', ['product' => $product]) !!}
+{!! view_render_event('bagisto.admin.catalog.product.edit.booking.event.after', ['product' => $product]) !!}
 
 @pushOnce('scripts')
     <script
@@ -10,7 +10,7 @@
         id="v-event-booking-template"
     >
         <!-- Tickets Component -->
-        <div class="flex gap-5 justify-between py-4">
+        <div class="flex gap-5 justify-between items-center py-2">
             <div class="flex flex-col gap-2">
                 <p class="text-base text-gray-800 dark:text-white font-semibold">
                     @lang('booking::app.admin.catalog.products.edit.booking.event.title')
@@ -34,96 +34,102 @@
                 v-if="tickets?.length" 
                 v-for="(element, index) in tickets"
             >
-                <div class="grid border-b border-slate-300 dark:border-gray-800 last:border-b-0">
-                    <div class="flex gap-2.5 justify-between py-3 cursor-pointer">
-                        <div class="grid gap-1.5 place-content-start">
-                            <!-- Name-->
-                            <p class="text-gray-600 dark:text-gray-300" >
-                                @lang('booking::app.admin.catalog.products.edit.booking.event.name') - @{{ element.name }}
-                            </p>
-
-                            <!-- Hidden Field For Name -->
+                <div class="border-b border-slate-300 dark:border-gray-800 last:border-b-0 ">
+                    <div class="flex gap-2.5 my-2.5 justify-between">
+                        <div class="grid gap-1 place-content-start">
+                            <!-- Hidden Inputs -->
                             <input
                                 type="hidden"
                                 :name="'booking[tickets][ticket_' + index + '][' + currentLocaleCode + '][name]'"
                                 :value="element.name"
                             />
 
-                            <!-- Price -->
-                            <p class="text-gray-600 dark:text-gray-300">
-                                @lang('booking::app.admin.catalog.products.edit.booking.event.price') - @{{ element.price }}
-                            </p>
-
-                            <!-- Hidden Field For Price -->
                             <input
                                 type="hidden"
                                 :name="'booking[tickets][ticket_' + index + '][price]'"
                                 :value="element.price"
                             />
 
-                             <!-- Qty -->
-                            <p class="text-gray-600 dark:text-gray-300" v-if="element.qty">
-                                @lang('booking::app.admin.catalog.products.edit.booking.event.qty') - @{{ element.qty }}
-                            </p>
-
-                            <!-- Hidden Field for Quantity -->
-                            <input
-                                type="hidden"
-                                :name="'booking[tickets][ticket_' + index + '][qty]'"
-                                :value="element.qty"
-                            />
-
-                            <!-- Special Price -->
-                            <p class="text-gray-600 dark:text-gray-300" v-if="element.special_price">
-                                @lang('booking::app.admin.catalog.products.edit.booking.event.special-price') - @{{ element.special_price }}
-                            </p>
-
-                            <!-- Hidden Field For Special Price -->
                             <input
                                 type="hidden"
                                 :name="'booking[tickets][ticket_' + index + '][special_price]'"
                                 :value="element.special_price"
                             />
 
-                            <!-- Valid From -->
-                            <p class="text-gray-600 dark:text-gray-300" v-if="element.special_price_from">
-                                @lang('booking::app.admin.catalog.products.edit.booking.event.special-price-from') - @{{ element.special_price_from }}
-                            </p>
-
-                            <!-- Hidden Field for Special Price From -->
                             <input
                                 type="hidden"
                                 :name="'booking[tickets][ticket_' + index + '][special_price_from]'"
                                 :value="element.special_price_from"
                             />
 
-                            <!-- Valid Until -->
-                            <p class="text-gray-600 dark:text-gray-300" v-if="element.special_price_to">
-                                @lang('booking::app.admin.catalog.products.edit.booking.event.special-price-to') - @{{ element.special_price_to }}
-                            </p>
-
-                            <!-- Hidden Field for Special Price To -->
                             <input
                                 type="hidden"
                                 :name="'booking[tickets][ticket_' + index + '][special_price_to]'"
                                 :value="element.special_price_to"
                             />
 
-                            <!-- Description -->
-                            <p class="text-gray-600 dark:text-gray-300">
-                                @lang('booking::app.admin.catalog.products.edit.booking.event.description') - @{{ element.description }}
-                            </p>
-
-                            <!-- Hidden Field For Description -->
                             <input
                                 type="hidden"
                                 :name="'booking[tickets][ticket_' + index + '][' + currentLocaleCode + '][description]'"
                                 :value="element.description"
                             />
+
+                            <!-- Name-->
+                            <p
+                                class="text-base dark:text-gray-300"
+                                v-text="element.name"
+                            >
+                            </p>
+
+                            <p class="flex gap-2">
+                                <!-- Price -->
+                                <span
+                                    class="text-sm font-normal dark:text-gray-300"
+                                    v-if="element.price"
+                                >
+                                    @lang('booking::app.admin.catalog.products.edit.booking.event.price') - @{{ element.price }},
+                                </span>
+
+                                <!-- Special Price -->
+                                <span
+                                    class="text-sm font-normal dark:text-gray-300"
+                                    v-if="element.special_price"
+                                >
+                                    @lang('booking::app.admin.catalog.products.edit.booking.event.special-price') - @{{ element.special_price }},
+                                </span>
+    
+                                 <!-- Qty -->
+                                <span class="text-sm font-normal dark:text-gray-300">
+                                    @lang('booking::app.admin.catalog.products.edit.booking.event.qty') - @{{ element.qty }}
+                                </span>
+                            </p>
+
+                            <p class="text-gray-600 dark:text-gray-300">
+                                <!-- Valid From -->
+                                <span
+                                    class="text-sm text-gray-600 dark:text-gray-300"
+                                    v-if="element.special_price_from"
+                                >
+                                    @lang('booking::app.admin.catalog.products.edit.booking.event.special-price-from') - @{{ element.special_price_from }}
+                                </span>
+
+                                <!-- Valid Until -->
+                                <span
+                                    class="text-sm text-gray-600 dark:text-gray-300"
+                                    v-if="element.special_price_to"
+                                >
+                                    @lang('booking::app.admin.catalog.products.edit.booking.event.special-price-to') - @{{ element.special_price_to }}
+                                </span>
+                            </p>
+
+                            <!-- Description -->
+                            <p class="text-gray-600 dark:text-gray-300">
+                                @lang('booking::app.admin.catalog.products.edit.booking.event.description') - @{{ element.description }}
+                            </p>
                         </div>
                         
                         <!-- Actions -->
-                        <div class="flex gap-x-5 items-center place-content-start text-right">
+                        <div class="flex gap-x-5 place-content-start text-right">
                             <p
                                 class="text-blue-600 cursor-pointer transition-all hover:underline"
                                 @click="edit(element)"
@@ -144,7 +150,7 @@
 
             <!-- For Empty Illustration -->
             <div v-else>
-                <v-empty-info ::type="event"></v-empty-info>
+                <v-empty-info ::type="event" />
             </div>
         </div>
 
@@ -154,11 +160,7 @@
             as="div"
             ref="modelForm"
         >
-            <form
-                @submit.prevent="handleSubmit($event, store)"
-                enctype="multipart/form-data"
-                ref="createOptionsForm"
-            >
+            <form @submit.prevent="handleSubmit($event, store)">
                 <x-admin::drawer ref="drawerform">
                     <x-slot:header>
                         <div class="flex justify-between items-center">
@@ -171,14 +173,14 @@
                                     type="submit"
                                     class="primary-button"
                                 >
-                                    @lang('booking::app.admin.catalog.products.edit.booking.event.modal.ticket.save')
+                                    @lang('booking::app.admin.catalog.products.edit.booking.event.modal.save')
                                 </button>
                             </div>
                         </div>
                     </x-slot:header>
         
-                    <x-slot:content>
-                        <div class="grid grid-cols-2 gap-4 px-4">
+                    <x-slot:content class="px-4">
+                        <div class="grid grid-cols-2 gap-4">
                             <!-- ID -->
                             <x-admin::form.control-group.control
                                 type="hidden"
@@ -212,6 +214,7 @@
                                     type="text"
                                     name="price"
                                     rules="required"
+                                    v-model="tickets.price"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.price')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.price')"
                                 />
@@ -220,7 +223,7 @@
                             </x-admin::form.control-group>
                         </div>
 
-                        <div class="grid grid-cols-2 gap-4 px-4">
+                        <div class="grid grid-cols-2 gap-4">
                             <!-- Quantity -->
                             <x-admin::form.control-group>
                                 <x-admin::form.control-group.label class="required">
@@ -245,9 +248,9 @@
                                 </x-admin::form.control-group.label>
             
                                 <x-admin::form.control-group.control
-                                    type="text"
+                                    type="number"
                                     name="special_price"
-                                    {{-- required="{decimal: true, min_value:0, ..(ticketItem.price ? {max_value: ticketItem.price} : {})}" --}}
+                                    ::rules="'min_value:0|max_value:' + tickets.price"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.special-price')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.special-price')"
                                 />
@@ -256,7 +259,7 @@
                             </x-admin::form.control-group>
                         </div>
 
-                        <div class="grid grid-cols-2 gap-4 px-4">
+                        <div class="grid grid-cols-2 gap-4">
                             <!-- Special Price From -->
                             <x-booking::form.control-group>
                                 <x-booking::form.control-group.label>
@@ -270,8 +273,8 @@
                                 <x-booking::form.control-group.control
                                     type="datetime"
                                     name="special_price_from"
-                                    :rules="'required_if:!value,date,required|after:' . $dateMin"
-                                    v-model="special_price_from"
+                                    :rules="'after:' . $dateMin"
+                                    v-model="tickets.special_price_from"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.valid-from')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.valid-from')"
                                 />
@@ -288,7 +291,7 @@
                                 <x-admin::form.control-group.control
                                     type="datetime"
                                     name="special_price_to"
-                                    {{-- :rules="'after:special_price_from'" --}}
+                                    ::rules="'after:' + tickets.special_price_from"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.valid-until')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.valid-until')"
                                     ref="special_price_to"
@@ -298,25 +301,23 @@
                             </x-admin::form.control-group>
                         </div>
 
-                        <div class="grid grid-cols-1 gap-4 px-4">
-                            <!-- Description -->
-                            <x-admin::form.control-group class="!mb-0">
-                                <x-admin::form.control-group.label class="required">
-                                    @lang('booking::app.admin.catalog.products.edit.booking.event.description')
-                                </x-admin::form.control-group.label>
-            
-                                <x-admin::form.control-group.control
-                                    type="textarea"
-                                    name="[description]"
-                                    rules="required"
-                                    :label="trans('booking::app.admin.catalog.products.edit.booking.event.description')"
-                                    :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.description')"
-                                    rows="9"
-                                />
+                        <!-- Description -->
+                        <x-admin::form.control-group class="!mb-0">
+                            <x-admin::form.control-group.label class="required">
+                                @lang('booking::app.admin.catalog.products.edit.booking.event.description')
+                            </x-admin::form.control-group.label>
+        
+                            <x-admin::form.control-group.control
+                                type="textarea"
+                                name="[description]"
+                                rules="required"
+                                :label="trans('booking::app.admin.catalog.products.edit.booking.event.description')"
+                                :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.description')"
+                                rows="9"
+                            />
 
-                                <x-admin::form.control-group.error control-name="[description]" />
-                            </x-admin::form.control-group>
-                        </div>
+                            <x-admin::form.control-group.error control-name="[description]" />
+                        </x-admin::form.control-group>
                     </x-slot:content>
                 </x-admin::drawer>
             </form>

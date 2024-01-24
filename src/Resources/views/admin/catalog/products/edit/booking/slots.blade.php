@@ -3,7 +3,7 @@
         type="text/x-template"
         id="v-slots-template"
     >
-        <div class="flex gap-5 justify-between py-4">
+        <div class="flex gap-5 justify-between items-center py-2">
             <div class="flex flex-col gap-1">
                 <p class="text-base text-gray-800 dark:text-white font-semibold">
                     @lang('booking::app.admin.catalog.products.edit.booking.slots.title')
@@ -15,10 +15,13 @@
             </div>
 
             <!-- Add Slots Button -->
-            <div class="flex gap-x-1 items-center">
+            <div
+                class="flex gap-x-1 items-center"
+                v-if="parseInt(sameSlotAllDays)"
+            >
                 <div
                     class="secondary-button"
-                    @click="$refs.drawerform.toggle()"
+                    @click="toggle()"
                 >
                     @lang('booking::app.admin.catalog.products.edit.booking.slots.add')
                 </div>
@@ -27,141 +30,113 @@
 
         <!-- Table Information -->
         <div class="overflow-x-auto">
-            <template v-if="different_for_week?.length || same_for_week?.length">
-                <!-- For Same Slot All Days -->
-                <template
-                    v-if="parseInt(bookingProduct.same_slot_all_days)"
-                    v-for="(data, index) in same_for_week"
-                >
-                    <div class="grid border-b border-slate-300 dark:border-gray-800 last:border-b-0">
-                        <div class="flex gap-2.5 justify-between py-3 cursor-pointer">
-                            <div class="grid gap-1.5 place-content-start">
-                                <p class="text-gray-600 dark:text-gray-300">
-                                    @lang('From') - @{{ data.from }}
-                                </p>
+            <!-- For Same Slot All Days -->
+            <template v-if="parseInt(bookingProduct.same_slot_all_days)">
+                <template v-if="slots['same_for_week']?.length">
+                    <div class="flex flex-wrap gap-x-2.5">
+                        <div
+                            class="flex flex-wrap gap-1 items-center min-h-[38px] dark:border-gray-800"
+                            v-for="(data, index) in slots['same_for_week']"
+                        >
+                            <!-- Hidden Inputs -->
+                            <input
+                                type="hidden"
+                                :name="'booking[slots][' + index + '][from]'"
+                                :value="data.from"
+                            />
+
+                            <input
+                                type="hidden"
+                                :name="'booking[slots][' + index + '][to]'"
+                                :value="data.to"
+                            />
+
+                            <!-- Pannel Detailes -->
+                            <p class="flex items-center py-1 px-2 bg-gray-600 rounded text-white font-semibold">
+                                @{{ data.from }} - @{{ data.to }}
     
-                                <!-- Hidden field for Id -->
-                                <input
-                                    type="hidden"
-                                    :name="'booking[slots][' + index + '][id]'"
-                                    :value="data.id"
-                                />
-    
-                                <!-- Hidden field for from -->
-                                <input
-                                    type="hidden"
-                                    :name="'booking[slots][' + index + '][from]'"
-                                    :value="data.from"
-                                />
-    
-                                <p class="text-gray-600 dark:text-gray-300">
-                                    @lang('To') - @{{ data.to }}
-                                </p>
-    
-                                <!-- Hidden field for To -->
-                                <input
-                                    type="hidden"
-                                    :name="'booking[slots][' + index + '][to]'"
-                                    :value="data.to"
-                                />
-                            </div>
-                            
-                            <!-- Actions -->
-                            <div class="flex gap-x-5 items-center place-content-start text-right">
-                                <p
-                                    class="text-blue-600 cursor-pointer transition-all hover:underline"
-                                    @click="editSlot(index)"
+                                <span
+                                    class="icon-cross text-white text-lg ltr:ml-1.5 rtl:mr-1.5 cursor-pointer"
+                                    @click="removeIndex(index)"
                                 >
-                                    @lang('booking::app.admin.catalog.products.edit.booking.slots.edit')
-                                </p>
-                                
-                                <p
-                                    class="text-red-600 cursor-pointer transition-all hover:underline"
-                                    @click="remove(index)"
-                                >
-                                    @lang('booking::app.admin.catalog.products.edit.booking.slots.delete')
-                                </p>
-                            </div>
+                                </span>
+                            </p>
                         </div>
                     </div>
                 </template>
-    
-                <!-- For Not Same Slot All Days -->
-                <template
-                    v-else-if="different_for_week?.length"
-                    v-for="(slot, slotIndex) in different_for_week"
-                >
-                    <div class="grid border-b border-slate-300 dark:border-gray-800 last:border-b-0">
-                        <template v-for="(item, itemIndex) in slot">
-                            <div
-                                class="text-base text-gray-800 dark:text-white my-2"
-                                v-text="itemIndex"
-                            >
-                            </div>
-    
-                            <template v-for="(time, timeIndex) in item">
-                                <div class="flex gap-2.5 justify-between py-3 cursor-pointer">
-                                    <div class="grid gap-1.5 place-content-start">
-                                        <p class="text-gray-800 dark:text-white">
-                                            From - @{{ time.from }}
-                                        </p>
-    
-                                        <!-- Hidden Field for from -->
-                                        <input
-                                            type="hidden"
-                                            :name="'booking[slots][' + slotIndex + '][' + timeIndex + '][from]'"
-                                            :value="time.from"
-                                        />
-    
-                                        <p class="text-gray-800 dark:text-white">
-                                            To - @{{ time.to }}
-                                        </p>
-    
-                                        <!-- Hidden Field for To -->
-                                        <input
-                                            type="hidden"
-                                            :name="'booking[slots][' + slotIndex + '][' + timeIndex + '][to]'"
-                                            :value="time.to"
-                                        />
-                                    </div>
-        
-                                    <!-- Actions -->
-                                    <div class="flex gap-x-5 place-content-start text-right">
-                                        <p
-                                            class="text-blue-600 cursor-pointer transition-all hover:underline"
-                                            @click="editSlot(time);currentWeek=itemIndex;currentTime=timeIndex"
-                                        >
-                                            @lang('booking::app.admin.catalog.products.edit.booking.slots.edit')
-                                        </p>
-                                        
-                                        <p
-                                            class="text-red-600 cursor-pointer transition-all hover:underline"
-                                            @click="currentWeek=itemIndex;currentTime=timeIndex;removeSlot(time);"
-                                        >
-                                            @lang('booking::app.admin.catalog.products.edit.booking.slots.delete')
-                                        </p>
-                                    </div>
-                                </div>
-                            </template>
-                        </template>
-                    </div>
+
+                <template v-else>
+                    <!-- For Empty Illustration -->
+                    <v-empty-info ::type="bookingType" />
                 </template>
             </template>
+            
+            <template v-else>
+                <div
+                    class="grid grid-cols-[0.5fr_2fr] gap-2.5 items-center py-2 border-b border-slate-300 dark:border-gray-800 last:border-b-0"
+                    v-for="(day, dayIndex) in week_days"
+                >
+                    <p
+                        class="font-medium dark:text-gray-300"
+                        v-text="day"
+                    >
+                    </p>
 
-            <!-- For Empty Illustration -->
-            <div v-else>
-                <v-empty-info ::type="bookingType"></v-empty-info>
-            </div>
+                    <div class="flex grid-cols-2 items-center justify-between">
+                        <div class="flex flex-wrap gap-1 items-center min-h-[38px] dark:border-gray-800">
+                            <template
+                                v-if="slots['different_for_week'][dayIndex]?.length"
+                                v-for="(item, itemIndex) in slots['different_for_week'][dayIndex]"
+                            >
+                                <!-- Hidden Inputs -->
+                                <input
+                                    type="hidden"
+                                    :name="'booking[slots][' + dayIndex + '][' + itemIndex + '][from]'"
+                                    :value="item.from"
+                                />
+
+                                <input
+                                    type="hidden"
+                                    :name="'booking[slots][' + dayIndex + '][' + itemIndex + '][to]'"
+                                    :value="item.to"
+                                />
+
+                                <!-- Panel Detailes -->
+                                <p class="flex items-center py-1 px-2 bg-gray-600 rounded text-white font-semibold">
+                                    @{{ item.from }} - @{{ item.to }}
+
+                                    <span
+                                        class="icon-cross text-white text-lg ltr:ml-1.5 rtl:mr-1.5 cursor-pointer"
+                                        @click="removeIndex(dayIndex,itemIndex)"
+                                    >
+                                    </span>
+                                </p>    
+                            </template>
+
+                            <template v-else>
+                                <p class="text-gray-500">
+                                    @lang('booking::app.admin.catalog.products.edit.booking.slots.unavailable')
+                                </p>
+                            </template>
+                        </div>
+
+                        <p
+                            class="place-content-start text-right text-blue-600 cursor-pointer transition-all hover:underline"
+                            @click="currentIndex=dayIndex;toggle()"
+                        >
+                            @lang('booking::app.admin.catalog.products.edit.booking.slots.action.add')
+                        </p>
+                    </div>
+                </div>
+            </template>
         </div>
 
-        <!-- Drawer component -->
-        <x-booking::form
+        <x-admin::form
             v-slot="{ meta, errors, handleSubmit }"
             as="div"
-            ref="modalForm"
         >
             <form
-                @submit.prevent="handleSubmit($event, storeSlot)"
+                @submit.prevent="handleSubmit($event, store)"
                 enctype="multipart/form-data"
                 ref="createOptionsForm"
             >
@@ -172,115 +147,15 @@
                                 @lang('booking::app.admin.catalog.products.edit.booking.slots.title')
                             </p>
 
-                            <div class="flex gap-2 ltr:mr-11 rtl:ml-11">
-                                <button
-                                    type="submit"
-                                    class="primary-button"
-                                >
-                                    @lang('booking::app.admin.catalog.products.edit.booking.slots.save')
-                                </button>
-
+                            <div class="flex gap-4 items-center ltr:mr-11 rtl:ml-11">
+                                <!-- Add Slots Button -->
                                 <div
-                                    class="primary-button"
-                                    v-if="parseInt(sameSlotAllDays)"
-                                    @click="addSlot()"
+                                    class="cursor-pointer font-medium text-blue-600 dark:text-white w-fit"
+                                    @click="add"
                                 >
                                     @lang('booking::app.admin.catalog.products.edit.booking.slots.add')
                                 </div>
-                            </div>
-                        </div>
-                    </x-slot:header>
 
-                    <x-slot:content>
-                        <template v-if="parseInt(sameSlotAllDays)">
-                            <template v-if="slots['same_for_week']?.length">
-                                <div class="grid grid-cols-3 gap-2.5 mx-2.5 py-2.5 text-gray-800 dark:text-white">
-                                    <div class="w-full">
-                                        @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')
-                                    </div>
-                        
-                                    <div class="w-full">
-                                        @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.to')
-                                    </div>
-                                </div>
-
-                                <template v-for="(slot, index) in slots['same_for_week']">
-                                    <v-slot-item
-                                        :control-name="'booking[slots][' + index + ']'"
-                                        :slot-item="slot"
-                                        @onRemoveSlot="remove($event)"
-                                    />
-                                </template>
-                            </template>
-
-                            <div v-else>
-                                <v-empty-info ::type="bookingType" />
-                            </div>
-                        </template>
-
-                        <div v-else>
-                            <div
-                                v-for="(day, dayIndex) in week_days"
-                                class="py-2.5 text-gray-800 dark:text-white border-b border-slate-300 dark:border-gray-800"
-                                :title="day"
-                            >
-                                <div class="grid grid-cols-2 gap-2.5">
-                                    <div v-text="day.charAt(0).toUpperCase() + day.slice(1)"></div>
-
-                                    <span
-                                        class="primary-button w-fit"
-                                        @click="addSlot(dayIndex)"
-                                    >
-                                        @lang('booking::app.admin.catalog.products.edit.booking.slots.add')
-                                    </span>
-                                </div>
-
-                                <template v-if="slots['different_for_week'][dayIndex] && slots['different_for_week'][dayIndex]?.length">
-                                    <div class="grid grid-cols-3 gap-2.5 m-2.5">
-                                        <div class="w-full">
-                                            @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')
-                                        </div>
-                            
-                                        <div class="w-full">
-                                            @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.to')
-                                        </div>
-                                    </div>
-
-                                    <template v-for="(slot, index) in slots['different_for_week'][dayIndex]">
-                                        <v-slot-item
-                                            :control-name="'booking[slots][' + dayIndex + '][' + index + ']'"
-                                            :slot-item="slot"
-                                            :id="index"
-                                            @onRemoveSlot="remove($event, dayIndex)"
-                                        />
-                                    </template>
-                                </template>
-                            </div>
-                        </div>
-                    </x-slot:content>
-                </x-admin::drawer>
-            </form>
-        </x-booking::form>
-
-        <!-- Single Edit Drawer component -->
-        <x-booking::form
-            v-slot="{ meta, errors, handleSubmit }"
-            as="div"
-            ref="editModalForm"
-        >
-            <form
-                @submit.prevent="handleSubmit($event, editStore)"
-                enctype="multipart/form-data"
-                ref="editOptionsForm"
-            >
-                <x-admin::drawer ref="editDrawerform">
-                    <x-slot:header>
-                        <div class="flex justify-between items-center">
-                            <p class="my-2.5 text-xl font-medium text-gray-800 dark:text-white">
-                                @lang('booking::app.admin.catalog.products.edit.booking.slots.title')
-                            </p>
-
-                            <div class="ltr:mr-11 rtl:ml-11">
                                 <button
                                     type="submit"
                                     class="primary-button"
@@ -292,64 +167,56 @@
                     </x-slot:header>
 
                     <x-slot:content>
-                        <div class="grid grid-cols-2 gap-2.5 mx-2.5 py-2.5 text-gray-800 dark:text-white">
-                            <div class="w-full">
-                                @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')
-                            </div>
-                
-                            <div class="w-full">
-                                @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.to')
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-2.5 mx-2.5">
-                            <!-- From -->
-                            <x-admin::form.control-group.control
-                                type="hidden"
-                                name="id"
-                            />
-
-                            <!-- From Input Field -->
-                            <x-booking::form.control-group class="w-full">
-                                <x-booking::form.control-group.label class="hidden">
+                        <template v-if="field['same_for_week']?.length">
+                            <div class="flex gap-2.5 pb-2.5 text-gray-800 dark:text-white">
+                                <div class="w-full">
                                     @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')
-                                </x-booking::form.control-group.label>
-                
-                                <x-booking::form.control-group.control
-                                    type="time"
-                                    name="from"
-                                    rules="required"
-                                    :label="trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')"
-                                    :placeholder="trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')"
-                                />
-
-                                <x-booking::form.control-group.error control-name="from" />
-                            </x-booking::form.control-group>
-                
-                            <!-- To Input Field -->
-                            <x-booking::form.control-group class="w-full">
-                                <x-booking::form.control-group.label class="hidden">
+                                </div>
+                    
+                                <div class="w-full">
                                     @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.to')
-                                </x-booking::form.control-group.label>
-                
-                                <x-booking::form.control-group.control
-                                    type="time"
-                                    name="to"
-                                    rules="required"
-                                    :label="trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.to')"
-                                    :placeholder="trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.to')"
+                                </div>
+                            </div>
+
+                            <template v-for="(slot, index) in field['same_for_week']">
+                                <v-slot-item
+                                    :control-name="'booking[slots][' + index + ']'"
+                                    :index="index"
+                                    :slot-item="slot"
+                                    @onRemoveSlot="remove($event)"
                                 />
+                            </template>
+                        </template>
 
-                                <!-- For Avoiding object value in last input field -->
-                                <x-booking::form.control-group.control type="hidden" />
+                        <template v-else-if="field['different_for_week'][currentIndex]?.length">
+                            <div class="flex gap-2.5 mx-2.5 pb-2.5 text-gray-800 dark:text-white">
+                                <div class="w-full">
+                                    @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')
+                                </div>
+                    
+                                <div class="w-full">
+                                    @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.to')
+                                </div>
+                            </div>
 
-                                <x-booking::form.control-group.error control-name="to" />
-                            </x-booking::form.control-group>
-                        </div>
+                            <template v-for="(slot, index) in field['different_for_week'][currentIndex]">
+                                <v-slot-item
+                                    :control-name="'booking[slots][' + currentIndex + '][' + index + ']'"
+                                    :index="currentIndex + '_' + index"
+                                    :slot-item="slot"
+                                    @onRemoveSlot="remove($event, currentIndex)"
+                                />
+                            </template>
+                        </template>
+
+                        <template v-else>
+                            <!-- For Empty Illustration -->
+                            <v-empty-info ::type="bookingType" />
+                        </template>
                     </x-slot:content>
                 </x-admin::drawer>
             </form>
-        </x-booking::form>
+        </x-admin::form>
     </script>
 
     <!-- Slot Item Vue Component -->
@@ -357,12 +224,11 @@
         type="text/x-template"
         id="v-slot-item-template"
     >
-        <div class="grid grid-cols-3 gap-2.5 mx-2.5">
+        <div class="flex gap-2.5">
             <!-- From -->
             <input
                 type="hidden"
                 :name="controlName + '[id]'"
-                :value="id"
             />
 
             <!-- From -->
@@ -404,8 +270,9 @@
                 <x-booking::form.control-group.error ::control-name="controlName + '[to]'" />
             </x-booking::form.control-group>
 
+            <!-- Delete Icon -->
             <div
-                class="icon-cross w-fit text-2xl p-1.5 cursor-pointer transition-all"
+                class="icon-delete w-fit text-2xl p-1.5 cursor-pointer transition-all"
                 @click="remove"
             >
             </div>
@@ -425,26 +292,24 @@
     
                         'different_for_week': [[], [], [], [], [], [], []]
                     },
+
+                    field: {
+                        'same_for_week': [],
     
+                        'different_for_week': [[], [], [], [], [], [], []]
+                    },
+
                     week_days: [
-                        "{{ trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.sunday') }}",
-                        "{{ trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.monday') }}",
-                        "{{ trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.tuesday') }}",
-                        "{{ trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.wednesday') }}",
-                        "{{ trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.thursday') }}",
-                        "{{ trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.friday') }}",
-                        "{{ trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.saturday') }}"
+                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.sunday')",
+                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.monday')",
+                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.tuesday')",
+                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.wednesday')",
+                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.thursday')",
+                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.friday')",
+                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.saturday')"
                     ],
 
-                    same_for_week: [],
-
-                    different_for_week: [],
-
-                    optionRowCount: 0,
-
-                    currentWeek: '',
-
-                    currentTime: '',
+                    currentIndex: '',
                 }
             },
 
@@ -452,68 +317,44 @@
                 if (! this.bookingProduct && ! this.bookingProduct.slots) {
                     return;
                 }
-    
-                if (parseInt(this.bookingProduct.same_slot_all_days)) {
-                    this.same_for_week = this.bookingProduct.slots;
+
+                if (parseInt(this.sameSlotAllDays)) {
+                    this.slots['same_for_week'] = this.bookingProduct.slots;
                 } else {
-                    let updatedData = this.bookingProduct.slots?.map((item, index) => {
-                        let updatedItem = {};
-
-                        updatedItem[this.week_days[index]] = item;
-
-                        return updatedItem;
-                    });
-
-                    if (updatedData) {
-                        this.different_for_week = updatedData;
-                    }
-                }
-
-                if (this.same_for_week){
-                    let [lastId] = Object.values(this.same_for_week).map(obj => obj.id);
-    
-                    this.optionRowCount = lastId?.split('_')[1];
+                    this.slots['different_for_week'] = this.bookingProduct.slots;
                 }
             },
 
             methods: {
-                addSlot(dayIndex = null) {
-                    if (dayIndex !== null) {
-                        if (this.slots['different_for_week'][dayIndex] == undefined) {
-                            this.slots['different_for_week'][dayIndex] = [];
-                        }
-    
-                        this.slots['different_for_week'][dayIndex].push({
-                            'id': '',
+                add() {
+                    if (parseInt(this.sameSlotAllDays)) {
+                        this.field['same_for_week'].push({
                             'from': '',
-                            'to': ''
+                            'to': '',
                         });
                     } else {
-                        this.slots['same_for_week'].push({
+                        this.field['different_for_week'][this.currentIndex].push({
+                            'id': '',
                             'from': '',
-                            'to': ''
+                            'to': '',
                         });
                     }
                 },
 
                 remove(slot, dayIndex = null) {
-                    this.$emitter.emit('open-confirm-modal', {
-                        agree: () => {
-                            if (dayIndex != null) {
-                                let index = this.slots['different_for_week'][dayIndex].indexOf(slot)
-            
-                                this.slots['different_for_week'][dayIndex].splice(index, 1)
-                            } else {
-                                let index = this.slots['same_for_week'].indexOf(slot)
-            
-                                this.slots['same_for_week'].splice(index, 1)
-                            }
-                        },
-                    });
+                    if (dayIndex != null) {
+                        let index = this.field['different_for_week'][dayIndex].indexOf(slot)
+    
+                        this.field['different_for_week'][dayIndex].splice(index, 1)
+                    } else {
+                        let index = this.field['same_for_week'].indexOf(slot)
+    
+                        this.field['same_for_week'].splice(index, 1)
+                    }
                 },
 
-                storeSlot(params) {
-                    const formDataObj = {};
+                store(params) {
+                    let formDataObj = {};
 
                     let formData = new FormData(this.$refs.createOptionsForm);
 
@@ -521,123 +362,75 @@
 
                     this.slotData(formDataObj);
 
-                    this.$refs.drawerform.toggle();
+                    this.toggle();
                 },
 
-                editSlot(element) {
+                slotData(params) {
                     if (parseInt(this.sameSlotAllDays)) {
-                        this.$refs.editModalForm.setValues(this.same_for_week[element]);
-                    } else {
-                        this.$refs.editModalForm.setValues(element);
-                    }
+                        for (let i = 0; i < Object.keys(params).length/3; i++) {
+                            if (params[`booking[slots][${i}][from]`] && params[`booking[slots][${i}][to]`]) {
+                                if (this.slots['same_for_week']?.length) {
+                                    this.slots['same_for_week'] = this.slots['same_for_week'].concat({ 
+                                        'id': i + 1, 
+                                        'from': params[`booking[slots][${i}][from]`],
+                                        'to': params[`booking[slots][${i}][to]`],
+                                    });
+                                } else {
+                                    this.slots['same_for_week'].push({ 
+                                        'id': i + 1, 
+                                        'from': params[`booking[slots][${i}][from]`], 
+                                        'to': params[`booking[slots][${i}][to]`],
+                                    });
+                                }
+                            }
+                        }
 
-                    this.$refs.editDrawerform.toggle();
-                },
-
-                editStore(params) {
-                    if (parseInt(this.sameSlotAllDays)) {
-                        let foundIndex = this.same_for_week.findIndex(item => item.id === params.id);
-                        
-                        if (foundIndex !== -1) {
-                            this.same_for_week[foundIndex] = { 
-                                ...this.same_for_week[foundIndex], 
-                                ...params
-                            };
+                        for (let i = 0; i < this.slots['same_for_week'].length; i++) {
+                            this.slots['same_for_week'][i].id = i + 1;
                         }
                     } else {
-                        this.different_for_week.forEach(element => {
-                            if (element.hasOwnProperty(this.currentWeek)) {
-                                element[this.currentWeek][this.currentTime] = params
+                        for (let i = 0; i < Object.keys(params).length/3; i++) {
+                            if (this.slots['different_for_week'][this.currentIndex]?.length) {
+                                this.slots['different_for_week'][this.currentIndex] = this.slots['different_for_week'][this.currentIndex].concat({ 
+                                    'id': i + 1, 
+                                    'from': params[`booking[slots][${this.currentIndex}][${i}][from]`],
+                                    'to': params[`booking[slots][${this.currentIndex}][${i}][to]`],
+                                });
+                            } else {
+                                this.slots['different_for_week'][this.currentIndex].push({ 
+                                    'id': i + 1, 
+                                    'from': params[`booking[slots][${this.currentIndex}][${i}][from]`],
+                                    'to': params[`booking[slots][${this.currentIndex}][${i}][to]`],
+                                });
                             }
-                        });
-                    }
+                        }
 
-                    this.$refs.editDrawerform.toggle();
+                        for (let i = 0; i < this.slots['different_for_week'][this.currentIndex].length; i++) {
+                            this.slots['different_for_week'][this.currentIndex][i].id = i + 1;
+                        }
+                    }
                 },
 
-                removeSlot(element) {
+                removeIndex(dayIndex, timeIndex) {
                     this.$emitter.emit('open-confirm-modal', {
                         agree: () => {
-                            console.log(element);
                             if (parseInt(this.sameSlotAllDays)) {
-
+                                this.slots['same_for_week'].splice(dayIndex, 1);
                             } else {
-                                this.different_for_week.forEach(element => {
-                                    if (element.hasOwnProperty(this.currentWeek)) {
-                                        element[this.currentWeek][this.currentTime] = {id: element.id, from: '00:00', to: '00:00'}
-                                    }
-                                });
+                                this.slots['different_for_week'][dayIndex].splice(timeIndex, 1);
                             }
                         },
                     });
                 },
 
-                slotData(params) {
-                    let item = [];
+                toggle() {
+                    this.field['same_for_week'] = [];
 
-                    if (parseInt(this.sameSlotAllDays)) {
-                        Object.keys(params).forEach(key => {
-                            let matches = key.match(/booking\[slots\]\[(\d+)\]\[(from|to|id)\]/);
+                    this.field['different_for_week'] = [[], [], [], [], [], [], []];
 
-                            if (params[key] == '[object Object]') {
-                                this.optionRowCount++;
-                                params[key] = 'option_' + this.optionRowCount;
-                            }
+                    this.add();
 
-                            if (matches) {
-                                let index = parseInt(matches[1]);
-
-                                if (! item[index]) {
-                                    item[index] = {};
-                                }
-
-                                item[index][matches[2]] = params[key];
-                            }
-                        });
-
-                        Object.values(item).forEach(element => {
-                            if (Object.keys(element).length) {
-                                if (this.same_for_week?.length) {
-                                    this.same_for_week = this.same_for_week.concat(element);
-                                } else {
-                                    this.same_for_week = element;
-                                }
-                            }
-                        });
-
-                        this.slots.same_for_week = [];
-                    } else {
-                        let updatedData = '';
-
-                        for (const key in params) {
-                            const matches = key.match(/\[(\d+)\]\[(\d+)\]\[(.+)\]/);
-                            const slotIndex = matches[1];
-                            const timeIndex = matches[2];
-                            const prop = matches[3];
-
-                            if (! this.different_for_week[slotIndex]) {
-                                this.different_for_week[slotIndex] = [];
-                            }
-
-                            if (! this.different_for_week[slotIndex][timeIndex]) {
-                                this.different_for_week[slotIndex][timeIndex] = {};
-                            }
-
-                            this.different_for_week[slotIndex][timeIndex][prop] = params[key];
-                        }
-
-                        updatedData = this.different_for_week.map((item, index) => {
-                            let day = this.week_days[index];
-
-                            let updatedItem = {};
-
-                            updatedItem[day] = item;
-
-                            return updatedItem;
-                        });
-
-                        this.different_for_week = updatedData;
-                    }
+                    this.$refs.drawerform.toggle();
                 },
             },
         });
@@ -645,7 +438,7 @@
         app.component('v-slot-item', {
             template: '#v-slot-item-template',
     
-            props: ['controlName', 'slotItem', 'id'],
+            props: ['controlName', 'slotItem'],
 
             methods: {
                 remove() {

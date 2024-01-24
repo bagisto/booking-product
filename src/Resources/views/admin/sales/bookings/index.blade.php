@@ -2,7 +2,7 @@
     <!-- Page Title -->
     <x-slot:title>
         @lang('booking::app.admin.sales.bookings.index.title')
-    </x-slot:title>
+    </x-slot>
 
     <div class="flex gap-[16px] justify-between items-center max-sm:flex-wrap">
         <p class="py-[11px] text-[20px] text-gray-800 dark:text-white font-bold">
@@ -17,5 +17,4 @@
 
     <!-- Datagrid -->
     <x-admin::datagrid src="{{ route('admin.sales.bookings.index') }}" />
-
 </x-admin::layouts>

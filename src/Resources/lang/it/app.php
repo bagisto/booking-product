@@ -7,8 +7,8 @@ return [
                 'edit' => [
                     'booking' => [
                         'appointment' => [
-                            'break-duration' => 'Tempo di pausa tra gli slot (minuti)',
-                            'slot-duration'  => 'Durata dello slot (minuti)',
+                            'break-duration'         => 'Tempo di pausa tra gli slot (minuti)',
+                            'slot-duration'          => 'Durata dello slot (minuti)',
 
                             'same-slot-for-all-days' => [
                                 'no'    => 'No',
@@ -17,56 +17,59 @@ return [
                             ],
                         ],
 
-                        'default' => [
-                            'break-duration' => 'Tempo di pausa tra gli slot (minuti)',
-                            'close'          => 'Chiudi',
-                            'delete'         => 'Elimina',
-                            'description'    => 'Informazioni prenotazione',
-                            'edit'           => 'Modifica',
-                            'many'           => 'Molte prenotazioni per un giorno',
+                        'default'     => [
+                            'add'              => 'Aggiungi',
+                            'break-duration'   => 'Tempo di pausa tra gli slot (minuti)',
+                            'close'            => 'Chiudi',
+                            'description'      => 'Informazioni sulla prenotazione',
+                            'description-info' => 'In base agli slot, verrà creata e resa visibile la durata temporale.',
+                            'edit'             => 'Modifica',
+                            'many'             => 'Molte prenotazioni per un giorno',
 
-                            'modal' => [
+                            'modal'            => [
                                 'slot' => [
+                                    'add-title'  => 'Aggiungi Slot',
                                     'close'      => 'Chiudi',
                                     'day'        => 'Giorno',
-                                    'edit-title' => 'Modifica slot',
+                                    'edit-title' => 'Modifica Slot',
                                     'friday'     => 'Venerdì',
-                                    'from-day'   => 'Dal giorno',
                                     'from'       => 'Da',
+                                    'from-day'   => 'Dal Giorno',
+                                    'from-time'  => 'Dall\'Ora',
                                     'monday'     => 'Lunedì',
-                                    'open'       => 'Aperto',
+                                    'open'       => 'Apri',
                                     'saturday'   => 'Sabato',
-                                    'save'       => 'Salva slot',
+                                    'save'       => 'Salvare',
                                     'select'     => 'Seleziona',
                                     'status'     => 'Stato',
                                     'sunday'     => 'Domenica',
                                     'thursday'   => 'Giovedì',
-                                    'time'       => 'Ora',
-                                    'title'      => 'Aggiungi slot',
                                     'to'         => 'A',
+                                    'to-day'     => 'Al Giorno',
+                                    'to-time'    => 'All\'Ora',
                                     'tuesday'    => 'Martedì',
                                     'wednesday'  => 'Mercoledì',
-                                    'week'       => ':giorno',
+                                    'week'       => ':day',
                                 ],
                             ],
 
-                            'one'           => 'Una prenotazione per molti giorni',
-                            'open'          => 'Apri',
-                            'slot-duration' => 'Durata dello slot (minuti)',
-                            'title'         => 'Predefinito',
+                            'one'              => 'Una prenotazione per molti giorni',
+                            'open'             => 'Aperto',
+                            'slot-add'         => 'Aggiungi slot',
+                            'slot-title'       => 'Durata temporale degli slot',
+                            'slot-duration'    => 'Durata dello slot (minuti)',
+                            'title'            => 'Predefinito',
                         ],
 
-                        'event' => [
-                            'add'              => 'Aggiungi biglietti',
-                            'delete'           => 'Elimina',
-                            'description-info' => 'Non ci sono biglietti disponibili.',
-                            'description'      => 'Descrizione',
-                            'edit'             => 'Modifica',
+                        'event'       => [
+                            'add'                => 'Aggiungi biglietto',
+                            'delete'             => 'Elimina',
+                            'description-info'   => 'Non ci sono biglietti disponibili.',
+                            'description'        => 'Descrizione',
+                            'edit'               => 'Modifica',
 
-                            'modal' => [
-                                'ticket' => [
-                                    'save' => 'Salva biglietti',
-                                ],
+                            'modal'              => [
+                                'save' => 'Salvare',
                             ],
 
                             'name'               => 'Nome',
@@ -76,26 +79,27 @@ return [
                             'special-price-to'   => 'Prezzo speciale a',
                             'special-price'      => 'Prezzo speciale',
                             'title'              => 'Biglietti',
+                            'valid-from'         => 'Valido dal',
+                            'valid-until'        => 'Valido fino al',
                         ],
 
-                        'empty-info' => [
+                        'empty-info'  => [
                             'tickets' => [
-                                'add' => 'Aggiungi biglietti',
+                                'add' => 'Aggiungi biglietto',
                             ],
 
-                            'slots' => [
+                            'slots'   => [
                                 'add'         => 'Aggiungi slot',
-                                'delete'      => 'Elimina',
                                 'description' => 'Slot disponibili con durata temporale.',
                             ],
                         ],
 
-                        'rental' => [
-                            'daily_hourly' => 'Entrambi (Giornaliero ed orario)',
-                            'daily-price'  => 'Prezzo giornaliero',
-                            'daily'        => 'Base giornaliera',
-                            'hourly-price' => 'Prezzo orario',
-                            'hourly'       => 'Base oraria',
+                        'rental'      => [
+                            'daily-hourly'           => 'Sia giornaliero che per ore',
+                            'daily-price'            => 'Prezzo giornaliero',
+                            'daily'                  => 'Su base giornaliera',
+                            'hourly-price'           => 'Prezzo orario',
+                            'hourly'                 => 'Su base oraria',
 
                             'same-slot-for-all-days' => [
                                 'no'    => 'No',
@@ -103,49 +107,52 @@ return [
                                 'yes'   => 'Sì',
                             ],
 
-                            'title' => 'Tipo di noleggio',
+                            'title'                  => 'Tipo di noleggio',
                         ],
 
-                        'slots' => [
+                        'slots'       => [
                             'add'              => 'Aggiungi slot',
-                            'delete'           => 'Elimina',
-                            'description-info' => 'Slot disponibili con durata temporale.',
-                            'description'      => 'Non ci sono slot disponibili.',
-                            'edit'             => 'Modifica',
 
-                            'modal' => [
+                            'action'           => [
+                                'add' => 'Aggiungi',
+                            ],
+
+                            'description-info' => 'In base agli slot, verrà creata e resa visibile la durata temporale.',
+
+                            'modal'            => [
                                 'slot' => [
-                                    'friday'    => 'Venerdì',
-                                    'from'      => 'Da',
-                                    'monday'    => 'Lunedì',
-                                    'saturday'  => 'Sabato',
-                                    'sunday'    => 'Domenica',
-                                    'thursday'  => 'Giovedì',
-                                    'to'        => 'A',
-                                    'tuesday'   => 'Martedì',
-                                    'wednesday' => 'Mercoledì',
+                                    'friday'     => 'Venerdì',
+                                    'from'       => 'Da',
+                                    'monday'     => 'Lunedì',
+                                    'saturday'   => 'Sabato',
+                                    'sunday'     => 'Domenica',
+                                    'thursday'   => 'Giovedì',
+                                    'to'         => 'A',
+                                    'tuesday'    => 'Martedì',
+                                    'wednesday'  => 'Mercoledì',
                                 ],
                             ],
 
-                            'save'  => 'Salva',
-                            'title' => 'Slot',
+                            'save'             => 'Salva',
+                            'title'            => 'Durata temporale degli slot',
+                            'unavailable'      => 'Non disponibile',
                         ],
 
-                        'table' => [
-                            'break-duration' => 'Tempo di pausa tra gli slot (minuti)',
+                        'table'       => [
+                            'break-duration'            => 'Tempo di pausa tra gli slot (minuti)',
 
-                            'charged-per' => [
-                                'guest' => 'Ospite',
-                                'table' => 'Tavolo',
-                                'title' => 'Addebitato per',
+                            'charged-per'               => [
+                                'guest'  => 'Ospite',
+                                'table'  => 'Tavolo',
+                                'title'  => 'Addebitato per',
                             ],
 
                             'guest-capacity'            => 'Capacità ospiti',
                             'guest-limit'               => 'Limite ospiti per tavolo',
-                            'prevent-scheduling-before' => 'Evita programmazione prima di',
+                            'prevent-scheduling-before' => 'Impedisci la pianificazione prima di',
                             'slot-duration'             => 'Durata dello slot (minuti)',
 
-                            'same-slot-for-all-days' => [
+                            'same-slot-for-all-days'    => [
                                 'no'    => 'No',
                                 'title' => 'Stesso slot per tutti i giorni',
                                 'yes'   => 'Sì',
