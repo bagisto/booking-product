@@ -23,7 +23,7 @@ return [
                             'delete'         => 'Verwijderen',
                             'description'    => 'Boekingsinformatie',
                             'edit'           => 'Bewerken',
-                            'many'           => 'Vele',
+                            'many'           => 'Veel boekingen voor één dag',
 
                             'modal'          => [
                                 'slot' => [
@@ -50,7 +50,7 @@ return [
                                 ],
                             ],
 
-                            'one'            => 'Een',
+                            'one'            => 'Eén boeking voor vele dagen',
                             'open'           => 'Openen',
                             'slot-duration'  => 'Slotduur (minuten)',
                             'title'          => 'Standaard',

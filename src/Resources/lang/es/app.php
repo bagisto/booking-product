@@ -23,7 +23,7 @@ return [
                             'delete'         => 'Eliminar',
                             'description'    => 'Información de reserva',
                             'edit'           => 'Editar',
-                            'many'           => 'Muchos',
+                            'many'           => 'Muchas reservas para un día.',
 
                             'modal'          => [
                                 'slot' => [
@@ -50,7 +50,7 @@ return [
                                 ],
                             ],
 
-                            'one'            => 'Uno',
+                            'one'            => 'Una reserva para muchos días',
                             'open'           => 'Abrir',
                             'slot-duration'  => 'Duración del espacio (minutos)',
                             'title'          => 'Por defecto',

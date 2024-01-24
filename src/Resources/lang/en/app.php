@@ -23,7 +23,7 @@ return [
                             'delete'         => 'Delete',
                             'description'    => 'Booking Information',
                             'edit'           => 'Edit',
-                            'many'           => 'Many',
+                            'many'           => 'Many Bookings For One Days',
 
                             'modal'          => [
                                 'slot' => [
@@ -50,7 +50,7 @@ return [
                                 ],
                             ],
 
-                            'one'            => 'One',
+                            'one'            => 'One Booking For Many Days',
                             'open'           => 'Open',
                             'slot-add'       => 'Add Slots',
                             'slot-title'     => 'Slots',
