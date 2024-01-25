@@ -207,8 +207,10 @@ class Booking
 
     /**
      * Returns slots for a particular day.
+     * 
+     * @param  \Webkul\BookingProduct\Contracts\BookingProduct  $bookingProduct
      */
-    public function getSlotsByDate(BookingProduct $bookingProduct, string $date): array
+    public function getSlotsByDate($bookingProduct, string $date): array
     {
         $bookingProductSlot = $this->typeRepositories[$bookingProduct->type]->findOneByField('booking_product_id', $bookingProduct->id);
 
@@ -243,56 +245,61 @@ class Booking
 
         $slots = [];
 
-        foreach ($timeDurations as $timeDuration) {
+        foreach ($timeDurations as $index => $timeDuration) {
             $fromChunks = explode(':', $timeDuration['from']);
             $toChunks = explode(':', $timeDuration['to']);
 
-            $startDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d') . ' 00:00:00');
-            $startDayTime->addMinutes(($fromChunks[0] * 60) + $fromChunks[1]);
+            $startDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d') . ' 00:00:00')
+                ->addMinutes(($fromChunks[0] * 60) + $fromChunks[1]);
+
+            $tempStartDayTime = clone $startDayTime;
 
             $endDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d') . ' 00:00:00')
                 ->addMinutes(($toChunks[0] * 60) + $toChunks[1]);
 
             $isFirstIteration = true;
 
-            while (1) {
-                $from = clone $startDayTime;
-                $startDayTime->addMinutes($bookingProductSlot->duration);
+            $from = clone $tempStartDayTime;
 
-                if ($isFirstIteration) {
-                    $isFirstIteration = false;
-                } else {
-                    $from->modify('+' . $bookingProductSlot->break_time . ' minutes');
-                    $startDayTime->modify('+' . $bookingProductSlot->break_time . ' minutes');
-                }
+            $tempStartDayTime->addMinutes($bookingProductSlot->duration);
 
-                $to = clone $startDayTime;
+            if ($isFirstIteration) {
+                $isFirstIteration = false;
+            } else {
+                $from->modify('+' . $bookingProductSlot->break_time . ' minutes');
+                $tempStartDayTime->modify('+' . $bookingProductSlot->break_time . ' minutes');
+            }
 
+            $to = clone $tempStartDayTime;
+
+            if (
+                (
+                    $startDayTime <= $from
+                    && $from <= $availableTo
+                )
+                && (
+                    $availableTo >= $to
+                    && $to >= $startDayTime
+                )
+                && (
+                    $startDayTime <= $from
+                    && $from <= $endDayTime
+                )
+                && (
+                    $endDayTime >= $to
+                    && $to >= $startDayTime
+                )
+            ) {
                 if (
-                    (
-                        $startDayTime <= $from
-                        && $from <= $availableTo
-                        && $from <= $endDayTime
-                        && $to >= $startDayTime
-                        && $endDayTime >= $to
-                        && $availableTo >= $to
-                    )
+                    $qty = $timeDuration['qty'] ?? 1
+                    && $currentTime <= $from
                 ) {
-                    $qty = isset($timeDuration['qty']) ? ($timeDuration['qty'] - 0) : 1;
-
-                    if (
-                        $qty
-                        && $currentTime <= $from
-                    ) {
-                        $slots[] = [
-                            'from'      => $from->format('h:i A'),
-                            'to'        => $to->format('h:i A'),
-                            'timestamp' => $from->getTimestamp() . '-' . $to->getTimestamp(),
-                            'qty'       => $qty,
-                        ];
-                    }
-                } else {
-                    break;
+                    $slots[] = [
+                        'from'      => $from->format('h:i A'),
+                        'to'        => $to->format('h:i A'),
+                        'timestamp' => $from->getTimestamp() . '-' . $to->getTimestamp(),
+                        'qty'       => $qty,
+                    ];
                 }
             }
         }
@@ -302,8 +309,12 @@ class Booking
 
     /**
      * Returns is item have quantity.
+     * 
+     * @param \Webkul\Checkout\Contracts\CartItem|array $cartItem
+     * 
+     * @return bool
      */
-    public function isItemHaveQuantity(CartItemContracts $cartItem): bool
+    public function isItemHaveQuantity($cartItem)
     {
         $bookingProduct = $this->bookingProductRepository->findOneByField('product_id', $cartItem['product_id']);
 
@@ -333,8 +344,10 @@ class Booking
 
     /**
      * Returns slots that are going to expire.
+     * 
+     * @param \Webkul\Checkout\Contracts\CartItem|array $cartItem
      */
-    public function isSlotExpired(CartItemContracts $cartItem): bool
+    public function isSlotExpired($cartItem): bool
     {
         $bookingProduct = $this->bookingProductRepository->findOneByField('product_id', $cartItem['product_id']);
 

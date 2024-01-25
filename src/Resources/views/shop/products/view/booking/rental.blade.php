@@ -213,7 +213,6 @@
                                 <x-shop::form.control-group.control
                                     type="date"
                                     name="booking[date_to]"
-                                    {{-- rules="required|date_format:yyyy-MM-dd|after_or_equal:date_from" --}}
                                     v-model="date_from"
                                     :label="trans('booking::app.shop.products.view.booking.rental.to')"
                                     :placeholder="trans('booking::app.shop.products.view.booking.rental.to')"
@@ -221,9 +220,8 @@
                                     ref="date_from"
                                     @change="dateSelected($event)"
                                 />
-        
+
                                 <x-shop::form.control-group.error control-name="booking[date_to]" />
-                                </x-shop::form.control-group.error>
                             </x-shop::form.control-group>
                         </div>
                     </div>
@@ -233,7 +231,6 @@
     </script>
 
     <script type="module">
-
         app.component('v-rental-slots', {
             template: '#v-rental-slots-template',
 
@@ -278,8 +275,6 @@
                         });
                 }
             }
-
         });
-        
     </script>
 @endpushOnce

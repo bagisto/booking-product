@@ -89,6 +89,12 @@ class BookingProductRepository extends Repository
                 $data['slots'] = $this->formatSlots($data);
 
                 $data['slots'] = $this->validateSlots($data);
+            } else {
+                if ($data['same_slot_all_days']) {
+                    $data['slots'] = null;
+                } else {
+                    $data['slots'] = [[], [], [], [], [], [], []];
+                }
             }
 
             if (! $bookingProductTypeSlot) {

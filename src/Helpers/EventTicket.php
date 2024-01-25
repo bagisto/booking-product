@@ -5,7 +5,6 @@ namespace Webkul\BookingProduct\Helpers;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Webkul\BookingProduct\Contracts\BookingProduct;
-use Webkul\Checkout\Contracts\CartItem as CartItemContracts;
 use Webkul\Checkout\Models\CartItem;
 use Webkul\Product\DataTypes\CartItemValidationResult;
 
@@ -27,10 +26,14 @@ class EventTicket extends Booking
 
     /**
      * Returns tickets
+     * 
+     * @param \Webkul\BookingProduct\Contracts\BookingProduct $bookingProduct
+     * 
+     * @return array
      */
-    public function getTickets(BookingProduct $bookingProduct): array
+    public function getTickets($bookingProduct)
     {
-        if (! $bookingProduct->event_tickets()->count()) {
+        if (!$bookingProduct->event_tickets()->count()) {
             return [];
         }
 
@@ -39,8 +42,11 @@ class EventTicket extends Booking
 
     /**
      * Format ticket price.
+     *
+     * @param array $tickets
+     * @return array
      */
-    public function formatPrice(array $tickets): array
+    public function formatPrice($tickets)
     {
         foreach ($tickets as $index => $ticket) {
             $price = $ticket->price;
@@ -63,8 +69,12 @@ class EventTicket extends Booking
 
     /**
      * Return the item if it has a quantity.
+     * 
+     * @param \Webkul\Checkout\Contracts\CartItem|array $cartItem
+     * 
+     * @return bool
      */
-    public function isItemHaveQuantity(CartItemContracts $cartItem): bool
+    public function isItemHaveQuantity($cartItem)
     {
         $bookingProduct = $this->bookingProductRepository->findOneByField('product_id', $cartItem['product_id']);
 
