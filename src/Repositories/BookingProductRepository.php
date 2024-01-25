@@ -64,8 +64,8 @@ class BookingProductRepository extends Repository
     /**
      * Update method.
      *
-     * @param int $id
-     * @param string $attribute
+     * @param  int  $id
+     * @param  string  $attribute
      * @return \Webkul\BookingProduct\Contracts\BookingProduct|void
      */
     public function update(array $data, $id, $attribute = 'id')

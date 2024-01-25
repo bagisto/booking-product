@@ -23,10 +23,8 @@ class DefaultSlot extends Booking
      * Returns slots for a particular day
      *
      * @param  \Webkul\BookingProduct\Contracts\BookingProduct  $bookingProduct
-     * @param  string  $date
-     * @return array
      */
-    public function getSlotsByDate($bookingProduct, $date)
+    public function getSlotsByDate($bookingProduct, string $date): array
     {
         $bookingProductSlot = $this->typeRepositories[$bookingProduct->type]->findOneByField('booking_product_id', $bookingProduct->id);
 
@@ -63,7 +61,7 @@ class DefaultSlot extends Booking
     /**
      * Returns slots for One Booking For Many Days
      *
-     * @param  \Webkul\BookingProduct\Contracts\BookingProduct  $bookingProduct
+     * @param  \Webkul\BookingProduct\Contracts\BookingProductTableSlot  $bookingProductSlot
      * @param  string  $requestedDate
      * @return array
      */
@@ -97,7 +95,7 @@ class DefaultSlot extends Booking
     /**
      * Returns slots for Many Bookings for One Day
      *
-     * @param  \Webkul\BookingProduct\Contracts\BookingProductSlot  $bookingProductSlot
+     * @param  \Webkul\BookingProduct\Contracts\BookingProductTableSlot  $bookingProductSlot
      * @param  string  $requestedDate
      * @return array
      */

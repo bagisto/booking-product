@@ -4,20 +4,16 @@ namespace Webkul\BookingProduct\Helpers;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
-use Webkul\Checkout\Facades\Cart;
-use Webkul\Checkout\Models\CartItem;
 use Webkul\Product\DataTypes\CartItemValidationResult;
 
 class RentalSlot extends Booking
 {
     /**
-     * Returns slots for a particular day
+     * Returns slots for a particular day.
      *
      * @param  \Webkul\BookingProduct\Contracts\BookingProduct  $bookingProduct
-     * @param  string  $date
-     * @return array
      */
-    public function getSlotsByDate($bookingProduct, $date)
+    public function getSlotsByDate($bookingProduct, string $date): array
     {
         $bookingProductSlot = $this->typeRepositories[$bookingProduct->type]->findOneByField('booking_product_id', $bookingProduct->id);
 
@@ -132,10 +128,11 @@ class RentalSlot extends Booking
     }
 
     /**
+     * Returns get booked quantity.
+     *
      * @param  array  $data
-     * @return int
      */
-    public function getBookedQuantity($data)
+    public function getBookedQuantity($data): int
     {
         $bookingProduct = $this->bookingProductRepository->findOneByField('product_id', $data['product_id']);
 
@@ -165,7 +162,9 @@ class RentalSlot extends Booking
     }
 
     /**
-     * @param  \Webkul\Ceckout\Contracts\CartItem|array  $cartItem
+     * Returns slots that are going to expire.
+     *
+     * @param  \Webkul\Checkout\Contracts\CartItem  $cartItem
      */
     public function isSlotExpired($cartItem): bool
     {
@@ -176,7 +175,8 @@ class RentalSlot extends Booking
 
             foreach ($timeIntervals as $timeInterval) {
                 foreach ($timeInterval['slots'] as $slot) {
-                    if ($slot['from_timestamp'] == $cartItem['additional']['booking']['slot']['from']
+                    if (
+                        $slot['from_timestamp'] == $cartItem['additional']['booking']['slot']['from']
                         && $slot['to_timestamp'] == $cartItem['additional']['booking']['slot']['to']
                     ) {
                         return false;
@@ -209,12 +209,9 @@ class RentalSlot extends Booking
     }
 
     /**
-     * Add booking additional prices to cart item
-     *
-     * @param  array  $products
-     * @return array
+     * Add booking additional prices to cart item.
      */
-    public function addAdditionalPrices($products)
+    public function addAdditionalPrices(array $products): array
     {
         $bookingProduct = $this->bookingProductRepository->findOneByField('product_id', $products[0]['product_id']);
 
@@ -245,9 +242,11 @@ class RentalSlot extends Booking
     }
 
     /**
-     * Validate cart item product price
+     * Validate cart item product price.
+     *
+     * @param  \Webkul\Checkout\Models\CartItem  $item
      */
-    public function validateCartItem(CartItem $item): CartItemValidationResult
+    public function validateCartItem($item): CartItemValidationResult
     {
         $result = new CartItemValidationResult();
 

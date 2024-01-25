@@ -5,10 +5,11 @@ namespace Webkul\BookingProduct\Helpers;
 class TableSlot extends Booking
 {
     /**
+     * Return the item if it has a quantity.
+     *
      * @param  \Webkul\Checkout\Contracts\CartItem|array  $cartItem
-     * @return bool
      */
-    public function isItemHaveQuantity($cartItem)
+    public function isItemHaveQuantity($cartItem): bool
     {
         $bookingProduct = $this->bookingProductRepository->findOneByField('product_id', $cartItem['product_id']);
 

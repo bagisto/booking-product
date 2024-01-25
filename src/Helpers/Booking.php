@@ -5,6 +5,7 @@ namespace Webkul\BookingProduct\Helpers;
 use Carbon\Carbon;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
+use Webkul\BookingProduct\Contracts\BookingProduct;
 use Webkul\BookingProduct\Repositories\BookingProductAppointmentSlotRepository;
 use Webkul\BookingProduct\Repositories\BookingProductDefaultSlotRepository;
 use Webkul\BookingProduct\Repositories\BookingProductEventTicketRepository;
@@ -12,6 +13,7 @@ use Webkul\BookingProduct\Repositories\BookingProductRentalSlotRepository;
 use Webkul\BookingProduct\Repositories\BookingProductRepository;
 use Webkul\BookingProduct\Repositories\BookingProductTableSlotRepository;
 use Webkul\BookingProduct\Repositories\BookingRepository;
+use Webkul\Checkout\Contracts\CartItem as CartItemContracts;
 use Webkul\Checkout\Models\CartItem;
 use Webkul\Product\DataTypes\CartItemValidationResult;
 
@@ -70,23 +72,19 @@ class Booking
     }
 
     /**
-     * Returns the booking type helper instance
+     * Returns the booking type helper instance.
      *
-     * @param  string  $type
-     * @return array
+     * @return mixed
      */
-    public function getTypeHelper($type)
+    public function getTypeHelper(string $type)
     {
         return $this->typeHelpers[$type];
     }
 
     /**
-     * Returns the booking information
-     *
-     * @param  \Webkul\BookingProduct\Contracts\BookingProduct  $bookingProduct
-     * @return array
+     * Returns the booking information.
      */
-    public function getWeekSlotDurations($bookingProduct)
+    public function getWeekSlotDurations(BookingProduct $bookingProduct): array
     {
         $slotsByDays = [];
 
@@ -111,12 +109,11 @@ class Booking
     }
 
     /**
-     * Returns html of slots for a current day
+     * Returns html of slots for a current day.
      *
-     * @param  \Webkul\BookingProduct\Contracts\BookingProduct  $bookingProduct
      * @return string
      */
-    public function getTodaySlotsHtml($bookingProduct)
+    public function getTodaySlotsHtml(BookingProduct $bookingProduct)
     {
         $slots = [];
 
@@ -132,12 +129,11 @@ class Booking
     }
 
     /**
-     * Returns the available week days
+     * Returns the available week days.
      *
-     * @param  \Webkul\BookingProduct\Contracts\BookingProduct  $bookingProduct
      * @return array
      */
-    public function getAvailableWeekDays($bookingProduct)
+    public function getAvailableWeekDays(BookingProduct $bookingProduct)
     {
         if ($bookingProduct->available_every_week) {
             return $this->daysOfWeek;
@@ -172,12 +168,9 @@ class Booking
     }
 
     /**
-     * Sort days
-     *
-     * @param  array  $days
-     * @return array
+     * Sort days.
      */
-    public function sortDaysOfWeek($days)
+    public function sortDaysOfWeek(array $days): array
     {
         $daysAux = [];
 
@@ -196,11 +189,8 @@ class Booking
 
     /**
      * Convert time from 24 to 12 hour format
-     *
-     * @param  array  $slots
-     * @return array
      */
-    public function convert24To12Hours($slots)
+    public function convert24To12Hours(array $slots): array
     {
         if (! $slots) {
             return [];
@@ -216,13 +206,9 @@ class Booking
     }
 
     /**
-     * Returns slots for a particular day
-     *
-     * @param  \Webkul\BookingProduct\Contracts\BookingProduct  $bookingProduct
-     * @param  string  $date
-     * @return array
+     * Returns slots for a particular day.
      */
-    public function getSlotsByDate($bookingProduct, $date)
+    public function getSlotsByDate(BookingProduct $bookingProduct, string $date): array
     {
         $bookingProductSlot = $this->typeRepositories[$bookingProduct->type]->findOneByField('booking_product_id', $bookingProduct->id);
 
@@ -283,26 +269,16 @@ class Booking
                 $to = clone $startDayTime;
 
                 if (
-                    ($startDayTime <= $from
-                        && $from <= $availableTo
-                    )
-                    && (
-                        $availableTo >= $to
-                        && $to >= $startDayTime
-                    )
-                    && (
+                    (
                         $startDayTime <= $from
+                        && $from <= $availableTo
                         && $from <= $endDayTime
-                    )
-                    && (
-                        $endDayTime >= $to
                         && $to >= $startDayTime
+                        && $endDayTime >= $to
+                        && $availableTo >= $to
                     )
                 ) {
-                    // Get already ordered qty for this slot
-                    $orderedQty = 0;
-
-                    $qty = isset($timeDuration['qty']) ? ($timeDuration['qty'] - $orderedQty) : 1;
+                    $qty = isset($timeDuration['qty']) ? ($timeDuration['qty'] - 0) : 1;
 
                     if (
                         $qty
@@ -325,10 +301,9 @@ class Booking
     }
 
     /**
-     * @param  \Webkul\Checkout\Contracts\CartItem|array  $cartItem
-     * @return bool
+     * Returns is item have quantity.
      */
-    public function isItemHaveQuantity($cartItem)
+    public function isItemHaveQuantity(CartItemContracts $cartItem): bool
     {
         $bookingProduct = $this->bookingProductRepository->findOneByField('product_id', $cartItem['product_id']);
 
@@ -343,10 +318,9 @@ class Booking
     }
 
     /**
-     * @param  array  $cartProducts
-     * @return bool
+     * Return slot if it is available.
      */
-    public function isSlotAvailable($cartProducts)
+    public function isSlotAvailable(array $cartProducts): bool
     {
         foreach ($cartProducts as $cartProduct) {
             if (! $this->isItemHaveQuantity($cartProduct)) {
@@ -358,10 +332,9 @@ class Booking
     }
 
     /**
-     * @param  \Webkul\Checkout\Contracts\CartItem|array  $cartItem
-     * @return bool
+     * Returns slots that are going to expire.
      */
-    public function isSlotExpired($cartItem)
+    public function isSlotExpired(CartItemContracts $cartItem): bool
     {
         $bookingProduct = $this->bookingProductRepository->findOneByField('product_id', $cartItem['product_id']);
 
@@ -377,10 +350,11 @@ class Booking
     }
 
     /**
+     * Returns get booked quantity.
+     *
      * @param  array  $data
-     * @return int
      */
-    public function getBookedQuantity($data)
+    public function getBookedQuantity($data): int
     {
         $timestamps = explode('-', $data['additional']['booking']['slot']);
 
@@ -396,12 +370,9 @@ class Booking
     }
 
     /**
-     * Returns additional cart item information
-     *
-     * @param  array  $data
-     * @return array
+     * Returns additional cart item information.
      */
-    public function getCartItemOptions($data)
+    public function getCartItemOptions(array $data): array
     {
         $bookingProduct = $this->bookingProductRepository->findOneByField('product_id', $data['product_id']);
 
@@ -508,18 +479,15 @@ class Booking
     }
 
     /**
-     * Add booking additional prices to cart item
-     *
-     * @param  array  $products
-     * @return array
+     * Add booking additional prices to cart item.
      */
-    public function addAdditionalPrices($products)
+    public function addAdditionalPrices(array $products): array
     {
         return $products;
     }
 
     /**
-     * Validate cart item product price
+     * Validate cart item product price.
      */
     public function validateCartItem(CartItem $item): CartItemValidationResult
     {
@@ -549,9 +517,9 @@ class Booking
     }
 
     /**
-     * Returns true, if cart item is inactive
+     * Returns true if the cart item is inactive.
      */
-    public function isCartItemInactive(\Webkul\Checkout\Contracts\CartItem $item): bool
+    public function isCartItemInactive(CartItemContracts $item): bool
     {
         return ! $item->product->status;
     }
