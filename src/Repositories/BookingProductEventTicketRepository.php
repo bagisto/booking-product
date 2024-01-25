@@ -49,6 +49,7 @@ class BookingProductEventTicketRepository extends Repository
                 }
 
                 $savedTickets[$ticketId]['ticket'] = $ticket;
+
                 $savedTickets[$ticketId]['ticketInputs'] = $ticketInputs;
             }
 

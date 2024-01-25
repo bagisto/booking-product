@@ -46,6 +46,12 @@
 
                             <input
                                 type="hidden"
+                                :name="'booking[tickets][ticket_' + index + '][qty]'"
+                                :value="element.qty"
+                            />
+
+                            <input
+                                type="hidden"
                                 :name="'booking[tickets][ticket_' + index + '][price]'"
                                 :value="element.price"
                             />
@@ -204,26 +210,6 @@
                                 <x-admin::form.control-group.error control-name="name" />
                             </x-admin::form.control-group>
 
-                            <!-- Price -->
-                            <x-admin::form.control-group>
-                                <x-admin::form.control-group.label class="required">
-                                    @lang('booking::app.admin.catalog.products.edit.booking.event.price')
-                                </x-admin::form.control-group.label>
-            
-                                <x-admin::form.control-group.control
-                                    type="text"
-                                    name="price"
-                                    rules="required"
-                                    v-model="tickets.price"
-                                    :label="trans('booking::app.admin.catalog.products.edit.booking.event.price')"
-                                    :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.price')"
-                                />
-
-                                <x-admin::form.control-group.error control-name="price" />
-                            </x-admin::form.control-group>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4">
                             <!-- Quantity -->
                             <x-admin::form.control-group>
                                 <x-admin::form.control-group.label class="required">
@@ -240,19 +226,40 @@
             
                                 <x-admin::form.control-group.error control-name="qty" />
                             </x-admin::form.control-group>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Price -->
+                            <x-admin::form.control-group>
+                                <x-admin::form.control-group.label class="required">
+                                    @lang('booking::app.admin.catalog.products.edit.booking.event.price')
+                                </x-admin::form.control-group.label>
+            
+                                <x-admin::form.control-group.control
+                                    type="text"
+                                    name="price"
+                                    rules="required"
+                                    :label="trans('booking::app.admin.catalog.products.edit.booking.event.price')"
+                                    :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.price')"
+                                    ref="price"
+                                />
+
+                                <x-admin::form.control-group.error control-name="price" />
+                            </x-admin::form.control-group>
 
                             <!-- Special Price -->
                             <x-admin::form.control-group>
                                 <x-admin::form.control-group.label>
                                     @lang('booking::app.admin.catalog.products.edit.booking.event.special-price')
                                 </x-admin::form.control-group.label>
-            
+
                                 <x-admin::form.control-group.control
                                     type="number"
                                     name="special_price"
-                                    ::rules="'min_value:0|max_value:' + tickets.price"
+                                    ::rules="'min_value:0|max_value:' + $refs.price?.value"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.special-price')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.special-price')"
+                                    ::disabled="!$refs.price?.value"
                                 />
 
                                 <x-admin::form.control-group.error control-name="special_price" />
@@ -274,9 +281,9 @@
                                     type="datetime"
                                     name="special_price_from"
                                     :rules="'after:' . $dateMin"
-                                    v-model="tickets.special_price_from"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.valid-from')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.valid-from')"
+                                    ref="special_price_from"
                                 />
 
                                 <x-booking::form.control-group.error control-name="special_price_from" />
@@ -291,7 +298,7 @@
                                 <x-admin::form.control-group.control
                                     type="datetime"
                                     name="special_price_to"
-                                    ::rules="'after:' + tickets.special_price_from"
+                                    ::rules="'after:' + $refs.special_price_from?.value"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.valid-until')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.valid-until')"
                                     ref="special_price_to"
