@@ -390,18 +390,20 @@
                         }
                     } else {
                         for (let i = 0; i < Object.keys(params).length/3; i++) {
-                            if (this.slots['different_for_week'][this.currentIndex]?.length) {
-                                this.slots['different_for_week'][this.currentIndex] = this.slots['different_for_week'][this.currentIndex].concat({ 
-                                    'id': i + 1, 
-                                    'from': params[`booking[slots][${this.currentIndex}][${i}][from]`],
-                                    'to': params[`booking[slots][${this.currentIndex}][${i}][to]`],
-                                });
-                            } else {
-                                this.slots['different_for_week'][this.currentIndex].push({ 
-                                    'id': i + 1, 
-                                    'from': params[`booking[slots][${this.currentIndex}][${i}][from]`],
-                                    'to': params[`booking[slots][${this.currentIndex}][${i}][to]`],
-                                });
+                            if (params[`booking[slots][${this.currentIndex}][${i}][from]`] && params[`booking[slots][${this.currentIndex}][${i}][to]`]) {
+                                if (this.slots['different_for_week'][this.currentIndex]?.length) {
+                                    this.slots['different_for_week'][this.currentIndex] = this.slots['different_for_week'][this.currentIndex].concat({ 
+                                        'id': i + 1, 
+                                        'from': params[`booking[slots][${this.currentIndex}][${i}][from]`],
+                                        'to': params[`booking[slots][${this.currentIndex}][${i}][to]`],
+                                    });
+                                } else {
+                                    this.slots['different_for_week'][this.currentIndex].push({ 
+                                        'id': i + 1, 
+                                        'from': params[`booking[slots][${this.currentIndex}][${i}][from]`],
+                                        'to': params[`booking[slots][${this.currentIndex}][${i}][to]`],
+                                    });
+                                }
                             }
                         }
 

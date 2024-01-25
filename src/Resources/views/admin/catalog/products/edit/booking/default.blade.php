@@ -496,13 +496,13 @@
                     },
 
                     week_days: [
+                        "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.sunday')",
                         "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.monday')",
                         "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.tuesday')",
                         "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.wednesday')",
                         "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.thursday')",
                         "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.friday')",
                         "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.saturday')",
-                        "@lang('booking::app.admin.catalog.products.edit.booking.default.modal.slot.sunday')",
                     ],
 
                     selectedStatus : [],

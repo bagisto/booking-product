@@ -4,7 +4,8 @@ namespace Webkul\BookingProduct\Helpers;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
-use Webkul\Checkout\Facades\Cart;
+use Webkul\BookingProduct\Contracts\BookingProduct;
+use Webkul\Checkout\Contracts\CartItem as CartItemContracts;
 use Webkul\Checkout\Models\CartItem;
 use Webkul\Product\DataTypes\CartItemValidationResult;
 
@@ -13,10 +14,9 @@ class EventTicket extends Booking
     /**
      * Returns event date
      *
-     * @param  \Webkul\BookingProduct\Contracts\BookingProduct  $bookingProduct
      * @return string
      */
-    public function getEventDate($bookingProduct)
+    public function getEventDate(BookingProduct $bookingProduct)
     {
         $from = Carbon::createFromTimeString($bookingProduct->available_from)->format('d F, Y h:i A');
 
@@ -27,11 +27,8 @@ class EventTicket extends Booking
 
     /**
      * Returns tickets
-     *
-     * @param  \Webkul\BookingProduct\Contracts\BookingProduct  $bookingProduct
-     * @return array
      */
-    public function getTickets($bookingProduct)
+    public function getTickets(BookingProduct $bookingProduct): array
     {
         if (! $bookingProduct->event_tickets()->count()) {
             return [];
@@ -41,12 +38,9 @@ class EventTicket extends Booking
     }
 
     /**
-     * Format ticket price
-     *
-     * @param  array  $tickets
-     * @return array
+     * Format ticket price.
      */
-    public function formatPrice($tickets)
+    public function formatPrice(array $tickets): array
     {
         foreach ($tickets as $index => $ticket) {
             $price = $ticket->price;
@@ -68,10 +62,9 @@ class EventTicket extends Booking
     }
 
     /**
-     * @param  \Webkul\Checkout\Contracts\CartItem|array  $cartItem
-     * @return bool
+     * Return the item if it has a quantity.
      */
-    public function isItemHaveQuantity($cartItem)
+    public function isItemHaveQuantity(CartItemContracts $cartItem): bool
     {
         $bookingProduct = $this->bookingProductRepository->findOneByField('product_id', $cartItem['product_id']);
 
@@ -85,10 +78,11 @@ class EventTicket extends Booking
     }
 
     /**
+     * Returns the quantity of booked product.
+     *
      * @param  array  $data
-     * @return int
      */
-    public function getBookedQuantity($data)
+    public function getBookedQuantity($data): int
     {
         $result = $this->bookingRepository->getModel()
             ->leftJoin('order_items', 'bookings.order_item_id', '=', 'order_items.id')
@@ -101,12 +95,9 @@ class EventTicket extends Booking
     }
 
     /**
-     * Add booking additional prices to cart item
-     *
-     * @param  array  $products
-     * @return array
+     * Add booking additional prices to cart item.
      */
-    public function addAdditionalPrices($products)
+    public function addAdditionalPrices(array $products): array
     {
         foreach ($products as $key => $product) {
             $bookingProduct = $this->bookingProductRepository->findOneByField('product_id', $product['product_id']);
@@ -129,7 +120,7 @@ class EventTicket extends Booking
     }
 
     /**
-     * Validate cart item product price
+     * Validate cart item product price.
      */
     public function validateCartItem(CartItem $item): CartItemValidationResult
     {
@@ -175,7 +166,7 @@ class EventTicket extends Booking
     }
 
     /**
-     * Determines whether a single ticket is in Sale, i.e. has a valid sale price
+     * Determines whether a single ticket is in Sale, i.e. has a valid sale price.
      */
     public function isInSale($ticket): bool
     {
