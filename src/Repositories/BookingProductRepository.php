@@ -139,7 +139,10 @@ class BookingProductRepository extends Repository
      */
     public function addSlots(array $data): array
     {
-        if (! isset($data['same_slot_all_days'])) {
+        if (
+            isset($data['same_slot_all_days']) 
+            && ! $data['same_slot_all_days']
+        ) {
             return [[], [], [], [], [], [], []];
         } else {
             return (
