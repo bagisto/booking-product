@@ -273,8 +273,8 @@
                                 setErrors(error.response.data.errors);
                             }
                         });
-                }
-            }
+                },
+            },
         });
     </script>
 @endpushOnce

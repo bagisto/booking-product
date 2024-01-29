@@ -188,10 +188,14 @@ return [
                             'title'                => '预订类型',
                         ],
                     ],
+                ],
 
-                    'index'   => [
-                        'booking' => '预订',
-                    ],
+                'index'   => [
+                    'booking' => '预订',
+                ],
+
+                'type'   => [
+                    'booking' => '预订',
                 ],
             ],
         ],

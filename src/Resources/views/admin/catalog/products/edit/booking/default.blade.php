@@ -230,7 +230,7 @@
 
                         <p
                             class="place-content-start text-right text-blue-600 cursor-pointer transition-all hover:underline"
-                            v-if="!slots['many'][dayIndex]?.length"
+                            v-if="! slots['many'][dayIndex]?.length"
                             @click="currentIndex=dayIndex;toggle()"
                         >
                             @lang('booking::app.admin.catalog.products.edit.booking.default.add')
@@ -343,7 +343,7 @@
                                     <x-booking::form.control-group.error control-name="from" />
                                 </x-booking::form.control-group>
                             </div>
-                    
+
                             <div class="grid grid-cols-2 gap-4">
                                 <!-- TO Day -->
                                 <x-admin::form.control-group class="w-full">
@@ -447,7 +447,7 @@
                                         type="select"
                                         name="status"
                                         v-model="selectedStatus[currentIndex]"
-                                        ::value="selectedStatus[currentIndex] ? selectedStatus[currentIndex] : 0"
+                                        ::value="selectedStatus[currentIndex]"
                                         :label="trans('booking::app.admin.catalog.products.edit.booking.default.modal.slot.status')"
                                     >
                                         <option value="1">
@@ -511,21 +511,17 @@
 
             created() {
                 if (this.default_booking.slots) {
-                    let [lastId] = this.default_booking.slots?.map(({ id }) => id).slice(-1);
-
-                    if (lastId) {
-                        this.optionRowCount = lastId?.split('_')[1];
+                    let lastIndex = Object.keys(this.default_booking.slots).pop();
+                    
+                    if (lastIndex) {
+                        this.optionRowCount = this.default_booking.slots[lastIndex][0]?.id;
                     }
                 }
 
                 if (this.default_booking.booking_type === 'one') {
                     this.slots['one'] = this.default_booking.slots;
                 } else {
-                    if (this.default_booking.slots?.length) {
-                        this.slots['many'] = this.default_booking.slots;
-
-                        this.selectedStatus = this.slots['many'].map(subArray => subArray.map(obj => obj.status));
-                    }
+                    this.slots['many'] = this.default_booking.slots;
                 }
             },
 
@@ -589,15 +585,21 @@
                 toggle(element) {
                     if (element != undefined) {
                         this.$refs.modelForm.setValues(this.slots['many'][element][0]);
+
+                        this.selectedStatus[this.currentIndex] = this.slots['many'][element][0].status;
+                    } else {
+                        this.selectedStatus[this.currentIndex] = 0;
                     }
 
                     this.$refs.drawerform.toggle();
                 },
 
                 change() {
-                    this.slots['one'] = [];
-
-                    this.slots['many'] = [[], [], [], [], [], [], []];
+                    if (this.default_booking.booking_type == 'one') {
+                        this.slots['one'] = [];
+                    } else {
+                        this.slots['many'] = [[], [], [], [], [], [], []];
+                    }
 
                     this.optionRowCount = 0;
                 }

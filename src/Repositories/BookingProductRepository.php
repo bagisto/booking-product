@@ -90,11 +90,7 @@ class BookingProductRepository extends Repository
 
                 $data['slots'] = $this->validateSlots($data);
             } else {
-                if ($data['same_slot_all_days']) {
-                    $data['slots'] = null;
-                } else {
-                    $data['slots'] = [[], [], [], [], [], [], []];
-                }
+                $data['slots'] = $this->addSlots($data);
             }
 
             if (! $bookingProductTypeSlot) {
@@ -106,9 +102,9 @@ class BookingProductRepository extends Repository
     }
 
     /**
-     * @return array
+     * Format Slots data.
      */
-    public function formatSlots(array $data)
+    public function formatSlots(array $data): array
     {
         if (
             isset($data['same_slot_all_days'])
@@ -139,10 +135,26 @@ class BookingProductRepository extends Repository
     }
 
     /**
-     * @param  array  $data
-     * @return array
+     * Add blank array where slots key in available.
      */
-    public function validateSlots($data)
+    public function addSlots(array $data): array
+    {
+        if (! isset($data['same_slot_all_days'])) {
+            return [[], [], [], [], [], [], []];
+        } else {
+            return (
+                $data['type'] == 'default' 
+                && $data['booking_type'] == 'many'
+            )
+                ? [[], [], [], [], [], [], []]
+                : [];
+        }
+    }
+
+    /**
+     * Validate Slots data.
+     */
+    public function validateSlots(array $data): array
     {
         if (! isset($data['same_slot_all_days'])) {
             return $data['slots'];

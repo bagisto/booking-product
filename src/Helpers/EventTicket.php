@@ -4,7 +4,6 @@ namespace Webkul\BookingProduct\Helpers;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
-use Webkul\BookingProduct\Contracts\BookingProduct;
 use Webkul\Checkout\Models\CartItem;
 use Webkul\Product\DataTypes\CartItemValidationResult;
 
@@ -12,10 +11,11 @@ class EventTicket extends Booking
 {
     /**
      * Returns event date
-     *
+     * 
+     * @param \Webkul\BookingProduct\Contracts\BookingProduct $bookingProduct
      * @return string
      */
-    public function getEventDate(BookingProduct $bookingProduct)
+    public function getEventDate($bookingProduct)
     {
         $from = Carbon::createFromTimeString($bookingProduct->available_from)->format('d F, Y h:i A');
 
@@ -28,7 +28,6 @@ class EventTicket extends Booking
      * Returns tickets
      * 
      * @param \Webkul\BookingProduct\Contracts\BookingProduct $bookingProduct
-     * 
      * @return array
      */
     public function getTickets($bookingProduct)
@@ -71,7 +70,6 @@ class EventTicket extends Booking
      * Return the item if it has a quantity.
      * 
      * @param \Webkul\Checkout\Contracts\CartItem|array $cartItem
-     * 
      * @return bool
      */
     public function isItemHaveQuantity($cartItem)

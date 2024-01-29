@@ -188,10 +188,14 @@ return [
                             'title' => 'Tipo di prenotazione',
                         ],
                     ],
+                ],
 
-                    'index' => [
-                        'booking' => 'Prenotazione',
-                    ],
+                'index' => [
+                    'booking' => 'Prenotazione',
+                ],
+
+                'type' => [
+                    'booking' => 'Prenotazione',
                 ],
             ],
         ],

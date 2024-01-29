@@ -3,7 +3,7 @@
 return [
     'booking' => [
         'key'   => 'booking',
-        'name'  => 'Booking',
+        'name'  => 'booking::app.admin.catalog.products.type.booking',
         'class' => 'Webkul\BookingProduct\Type\Booking',
         'sort'  => 7,
     ],

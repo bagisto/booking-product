@@ -188,10 +188,14 @@ return [
                             'title'                => '予約タイプ',
                         ],
                     ],
+                ],
 
-                    'index'   => [
-                        'booking' => '予約',
-                    ],
+                'index'   => [
+                    'booking' => '予約',
+                ],
+
+                'type'   => [
+                    'booking' => '予約',
                 ],
             ],
         ],
