@@ -136,7 +136,6 @@
                             type="datetime"
                             name="booking[available_from]"
                             :rules="'required|after:' . $dateMin"
-                            rules="required"
                             v-model="booking.available_from"
                             :label="trans('booking::app.admin.catalog.products.edit.types.booking.available-from')"
                             :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.available-from')"
@@ -178,12 +177,9 @@
                 @endphp
     
                 @foreach ($bookingTypes as $bookingType)
-                    <div
-                        class="{{ $bookingType }}-booking-section"
-                        v-if="booking.type === '{{ $bookingType }}'"
-                    >
+                    <template v-if="booking.type === '{{ $bookingType }}'">
                         @include('booking::admin.catalog.products.edit.booking.' . $bookingType, ['bookingProduct' => $bookingProduct])
-                    </div>
+                    </template>
                 @endforeach
             </div>
         </script>

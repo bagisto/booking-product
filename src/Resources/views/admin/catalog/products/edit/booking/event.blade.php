@@ -259,7 +259,8 @@
                                     ::rules="'min_value:0|max_value:' + $refs.price?.value"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.special-price')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.special-price')"
-                                    ::disabled="!$refs.price?.value"
+                                    ::disabled="! $refs.price?.value"
+                                    ref="special_price"
                                 />
 
                                 <x-admin::form.control-group.error control-name="special_price" />
@@ -280,9 +281,10 @@
                                 <x-booking::form.control-group.control
                                     type="datetime"
                                     name="special_price_from"
-                                    :rules="'after:' . $dateMin"
+                                    :rules="'$refs.special_price?.value' ? 'after:' . $dateMin : ''"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.valid-from')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.valid-from')"
+                                    ::disabled="! $refs.special_price?.value"
                                     ref="special_price_from"
                                 />
 
@@ -294,14 +296,14 @@
                                 <x-admin::form.control-group.label>
                                     @lang('booking::app.admin.catalog.products.edit.booking.event.valid-until')
                                 </x-admin::form.control-group.label>
-            
+
                                 <x-admin::form.control-group.control
                                     type="datetime"
                                     name="special_price_to"
-                                    ::rules="'after:' + $refs.special_price_from?.value"
+                                    ::rules="$refs.special_price_from?.value ? 'after:' + $refs.special_price_from?.value : ''"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.valid-until')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.valid-until')"
-                                    ref="special_price_to"
+                                    ::disabled="! $refs.special_price?.value"
                                 />
             
                                 <x-admin::form.control-group.error control-name="special_price_to" />

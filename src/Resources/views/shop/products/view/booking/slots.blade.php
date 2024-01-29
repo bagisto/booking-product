@@ -69,7 +69,7 @@
 
             data() {
                 return {
-                    slots: []
+                    slots: [],
                 }
             },
 
