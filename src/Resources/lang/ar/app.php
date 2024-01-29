@@ -193,6 +193,10 @@ return [
                 'index' => [
                     'booking' => 'الحجز',
                 ],
+
+                'type' => [
+                    'booking' => 'الحجز',
+                ],
             ],
         ],
 

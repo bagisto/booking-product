@@ -135,7 +135,7 @@
 
                         same_slot_all_days: 1,
 
-                        slots: []
+                        slots: [],
                     }
                 }
             },

@@ -193,6 +193,10 @@ return [
                 'index' => [
                     'booking' => 'رزرو',
                 ],
+
+                'type' => [
+                    'booking' => 'رزرو',
+                ],
             ],
         ],
 

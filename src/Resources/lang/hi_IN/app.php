@@ -193,6 +193,10 @@ return [
                 'index' => [
                     'booking' => 'बुकिंग',
                 ],
+
+                'type' => [
+                    'booking' => 'बुकिंग',
+                ],
             ],
         ],
 

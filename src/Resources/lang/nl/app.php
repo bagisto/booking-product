@@ -188,10 +188,14 @@ return [
                             'title'                => 'Boekingstype',
                         ],
                     ],
+                ],
 
-                    'index'   => [
-                        'booking' => 'Boeking',
-                    ],
+                'index'   => [
+                    'booking' => 'Boeking',
+                ],
+
+                'type'   => [
+                    'booking' => 'Boeking',
                 ],
             ],
         ],

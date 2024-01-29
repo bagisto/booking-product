@@ -23,9 +23,7 @@ class RentalSlot extends Booking
 
         $requestedDate = Carbon::createFromTimeString($date . ' 00:00:00');
 
-        $currentTime = Carbon::now();
-
-        $availableFrom = Carbon::createFromTimeString($currentTime->format('Y-m-d 00:00:00'));
+        $availableFrom = Carbon::createFromTimeString(Carbon::now()->format('Y-m-d 00:00:00'));
 
         $availableTo = Carbon::createFromTimeString('2080-01-01 00:00:00');
 
@@ -58,69 +56,44 @@ class RentalSlot extends Booking
             $endDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d') . ' 00:00:00')
                 ->addMinutes(($toChunks[0] * 60) + $toChunks[1]);
 
-            while (1) {
-                $from = clone $startDayTime;
+            $from = clone $startDayTime;
 
-                $to = clone $startDayTime->addMinutes(60);
+            $to = clone $endDayTime;
 
+            if (
+                (
+                    $availableFrom <= $from
+                    && $from <= $availableTo
+                )
+                && (
+                    $availableTo >= $to
+                    && $to >= $availableFrom
+                )
+                && (
+                    $startDayTime <= $from
+                    && $from <= $endDayTime
+                )
+                && (
+                    $endDayTime >= $to
+                    && $to >= $startDayTime
+                )
+            ) {
                 if (
-                    (
-                        $startDayTime <= $from
-                        && $from <= $availableTo
-                    )
-                    && (
-                        $availableTo >= $to
-                        && $to >= $startDayTime
-                    )
-                    && (
-                        $startDayTime <= $from
-                        && $from <= $endDayTime
-                    )
-                    && (
-                        $endDayTime >= $to
-                        && $to >= $startDayTime
-                    )
+                    $qty = $timeDuration['qty'] ?? 1
+                    && Carbon::now() <= $from
                 ) {
-                    // Get already ordered qty for this slot
-                    $orderedQty = 0;
-
-                    $qty = isset($timeDuration['qty']) ? ($timeDuration['qty'] - $orderedQty) : 1;
-
-                    if (
-                        $qty
-                        && $currentTime <= $from
-                    ) {
-                        if (! isset($slots[$index])) {
-                            $slots[$index]['time'] = $startDayTime->format('h:i A') . ' - ' . $endDayTime->format('h:i A');
-                        }
-
-                        $slots[$index]['slots'][] = [
-                            'from'           => $from->format('h:i A'),
-                            'to'             => $to->format('h:i A'),
-                            'from_timestamp' => $from->getTimestamp(),
-                            'to_timestamp'   => $to->getTimestamp(),
-                            'qty'            => $qty,
-                        ];
+                    if (! isset($slots[$index])) {
+                        $slots[$index]['time'] = $startDayTime->format('h:i A') . ' - ' . $endDayTime->format('h:i A');
                     }
-                } else {
-                    break;
+
+                    $slots[$index]['slots'][] = [
+                        'from'           => $from->format('h:i A'),
+                        'to'             => $to->format('h:i A'),
+                        'from_timestamp' => $from->getTimestamp(),
+                        'to_timestamp'   => $to->getTimestamp(),
+                        'qty'            => $qty,
+                    ];
                 }
-            }
-        }
-
-        foreach ($timeDurations as $index => $timeDuration) {
-            $fromChunks = explode(':', $timeDuration['from']);
-            $toChunks = explode(':', $timeDuration['to']);
-
-            $startDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d') . ' 00:00:00')
-                ->addMinutes(($fromChunks[0] * 60) + $fromChunks[1]);
-
-            $endDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d') . ' 00:00:00')
-                ->addMinutes(($toChunks[0] * 60) + $toChunks[1]);
-
-            while ($startDayTime <= $endDayTime && $startDayTime <= $availableTo) {
-                $from = clone $startDayTime;
-                $to = clone $startDayTime->addMinutes(60);
             }
         }
 
