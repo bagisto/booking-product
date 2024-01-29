@@ -259,7 +259,7 @@
                                     ::rules="'min_value:0|max_value:' + $refs.price?.value"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.special-price')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.special-price')"
-                                    ::disabled="!$refs.price?.value"
+                                    ::disabled="! $refs.price?.value"
                                     ref="special_price"
                                 />
 
