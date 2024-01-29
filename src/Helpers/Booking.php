@@ -245,7 +245,7 @@ class Booking
 
         $slots = [];
 
-        foreach ($timeDurations as $index => $timeDuration) {
+        foreach ($timeDurations as $timeDuration) {
             $fromChunks = explode(':', $timeDuration['from']);
             $toChunks = explode(':', $timeDuration['to']);
 

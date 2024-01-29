@@ -512,7 +512,7 @@
             created() {
                 if (this.default_booking.slots) {
                     let lastIndex = Object.keys(this.default_booking.slots).pop();
-                    
+
                     if (lastIndex) {
                         this.optionRowCount = this.default_booking.slots[lastIndex][0]?.id;
                     }
