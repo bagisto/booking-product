@@ -565,7 +565,7 @@
                 },
 
                 convertIndexToDay(day) {
-                    return this.week_days[day].slice(0, 3);
+                    return this.week_days[day]?.slice(0, 3);
                 },
 
                 removeIndex(dayIndex, timeIndex) {
