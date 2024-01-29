@@ -11,8 +11,8 @@ class EventTicket extends Booking
 {
     /**
      * Returns event date
-     * 
-     * @param \Webkul\BookingProduct\Contracts\BookingProduct $bookingProduct
+     *
+     * @param  \Webkul\BookingProduct\Contracts\BookingProduct  $bookingProduct
      * @return string
      */
     public function getEventDate($bookingProduct)
@@ -21,13 +21,13 @@ class EventTicket extends Booking
 
         $to = Carbon::createFromTimeString($bookingProduct->available_to)->format('d F, Y h:i A');
 
-        return $from . ' - ' . $to;
+        return $from.' - '.$to;
     }
 
     /**
      * Returns tickets
-     * 
-     * @param \Webkul\BookingProduct\Contracts\BookingProduct $bookingProduct
+     *
+     * @param  \Webkul\BookingProduct\Contracts\BookingProduct  $bookingProduct
      * @return array
      */
     public function getTickets($bookingProduct)
@@ -42,7 +42,7 @@ class EventTicket extends Booking
     /**
      * Format ticket price.
      *
-     * @param array $tickets
+     * @param  array  $tickets
      * @return array
      */
     public function formatPrice($tickets)
@@ -68,8 +68,8 @@ class EventTicket extends Booking
 
     /**
      * Return the item if it has a quantity.
-     * 
-     * @param \Webkul\Checkout\Contracts\CartItem|array $cartItem
+     *
+     * @param  \Webkul\Checkout\Contracts\CartItem|array  $cartItem
      * @return bool
      */
     public function isItemHaveQuantity($cartItem)
