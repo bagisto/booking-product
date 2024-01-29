@@ -207,7 +207,7 @@ class Booking
 
     /**
      * Returns slots for a particular day.
-     * 
+     *
      * @param  \Webkul\BookingProduct\Contracts\BookingProduct  $bookingProduct
      */
     public function getSlotsByDate($bookingProduct, string $date): array
@@ -309,9 +309,8 @@ class Booking
 
     /**
      * Returns is item have quantity.
-     * 
-     * @param \Webkul\Checkout\Contracts\CartItem|array $cartItem
-     * 
+     *
+     * @param  \Webkul\Checkout\Contracts\CartItem|array  $cartItem
      * @return bool
      */
     public function isItemHaveQuantity($cartItem)
@@ -344,8 +343,8 @@ class Booking
 
     /**
      * Returns slots that are going to expire.
-     * 
-     * @param \Webkul\Checkout\Contracts\CartItem|array $cartItem
+     *
+     * @param  \Webkul\Checkout\Contracts\CartItem|array  $cartItem
      */
     public function isSlotExpired($cartItem): bool
     {

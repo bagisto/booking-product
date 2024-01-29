@@ -127,11 +127,11 @@
                         <x-admin::form.control-group.label class="required">
                             @lang('booking::app.admin.catalog.products.edit.types.booking.available-from')
                         </x-admin::form.control-group.label>
-    
+
                         @php
                             $dateMin = \Carbon\Carbon::yesterday()->format('Y-m-d 23:59:59');
                         @endphp
-    
+
                         <x-admin::form.control-group.control
                             type="datetime"
                             name="booking[available_from]"
@@ -140,7 +140,7 @@
                             :label="trans('booking::app.admin.catalog.products.edit.types.booking.available-from')"
                             :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.available-from')"
                         />
-    
+
                         <x-admin::form.control-group.error  control-name="booking[available_from]" />
                     </x-admin::form.control-group>
 
@@ -152,7 +152,7 @@
                         <x-admin::form.control-group.label class="required">
                             @lang('booking::app.admin.catalog.products.edit.types.booking.available-to')
                         </x-admin::form.control-group.label>
-    
+
                         <x-admin::form.control-group.control
                             type="datetime"
                             name="booking[available_to]"
@@ -161,7 +161,7 @@
                             :label="trans('booking::app.admin.catalog.products.edit.types.booking.available-to')"
                             :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.available-to')"
                         />
-    
+
                         <x-admin::form.control-group.error  control-name="booking[available_to]" />
                     </x-admin::form.control-group>
                 </div>
