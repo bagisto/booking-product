@@ -29,6 +29,7 @@ export default defineConfig(({ mode }) => {
                 buildDirectory: "themes/booking/build",
                 input: [
                     "src/Resources/assets/css/admin.css",
+                    "src/Resources/assets/js/app.js",
                 ],
                 refresh: true,
             }),

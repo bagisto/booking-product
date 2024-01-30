@@ -12,6 +12,7 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
-    "@vitejs/plugin-vue": "^4.2.3"
+    "@vitejs/plugin-vue": "^4.2.3",
+    "vue-cal": "^4.8.1"
   }
 }
