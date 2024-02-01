@@ -9,6 +9,14 @@
     >
         <div class="calendar-container">
             <vue-cal
+                {{-- :time="false" --}}
+                show-week-numbers
+                :hide-weekdays="[2, 3, 5]"
+                :disable-views="['years', 'year', 'month', 'day']"
+                :events="events"
+            />
+
+            {{-- <vue-cal
                 hide-view-selector
                 :watchRealTime="true"
                 :twelveHour="true"
@@ -18,7 +26,7 @@
                 @ready="getBookings"
                 @view-change="getBookings"
                 :on-event-click="onEventClick"
-            />
+            /> --}}
         </div>
     </script>
 
@@ -41,8 +49,6 @@
                             this.$root.pageLoaded = true;
 
                             this.events = response.data.bookings;
-
-                            console.log(this.events);
                         })
                         .catch(error => {
                             this.$root.pageLoaded = true;

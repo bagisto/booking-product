@@ -34,6 +34,9 @@
         color: #d1d5db;
     }
 
+    .icon-list:before {
+        content: "\e953";
+    }
     .icon-clock:before {
         content: "\e952";
     }

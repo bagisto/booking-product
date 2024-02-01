@@ -1,6 +1,6 @@
 <x-admin::layouts>
     @push('styles')
-        @bagistoVite(['src/Resources/assets/css/admin.css'], 'booking')
+        @bagistoVite(['src/Resources/assets/css/admin.css', 'src/Resources/assets/js/app.js'], 'booking')
     @endpush
 
     <!-- Page Title -->
@@ -14,23 +14,27 @@
         </p>
 
         <div class="flex gap-2.5 items-center">
-            <div class="grid grid-cols-2">
+             <!-- Export Modal -->
+             @if (! request('view_type'))
+                <x-admin::datagrid.export src="{{ route('admin.sales.bookings.index') }}" />
+            @endif
+
+            <!-- View Switcher -->
+            <div class="grid grid-cols-2 border border-gray-300 dark:border-gray-700">
+                <!-- List Icon -->
                 <a
                     href="{{ route('admin.sales.bookings.index') }}"
-                    class="icon-calendar p-1.5 border border-black text-xl cursor-pointer {{ request('view_type') ? '' : 'bg-gray-600 text-white' }}"
+                    class="icon-list p-1.5 text-xl cursor-pointer {{ request('view_type') ? '' : 'bg-blue-700 text-white' }}"
                 >
                 </a>
 
+                <!-- Calender Icon -->
                 <a
                     href="{{ route('admin.sales.bookings.index', ['view_type' => 'calendar']) }}"
-                    class="icon-cancel p-1.5 text-xl border border-black cursor-pointer {{ request('view_type') ? 'bg-gray-600 text-white' : '' }}"
+                    class="icon-calendar p-1.5 text-xl cursor-pointer {{ request('view_type') ? 'bg-blue-700 text-white' : '' }}"
                 >
                 </a>
             </div>
-            <!-- Export Modal -->
-            @if (! request('view_type'))
-                <x-admin::datagrid.export src="{{ route('admin.sales.bookings.index') }}" />
-            @endif
         </div>
     </div>
 
@@ -40,4 +44,5 @@
     @else
         @include('booking::admin.sales.bookings.calendar')
     @endif
+
 </x-admin::layouts>
