@@ -55,10 +55,6 @@
                     })
                     .catch(error => {});
                 },
-
-                onEventClick (event) {
-                    window.location.href = "{{ route('admin.sales.orders.view', 'order_id') }}/".replace('order_id', event.order_id)
-                },
             },
         });
     </script>
