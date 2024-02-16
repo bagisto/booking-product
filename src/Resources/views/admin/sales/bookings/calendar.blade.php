@@ -9,24 +9,25 @@
     >
         <div class="calendar-container">
             <vue-cal
-                {{-- :time="false" --}}
-                show-week-numbers
-                :hide-weekdays="[2, 3, 5]"
-                :disable-views="['years', 'year', 'month', 'day']"
-                :events="events"
-            />
-
-            {{-- <vue-cal
                 hide-view-selector
                 :watchRealTime="true"
                 :twelveHour="true"
-                :disable-views="['years', 'year', 'month', 'day']"
-                style="height: calc(100vh - 240px);"
+                :class="'w-full h-full'"
                 :events="events"
                 @ready="getBookings"
-                @view-change="getBookings"
-                :on-event-click="onEventClick"
-            /> --}}
+            >
+                <template #event="{ event, view }">
+                    <div class="text-xs">
+                        <span>
+                            @{{ event.start }} - @{{ event.end }}
+                        </span>
+
+                        <br />
+
+                        <span v-text="event.full_name"></span>
+                    </div>
+                </template>
+            </vue-cal>
         </div>
     </script>
 
@@ -42,23 +43,23 @@
 
             methods: {
                 getBookings({startDate, endDate}) {
-                    this.$root.pageLoaded = false;
-
-                    this.$http.get("{{ route('admin.sales.bookings.get', ['view_type' => 'calendar']) }}" + `&startDate=${new Date(startDate).toLocaleDateString("en-US")}&endDate=${new Date(endDate).toLocaleDateString("en-US")}`)
-                        .then(response => {
-                            this.$root.pageLoaded = true;
-
-                            this.events = response.data.bookings;
-                        })
-                        .catch(error => {
-                            this.$root.pageLoaded = true;
-                        });
+                    this.$axios.get("{{ route('admin.sales.bookings.get') }}", {
+                        params: {
+                            view_type: 'calendar',
+                            startDate: new Date(startDate).toLocaleDateString("en-US"),
+                            endDate: new Date(endDate).toLocaleDateString("en-US")
+                        }
+                    })
+                    .then(response => {
+                        this.events = response.data.bookings;
+                    })
+                    .catch(error => {});
                 },
 
                 onEventClick (event) {
                     window.location.href = "{{ route('admin.sales.orders.view', 'order_id') }}/".replace('order_id', event.order_id)
-                }
-            }
+                },
+            },
         });
     </script>
 @endpush

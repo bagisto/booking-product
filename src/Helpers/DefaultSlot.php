@@ -32,7 +32,7 @@ class DefaultSlot extends Booking
             return [];
         }
 
-        $requestedDate = Carbon::createFromTimeString($date . ' 00:00:00');
+        $requestedDate = Carbon::createFromTimeString($date.' 00:00:00');
 
         $currentTime = Carbon::now();
 
@@ -74,18 +74,18 @@ class DefaultSlot extends Booking
                 continue;
             }
 
-            $startDate = clone $requestedDate->modify('this ' . $this->daysOfWeek[$timeDuration['from_day']]);
+            $startDate = clone $requestedDate->modify('this '.$this->daysOfWeek[$timeDuration['from_day']]);
 
-            $endDate = clone $requestedDate->modify('this ' . $this->daysOfWeek[$timeDuration['to_day']]);
+            $endDate = clone $requestedDate->modify('this '.$this->daysOfWeek[$timeDuration['to_day']]);
 
-            $startDate = Carbon::createFromTimeString($startDate->format('Y-m-d') . ' ' . $timeDuration['from'] . ':00');
+            $startDate = Carbon::createFromTimeString($startDate->format('Y-m-d').' '.$timeDuration['from'].':00');
 
-            $endDate = Carbon::createFromTimeString($endDate->format('Y-m-d') . ' ' . $timeDuration['to'] . ':00');
+            $endDate = Carbon::createFromTimeString($endDate->format('Y-m-d').' '.$timeDuration['to'].':00');
 
             $slots[] = [
                 'from'      => $startDate->format('h:i A'),
                 'to'        => $endDate->format('h:i A'),
-                'timestamp' => $startDate->getTimestamp() . '-' . $endDate->getTimestamp(),
+                'timestamp' => $startDate->getTimestamp().'-'.$endDate->getTimestamp(),
             ];
         }
 
@@ -127,11 +127,11 @@ class DefaultSlot extends Booking
         $fromChunks = explode(':', $timeDuration['from']);
         $toChunks = explode(':', $timeDuration['to']);
 
-        $startDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d') . ' 00:00:00')
+        $startDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d').' 00:00:00')
             ->addMinutes(($fromChunks[0] * 60) + $fromChunks[1]);
         $tempStartDayTime = clone $startDayTime;
 
-        $endDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d') . ' 00:00:00')
+        $endDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d').' 00:00:00')
             ->addMinutes(($toChunks[0] * 60) + $toChunks[1]);
 
         $isFirstIteration = true;
@@ -143,8 +143,8 @@ class DefaultSlot extends Booking
             if ($isFirstIteration) {
                 $isFirstIteration = false;
             } else {
-                $from->modify('+' . $bookingProductSlot->break_time . ' minutes');
-                $tempStartDayTime->modify('+' . $bookingProductSlot->break_time . ' minutes');
+                $from->modify('+'.$bookingProductSlot->break_time.' minutes');
+                $tempStartDayTime->modify('+'.$bookingProductSlot->break_time.' minutes');
             }
 
             $to = clone $tempStartDayTime;
@@ -179,7 +179,7 @@ class DefaultSlot extends Booking
                     $slots[] = [
                         'from'      => $from->format('h:i A'),
                         'to'        => $to->format('h:i A'),
-                        'timestamp' => $from->getTimestamp() . '-' . $to->getTimestamp(),
+                        'timestamp' => $from->getTimestamp().'-'.$to->getTimestamp(),
                         'qty'       => $qty,
                     ];
                 }

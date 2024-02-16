@@ -1,5 +1,5 @@
 @push('styles')
-    @bagistoVite(['src/Resources/assets/css/admin.css'], 'booking')
+    @bagistoVite(['src/Resources/assets/css/admin.css', 'src/Resources/assets/css/app.js'], 'booking')
 @endpush
 
 @if ($product->type == 'booking')

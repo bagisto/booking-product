@@ -1,8 +1,8 @@
-/**
- * This will track all the images and fonts for publishing.
- */
-import.meta.glob(["../images/**"]);
+import VueCal from 'vue-cal'
+import 'vue-cal/dist/vuecal.css'
 
-import VueCal from "vue-cal";
+app.component("vue-cal", VueCal);
 
-window.app.directive("vue-cal", VueCal);
+window.addEventListener("load", function (event) {
+    app.mount("#app");
+});

@@ -45,4 +45,3 @@
         @apply flex gap-x-1 items-center px-3 py-1.5 bg-blue-600 border border-blue-700 rounded-md text-gray-50 font-semibold cursor-pointer transition-all hover:opacity-[0.9] focus:opacity-[0.9];
     }
 }
-
