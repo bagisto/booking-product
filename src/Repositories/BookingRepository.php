@@ -80,11 +80,23 @@ class BookingRepository extends Repository
             'bookings.order_id',
             'bookings.from as start',
             'bookings.to as end',
+            'orders.status as status',
+            'orders.customer_email as email',
+            'orders.grand_total as total',
+            'orders.created_at as created_at',
+            'addresses.phone as contact',
+            'addresses.address1 as address1',
+            'addresses.address2 as address2',
+            'addresses.city as city',
+            'addresses.state as state',
+            'addresses.country as country',
+            'addresses.postcode as postcode',
         )
             ->addSelect(
                 \DB::raw('CONCAT(orders.customer_first_name, " ", orders.customer_last_name) as full_name')
             )
             ->leftJoin('orders', 'bookings.order_id', '=', 'orders.id')
+            ->leftJoin('addresses', 'bookings.order_id', '=', 'addresses.order_id')
             ->whereBetween('bookings.from', $dateRange)
             ->distinct()
             ->get();

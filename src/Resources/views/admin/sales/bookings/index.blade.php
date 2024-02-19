@@ -1,6 +1,6 @@
 <x-admin::layouts>
     @push('styles')
-        @bagistoVite(['src/Resources/assets/css/admin.css', 'src/Resources/assets/js/app.js'], 'booking')
+        @bagistoVite(['src/Resources/assets/css/admin.css'], 'booking')
     @endpush
 
     <!-- Page Title -->
