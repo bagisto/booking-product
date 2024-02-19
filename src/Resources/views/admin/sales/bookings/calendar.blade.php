@@ -47,7 +47,7 @@
             </vue-cal>
         </div>
 
-        <x-admin::modal ref="myModal">
+        <x-booking::modal ref="myModal">
             <!-- Modal Header -->
             <x-slot:header>
                 <div>
@@ -58,14 +58,14 @@
             <!-- Modal Content -->
             <x-slot:content>
                 <div class="grid">
-                    <div class="grid grid-cols-2 gap-2.5 pb-4 border-b">
-                        <div class="grid grid-cols-1 gap-2">
+                    <div class="grid grid-cols-1 gap-2.5 pb-4 border-b">
+                        <div class="grid grid-cols-[120px_auto] gap-2">
                             <div class="text-gray-500">Booking Date:</div>
     
                             <div>@{{ event.created_at }}</div>
                         </div>
 
-                        <div class="grid grid-cols-1 gap-2">
+                        <div class="grid grid-cols-[120px_auto] gap-2">
                             <div class="text-gray-500">Time Slot:</div>
 
                             <div>
@@ -99,7 +99,7 @@
                                     event.status === 'canceled' ? 'bg-darkPink' :
                                     'bg-green-500',
                                 ]"
-                                v-text="event.status"
+                                v-text="event.status == 'completed' ? 'Done' : event.status"
                             >
                             </div>
                         </div>
@@ -152,7 +152,7 @@
                     @lang('View Details')
                 </button>
             </x-slot>
-        </x-admin::modal>
+        </x-booking::modal>
     </script>
 
     <script type="module">
