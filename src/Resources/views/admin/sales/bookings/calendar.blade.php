@@ -21,7 +21,7 @@
             >
                 <template #event="{ event, view }">
                     <div
-                        class="h-full border-l-4 rounded-l text-left text-xs cursor-pointer"
+                        class="relative h-full border-l-4 rounded-l text-left text-xs cursor-pointer"
                         :class="[
                             event.status === 'pending' ? 'bg-yellow-100 border-yellow-500' :
                             event.status === 'completed' ? 'bg-green-100 border-green-500' :
@@ -30,6 +30,7 @@
                             'bg-green-100 border-green-600',
                             event.time_difference ? 'p-2' : 'p-1'
                         ]"
+                        @click="showTooltip"
                     >
                         <span>
                             @{{ new Date(event.start).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric', minute: '2-digit' }) }} - @{{ new Date(event.end).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric', minute: '2-digit' }) }}
@@ -74,7 +75,7 @@
                         </div>
                     </div>
     
-                    <div class="grid grid-cols-3 gap-2.5 py-4 border-b">
+                    <div class="grid grid-cols-[80px_80px_auto] gap-2.5 py-4 border-b">
                         <div class="grid grid-cols-1 gap-2">
                             <div class="text-gray-500">Order Id</div>
     
@@ -91,7 +92,7 @@
                             <div class="text-gray-500">Status</div>
     
                             <div
-                                class="w-fit px-5 text-white text-base rounded-xl"
+                                class="w-fit px-2.5 py-1 text-white font-medium text-xs rounded-xl"
                                 :class="[
                                     event.status === 'pending' ? 'bg-yellow-500' :
                                     event.status === 'completed' ? 'bg-darkGreen' :
@@ -202,6 +203,48 @@
                     this.event = event;
 
                     this.$refs.myModal.toggle();
+                },
+
+                showTooltip(event) {
+                    let offsetTop = event.target.offsetTop;
+
+                    let offsetLeft = event.target.offsetLeft;
+
+                    let bodyHeight = document.body.clientHeight;
+
+                    let bodyWidth = document.body.clientWidth;
+
+                    let offsetParent = event.target.offsetParent;
+
+                    while (offsetParent) {
+                        offsetTop += offsetParent.offsetTop;
+
+                        offsetLeft += offsetParent.offsetLeft;
+
+                        offsetParent = offsetParent.offsetParent;
+                    }
+
+                    let calendar = document.querySelector('.calender');
+
+                    let finalTop = Math.min(offsetTop, bodyHeight - calendar.offsetHeight - 50);
+
+                    let finalLeft = Math.min(offsetLeft, bodyWidth - calendar.offsetWidth - 50);
+
+                    let finalRight = bodyWidth - finalLeft - event.target.offsetWidth;
+
+                    if (offsetLeft <= bodyWidth / 2) {
+                        calendar.style.right = finalRight + 'px';
+
+                        calendar.style.left = ''; 
+                    } else {
+                        calendar.style.left = finalLeft + 'px';
+
+                        calendar.style.right = ''; 
+                    }
+
+                    calendar.style.top = finalTop + 'px';
+
+                    calendar.classList.add('show');
                 },
 
                 redirect(event) {
