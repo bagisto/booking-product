@@ -74,8 +74,8 @@
                 leave-to-class="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
             >
                 <div
-                    class="calender absolute w-[300px] h-[380px] px-4 py-3 top-full left-1/2 bg-white border border-gray-300 text-xs transform -translate-x-1/2 rounded-md transition-all duration-300 shadow-md z-20"
-                    :class="isOpen ? 'w-[300px] h-[380px] px-4 py-3 top-full left-1/2' : 'hidden'"
+                    class="calendar absolute w-[300px] h-[380px] px-4 py-3 bg-white border border-gray-300 text-xs transform -translate-x-1/2 rounded-md transition-all duration-300 shadow-md z-20"
+                    :class="isOpen ? 'w-[300px] h-[380px] px-4 py-3' : 'hidden'"
                 >
                     <slot name="content">
                         Default Content

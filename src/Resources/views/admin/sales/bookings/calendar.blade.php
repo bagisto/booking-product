@@ -224,22 +224,16 @@
                         offsetParent = offsetParent.offsetParent;
                     }
 
-                    let calendar = document.querySelector('.calender');
+                    let calendar = document.querySelector('.calendar');
 
-                    let finalTop = Math.min(offsetTop, bodyHeight - calendar.offsetHeight - 50);
+                    let finalTop = (Math.min(offsetTop, bodyHeight - calendar.offsetHeight) - 5);
 
-                    let finalLeft = Math.min(offsetLeft, bodyWidth - calendar.offsetWidth - 50);
-
-                    let finalRight = bodyWidth - finalLeft - event.target.offsetWidth;
-
-                    if (offsetLeft <= bodyWidth / 2) {
-                        calendar.style.right = finalRight + 'px';
-
-                        calendar.style.left = ''; 
+                    let finalLeft = Math.min(offsetLeft, bodyWidth - calendar.offsetWidth);
+                    
+                    if (calendar.offsetWidth * 2 > offsetLeft) {
+                        calendar.style.left = (calendar.offsetWidth + offsetLeft + 50) + 'px';
                     } else {
-                        calendar.style.left = finalLeft + 'px';
-
-                        calendar.style.right = ''; 
+                        calendar.style.left = (finalLeft - 50) + 'px';
                     }
 
                     calendar.style.top = finalTop + 'px';
