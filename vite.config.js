@@ -28,8 +28,7 @@ export default defineConfig(({ mode }) => {
                 publicDirectory: "../../../public",
                 buildDirectory: "themes/booking/build",
                 input: [
-                    "src/Resources/assets/css/admin.css",
-                    "src/Resources/assets/js/app.js",
+                    "src/Resources/assets/css/app.css",
                 ],
                 refresh: true,
             }),
