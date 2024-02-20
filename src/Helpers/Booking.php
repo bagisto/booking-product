@@ -259,16 +259,16 @@ class Booking
 
             $isFirstIteration = true;
 
-            $isFirstIteration = true;
-
             while (1) {
                 $from = clone $tempStartDayTime;
+
                 $tempStartDayTime->addMinutes($bookingProductSlot->duration);
 
                 if ($isFirstIteration) {
                     $isFirstIteration = false;
                 } else {
                     $from->modify('+'.$bookingProductSlot->break_time.' minutes');
+
                     $tempStartDayTime->modify('+'.$bookingProductSlot->break_time.' minutes');
                 }
 

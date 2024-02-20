@@ -62,10 +62,9 @@ class DefaultSlot extends Booking
      * Returns slots for One Booking For Many Days
      *
      * @param  \Webkul\BookingProduct\Contracts\BookingProductTableSlot  $bookingProductSlot
-     * @param  string  $requestedDate
      * @return array
      */
-    public function getOneBookingForManyDaysSlots($bookingProductSlot, $requestedDate)
+    public function getOneBookingForManyDaysSlots($bookingProductSlot, object $requestedDate)
     {
         $slots = [];
 
@@ -96,10 +95,9 @@ class DefaultSlot extends Booking
      * Returns slots for Many Bookings for One Day
      *
      * @param  \Webkul\BookingProduct\Contracts\BookingProductTableSlot  $bookingProductSlot
-     * @param  string  $requestedDate
      * @return array
      */
-    public function getManyBookingsForOneDaySlots($bookingProductSlot, $requestedDate)
+    public function getManyBookingsForOneDaySlots($bookingProductSlot, object $requestedDate)
     {
         $bookingProduct = $bookingProductSlot->booking_product;
 
@@ -113,78 +111,83 @@ class DefaultSlot extends Booking
             ? Carbon::createFromTimeString($bookingProduct->available_to)
             : Carbon::createFromTimeString('2080-01-01 00:00:00');
 
-        $timeDuration = $bookingProductSlot->slots[0][$requestedDate->format('w')] ?? [];
+        $timeDurations = $bookingProductSlot->slots[$requestedDate->format('w')] ?? [];
 
         if (
-            empty($timeDuration)
-            || ! $timeDuration['status']
+            $requestedDate < $availableFrom
+            || $requestedDate > $availableTo
         ) {
             return [];
         }
 
         $slots = [];
 
-        $fromChunks = explode(':', $timeDuration['from']);
-        $toChunks = explode(':', $timeDuration['to']);
+        foreach ($timeDurations as $timeDuration) {
 
-        $startDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d').' 00:00:00')
-            ->addMinutes(($fromChunks[0] * 60) + $fromChunks[1]);
-        $tempStartDayTime = clone $startDayTime;
+            $fromChunks = explode(':', $timeDuration['from']);
+            $toChunks = explode(':', $timeDuration['to']);
 
-        $endDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d').' 00:00:00')
-            ->addMinutes(($toChunks[0] * 60) + $toChunks[1]);
+            $startDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d').' 00:00:00')
+                ->addMinutes(($fromChunks[0] * 60) + $fromChunks[1]);
 
-        $isFirstIteration = true;
+            $tempStartDayTime = clone $startDayTime;
 
-        while (1) {
-            $from = clone $tempStartDayTime;
-            $tempStartDayTime->addMinutes($bookingProductSlot->duration);
+            $endDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d').' 00:00:00')
+                ->addMinutes(($toChunks[0] * 60) + $toChunks[1]);
 
-            if ($isFirstIteration) {
-                $isFirstIteration = false;
-            } else {
-                $from->modify('+'.$bookingProductSlot->break_time.' minutes');
-                $tempStartDayTime->modify('+'.$bookingProductSlot->break_time.' minutes');
-            }
+            $isFirstIteration = true;
 
-            $to = clone $tempStartDayTime;
+            while (1) {
+                $from = clone $tempStartDayTime;
 
-            if (
-                (
-                    $startDayTime <= $from
-                    && $from <= $availableTo
-                )
-                && (
-                    $availableTo >= $to
-                    && $to >= $startDayTime
-                )
-                && (
-                    $startDayTime <= $from
-                    && $from <= $endDayTime
-                )
-                && (
-                    $endDayTime >= $to
-                    && $to >= $startDayTime
-                )
-            ) {
-                // Get already ordered qty for this slot
-                $orderedQty = 0;
+                $tempStartDayTime->addMinutes($bookingProductSlot->duration);
 
-                $qty = isset($timeDuration['qty']) ? ($timeDuration['qty'] - $orderedQty) : 1;
+                if ($isFirstIteration) {
+                    $isFirstIteration = false;
+                } else {
+                    $from->modify('+'.$bookingProductSlot->break_time.' minutes');
+
+                    $tempStartDayTime->modify('+'.$bookingProductSlot->break_time.' minutes');
+                }
+
+                $to = clone $tempStartDayTime;
 
                 if (
-                    $qty
-                    && $currentTime <= $from
+                    ($startDayTime <= $from
+                        && $from <= $availableTo
+                    )
+                    && (
+                        $availableTo >= $to
+                        && $to >= $startDayTime
+                    )
+                    && (
+                        $startDayTime <= $from
+                        && $from <= $endDayTime
+                    )
+                    && (
+                        $endDayTime >= $to
+                        && $to >= $startDayTime
+                    )
                 ) {
-                    $slots[] = [
-                        'from'      => $from->format('h:i A'),
-                        'to'        => $to->format('h:i A'),
-                        'timestamp' => $from->getTimestamp().'-'.$to->getTimestamp(),
-                        'qty'       => $qty,
-                    ];
+                    // Get already ordered qty for this slot
+                    $orderedQty = 0;
+
+                    $qty = isset($timeDuration['qty']) ? ($timeDuration['qty'] - $orderedQty) : 1;
+
+                    if (
+                        $qty = $timeDuration['qty'] ?? 1
+                        && $currentTime <= $from
+                    ) {
+                        $slots[] = [
+                            'from'      => $from->format('h:i A'),
+                            'to'        => $to->format('h:i A'),
+                            'timestamp' => $from->getTimestamp().'-'.$to->getTimestamp(),
+                            'qty'       => $qty,
+                        ];
+                    }
+                } else {
+                    break;
                 }
-            } else {
-                break;
             }
         }
 
