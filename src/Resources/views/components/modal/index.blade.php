@@ -74,7 +74,7 @@
                 leave-to-class="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
             >
                 <div
-                    class="absolute top-2/3 left-1/2 w-[340px] h-[400px] overflow-y-auto bg-white border border-gray-300 rounded-md shadow-md z-1"
+                    class="absolute w-[340px] h-[380px] px-4 py-3 top-full left-1/2 bg-white border border-gray-300 text-xs transform -translate-x-1/2 rounded-md transition-all duration-300 shadow-md z-20"
                     v-if="isOpen"
                 >
                     <slot name="content">

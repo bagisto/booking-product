@@ -123,7 +123,6 @@ class DefaultSlot extends Booking
         $slots = [];
 
         foreach ($timeDurations as $timeDuration) {
-
             $fromChunks = explode(':', $timeDuration['from']);
             $toChunks = explode(':', $timeDuration['to']);
 
