@@ -206,15 +206,15 @@
                 },
 
                 showTooltip(event) {
-                    let offsetTop = event.target.offsetTop;
+                    let targetElement = event.target;
 
-                    let offsetLeft = event.target.offsetLeft;
+                    let offsetTop = targetElement.offsetTop;
 
-                    let bodyHeight = document.body.clientHeight;
+                    let offsetLeft = targetElement.offsetLeft;
 
-                    let bodyWidth = document.body.clientWidth;
+                    let offsetParent = targetElement.offsetParent;
 
-                    let offsetParent = event.target.offsetParent;
+                    let calendar = document.querySelector('.calendar');
 
                     while (offsetParent) {
                         offsetTop += offsetParent.offsetTop;
@@ -224,16 +224,14 @@
                         offsetParent = offsetParent.offsetParent;
                     }
 
-                    let calendar = document.querySelector('.calendar');
+                    let finalTop = Math.min(offsetTop, document.body.clientHeight - calendar.offsetHeight);
 
-                    let finalTop = (Math.min(offsetTop, bodyHeight - calendar.offsetHeight) - 5);
+                    let finalLeft = Math.min(offsetLeft, document.body.clientWidth - calendar.offsetWidth);
 
-                    let finalLeft = Math.min(offsetLeft, bodyWidth - calendar.offsetWidth);
-                    
-                    if (calendar.offsetWidth * 2 > offsetLeft) {
-                        calendar.style.left = (calendar.offsetWidth + offsetLeft + 50) + 'px';
+                    if (calendar.offsetWidth * 3 > offsetLeft) {
+                        calendar.style.left = (calendar.offsetWidth + offsetLeft + 25) + 'px';
                     } else {
-                        calendar.style.left = (finalLeft - 50) + 'px';
+                        calendar.style.left = (finalLeft - 40) + 'px';
                     }
 
                     calendar.style.top = finalTop + 'px';
