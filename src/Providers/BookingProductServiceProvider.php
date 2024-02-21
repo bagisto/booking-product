@@ -12,15 +12,15 @@ class BookingProductServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->loadRoutesFrom(__DIR__ . '/../Routes/web.php');
+        $this->loadRoutesFrom(__DIR__.'/../Routes/web.php');
 
-        $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../Database/Migrations');
 
-        $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'booking');
+        $this->loadTranslationsFrom(__DIR__.'/../Resources/lang', 'booking');
 
-        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'booking');
+        $this->loadViewsFrom(__DIR__.'/../Resources/views', 'booking');
 
-        Blade::anonymousComponentPath(__DIR__ . '/../Resources/views/components', 'booking');
+        Blade::anonymousComponentPath(__DIR__.'/../Resources/views/components', 'booking');
 
         $this->app->register(EventServiceProvider::class);
 
@@ -32,10 +32,10 @@ class BookingProductServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(dirname(__DIR__) . '/Config/product_types.php', 'product_types');
+        $this->mergeConfigFrom(dirname(__DIR__).'/Config/product_types.php', 'product_types');
 
         $this->mergeConfigFrom(
-            dirname(__DIR__) . '/Config/menu.php', 'menu.admin'
+            dirname(__DIR__).'/Config/menu.php', 'menu.admin'
         );
     }
 }

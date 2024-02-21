@@ -21,7 +21,7 @@ class RentalSlot extends Booking
             return [];
         }
 
-        $requestedDate = Carbon::createFromTimeString($date . ' 00:00:00');
+        $requestedDate = Carbon::createFromTimeString($date.' 00:00:00');
 
         $availableFrom = Carbon::createFromTimeString(Carbon::now()->format('Y-m-d 00:00:00'));
 
@@ -50,10 +50,10 @@ class RentalSlot extends Booking
             $fromChunks = explode(':', $timeDuration['from']);
             $toChunks = explode(':', $timeDuration['to']);
 
-            $startDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d') . ' 00:00:00')
+            $startDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d').' 00:00:00')
                 ->addMinutes(($fromChunks[0] * 60) + $fromChunks[1]);
 
-            $endDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d') . ' 00:00:00')
+            $endDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d').' 00:00:00')
                 ->addMinutes(($toChunks[0] * 60) + $toChunks[1]);
 
             $from = clone $startDayTime;
@@ -83,7 +83,7 @@ class RentalSlot extends Booking
                     && Carbon::now() <= $from
                 ) {
                     if (! isset($slots[$index])) {
-                        $slots[$index]['time'] = $startDayTime->format('h:i A') . ' - ' . $endDayTime->format('h:i A');
+                        $slots[$index]['time'] = $startDayTime->format('h:i A').' - '.$endDayTime->format('h:i A');
                     }
 
                     $slots[$index]['slots'][] = [
@@ -112,9 +112,9 @@ class RentalSlot extends Booking
         $rentingType = $data['additional']['booking']['renting_type'] ?? $bookingProduct->rental_slot->renting_type;
 
         if ($rentingType == 'daily') {
-            $from = Carbon::createFromTimeString($data['additional']['booking']['date_from'] . ' 00:00:01')->getTimestamp();
+            $from = Carbon::createFromTimeString($data['additional']['booking']['date_from'].' 00:00:01')->getTimestamp();
 
-            $to = Carbon::createFromTimeString($data['additional']['booking']['date_to'] . ' 23:59:59')->getTimestamp();
+            $to = Carbon::createFromTimeString($data['additional']['booking']['date_to'].' 23:59:59')->getTimestamp();
         } else {
             $from = Carbon::createFromTimestamp($data['additional']['booking']['slot']['from'])->getTimestamp();
 
@@ -161,16 +161,16 @@ class RentalSlot extends Booking
         } else {
             $currentTime = Carbon::now();
 
-            $requestedFromDate = Carbon::createFromTimeString($cartItem['additional']['booking']['date_from'] . ' 00:00:00');
+            $requestedFromDate = Carbon::createFromTimeString($cartItem['additional']['booking']['date_from'].' 00:00:00');
 
-            $requestedToDate = Carbon::createFromTimeString($cartItem['additional']['booking']['date_to'] . ' 23:59:59');
+            $requestedToDate = Carbon::createFromTimeString($cartItem['additional']['booking']['date_to'].' 23:59:59');
 
             $availableFrom = ! $bookingProduct->available_every_week && $bookingProduct->available_from
-                ? Carbon::createFromTimeString($bookingProduct->available_from->format('Y-m-d') . ' 00:00:00')
+                ? Carbon::createFromTimeString($bookingProduct->available_from->format('Y-m-d').' 00:00:00')
                 : Carbon::createFromTimeString($currentTime->format('Y-m-d 00:00:00'));
 
             $availableTo = ! $bookingProduct->available_every_week && $bookingProduct->available_from
-                ? Carbon::createFromTimeString($bookingProduct->available_to->format('Y-m-d') . ' 23:59:59')
+                ? Carbon::createFromTimeString($bookingProduct->available_to->format('Y-m-d').' 23:59:59')
                 : Carbon::createFromTimeString('2080-01-01 00:00:00');
 
             return
@@ -191,8 +191,8 @@ class RentalSlot extends Booking
         $rentingType = $products[0]['additional']['booking']['renting_type'] ?? $bookingProduct->rental_slot->renting_type;
 
         if ($rentingType == 'daily') {
-            $from = Carbon::createFromTimeString($products[0]['additional']['booking']['date_from'] . ' 00:00:00');
-            $to = Carbon::createFromTimeString($products[0]['additional']['booking']['date_to'] . ' 24:00:00');
+            $from = Carbon::createFromTimeString($products[0]['additional']['booking']['date_from'].' 00:00:00');
+            $to = Carbon::createFromTimeString($products[0]['additional']['booking']['date_to'].' 24:00:00');
 
             $price = $bookingProduct->rental_slot->daily_price * $to->diffInDays($from);
         } else {
@@ -247,8 +247,8 @@ class RentalSlot extends Booking
                 return $result;
             }
 
-            $from = Carbon::createFromTimeString($bookingInfo['date_from'] . ' 00:00:00');
-            $to = Carbon::createFromTimeString($bookingInfo['date_to'] . ' 24:00:00');
+            $from = Carbon::createFromTimeString($bookingInfo['date_from'].' 00:00:00');
+            $to = Carbon::createFromTimeString($bookingInfo['date_to'].' 24:00:00');
 
             $price += $bookingProduct->rental_slot->daily_price * $to->diffInDays($from);
         } else {

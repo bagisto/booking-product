@@ -28,7 +28,8 @@ export default defineConfig(({ mode }) => {
                 publicDirectory: "../../../public",
                 buildDirectory: "themes/booking/build",
                 input: [
-                    "src/Resources/assets/css/admin.css",
+                    "src/Resources/assets/css/app.css",
+                    "src/Resources/assets/js/vue-cal.js",
                 ],
                 refresh: true,
             }),

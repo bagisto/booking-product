@@ -119,7 +119,7 @@ class BookingProductRepository extends Repository
                     $slots = [];
 
                     foreach ($data['slots'][$i] as $slot) {
-                        $slots[] = array_merge($slot, ['id' => $i . '_slot_' . $count]);
+                        $slots[] = array_merge($slot, ['id' => $i.'_slot_'.$count]);
 
                         $count++;
                     }
@@ -139,10 +139,7 @@ class BookingProductRepository extends Repository
      */
     public function addSlots(array $data): array
     {
-        if (
-            isset($data['same_slot_all_days'])
-            && ! $data['same_slot_all_days']
-        ) {
+        if (isset($data['same_slot_all_days']) && ! $data['same_slot_all_days']) {
             return [[], [], [], [], [], [], []];
         } else {
             return (
