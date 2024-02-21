@@ -15,7 +15,7 @@ To install the Booking Product Extension, follow these steps:
 ##### 2. Open the composer.json file and add the following line under the 'psr-4' section:
 
 ~~~
-"Webkul\\BookingProduct\\": "packages/Webkul/BookingProduct/src",
+"Webkul\\BookingProduct\\": "packages/Webkul/BookingProduct/src"
 ~~~
 
 ##### 3. In the config/app.php file, add the following line under the 'providers' section:
