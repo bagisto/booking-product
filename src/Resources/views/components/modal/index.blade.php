@@ -13,8 +13,8 @@
     @endisset
 
     @isset($header)
-        <template v-slot:header="{ open, isOpen }">
-            <div {{ $header->attributes->merge(['class' => 'flex justify-between items-center gap-2.5 px-4 py-3 border-b dark:border-gray-800']) }}>
+        <template v-slot:header>
+            <div {{ $header->attributes->merge(['class' => 'flex justify-between items-center gap-2.5 px-2.5 py-3']) }}>
                 {{ $header }}
             </div>
         </template>
@@ -22,7 +22,7 @@
 
     @isset($content)
         <template v-slot:content>
-            <div {{ $content->attributes->merge(['class' => 'px-2.5 py-4 border-b dark:border-gray-800']) }}>
+            <div {{ $content->attributes->merge(['class' => 'px-2.5 py-2.5 border-b dark:border-gray-800']) }}>
                 {{ $content }}
             </div>
         </template>
@@ -32,10 +32,10 @@
         <template v-slot:footer="{ close, isOpen }">
             <div {{ $content->attributes->merge(['class' => 'flex gap-4 justify-end items-center py-2.5']) }}>
                 <span
-                    class="cursor-pointer text-blue-500 font-medium text-sm"
+                    class="cursor-pointer text-blue-500 font-medium text-sm hover:text-blue-600"
+                    v-text="'@lang('booking::app.component.modal.close')'"
                     @click="close"
                 >
-                    Close
                 </span>
 
                 {{ $footer }}
@@ -75,8 +75,12 @@
             >
                 <div
                     class="calendar absolute bg-white border border-gray-300 text-xs transform -translate-x-1/2 rounded-md transition-all duration-300 shadow-md z-20"
-                    :class="isOpen ? 'w-[300px] h-[380px] px-4 py-3' : 'hidden'"
+                    :class="isOpen ? 'w-[300px] h-fit px-4 py-3' : 'hidden'"
                 >
+                    <slot name="header">
+                        Default Header
+                    </slot>
+
                     <slot name="content">
                         Default Content
                     </slot>
@@ -86,6 +90,7 @@
                         :close="close"
                         :isOpen="isOpen"
                     >
+                        Default footer
                     </slot>
                 </div>
             </transition>

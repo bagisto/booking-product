@@ -50,26 +50,38 @@
 
         <x-booking::modal ref="myModal">
             <!-- Modal Header -->
-            <x-slot:header>
-                <div>
-                    @lang('Booking')
+            <x-slot:header class="!py-0">
+                <div class="text-lg font-medium text-[#1F2937]">
+                    @lang('booking::app.admin.sales.bookings.calendar.booking-detailes')
                 </div>
             </x-slot>
 
             <!-- Modal Content -->
             <x-slot:content>
-                <div class="grid">
+                <div class="grid text-sm font-normal">
                     <div class="grid grid-cols-1 gap-2.5 pb-4 border-b">
-                        <div class="grid grid-cols-[120px_auto] gap-2">
-                            <div class="text-gray-500">Booking Date:</div>
-    
-                            <div>@{{ event.created_at }}</div>
+                        <div class="grid grid-cols-[100px_auto] gap-2">
+                            <div
+                                class="text-gray-500"
+                                v-text="'@lang('booking::app.admin.sales.bookings.calendar.booking-date')'"
+                            >
+                            </div>
+
+                            <div
+                                class="font-medium text-[#1F2937]"
+                                v-text="new Date(event.created_at).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })"
+                            >
+                            </div>
                         </div>
 
-                        <div class="grid grid-cols-[120px_auto] gap-2">
-                            <div class="text-gray-500">Time Slot:</div>
+                        <div class="grid grid-cols-[100px_auto] gap-2">
+                            <div
+                                class="text-gray-500"
+                                v-text="'@lang('booking::app.admin.sales.bookings.calendar.time-slot')'"
+                            >
+                            </div>
 
-                            <div>
+                            <div class="font-medium text-[#1F2937]">
                                 @{{ new Date(event.start).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric', minute: '2-digit' }) }} - @{{ new Date(event.end).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric', minute: '2-digit' }) }}
                             </div>
                         </div>
@@ -77,22 +89,40 @@
     
                     <div class="grid grid-cols-[80px_80px_auto] gap-2.5 py-4 border-b">
                         <div class="grid grid-cols-1 gap-2">
-                            <div class="text-gray-500">Order Id</div>
+                            <div
+                                class="text-gray-500"
+                                v-text="'@lang('booking::app.admin.sales.bookings.calendar.order-id')'"
+                            >
+                            </div>
     
-                            <div>#@{{ event.order_id }}</div>
+                            <div class="font-medium text-[#1F2937]">
+                                #@{{ event.order_id }}
+                            </div>
                         </div>
     
                         <div class="grid grid-cols-1 gap-2">
-                            <div class="text-gray-500">Price</div>
+                            <div    
+                                class="text-gray-500"
+                                v-text="'@lang('booking::app.admin.sales.bookings.calendar.price')'"
+                            >
+                            </div>
     
-                            <div v-text="event.total"></div>
+                            <div    
+                                class="font-medium text-[#1F2937]"
+                                v-text="event.total"
+                            >
+                            </div>
                         </div>
     
                         <div class="grid grid-cols-1 gap-2">
-                            <div class="text-gray-500">Status</div>
+                            <div
+                                class="text-gray-500"
+                                v-text="'@lang('booking::app.admin.sales.bookings.calendar.status')'"
+                            >
+                            </div>
     
                             <div
-                                class="w-fit px-2.5 py-1 text-white font-medium text-xs rounded-xl"
+                                class="w-fit px-2.5 py-1 text-white font-medium rounded-2xl "
                                 :class="[
                                     event.status === 'pending' ? 'bg-yellow-500' :
                                     event.status === 'completed' ? 'bg-darkGreen' :
@@ -100,33 +130,39 @@
                                     event.status === 'canceled' ? 'bg-darkPink' :
                                     'bg-green-500',
                                 ]"
-                                v-text="event.status == 'completed' ? 'Done' : event.status"
+                                v-text="event.status == 'completed'
+                                    ? '@lang('booking::app.admin.sales.bookings.calendar.done')'
+                                    : event.status"
                             >
                             </div>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 gap-2.5 pt-4">
+                    <div class="grid grid-cols-1 gap-2.5 pt-4 items-center text-[#1F2937]">
+                        <!-- Customer Name -->
                         <div class="flex gap-2 items-center">
-                            <span class="icon-customer-2 text-2xl"></span>
+                            <span class="icon-customer-2 text-2xl text-gray-500"></span>
 
                             <span v-text="event.full_name"></span>
                         </div>
 
+                        <!-- Customer Email -->
                         <div class="flex gap-2 items-center">
-                            <span class="icon-mail text-2xl"></span>
+                            <span class="icon-mail text-2xl text-gray-500"></span>
 
                             <span v-text="event.email"></span>
                         </div>
 
+                        <!-- Customer Phone Number -->
                         <div class="flex gap-2">
-                            <span class="icon-information text-2xl"></span>
+                            <span class="icon-phone-number text-2xl text-gray-500"></span>
 
                             <span v-text="event.contact"></span>
                         </div>
 
+                        <!-- Customer Address -->
                         <div class="flex gap-2">
-                            <span class="icon-location text-2xl"></span>
+                            <span class="icon-location text-2xl text-gray-500"></span>
 
                             <span>
                                 <template v-if="event.address1">
@@ -148,9 +184,9 @@
             </x-slot>
 
             <!-- Modal Footer -->
-            <x-slot:footer>
+            <x-slot:footer class="!pb-0">
                 <button class="primary-button" @click="redirect">
-                    @lang('View Details')
+                    @lang('booking::app.admin.sales.bookings.calendar.view-details')
                 </button>
             </x-slot>
         </x-booking::modal>
@@ -185,6 +221,7 @@
                             const differenceInMinutes = Math.floor((new Date(element.end) - new Date(element.start)) / (1000 * 60));
 
                             const formattedHours = String(Math.floor(differenceInMinutes / 60)).padStart(2, '0');
+
                             const formattedMinutes = String(differenceInMinutes % 60).padStart(2, '0');
                             
                             const totalMinutes = formattedHours * 60 + formattedMinutes;

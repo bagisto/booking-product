@@ -1,4 +1,6 @@
-<div id="root"></div>
+@if ($product->type == 'booking')
+    <div id="root"></div>
+@endif
 
 @pushOnce('scripts')
     <script>

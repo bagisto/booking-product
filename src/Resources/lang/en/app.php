@@ -215,8 +215,28 @@ return [
                     'title'    => 'Bookings Product',
                 ],
 
+                'calendar' => [
+                    'booking-date' => 'Booking Date',
+                    'booking-detailes' => 'Booking Details',
+                    'canceled' => 'Canceled',
+                    'closed'   => 'Closed',
+                    'done'     => 'Done',
+                    'order-id' => 'Order Id',
+                    'pending'  => 'Pending',
+                    'price' => 'Price',
+                    'status' => 'Status',
+                    'time-slot' => 'Time Slot:',
+                    'view-details' => 'View Details',
+                ],
+
                 'title' => 'Bookings Product',
             ],
+        ],
+    ],
+
+    'component' => [
+        'modal' => [
+            'close' => 'Close',
         ],
     ],
 

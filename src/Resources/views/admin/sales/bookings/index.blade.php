@@ -44,4 +44,5 @@
     @else
         @include('booking::admin.sales.bookings.calendar')
     @endif
+
 </x-admin::layouts>
