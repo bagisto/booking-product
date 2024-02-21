@@ -1,0 +1,16 @@
+{
+  "src/Resources/assets/css/app.css": {
+    "file": "assets/app-1a986084.css",
+    "isEntry": true,
+    "src": "src/Resources/assets/css/app.css"
+  },
+  "src/Resources/assets/fonts/booking.woff": {
+    "file": "assets/booking-e486554d.woff",
+    "src": "src/Resources/assets/fonts/booking.woff"
+  },
+  "src/Resources/assets/js/vue-cal.js": {
+    "file": "assets/vue-cal-be7d1b67.js",
+    "isEntry": true,
+    "src": "src/Resources/assets/js/vue-cal.js"
+  }
+}

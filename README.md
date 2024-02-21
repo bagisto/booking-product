@@ -48,14 +48,11 @@ php artisan migrate
 php artisan optimize:clear
 ~~~
 
-##### 6. Run the following commands under the path packages/Webkul/BookingProduct to generate the assets build file.
+~~~
+php artisan vendor:publish
 
 ~~~
-npm i
-~~~
 
-~~~
-npm run build
-~~~
+-> Press the number before "Webkul\BookingProduct\Providers\BookingProductServiceProvider" and then press enter to publish all assets and configurations.
 
 After following these steps, the Booking Product Extension should be successfully installed and ready for use in your Bagisto v2.0 project.

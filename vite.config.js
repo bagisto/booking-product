@@ -25,8 +25,7 @@ export default defineConfig(({ mode }) => {
             
             laravel({
                 hotFile: "../../../public/booking-vite.hot",
-                publicDirectory: "../../../public",
-                buildDirectory: "themes/booking/build",
+                publicDirectory: "publishable",
                 input: [
                     "src/Resources/assets/css/app.css",
                     "src/Resources/assets/js/vue-cal.js",
