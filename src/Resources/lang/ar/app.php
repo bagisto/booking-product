@@ -202,6 +202,20 @@ return [
 
         'sales'   => [
             'bookings' => [
+                'calendar' => [
+                    'booking-date'     => 'تاريخ الحجز',
+                    'booking-detailes' => 'تفاصيل الحجز',
+                    'canceled'         => 'ملغاة',
+                    'closed'           => 'مغلقة',
+                    'done'             => 'منتهي',
+                    'order-id'         => 'رقم الطلب',
+                    'pending'          => 'قيد الانتظار',
+                    'price'            => 'السعر',
+                    'status'           => 'الحالة',
+                    'time-slot'        => 'فترة زمنية:',
+                    'view-details'     => 'عرض التفاصيل',
+                ],
+
                 'index' => [
                     'datagrid' => [
                         'created-date' => 'تاريخ الإنشاء',
@@ -217,6 +231,12 @@ return [
 
                 'title' => 'منتجات الحجوزات',
             ],
+        ],
+    ],
+
+    'component' => [
+        'modal' => [
+            'close' => 'إغلاق',
         ],
     ],
 

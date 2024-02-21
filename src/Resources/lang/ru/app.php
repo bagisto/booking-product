@@ -202,6 +202,20 @@ return [
 
         'sales'   => [
             'bookings' => [
+                'calendar' => [
+                    'booking-date'     => 'Дата бронирования',
+                    'booking-detailes' => 'Детали бронирования',
+                    'canceled'         => 'Отменено',
+                    'closed'           => 'Закрыто',
+                    'done'             => 'Выполнено',
+                    'order-id'         => 'Идентификатор заказа',
+                    'pending'          => 'В ожидании',
+                    'price'            => 'Цена',
+                    'status'           => 'Статус',
+                    'time-slot'        => 'Временной слот:',
+                    'view-details'     => 'Просмотреть детали',
+                ],
+
                 'index' => [
                     'datagrid' => [
                         'created-date' => 'Дата создания',
@@ -217,6 +231,12 @@ return [
 
                 'title' => 'Товары для бронирования',
             ],
+        ],
+    ],
+
+    'component' => [
+        'modal' => [
+            'close' => 'Закрыть',
         ],
     ],
 

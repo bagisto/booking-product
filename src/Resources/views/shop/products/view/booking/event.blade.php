@@ -20,7 +20,10 @@
 </div>
 
 @pushOnce('scripts')
-    <script type="text/x-template" id="v-event-tickets-template">
+    <script
+        type="text/x-template"
+        id="v-event-tickets-template"
+    >
         <div class="grid grid-cols-1 gap-4">
             <div class="text-xl font-medium">
                 @lang('booking::app.shop.products.view.booking.event.book-your-ticket')
@@ -32,36 +35,38 @@
                 :class="tickets?.length - index == 1 ? '' : 'pb-4'"
             >
                 <div class="grid gap-1.5">
-                    <p v-text="ticket.name"></p>
-    
-                    <div v-if="ticket.original_formatted_price">
+                    <p  
+                        class="font-medium"
+                        v-text="ticket.name"
+                    >
+                    </p>
+
+                    <div
+                        v-if="ticket.original_formatted_price"
+                        class="text-[#6E6E6E]"
+                    >
                         <p
-                            class="mr-1.5 text-[#6E6E6E] line-through"
+                            class="mr-1.5 line-through"
                             v-text="ticket.original_formatted_price"
                         >
                         </p>
-    
+
                         <p
-                            class="text-lg text-[#6E6E6E]"
+                            class="text-lg"
                             v-text="ticket.formatted_price_text"
                         >
                         </p>
                     </div>
-    
+
                     <p
                         v-else
-                        class="text-[#6E6E6E]"
                         v-text="ticket.formatted_price_text"
                     >
                     </p>
-    
-                    <div
-                        class="text-[#6E6E6E]"
-                        v-text="ticket.description"
-                    >
-                    </div>
+
+                    <div v-text="ticket.description"></div>
                 </div>
-    
+
                 <div class="place-items-end">
                     <x-shop::quantity-changer
                         class="gap-x-4 w-max rounded-xl py-2.5 px-4 mt-5 !border-[#E9E9E9]"

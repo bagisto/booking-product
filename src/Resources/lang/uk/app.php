@@ -202,6 +202,20 @@ return [
 
         'sales'   => [
             'bookings' => [
+                'calendar' => [
+                    'booking-date'     => 'Дата бронювання',
+                    'booking-detailes' => 'Деталі бронювання',
+                    'canceled'         => 'Скасовано',
+                    'closed'           => 'Закрито',
+                    'done'             => 'Виконано',
+                    'order-id'         => 'Ідентифікатор замовлення',
+                    'pending'          => 'Очікується',
+                    'price'            => 'Ціна',
+                    'status'           => 'Статус',
+                    'time-slot'        => 'Часовий проміжок:',
+                    'view-details'     => 'Переглянути деталі',
+                ],
+
                 'index' => [
                     'datagrid' => [
                         'created-date' => 'Дата створення',
@@ -217,6 +231,12 @@ return [
 
                 'title' => 'Продукт бронювань',
             ],
+        ],
+    ],
+
+    'component' => [
+        'modal' => [
+            'close' => 'Закрити',
         ],
     ],
 

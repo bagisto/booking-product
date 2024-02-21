@@ -202,6 +202,20 @@ return [
 
         'sales'   => [
             'bookings' => [
+                'calendar' => [
+                    'booking-date'     => '予約日',
+                    'booking-detailes' => '予約詳細',
+                    'canceled'         => 'キャンセル',
+                    'closed'           => '閉じる',
+                    'done'             => '完了',
+                    'order-id'         => '注文ID',
+                    'pending'          => '保留中',
+                    'price'            => '価格',
+                    'status'           => 'ステータス',
+                    'time-slot'        => '時間帯：',
+                    'view-details'     => '詳細を表示',
+                ],
+
                 'index' => [
                     'datagrid' => [
                         'created-date' => '作成日',
@@ -217,6 +231,12 @@ return [
 
                 'title' => '予約製品',
             ],
+        ],
+    ],
+
+    'component' => [
+        'modal' => [
+            'close' => '閉じる',
         ],
     ],
 

@@ -202,6 +202,20 @@ return [
 
         'sales'   => [
             'bookings' => [
+                'calendar' => [
+                    'booking-date'     => 'বুকিং তারিখ',
+                    'booking-detailes' => 'বুকিং বিবরণ',
+                    'canceled'         => 'বাতিল করা হয়েছে',
+                    'closed'           => 'বন্ধ',
+                    'done'             => 'সম্পন্ন',
+                    'order-id'         => 'অর্ডার আইডি',
+                    'pending'          => 'মুলতুবি',
+                    'price'            => 'মূল্য',
+                    'status'           => 'অবস্থা',
+                    'time-slot'        => 'সময় স্লট:',
+                    'view-details'     => 'বিস্তারিত দেখুন',
+                ],
+
                 'index' => [
                     'datagrid' => [
                         'created-date' => 'তৈরির তারিখ',
@@ -217,6 +231,12 @@ return [
 
                 'title' => 'বুকিং প্রোডাক্ট',
             ],
+        ],
+    ],
+
+    'component' => [
+        'modal' => [
+            'close' => 'বন্ধ',
         ],
     ],
 

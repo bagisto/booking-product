@@ -200,8 +200,28 @@ return [
             ],
         ],
 
+        'component' => [
+            'modal' => [
+                'close' => 'Fechar',
+            ],
+        ],
+
         'sales'   => [
             'bookings' => [
+                'calendar' => [
+                    'booking-date'     => 'Data da Reserva',
+                    'booking-detailes' => 'Detalhes da Reserva',
+                    'canceled'         => 'Cancelado',
+                    'closed'           => 'Fechado',
+                    'done'             => 'Concluído',
+                    'order-id'         => 'ID do Pedido',
+                    'pending'          => 'Pendente',
+                    'price'            => 'Preço',
+                    'status'           => 'Status',
+                    'time-slot'        => 'Intervalo de Tempo:',
+                    'view-details'     => 'Ver Detalhes',
+                ],
+
                 'index' => [
                     'datagrid' => [
                         'created-date' => 'Data de Criação',

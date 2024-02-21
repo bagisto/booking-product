@@ -1,7 +1,10 @@
 <v-book-slots :bookingProduct = "{{ $bookingProduct }}" />
 
 @pushOnce('scripts')
-    <script type="text/x-template" id="v-book-slots-template">
+    <script
+        type="text/x-template"
+        id="v-book-slots-template"
+    >
         <div>
             <x-shop::form.control-group.label class="required">
                 {{ $title  ?? trans('booking::app.shop.products.view.booking.slots.book-an-appointment') }}

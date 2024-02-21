@@ -202,6 +202,20 @@ return [
 
         'sales'   => [
             'bookings' => [
+                'calendar' => [
+                    'booking-date'     => '预订日期',
+                    'booking-detailes' => '预订详情',
+                    'canceled'         => '已取消',
+                    'closed'           => '已关闭',
+                    'done'             => '已完成',
+                    'order-id'         => '订单编号',
+                    'pending'          => '待处理',
+                    'price'            => '价格',
+                    'status'           => '状态',
+                    'time-slot'        => '时间段：',
+                    'view-details'     => '查看详情',
+                ],
+
                 'index' => [
                     'datagrid' => [
                         'created-date' => '创建日期',
@@ -217,6 +231,12 @@ return [
 
                 'title' => '预订产品',
             ],
+        ],
+    ],
+
+    'component' => [
+        'modal' => [
+            'close' => '关闭',
         ],
     ],
 

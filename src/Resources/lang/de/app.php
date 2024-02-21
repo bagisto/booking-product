@@ -202,6 +202,20 @@ return [
 
         'sales'   => [
             'bookings' => [
+                'calendar' => [
+                    'booking-date'     => 'Buchungsdatum',
+                    'booking-detailes' => 'Buchungsdetails',
+                    'canceled'         => 'Abgesagt',
+                    'closed'           => 'Geschlossen',
+                    'done'             => 'Erledigt',
+                    'order-id'         => 'Bestellnummer',
+                    'pending'          => 'Ausstehend',
+                    'price'            => 'Preis',
+                    'status'           => 'Status',
+                    'time-slot'        => 'Zeitfenster:',
+                    'view-details'     => 'Details anzeigen',
+                ],
+
                 'index' => [
                     'datagrid' => [
                         'created-date' => 'Erstellungsdatum',
@@ -217,6 +231,11 @@ return [
 
                 'title' => 'Buchungsprodukt',
             ],
+        ],
+    ],
+    'component' => [
+        'modal' => [
+            'close' => 'Schließen',
         ],
     ],
 

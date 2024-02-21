@@ -202,6 +202,20 @@ return [
 
         'sales'   => [
             'bookings' => [
+                'calendar' => [
+                    'booking-date'     => 'बुकिंग दिनांक',
+                    'booking-detailes' => 'बुकिंग विवरण',
+                    'canceled'         => 'रद्द',
+                    'closed'           => 'बंद',
+                    'done'             => 'संपन्न',
+                    'order-id'         => 'आदेश आईडी',
+                    'pending'          => 'अपूर्ण',
+                    'price'            => 'मूल्य',
+                    'status'           => 'स्थिति',
+                    'time-slot'        => 'समय स्लॉट:',
+                    'view-details'     => 'विवरण देखें',
+                ],
+
                 'index' => [
                     'datagrid' => [
                         'created-date' => 'बनाया गया तिथि',
@@ -217,6 +231,12 @@ return [
 
                 'title' => 'बुकिंग्स प्रोडक्ट',
             ],
+        ],
+    ],
+
+    'component' => [
+        'modal' => [
+            'close' => 'बंद करे',
         ],
     ],
 

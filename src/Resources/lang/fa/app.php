@@ -202,6 +202,20 @@ return [
 
         'sales'   => [
             'bookings' => [
+                'calendar' => [
+                    'booking-date'     => 'تاریخ رزرو',
+                    'booking-detailes' => 'جزئیات رزرو',
+                    'canceled'         => 'لغو شده',
+                    'closed'           => 'بسته',
+                    'done'             => 'انجام شده',
+                    'order-id'         => 'شناسه سفارش',
+                    'pending'          => 'در انتظار',
+                    'price'            => 'قیمت',
+                    'status'           => 'وضعیت',
+                    'time-slot'        => 'تایم‌اسلات:',
+                    'view-details'     => 'مشاهده جزئیات',
+                ],
+
                 'index' => [
                     'datagrid' => [
                         'created-date' => 'تاریخ ایجاد',
@@ -217,6 +231,12 @@ return [
 
                 'title' => 'محصول رزروها',
             ],
+        ],
+    ],
+
+    'component' => [
+        'modal' => [
+            'close' => 'بستن',
         ],
     ],
 

@@ -202,6 +202,20 @@ return [
 
         'sales'   => [
             'bookings' => [
+                'calendar' => [
+                    'booking-date'     => 'දිනය ගෙවීම්',
+                    'booking-detailes' => 'දිනය තොරතුරු',
+                    'canceled'         => 'අවලංගු කරන ලදි',
+                    'closed'           => 'වසා ඇත',
+                    'done'             => 'කළ යුතු',
+                    'order-id'         => 'ඇණවුම් අංකය',
+                    'pending'          => 'අක්‍රීය',
+                    'price'            => 'මිල',
+                    'status'           => 'ස්ත්‍රී/තත්ත්වය',
+                    'time-slot'        => 'වේලාව:',
+                    'view-details'     => 'විස්තර බලන්න',
+                ],
+
                 'index' => [
                     'datagrid' => [
                         'created-date' => 'නිර්මාණය කළ දිනය',
@@ -217,6 +231,12 @@ return [
 
                 'title' => 'ගිනුම් ප්‍රවේශ නිර්මාණය',
             ],
+        ],
+    ],
+
+    'component' => [
+        'modal' => [
+            'close' => 'වසන්න',
         ],
     ],
 

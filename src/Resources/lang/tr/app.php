@@ -202,6 +202,20 @@ return [
 
         'sales'   => [
             'bookings' => [
+                'calendar' => [
+                    'booking-date'     => 'Rezervasyon Tarihi',
+                    'booking-detailes' => 'Rezervasyon Detayları',
+                    'canceled'         => 'İptal Edildi',
+                    'closed'           => 'Kapalı',
+                    'done'             => 'Tamamlandı',
+                    'order-id'         => 'Sipariş Kimliği',
+                    'pending'          => 'Beklemede',
+                    'price'            => 'Fiyat',
+                    'status'           => 'Durum',
+                    'time-slot'        => 'Zaman Aralığı:',
+                    'view-details'     => 'Detayları Görüntüle',
+                ],
+
                 'index' => [
                     'datagrid' => [
                         'created-date' => 'Oluşturulma Tarihi',
@@ -217,6 +231,12 @@ return [
 
                 'title' => 'Rezervasyon Ürünü',
             ],
+        ],
+    ],
+
+    'component' => [
+        'modal' => [
+            'close' => 'Kapat',
         ],
     ],
 

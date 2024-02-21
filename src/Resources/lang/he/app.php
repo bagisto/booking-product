@@ -202,6 +202,20 @@ return [
 
         'sales'   => [
             'bookings' => [
+                'calendar' => [
+                    'booking-date'     => 'תאריך ההזמנה',
+                    'booking-detailes' => 'פרטי ההזמנה',
+                    'canceled'         => 'בוטל',
+                    'closed'           => 'סגור',
+                    'done'             => 'בוצע',
+                    'order-id'         => 'מספר הזמנה',
+                    'pending'          => 'ממתין',
+                    'price'            => 'מחיר',
+                    'status'           => 'מצב',
+                    'time-slot'        => 'תקופת זמן:',
+                    'view-details'     => 'הצג פרטים',
+                ],
+
                 'index' => [
                     'datagrid' => [
                         'created-date' => 'תאריך יצירה',
@@ -217,6 +231,12 @@ return [
 
                 'title' => 'מוצרי הזמנה',
             ],
+        ],
+    ],
+
+    'component' => [
+        'modal' => [
+            'close' => 'סגור',
         ],
     ],
 

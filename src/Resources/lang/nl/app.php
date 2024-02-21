@@ -202,6 +202,20 @@ return [
 
         'sales'   => [
             'bookings' => [
+                'calendar' => [
+                    'booking-date'     => 'Boekingsdatum',
+                    'booking-detailes' => 'Boekingsgegevens',
+                    'canceled'         => 'Geannuleerd',
+                    'closed'           => 'Gesloten',
+                    'done'             => 'Voltooid',
+                    'order-id'         => 'Bestelnummer',
+                    'pending'          => 'In Afwachting',
+                    'price'            => 'Prijs',
+                    'status'           => 'Status',
+                    'time-slot'        => 'Tijdslot:',
+                    'view-details'     => 'Details weergeven',
+                ],
+
                 'index' => [
                     'datagrid' => [
                         'created-date' => 'Aanmaakdatum',
@@ -217,6 +231,12 @@ return [
 
                 'title' => 'Boekingsproducten',
             ],
+        ],
+    ],
+
+    'component' => [
+        'modal' => [
+            'close' => 'Sluiten',
         ],
     ],
 

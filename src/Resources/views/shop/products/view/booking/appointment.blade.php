@@ -69,14 +69,14 @@
                 >
                 </p>
 
-                <p class="text-sm text-gray-600">
+                <p class="grid gap-y-2.5 text-sm text-gray-600">
                     <template v-if="day.slots && day.slots?.length">
                         <div v-for="slot in day.slots">
                             @{{ slot.from }} - @{{ slot.to }}
                         </div>
                     </template>
 
-                    <div v-else class="label-canceled">
+                    <div v-else>
                         @lang('booking::app.shop.products.view.booking.appointment.closed')
                     </div>
                 </p>

@@ -185,7 +185,10 @@
 
             <!-- Modal Footer -->
             <x-slot:footer class="!pb-0">
-                <button class="primary-button" @click="redirect">
+                <button
+                    class="primary-button"
+                    @click="redirect"
+                >
                     @lang('booking::app.admin.sales.bookings.calendar.view-details')
                 </button>
             </x-slot>
@@ -216,7 +219,7 @@
                     .then(response => {
                         this.events = response.data.bookings;
 
-                        // Getting a difference between start time and end time for a single event for adding a check on calendar data display as name and time and booking id.
+                        // Getting a difference between start time and end time.
                         this.events.forEach(element => {
                             const differenceInMinutes = Math.floor((new Date(element.end) - new Date(element.start)) / (1000 * 60));
 

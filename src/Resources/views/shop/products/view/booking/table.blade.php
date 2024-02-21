@@ -97,7 +97,7 @@
                         </div>
                     </template>
 
-                    <div v-else class="label-canceled">
+                    <div v-else>
                         @lang('booking::app.shop.products.view.booking.table.closed')
                     </div>
                 </p>
