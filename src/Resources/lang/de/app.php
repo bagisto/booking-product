@@ -233,11 +233,6 @@ return [
             ],
         ],
     ],
-    'component' => [
-        'modal' => [
-            'close' => 'Schließen',
-        ],
-    ],
 
     'shop'  => [
         'products' => [

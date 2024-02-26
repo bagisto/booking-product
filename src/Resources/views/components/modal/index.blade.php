@@ -13,31 +13,30 @@
     @endisset
 
     @isset($header)
-        <template v-slot:header>
-            <div {{ $header->attributes->merge(['class' => 'flex justify-between items-center gap-2.5 px-2.5 py-3']) }}>
+        <template v-slot:header="{ close, isOpen }">
+            <div {{ $header->attributes->merge(['class' => 'flex justify-between items-center gap-2.5 py-3']) }}>
                 {{ $header }}
+
+                <span
+                    class="icon-cancel-1 text-3xl  cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-950 hover:rounded-md"
+                    @click="close"
+                >
+                </span>
             </div>
         </template>
     @endisset
 
     @isset($content)
         <template v-slot:content>
-            <div {{ $content->attributes->merge(['class' => 'px-2.5 py-2.5 border-b dark:border-gray-800']) }}>
+            <div {{ $content->attributes->merge(['class' => 'py-2.5 border-b dark:border-gray-800']) }}>
                 {{ $content }}
             </div>
         </template>
     @endisset
 
     @isset($footer)
-        <template v-slot:footer="{ close, isOpen }">
-            <div {{ $content->attributes->merge(['class' => 'flex gap-4 justify-end items-center py-2.5']) }}>
-                <span
-                    class="cursor-pointer text-blue-500 font-medium text-sm hover:text-blue-600"
-                    v-text="'@lang('booking::app.component.modal.close')'"
-                    @click="close"
-                >
-                </span>
-
+        <template v-slot:footer>
+            <div {{ $content->attributes->merge(['class' => 'flex gap-4 justify-end py-2.5']) }}>
                 {{ $footer }}
             </div>
         </template>
@@ -45,7 +44,10 @@
 </v-modal>
 
 @pushOnce('scripts')
-    <script type="text/x-template" id="v-modal-template">
+    <script
+        type="text/x-template"
+        id="v-modal-template"
+    >
         <div>
             <div @click="open">
                 <slot name="open"></slot>
@@ -77,7 +79,11 @@
                     class="calendar absolute bg-white border border-gray-300 text-xs transform -translate-x-1/2 rounded-md transition-all duration-300 shadow-md z-20"
                     :class="isOpen ? 'w-[300px] h-fit px-4 py-3' : 'hidden'"
                 >
-                    <slot name="header">
+                    <slot
+                        name="header"
+                        :close="close"
+                        :isOpen="isOpen"
+                    >
                         Default Header
                     </slot>
 
@@ -85,11 +91,7 @@
                         Default Content
                     </slot>
                     
-                    <slot
-                        name="footer"
-                        :close="close"
-                        :isOpen="isOpen"
-                    >
+                    <slot name="footer">
                         Default footer
                     </slot>
                 </div>

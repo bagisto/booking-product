@@ -234,12 +234,6 @@ return [
         ],
     ],
 
-    'component' => [
-        'modal' => [
-            'close' => 'বন্ধ',
-        ],
-    ],
-
     'shop'  => [
         'products' => [
             'booking' => [

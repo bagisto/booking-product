@@ -234,12 +234,6 @@ return [
         ],
     ],
 
-    'component' => [
-        'modal' => [
-            'close' => 'Kapat',
-        ],
-    ],
-
     'shop'  => [
         'products' => [
             'booking' => [
