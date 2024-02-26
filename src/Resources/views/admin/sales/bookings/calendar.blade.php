@@ -30,7 +30,7 @@
                             'bg-green-100 border-green-600',
                             event.time_difference ? 'p-2' : 'p-1'
                         ]"
-                        @click="showTooltip"
+                        @click="showTooltip($event)"
                     >
                         <span>
                             @{{ new Date(event.start).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric', minute: '2-digit' }) }} - @{{ new Date(event.end).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric', minute: '2-digit' }) }}
@@ -246,39 +246,35 @@
                 },
 
                 showTooltip(event) {
-                    this.$nextTick(() => {
-                        const element = event.target;
+                    const element = event.currentTarget;
 
-                        const elementTopOffset = element.getBoundingClientRect().top + window.pageYOffset;
+                    const elementTopOffset = element.getBoundingClientRect().top + window.pageYOffset;
 
-                        const parent = element.parentNode.parentNode.parentNode.parentNode;
+                    const parentLeftOffset = element.closest(".vuecal__cell--has-events").offsetLeft;
 
-                        const parentLeftOffset = parent.offsetLeft;
+                    const elementWidth = element.offsetWidth;
 
-                        const elementWidth = element.offsetWidth;
+                    const calendar = document.querySelector('.calendar');
 
-                        const calendar = document.querySelector('.calendar');
+                    const calendarWidth = calendar.offsetWidth;
 
-                        const calendarWidth = calendar.offsetWidth;
+                    calendar.style.top = Math.min(elementTopOffset, document.body.clientHeight - calendar.offsetHeight) + 'px';
 
-                        calendar.style.top = Math.min(elementTopOffset, document.body.clientHeight - calendar.offsetHeight) + 'px';
+                    calendar.style.right = '';
 
-                        calendar.style.right = '';
+                    calendar.style.left = '';
 
-                        calendar.style.left = '';
-
-                        if (parentLeftOffset > calendarWidth) {
-                            calendar.style.left = parentLeftOffset - 75 + "px";
+                    if (parentLeftOffset > calendarWidth) {
+                        calendar.style.left = parentLeftOffset - 75 + "px";
+                    } else {
+                        if (elementWidth < parentLeftOffset) {
+                            calendar.style.right = parentLeftOffset + elementWidth + 75 + "px";
                         } else {
-                            if (elementWidth < parentLeftOffset) {
-                                calendar.style.right = parentLeftOffset + elementWidth + 75 + "px";
-                            } else {
-                                calendar.style.left = calendarWidth + (elementWidth - parentLeftOffset) + 60 + "px";
-                            }
+                            calendar.style.left = calendarWidth + (elementWidth - parentLeftOffset) + 60 + "px";
                         }
+                    }
 
-                        calendar.classList.add('show');
-                    });
+                    calendar.classList.add('show');
                 },
 
                 redirect(event) {
