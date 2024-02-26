@@ -223,7 +223,7 @@
 
                             <template v-else>
                                 <p class="text-gray-500">
-                                    @lang('Unavailalable')
+                                    @lang('booking::app.admin.catalog.products.edit.booking.default.unavailable')
                                 </p>
                             </template>
                         </div>

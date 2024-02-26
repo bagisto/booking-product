@@ -59,6 +59,7 @@ return [
                             'slot-title'       => 'Slots Time Duration',
                             'slot-duration'    => 'Slot Duration (Mins)',
                             'title'            => 'Default',
+                            'unavailable'      => 'Unavailable',
                         ],
 
                         'event'       => [

@@ -26,7 +26,7 @@ return [
                             'edit'             => 'Edytuj',
                             'many'             => 'Wiele rezerwacji na jeden dzień',
 
-                            'modal'          => [
+                            'modal'            => [
                                 'slot' => [
                                     'add-title'  => 'Dodaj Sloty',
                                     'close'      => 'Zamknij',
@@ -53,12 +53,13 @@ return [
                                 ],
                             ],
 
-                            'one'            => 'Jedna rezerwacja na wiele dni',
-                            'open'           => 'Otwórz',
-                            'slot-add'       => 'Dodaj sloty',
-                            'slot-title'     => 'Czas trwania slotów',
-                            'slot-duration'  => 'Czas trwania slotu (minuty)',
-                            'title'          => 'Domyślne',
+                            'one'              => 'Jedna rezerwacja na wiele dni',
+                            'open'             => 'Otwórz',
+                            'slot-add'         => 'Dodaj sloty',
+                            'slot-title'       => 'Czas trwania slotów',
+                            'slot-duration'    => 'Czas trwania slotu (minuty)',
+                            'title'            => 'Domyślne',
+                            'unavailable'      => 'niedostępne',
                         ],
 
                         'event'       => [
