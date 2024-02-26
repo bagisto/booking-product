@@ -246,37 +246,39 @@
                 },
 
                 showTooltip(event) {
-                    let targetElement = event.target;
+                    this.$nextTick(() => {
+                        const element = event.target;
 
-                    let offsetTop = targetElement.offsetTop;
+                        const elementTopOffset = element.getBoundingClientRect().top + window.pageYOffset;
 
-                    let offsetLeft = targetElement.offsetLeft;
+                        const parent = element.parentNode.parentNode.parentNode.parentNode;
 
-                    let offsetParent = targetElement.offsetParent;
+                        const parentLeftOffset = parent.offsetLeft;
 
-                    let calendar = document.querySelector('.calendar');
+                        const elementWidth = element.offsetWidth;
 
-                    while (offsetParent) {
-                        offsetTop += offsetParent.offsetTop;
+                        const calendar = document.querySelector('.calendar');
 
-                        offsetLeft += offsetParent.offsetLeft;
+                        const calendarWidth = calendar.offsetWidth;
 
-                        offsetParent = offsetParent.offsetParent;
-                    }
+                        calendar.style.top = Math.min(elementTopOffset, document.body.clientHeight - calendar.offsetHeight) + 'px';
 
-                    let finalTop = Math.min(offsetTop, document.body.clientHeight - calendar.offsetHeight);
+                        calendar.style.right = '';
 
-                    let finalLeft = Math.min(offsetLeft, document.body.clientWidth - calendar.offsetWidth);
+                        calendar.style.left = '';
 
-                    if (calendar.offsetWidth * 3 > offsetLeft) {
-                        calendar.style.left = (calendar.offsetWidth + offsetLeft + 25) + 'px';
-                    } else {
-                        calendar.style.left = (finalLeft - 40) + 'px';
-                    }
+                        if (parentLeftOffset > calendarWidth) {
+                            calendar.style.left = parentLeftOffset - 75 + "px";
+                        } else {
+                            if (elementWidth < parentLeftOffset) {
+                                calendar.style.right = parentLeftOffset + elementWidth + 75 + "px";
+                            } else {
+                                calendar.style.left = calendarWidth + (elementWidth - parentLeftOffset) + 60 + "px";
+                            }
+                        }
 
-                    calendar.style.top = finalTop + 'px';
-
-                    calendar.classList.add('show');
+                        calendar.classList.add('show');
+                    });
                 },
 
                 redirect(event) {
