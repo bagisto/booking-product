@@ -19,11 +19,6 @@
                 @view-change="getBookings"
                 :on-event-click="onEventClick"
             >
-                <!-- Calendar Header -->
-                <template #title="{ title }">
-                    <div v-text="title"></div>
-                </template>
-
                 <!-- Left Arrow -->
                 <template #arrow-prev="">
                     <span class="icon-sort-left"></span>
@@ -32,6 +27,11 @@
                 <!-- Right Arrow -->
                 <template #arrow-next="">
                     <span class="icon-sort-right"></span>
+                </template>
+
+                <!-- No Events Content -->
+                <template #no-event>
+                    <p class="hidden"></p>
                 </template>
 
                 <!-- Contecnt -->
