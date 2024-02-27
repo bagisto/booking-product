@@ -116,7 +116,7 @@
                                     class="text-sm text-gray-600 dark:text-gray-300"
                                     v-if="element.special_price_from"
                                 >
-                                    @lang('booking::app.admin.catalog.products.edit.booking.event.special-price-from') - @{{ element.special_price_from }}
+                                    @lang('booking::app.admin.catalog.products.edit.booking.event.special-price-from') - @{{ element.special_price_from }},
                                 </span>
 
                                 <!-- Valid Until -->
@@ -239,9 +239,9 @@
                                     type="text"
                                     name="price"
                                     rules="required"
+                                    v-model="price"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.price')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.price')"
-                                    ref="price"
                                 />
 
                                 <x-admin::form.control-group.error control-name="price" />
@@ -256,11 +256,11 @@
                                 <x-admin::form.control-group.control
                                     type="number"
                                     name="special_price"
-                                    ::rules="'min_value:0|max_value:' + $refs.price?.value"
+                                    ::rules="'min_value:0|max_value:' + price"
+                                    v-model="special_price"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.special-price')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.special-price')"
-                                    ::disabled="! $refs.price?.value"
-                                    ref="special_price"
+                                    ::disabled="! price"
                                 />
 
                                 <x-admin::form.control-group.error control-name="special_price" />
@@ -274,18 +274,14 @@
                                     @lang('booking::app.admin.catalog.products.edit.booking.event.valid-from')
                                 </x-booking::form.control-group.label>
 
-                                @php
-                                    $dateMin = \Carbon\Carbon::yesterday()->format('Y-m-d 23:59:59');
-                                @endphp
-
                                 <x-booking::form.control-group.control
                                     type="datetime"
                                     name="special_price_from"
-                                    :rules="'$refs.special_price?.value' ? 'after:' . $dateMin : ''"
+                                    ::rules="special_price" 
+                                    v-model="special_price_from"
+                                    ::disabled="!special_price"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.valid-from')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.valid-from')"
-                                    ::disabled="! $refs.special_price?.value"
-                                    ref="special_price_from"
                                 />
 
                                 <x-booking::form.control-group.error control-name="special_price_from" />
@@ -300,10 +296,10 @@
                                 <x-admin::form.control-group.control
                                     type="datetime"
                                     name="special_price_to"
-                                    ::rules="$refs.special_price_from?.value ? 'after:' + $refs.special_price_from?.value : ''"
+                                    ::rules="special_price_from ? 'after:' + special_price_from : ''"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.valid-until')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.valid-until')"
-                                    ::disabled="! $refs.special_price?.value"
+                                    ::disabled="! special_price"
                                 />
             
                                 <x-admin::form.control-group.error control-name="special_price_to" />
@@ -344,6 +340,16 @@
                     optionRowCount: 0,
 
                     currentLocaleCode: @json(core()->getCurrentLocale()->code),
+
+                    special_price: '', 
+
+                    yesterday: '{{ \Carbon\Carbon::yesterday()->format('Y-m-d 23:59:59') }}'
+                }
+            },
+
+            computed: {
+                special_price() {
+                    return this.special_price ? `after:${this.yesterday}` : '';
                 }
             },
 
