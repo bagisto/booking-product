@@ -275,7 +275,7 @@
 
                     const sidebar = document.getElementsByClassName('sidebar-collapsed');
 
-                    const sidebarNotCollapsed = document.getElementsByClassName('sidebar-not-collapsed')[0];
+                    const sidebarNotCollapsed = document.getElementsByClassName('sidebar-not-collapsed');
 
                     const parentLeftOffset = sidebar.length ? parent.offsetLeft : parent.offsetLeft + 200;
                     
@@ -291,10 +291,10 @@
 
                     calendar.style.left = '';
 
-                    const sidebarFirstChildWidth;
+                    let sidebarFirstChildWidth;
 
-                    if (sidebarNotCollapsed.length && ! sidebar.length) {
-                        sidebarFirstChildWidth = sidebarNotCollapsed.firstChild.clientWidth;
+                    if (sidebarNotCollapsed?.length && ! sidebar.length) {
+                        sidebarFirstChildWidth = sidebarNotCollapsed[0].firstChild.clientWidth;
                     }
 
                     if (parentLeftOffset > calendarWidth) {
