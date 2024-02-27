@@ -19,9 +19,25 @@
                 @view-change="getBookings"
                 :on-event-click="onEventClick"
             >
+                <!-- Calendar Header -->
+                <template #title="{ title }">
+                    <div v-text="title"></div>
+                </template>
+
+                <!-- Left Arrow -->
+                <template #arrow-prev="">
+                    <span class="icon-sort-left"></span>
+                </template>
+
+                <!-- Right Arrow -->
+                <template #arrow-next="">
+                    <span class="icon-sort-right"></span>
+                </template>
+
+                <!-- Contecnt -->
                 <template #event="{ event, view }">
                     <div
-                        class="relative h-full border-l-4 rounded-l text-left text-xs cursor-pointer"
+                        class="slot relative h-full border-l-4 rounded-l text-left text-xs cursor-pointer"
                         :class="[
                             event.status === 'pending' ? 'bg-yellow-100 border-yellow-500' :
                             event.status === 'completed' ? 'bg-green-100 border-green-500' :
@@ -50,7 +66,7 @@
 
         <x-booking::modal ref="myModal">
             <!-- Modal Header -->
-            <x-slot:header class="!py-0">
+            <x-slot:header class="!pb-0">
                 <div class="text-lg font-medium text-[#1F2937]">
                     @lang('booking::app.admin.sales.bookings.calendar.booking-detailes')
                 </div>
@@ -59,7 +75,7 @@
             <!-- Modal Content -->
             <x-slot:content>
                 <div class="grid text-sm font-normal">
-                    <div class="grid grid-cols-1 gap-2.5 pb-4 border-b">
+                    <div class="grid grid-cols-1 gap-2.5 pb-4  px-4 border-b">
                         <div class="grid grid-cols-[100px_auto] gap-2">
                             <div
                                 class="text-gray-500"
@@ -87,7 +103,7 @@
                         </div>
                     </div>
     
-                    <div class="grid grid-cols-[80px_80px_auto] gap-2.5 py-4 border-b">
+                    <div class="grid grid-cols-[80px_80px_auto] gap-2.5 py-4  px-4 border-b">
                         <div class="grid grid-cols-1 gap-2">
                             <div
                                 class="text-gray-500"
@@ -130,15 +146,20 @@
                                     event.status === 'canceled' ? 'bg-darkPink' :
                                     'bg-green-500',
                                 ]"
-                                v-text="event.status == 'completed'
-                                    ? '@lang('booking::app.admin.sales.bookings.calendar.done')'
-                                    : event.status"
                             >
+                                <span v-text="
+                                    event.status === 'completed' ? '@lang('booking::app.admin.sales.bookings.calendar.done')' :
+                                    event.status === 'pending' ? '@lang('booking::app.admin.sales.bookings.calendar.pending')' :
+                                    event.status === 'canceled' ? '@lang('booking::app.admin.sales.bookings.calendar.canceled')' :
+                                    event.status === 'closed' ? '@lang('booking::app.admin.sales.bookings.calendar.closed')' :
+                                    event.status"
+                                >
+                                </span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 gap-2.5 pt-4 items-center text-[#1F2937]">
+                    <div class="grid grid-cols-1 gap-2.5 pt-4  px-4 items-center font-medium text-[#1F2937]">
                         <!-- Customer Name -->
                         <div class="flex gap-2 items-center">
                             <span class="icon-customer-2 text-2xl text-gray-500"></span>
@@ -186,7 +207,7 @@
             <!-- Modal Footer -->
             <x-slot:footer class="!pb-0">
                 <button
-                    class="primary-button"
+                    class="primary-button p-2.5 text-base"
                     @click="redirect"
                 >
                     @lang('booking::app.admin.sales.bookings.calendar.view-details')
@@ -283,4 +304,40 @@
             },
         });
     </script>
+
+    <style>
+        .vuecal__title-bar {
+            background-color: transparent;
+            border-bottom: 1px solid #ddd;
+            color: #1F2937;
+        }
+
+        .vuecal__title-bar .vuecal__title {
+            width: fit-content;
+        }
+
+        .vuecal__heading {
+            height: 100%;
+        }
+
+        .vuecal__heading .weekday-label {
+            display: grid;
+            height: fit-content;
+            justify-content: left;
+            text-align:left;
+            padding: 6px 25px;
+        }
+
+        .weekday-label .full, .weekday-label .small, .weekday-label .xsmall {
+            font-size: 12px;
+            font-weight: 700;
+        } 
+
+        .weekday-label span {
+            font-size: 24px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: #1F2937;
+        }
+    </style>
 @endpush
