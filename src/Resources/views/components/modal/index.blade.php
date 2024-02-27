@@ -76,7 +76,7 @@
                 leave-to-class="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
             >
                 <div
-                    class="calendar absolute bg-white border border-gray-300 text-xs transform -translate-x-1/2 rounded-md transition-all duration-300 shadow-md z-20"
+                    class="calendar absolute bg-white border border-gray-300 text-xs transform -translate-x-1/2 rounded-md transition-all duration-300 shadow-md z-[9999]"
                     :class="isOpen ? 'w-[300px] h-fit px-4 py-3' : 'hidden'"
                 >
                     <slot

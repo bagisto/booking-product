@@ -271,11 +271,17 @@
 
                     const elementTopOffset = element.getBoundingClientRect().top + window.pageYOffset;
 
-                    const parentLeftOffset = element.closest(".vuecal__cell--has-events").offsetLeft;
+                    const parent = element.closest(".vuecal__cell--has-events");
+
+                    const sidebar = document.getElementsByClassName('sidebar-collapsed');
+
+                    const sidebarNotCollapsed = document.getElementsByClassName('sidebar-not-collapsed')[0];
+
+                    const parentLeftOffset = sidebar.length ? parent.offsetLeft : parent.offsetLeft + 200;
+                    
+                    const calendar = document.querySelector('.calendar');
 
                     const elementWidth = element.offsetWidth;
-
-                    const calendar = document.querySelector('.calendar');
 
                     const calendarWidth = calendar.offsetWidth;
 
@@ -285,11 +291,25 @@
 
                     calendar.style.left = '';
 
+                    const sidebarFirstChildWidth;
+
+                    if (sidebarNotCollapsed.length && ! sidebar.length) {
+                        sidebarFirstChildWidth = sidebarNotCollapsed.firstChild.clientWidth;
+                    }
+
                     if (parentLeftOffset > calendarWidth) {
-                        calendar.style.left = parentLeftOffset - 75 + "px";
+                        if (! sidebar.length) {
+                            if ((parentLeftOffset - sidebarFirstChildWidth) > calendarWidth) {
+                                calendar.style.left = parentLeftOffset - 75 + "px";
+                            } else {
+                                calendar.style.right = (parentLeftOffset - sidebarFirstChildWidth - 5)  + elementWidth + "px";
+                            }
+                        } else {
+                            calendar.style.left = parentLeftOffset - 75 + "px";
+                        }
                     } else {
                         if (elementWidth < parentLeftOffset) {
-                            calendar.style.right = parentLeftOffset + elementWidth + 75 + "px";
+                            calendar.style.right = parentLeftOffset + elementWidth + 10 + "px";
                         } else {
                             calendar.style.left = calendarWidth + (elementWidth - parentLeftOffset) + 60 + "px";
                         }
