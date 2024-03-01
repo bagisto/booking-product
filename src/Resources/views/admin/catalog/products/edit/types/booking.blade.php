@@ -234,7 +234,7 @@
                 },
 
                 created() {
-                    this.booking.available_from = this.booking?.available_from;
+                    this.booking.available_from = "{{ $bookingProduct && $bookingProduct->available_from ? $bookingProduct->available_from->format('Y-m-d H:i:s') : '' }}";
 
                     this.booking.available_to = "{{ $bookingProduct && $bookingProduct->available_to ? $bookingProduct->available_to->format('Y-m-d H:i:s') : '' }}";
                 }
