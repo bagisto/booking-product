@@ -26,7 +26,7 @@ return [
                             'edit'             => 'Bewerken',
                             'many'             => 'Veel boekingen voor één dag',
 
-                            'modal'          => [
+                            'modal'            => [
                                 'slot' => [
                                     'add-title'  => 'Slots Toevoegen',
                                     'close'      => 'Sluiten',
@@ -53,12 +53,13 @@ return [
                                 ],
                             ],
 
-                            'one'            => 'Eén boeking voor meerdere dagen',
-                            'open'           => 'Open',
-                            'slot-add'       => 'Slots toevoegen',
-                            'slot-title'     => 'Tijdsduur van slots',
-                            'slot-duration'  => 'Slotduur (minuten)',
-                            'title'          => 'Standaard',
+                            'one'              => 'Eén boeking voor meerdere dagen',
+                            'open'             => 'Open',
+                            'slot-add'         => 'Slots toevoegen',
+                            'slot-title'       => 'Tijdsduur van slots',
+                            'slot-duration'    => 'Slotduur (minuten)',
+                            'title'            => 'Standaard',
+                            'unavailable'      => 'niet beschikbaar',
                         ],
 
                         'event'       => [

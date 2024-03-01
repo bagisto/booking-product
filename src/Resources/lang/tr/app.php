@@ -26,7 +26,7 @@ return [
                             'edit'             => 'Düzenle',
                             'many'             => 'Bir Günde Çok Sayıda Rezervasyon',
 
-                            'modal'          => [
+                            'modal'            => [
                                 'slot' => [
                                     'add-title'  => 'Yuva Ekle',
                                     'close'      => 'Kapat',
@@ -53,12 +53,13 @@ return [
                                 ],
                             ],
 
-                            'one'            => 'Bir Gün İçin Tek Rezervasyon',
-                            'open'           => 'Açık',
-                            'slot-add'       => 'Slot Ekle',
-                            'slot-title'     => 'Slot Zaman Süresi',
-                            'slot-duration'  => 'Slot Süresi (Dakika)',
-                            'title'          => 'Varsayılan',
+                            'one'              => 'Bir Gün İçin Tek Rezervasyon',
+                            'open'             => 'Açık',
+                            'slot-add'         => 'Slot Ekle',
+                            'slot-title'       => 'Slot Zaman Süresi',
+                            'slot-duration'    => 'Slot Süresi (Dakika)',
+                            'title'            => 'Varsayılan',
+                            'unavailable'      => 'kullanım dışı',
                         ],
 
                         'event'       => [

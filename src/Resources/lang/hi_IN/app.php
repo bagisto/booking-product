@@ -59,6 +59,7 @@ return [
                             'slot-title'       => 'स्लॉट समय अवधि',
                             'slot-duration'    => 'स्लॉट की अवधि (मिनट)',
                             'title'            => 'डिफ़ॉल्ट',
+                            'unavailable'      => 'अनुपलब्ध',
                         ],
 
                         'event'       => [
