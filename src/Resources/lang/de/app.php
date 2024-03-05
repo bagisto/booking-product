@@ -59,6 +59,7 @@ return [
                             'slot-title'       => 'Slot-Zeitdauer',
                             'slot-duration'    => 'Slot-Dauer (Minuten)',
                             'title'            => 'Standard',
+                            'unavailable'      => 'nicht verfügbar',
                         ],
 
                         'event'       => [
@@ -231,11 +232,6 @@ return [
 
                 'title' => 'Buchungsprodukt',
             ],
-        ],
-    ],
-    'component' => [
-        'modal' => [
-            'close' => 'Schließen',
         ],
     ],
 

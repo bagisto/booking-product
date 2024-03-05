@@ -59,6 +59,7 @@ return [
                             'slot-title'       => 'Durata temporale degli slot',
                             'slot-duration'    => 'Durata dello slot (minuti)',
                             'title'            => 'Predefinito',
+                            'unavailable'      => 'non disponibile',
                         ],
 
                         'event'       => [
@@ -231,12 +232,6 @@ return [
 
                 'title' => 'Prodotto Prenotazioni',
             ],
-        ],
-    ],
-
-    'component' => [
-        'modal' => [
-            'close' => 'Chiudi',
         ],
     ],
 

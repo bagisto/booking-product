@@ -26,7 +26,7 @@ return [
                             'edit'             => '编辑',
                             'many'             => '一天内的多次预约',
 
-                            'modal'          => [
+                            'modal'            => [
                                 'slot' => [
                                     'add-title'  => '添加时间段',
                                     'close'      => '关闭',
@@ -53,12 +53,13 @@ return [
                                 ],
                             ],
 
-                            'one'            => '一天内的一次预约',
-                            'open'           => '开放',
-                            'slot-add'       => '添加时隙',
-                            'slot-title'     => '时隙时长',
-                            'slot-duration'  => '时隙时长（分钟）',
-                            'title'          => '默认',
+                            'one'              => '一天内的一次预约',
+                            'open'             => '开放',
+                            'slot-add'         => '添加时隙',
+                            'slot-title'       => '时隙时长',
+                            'slot-duration'    => '时隙时长（分钟）',
+                            'title'            => '默认',
+                            'unavailable'      => '不可用',
                         ],
 
                         'event'       => [
@@ -231,12 +232,6 @@ return [
 
                 'title' => '预订产品',
             ],
-        ],
-    ],
-
-    'component' => [
-        'modal' => [
-            'close' => '关闭',
         ],
     ],
 

@@ -26,7 +26,7 @@ return [
                             'edit'             => 'Editar',
                             'many'             => 'Muitas Reservas Para Um Dia',
 
-                            'modal'          => [
+                            'modal'            => [
                                 'slot' => [
                                     'add-title'  => 'Adicionar Slots',
                                     'close'      => 'Fechar',
@@ -53,12 +53,13 @@ return [
                                 ],
                             ],
 
-                            'one'            => 'Uma Reserva Para Muitos Dias',
-                            'open'           => 'Abrir',
-                            'slot-add'       => 'Adicionar Slots',
-                            'slot-title'     => 'Duração do Tempo dos Slots',
-                            'slot-duration'  => 'Duração do Slot (minutos)',
-                            'title'          => 'Padrão',
+                            'one'              => 'Uma Reserva Para Muitos Dias',
+                            'open'             => 'Abrir',
+                            'slot-add'         => 'Adicionar Slots',
+                            'slot-title'       => 'Duração do Tempo dos Slots',
+                            'slot-duration'    => 'Duração do Slot (minutos)',
+                            'title'            => 'Padrão',
+                            'unavailable'      => 'indisponível',
                         ],
 
                         'event'       => [

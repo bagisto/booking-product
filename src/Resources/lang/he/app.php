@@ -59,6 +59,7 @@ return [
                             'slot-title'       => 'משך זמן המקומות',
                             'slot-duration'    => 'משך זמן המקום (דקות)',
                             'title'            => 'ברירת מחדל',
+                            'unavailable'      => 'אינו זמין',
                         ],
 
                         'event'       => [
@@ -231,12 +232,6 @@ return [
 
                 'title' => 'מוצרי הזמנה',
             ],
-        ],
-    ],
-
-    'component' => [
-        'modal' => [
-            'close' => 'סגור',
         ],
     ],
 

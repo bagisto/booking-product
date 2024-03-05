@@ -59,6 +59,7 @@ return [
                             'slot-title'       => 'スロットの時間の期間',
                             'slot-duration'    => 'スロットの期間（分）',
                             'title'            => 'デフォルト',
+                            'unavailable'      => '利用不可',
                         ],
 
                         'event'       => [
@@ -231,12 +232,6 @@ return [
 
                 'title' => '予約製品',
             ],
-        ],
-    ],
-
-    'component' => [
-        'modal' => [
-            'close' => '閉じる',
         ],
     ],
 

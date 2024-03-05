@@ -59,6 +59,7 @@ return [
                             'slot-title'       => 'مدت زمان اسلات',
                             'slot-duration'    => 'مدت زمان اسلات (دقیقه)',
                             'title'            => 'پیش‌فرض',
+                            'unavailable'      => 'غیر قابل دسترسی',
                         ],
 
                         'event'       => [
@@ -231,12 +232,6 @@ return [
 
                 'title' => 'محصول رزروها',
             ],
-        ],
-    ],
-
-    'component' => [
-        'modal' => [
-            'close' => 'بستن',
         ],
     ],
 

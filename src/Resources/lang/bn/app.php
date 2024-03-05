@@ -59,6 +59,7 @@ return [
                             'slot-title'       => 'স্লটের সময় দৈর্ঘ্য',
                             'slot-duration'    => 'স্লট সময়কাল (মিনিট)',
                             'title'            => 'ডিফল্ট',
+                            'unavailable'      => 'অনুপলব্ধ',
                         ],
 
                         'event'       => [
@@ -231,12 +232,6 @@ return [
 
                 'title' => 'বুকিং প্রোডাক্ট',
             ],
-        ],
-    ],
-
-    'component' => [
-        'modal' => [
-            'close' => 'বন্ধ',
         ],
     ],
 

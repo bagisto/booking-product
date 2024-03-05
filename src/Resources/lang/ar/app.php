@@ -59,6 +59,7 @@ return [
                             'slot-title'       => 'مدة زمنية للفترات',
                             'slot-duration'    => 'مدة الفترة (دقائق)',
                             'title'            => 'افتراضي',
+                            'unavailable'      => 'غير متوفره',
                         ],
 
                         'event'       => [
@@ -231,12 +232,6 @@ return [
 
                 'title' => 'منتجات الحجوزات',
             ],
-        ],
-    ],
-
-    'component' => [
-        'modal' => [
-            'close' => 'إغلاق',
         ],
     ],
 

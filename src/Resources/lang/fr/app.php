@@ -59,6 +59,7 @@ return [
                             'slot-title'       => 'Durée des créneaux',
                             'slot-duration'    => 'Durée du créneau (minutes)',
                             'title'            => 'Par défaut',
+                            'unavailable'      => 'indisponible',
                         ],
 
                         'event'       => [
@@ -231,12 +232,6 @@ return [
 
                 'title' => 'Produit de Réservations',
             ],
-        ],
-    ],
-
-    'component' => [
-        'modal' => [
-            'close' => 'Fermer',
         ],
     ],
 

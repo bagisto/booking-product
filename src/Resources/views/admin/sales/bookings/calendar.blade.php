@@ -19,9 +19,25 @@
                 @view-change="getBookings"
                 :on-event-click="onEventClick"
             >
+                <!-- Left Arrow -->
+                <template #arrow-prev="">
+                    <span class="icon-sort-left"></span>
+                </template>
+
+                <!-- Right Arrow -->
+                <template #arrow-next="">
+                    <span class="icon-sort-right"></span>
+                </template>
+
+                <!-- No Events Content -->
+                <template #no-event>
+                    <p class="hidden"></p>
+                </template>
+
+                <!-- Contecnt -->
                 <template #event="{ event, view }">
                     <div
-                        class="relative h-full border-l-4 rounded-l text-left text-xs cursor-pointer"
+                        class="slot relative h-full border-l-4 rounded-l text-left text-xs cursor-pointer"
                         :class="[
                             event.status === 'pending' ? 'bg-yellow-100 border-yellow-500' :
                             event.status === 'completed' ? 'bg-green-100 border-green-500' :
@@ -30,7 +46,7 @@
                             'bg-green-100 border-green-600',
                             event.time_difference ? 'p-2' : 'p-1'
                         ]"
-                        @click="showTooltip"
+                        @click="showTooltip($event)"
                     >
                         <span>
                             @{{ new Date(event.start).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric', minute: '2-digit' }) }} - @{{ new Date(event.end).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric', minute: '2-digit' }) }}
@@ -50,7 +66,7 @@
 
         <x-booking::modal ref="myModal">
             <!-- Modal Header -->
-            <x-slot:header class="!py-0">
+            <x-slot:header class="!pb-0">
                 <div class="text-lg font-medium text-[#1F2937]">
                     @lang('booking::app.admin.sales.bookings.calendar.booking-detailes')
                 </div>
@@ -59,7 +75,7 @@
             <!-- Modal Content -->
             <x-slot:content>
                 <div class="grid text-sm font-normal">
-                    <div class="grid grid-cols-1 gap-2.5 pb-4 border-b">
+                    <div class="grid grid-cols-1 gap-2.5 pb-4  px-4 border-b">
                         <div class="grid grid-cols-[100px_auto] gap-2">
                             <div
                                 class="text-gray-500"
@@ -87,7 +103,7 @@
                         </div>
                     </div>
     
-                    <div class="grid grid-cols-[80px_80px_auto] gap-2.5 py-4 border-b">
+                    <div class="grid grid-cols-[80px_80px_auto] gap-2.5 py-4  px-4 border-b">
                         <div class="grid grid-cols-1 gap-2">
                             <div
                                 class="text-gray-500"
@@ -130,15 +146,20 @@
                                     event.status === 'canceled' ? 'bg-darkPink' :
                                     'bg-green-500',
                                 ]"
-                                v-text="event.status == 'completed'
-                                    ? '@lang('booking::app.admin.sales.bookings.calendar.done')'
-                                    : event.status"
                             >
+                                <span v-text="
+                                    event.status === 'completed' ? '@lang('booking::app.admin.sales.bookings.calendar.done')' :
+                                    event.status === 'pending' ? '@lang('booking::app.admin.sales.bookings.calendar.pending')' :
+                                    event.status === 'canceled' ? '@lang('booking::app.admin.sales.bookings.calendar.canceled')' :
+                                    event.status === 'closed' ? '@lang('booking::app.admin.sales.bookings.calendar.closed')' :
+                                    event.status"
+                                >
+                                </span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 gap-2.5 pt-4 items-center text-[#1F2937]">
+                    <div class="grid grid-cols-1 gap-2.5 pt-4  px-4 items-center font-medium text-[#1F2937]">
                         <!-- Customer Name -->
                         <div class="flex gap-2 items-center">
                             <span class="icon-customer-2 text-2xl text-gray-500"></span>
@@ -186,7 +207,7 @@
             <!-- Modal Footer -->
             <x-slot:footer class="!pb-0">
                 <button
-                    class="primary-button"
+                    class="primary-button p-2.5 text-base"
                     @click="redirect"
                 >
                     @lang('booking::app.admin.sales.bookings.calendar.view-details')
@@ -246,35 +267,49 @@
                 },
 
                 showTooltip(event) {
-                    let targetElement = event.target;
+                    const element = event.currentTarget;
 
-                    let offsetTop = targetElement.offsetTop;
+                    const elementTopOffset = element.getBoundingClientRect().top + window.pageYOffset;
 
-                    let offsetLeft = targetElement.offsetLeft;
+                    const parentOffsetLeft = element.closest(".vuecal__cell--has-events")?.offsetLeft;
 
-                    let offsetParent = targetElement.offsetParent;
+                    const sidebar = document.getElementsByClassName('sidebar-collapsed');
 
-                    let calendar = document.querySelector('.calendar');
+                    const sidebarNotCollapsed = document.getElementsByClassName('sidebar-not-collapsed');
 
-                    while (offsetParent) {
-                        offsetTop += offsetParent.offsetTop;
+                    const parentLeftOffset = sidebar.length ? parentOffsetLeft : parentOffsetLeft + 200;
+                    
+                    const calendar = document.querySelector('.calendar');
 
-                        offsetLeft += offsetParent.offsetLeft;
+                    const elementWidth = element.offsetWidth;
 
-                        offsetParent = offsetParent.offsetParent;
+                    const calendarWidth = calendar.offsetWidth;
+
+                    calendar.style.top = Math.min(elementTopOffset, document.body.clientHeight - calendar.offsetHeight) + 'px';
+
+                    calendar.style.right = '';
+
+                    calendar.style.left = '';
+
+                    let sidebarFirstChildWidth;
+
+                    if (sidebarNotCollapsed?.length && ! sidebar.length) {
+                        sidebarFirstChildWidth = sidebarNotCollapsed[0].firstChild.clientWidth;
                     }
 
-                    let finalTop = Math.min(offsetTop, document.body.clientHeight - calendar.offsetHeight);
-
-                    let finalLeft = Math.min(offsetLeft, document.body.clientWidth - calendar.offsetWidth);
-
-                    if (calendar.offsetWidth * 3 > offsetLeft) {
-                        calendar.style.left = (calendar.offsetWidth + offsetLeft + 25) + 'px';
+                    if (parentLeftOffset > calendarWidth) {
+                        if (sidebar.length) {
+                            calendar.style.left = parentLeftOffset - 75 + "px";
+                        } else if ((parentLeftOffset - sidebarFirstChildWidth) > calendarWidth) {
+                            calendar.style.left = parentLeftOffset - 75 + "px";
+                        } else {
+                            calendar.style.right = (parentLeftOffset - sidebarFirstChildWidth - 5)  + elementWidth + "px";
+                        }
+                    } else if(elementWidth < parentLeftOffset) {
+                        calendar.style.right = parentLeftOffset + elementWidth + 10 + "px";
                     } else {
-                        calendar.style.left = (finalLeft - 40) + 'px';
+                        calendar.style.left = calendarWidth + (elementWidth - parentLeftOffset) + 60 + "px";
                     }
-
-                    calendar.style.top = finalTop + 'px';
 
                     calendar.classList.add('show');
                 },
@@ -285,4 +320,40 @@
             },
         });
     </script>
+
+    <style>
+        .vuecal__title-bar {
+            background-color: transparent;
+            border-bottom: 1px solid #ddd;
+            color: #1F2937;
+        }
+
+        .vuecal__title-bar .vuecal__title {
+            width: fit-content;
+        }
+
+        .vuecal__heading {
+            height: 100%;
+        }
+
+        .vuecal__heading .weekday-label {
+            display: grid;
+            height: fit-content;
+            justify-content: left;
+            text-align:left;
+            padding: 6px 25px;
+        }
+
+        .weekday-label .full, .weekday-label .small, .weekday-label .xsmall {
+            font-size: 12px;
+            font-weight: 700;
+        } 
+
+        .weekday-label span {
+            font-size: 24px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: #1F2937;
+        }
+    </style>
 @endpush
