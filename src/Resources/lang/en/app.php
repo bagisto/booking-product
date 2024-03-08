@@ -176,13 +176,13 @@ return [
                             'qty'                  => 'Qty',
 
                             'type'                 => [
-                                'appointment' => 'Appointment',
-                                'default'     => 'Default',
-                                'event'       => 'Event',
+                                'appointment' => 'Appointment Booking',
+                                'default'     => 'Default Booking',
+                                'event'       => 'Event Booking',
                                 'many'        => 'Many',
                                 'one'         => 'One',
-                                'rental'      => 'Rental',
-                                'table'       => 'Table',
+                                'rental'      => 'Rental Booking',
+                                'table'       => 'Table Booking',
                                 'title'       => 'Type',
                             ],
 
