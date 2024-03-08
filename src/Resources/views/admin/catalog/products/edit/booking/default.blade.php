@@ -519,9 +519,9 @@
                 }
 
                 if (this.default_booking.booking_type === 'one') {
-                    this.slots['one'] = this.default_booking.slots;
+                    this.slots['one'] = this.default_booking.slots ?? [];
                 } else {
-                    this.slots['many'] = this.default_booking.slots;
+                    this.slots['many'] = this.default_booking.slots ?? [];
                 }
             },
 
