@@ -53,6 +53,6 @@ php artisan vendor:publish
 
 ~~~
 
--> Press the number before "Webkul\BookingProduct\Providers\BookingProductServiceProvider" and then press enter to publish all assets and configurations.
+-> Search the "Webkul\BookingProduct\Providers\BookingProductServiceProvider" and press enter to initiate the publishing of all assets and configurations.
 
-After following these steps, the Booking Product Extension should be successfully installed and ready for use in your Bagisto v2.1.0 project.
+After following these steps, the Booking Product Extension should be successfully installed and ready for use in your Bagisto v2.1.2 project.
