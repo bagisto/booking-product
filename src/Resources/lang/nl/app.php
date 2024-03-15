@@ -175,14 +175,14 @@ return [
                             'location'             => 'Locatie',
                             'qty'                  => 'Aantal',
 
-                            'type'                 => [
-                                'appointment' => 'Afspraak',
-                                'default'     => 'Standaard',
-                                'event'       => 'Evenement',
-                                'many'        => 'Vele',
-                                'one'         => 'Een',
-                                'rental'      => 'Verhuur',
-                                'table'       => 'Tafel',
+                            'type' => [
+                                'appointment' => 'Afspraak boeking',
+                                'default'     => 'Standaard boeking',
+                                'event'       => 'Evenementen boeking',
+                                'many'        => 'Meerdere',
+                                'one'         => 'Eén',
+                                'rental'      => 'Verhuur boeking',
+                                'table'       => 'Tafel boeking',
                                 'title'       => 'Type',
                             ],
 
