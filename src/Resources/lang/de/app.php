@@ -175,14 +175,14 @@ return [
                             'location'             => 'Ort',
                             'qty'                  => 'Menge',
 
-                            'type'                 => [
-                                'appointment' => 'Termin',
-                                'default'     => 'Standard',
-                                'event'       => 'Veranstaltung',
+                            'type' => [
+                                'appointment' => 'Terminbuchung',
+                                'default'     => 'Standardbuchung',
+                                'event'       => 'Veranstaltungsbuchung',
                                 'many'        => 'Viele',
                                 'one'         => 'Ein',
-                                'rental'      => 'Vermietung',
-                                'table'       => 'Tisch',
+                                'rental'      => 'Mietbuchung',
+                                'table'       => 'Tischbuchung',
                                 'title'       => 'Typ',
                             ],
 

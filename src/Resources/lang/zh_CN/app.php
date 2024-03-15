@@ -175,14 +175,14 @@ return [
                             'location'             => '位置',
                             'qty'                  => '数量',
 
-                            'type'                 => [
-                                'appointment' => '预约',
-                                'default'     => '默认',
-                                'event'       => '事件',
-                                'many'        => '多',
-                                'one'         => '一',
-                                'rental'      => '租赁',
-                                'table'       => '桌子',
+                            'type' => [
+                                'appointment' => '预约预订',
+                                'default'     => '默认预订',
+                                'event'       => '事件预订',
+                                'many'        => '多个',
+                                'one'         => '一个',
+                                'rental'      => '租赁预订',
+                                'table'       => '桌子预订',
                                 'title'       => '类型',
                             ],
 

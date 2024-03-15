@@ -175,14 +175,14 @@ return [
                             'location'             => 'Localização',
                             'qty'                  => 'Quantidade',
 
-                            'type'                 => [
-                                'appointment' => 'Agendamento',
-                                'default'     => 'Padrão',
-                                'event'       => 'Evento',
-                                'many'        => 'Vários',
+                            'type' => [
+                                'appointment' => 'Agendamento de Consulta',
+                                'default'     => 'Agendamento Padrão',
+                                'event'       => 'Agendamento de Evento',
+                                'many'        => 'Muitos',
                                 'one'         => 'Um',
-                                'rental'      => 'Aluguel',
-                                'table'       => 'Mesa',
+                                'rental'      => 'Agendamento de Aluguel',
+                                'table'       => 'Agendamento de Mesa',
                                 'title'       => 'Tipo',
                             ],
 
