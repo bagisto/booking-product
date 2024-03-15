@@ -175,14 +175,14 @@ return [
                             'location'             => '場所',
                             'qty'                  => '数量',
 
-                            'type' => [
-                                'appointment' => '予約の予約',
-                                'default'     => 'デフォルトの予約',
-                                'event'       => 'イベントの予約',
-                                'many'        => '多数',
+                            'type'                 => [
+                                'appointment' => '予約',
+                                'default'     => 'デフォルト',
+                                'event'       => 'イベント',
+                                'many'        => 'たくさん',
                                 'one'         => '1つ',
-                                'rental'      => 'レンタルの予約',
-                                'table'       => 'テーブルの予約',
+                                'rental'      => 'レンタル',
+                                'table'       => 'テーブル',
                                 'title'       => 'タイプ',
                             ],
 

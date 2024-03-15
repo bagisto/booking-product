@@ -175,14 +175,14 @@ return [
                             'location'             => 'Konum',
                             'qty'                  => 'Adet',
 
-                            'type' => [
-                                'appointment' => 'Randevu Rezervasyonu',
-                                'default'     => 'Varsayılan Rezervasyon',
-                                'event'       => 'Etkinlik Rezervasyonu',
+                            'type'                 => [
+                                'appointment' => 'Randevu',
+                                'default'     => 'Varsayılan',
+                                'event'       => 'Etkinlik',
                                 'many'        => 'Çoklu',
                                 'one'         => 'Bir',
-                                'rental'      => 'Kiralama Rezervasyonu',
-                                'table'       => 'Masa Rezervasyonu',
+                                'rental'      => 'Kiralama',
+                                'table'       => 'Masa',
                                 'title'       => 'Tür',
                             ],
 

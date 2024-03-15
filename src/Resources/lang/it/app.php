@@ -176,13 +176,13 @@ return [
                             'qty'      => 'Quantità',
 
                             'type' => [
-                                'appointment' => 'Prenotazione appuntamento',
-                                'default'     => 'Prenotazione predefinita',
-                                'event'       => 'Prenotazione evento',
+                                'appointment' => 'Appuntamento',
+                                'default'     => 'Predefinito',
+                                'event'       => 'Evento',
                                 'many'        => 'Molti',
                                 'one'         => 'Uno',
-                                'rental'      => 'Prenotazione noleggio',
-                                'table'       => 'Prenotazione tavolo',
+                                'rental'      => 'Noleggio',
+                                'table'       => 'Tavolo',
                                 'title'       => 'Tipo',
                             ],
 

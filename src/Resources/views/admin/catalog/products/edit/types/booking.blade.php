@@ -118,12 +118,12 @@
                     <x-admin::form.control-group.error  control-name="booking[available_every_week]" />
                 </x-admin::form.control-group>
 
-                <div
-                    class="flex gap-2.5"
-                    v-if="! parseInt(booking.available_every_week)"
-                >
+                <div class="flex gap-2.5">    
                     <!-- Available From  -->
-                    <x-admin::form.control-group class="w-full">
+                    <x-admin::form.control-group
+                        class="w-full"
+                        v-if="(booking.availableEveryWeekSwatch && booking.available_every_week == 0) || booking.type == 'default'"
+                    >
                         <x-admin::form.control-group.label class="required">
                             @lang('booking::app.admin.catalog.products.edit.types.booking.available-from')
                         </x-admin::form.control-group.label>
@@ -145,7 +145,10 @@
                     </x-admin::form.control-group>
 
                     <!-- Available To -->
-                    <x-admin::form.control-group class="w-full">
+                    <x-admin::form.control-group
+                        class="w-full"
+                        v-if="(booking.availableEveryWeekSwatch && booking.available_every_week == 0) || booking.type == 'default'"
+                    >
                         <x-admin::form.control-group.label class="required">
                             @lang('booking::app.admin.catalog.products.edit.types.booking.available-to')
                         </x-admin::form.control-group.label>
