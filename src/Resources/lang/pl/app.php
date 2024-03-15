@@ -175,14 +175,14 @@ return [
                             'location'             => 'Lokalizacja',
                             'qty'                  => 'Ilość',
 
-                            'type' => [
-                                'appointment' => 'Rezerwacja spotkania',
-                                'default'     => 'Domyślna rezerwacja',
-                                'event'       => 'Rezerwacja wydarzenia',
+                            'type'                 => [
+                                'appointment' => 'Spotkanie',
+                                'default'     => 'Domyślny',
+                                'event'       => 'Wydarzenie',
                                 'many'        => 'Wiele',
                                 'one'         => 'Jeden',
-                                'rental'      => 'Rezerwacja wynajmu',
-                                'table'       => 'Rezerwacja stołu',
+                                'rental'      => 'Wynajem',
+                                'table'       => 'Stół',
                                 'title'       => 'Typ',
                             ],
 
