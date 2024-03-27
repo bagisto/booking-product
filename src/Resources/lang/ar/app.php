@@ -175,14 +175,14 @@ return [
                             'location'             => 'الموقع',
                             'qty'                  => 'الكمية',
 
-                            'type'                 => [
-                                'appointment' => 'موعد',
-                                'default'     => 'افتراضي',
-                                'event'       => 'حدث',
-                                'many'        => 'عديد',
+                            'type' => [
+                                'appointment' => 'حجز موعد',
+                                'default'     => 'حجز افتراضي',
+                                'event'       => 'حجز حدث',
+                                'many'        => 'عدة',
                                 'one'         => 'واحد',
-                                'rental'      => 'تأجير',
-                                'table'       => 'طاولة',
+                                'rental'      => 'حجز تأجير',
+                                'table'       => 'حجز طاولة',
                                 'title'       => 'النوع',
                             ],
 

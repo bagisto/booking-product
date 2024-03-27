@@ -21,7 +21,7 @@
             <div class="flex gap-x-1 items-center">
                 <div
                     class="secondary-button"
-                    @click="$refs.drawerform.toggle()"
+                    @click="add"
                 >
                     @lang('booking::app.admin.catalog.products.edit.booking.event.add')
                 </div>
@@ -191,6 +191,7 @@
                             <x-admin::form.control-group.control
                                 type="hidden"
                                 name="id"
+                                ::value="ticketItem.id"
                             />
 
                             <!-- Name -->
@@ -198,11 +199,12 @@
                                 <x-admin::form.control-group.label class="required">
                                     @lang('booking::app.admin.catalog.products.edit.booking.event.name')
                                 </x-admin::form.control-group.label>
-            
+
                                 <x-admin::form.control-group.control
                                     type="text"
                                     name="name"
                                     rules="required"
+                                    v-model="ticketItem.name"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.name')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.name')"
                                 />
@@ -220,6 +222,7 @@
                                     type="text"
                                     name="qty"
                                     rules="required|min_value:0"
+                                    v-model="ticketItem.qty"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.qty')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.qty')"
                                 />
@@ -239,7 +242,7 @@
                                     type="text"
                                     name="price"
                                     rules="required"
-                                    v-model="price"
+                                    v-model="ticketItem.price"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.price')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.price')"
                                 />
@@ -256,11 +259,10 @@
                                 <x-admin::form.control-group.control
                                     type="number"
                                     name="special_price"
-                                    ::rules="'min_value:0|max_value:' + price"
-                                    v-model="special_price"
+                                    ::rules="'min_value:0|max_value:' + ticketItem.price"
+                                    v-model="ticketItem.special_price"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.special-price')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.special-price')"
-                                    ::disabled="! price"
                                 />
 
                                 <x-admin::form.control-group.error control-name="special_price" />
@@ -277,9 +279,8 @@
                                 <x-booking::form.control-group.control
                                     type="datetime"
                                     name="special_price_from"
-                                    ::rules="special_price" 
-                                    v-model="special_price_from"
-                                    ::disabled="!special_price"
+                                    ::rules="ticketItem.special_price_from ? 'required|after:{{\Carbon\Carbon::yesterday()->format('Y-m-d 23:59:59')}}' : ''" 
+                                    v-model="ticketItem.special_price_from"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.valid-from')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.valid-from')"
                                 />
@@ -296,10 +297,10 @@
                                 <x-admin::form.control-group.control
                                     type="datetime"
                                     name="special_price_to"
-                                    ::rules="special_price_from ? 'after:' + special_price_from : ''"
+                                    ::rules="ticketItem.special_price_from ? 'after:' + ticketItem.special_price_from : ''"
+                                    v-model="ticketItem.special_price_to"
                                     :label="trans('booking::app.admin.catalog.products.edit.booking.event.valid-until')"
                                     :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.valid-until')"
-                                    ::disabled="! special_price"
                                 />
             
                                 <x-admin::form.control-group.error control-name="special_price_to" />
@@ -316,6 +317,7 @@
                                 type="textarea"
                                 name="[description]"
                                 rules="required"
+                                v-model="ticketItem.description" 
                                 :label="trans('booking::app.admin.catalog.products.edit.booking.event.description')"
                                 :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.description')"
                                 rows="9"
@@ -340,16 +342,6 @@
                     optionRowCount: 0,
 
                     currentLocaleCode: @json(core()->getCurrentLocale()->code),
-
-                    special_price: '', 
-
-                    yesterday: '{{ \Carbon\Carbon::yesterday()->format('Y-m-d 23:59:59') }}'
-                }
-            },
-
-            computed: {
-                special_price() {
-                    return this.special_price ? `after:${this.yesterday}` : '';
                 }
             },
 
@@ -375,7 +367,21 @@
                 },
 
                 edit(values) {
-                    this.$refs.modelForm.setValues(values);
+                    this.ticketItem = values;
+
+                    this.$refs.drawerform.toggle();
+                },
+
+                add() {
+                    this.ticketItem = {
+                        name: '',
+                        price: '',
+                        qty: '',
+                        description: '',
+                        special_price: '',
+                        special_price_from: '',
+                        special_price_to: ''
+                    };
 
                     this.$refs.drawerform.toggle();
                 },
