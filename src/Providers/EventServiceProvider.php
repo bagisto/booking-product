@@ -29,7 +29,7 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-          /**
+        /**
          * Styles loading.
          */
         Event::listen('bagisto.admin.layout.head', function ($viewRenderEventManager) {
