@@ -3,11 +3,8 @@
 namespace Webkul\BookingProduct\Repositories;
 
 use Carbon\Carbon;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Event;
 use Webkul\Core\Eloquent\Repository;
-use Webkul\BookingProduct\Contracts\Booking;
 
 class BookingRepository extends Repository
 {
@@ -16,13 +13,15 @@ class BookingRepository extends Repository
      */
     public function model(): string
     {
-        return Booking::class;
+        return 'Webkul\BookingProduct\Contracts\Booking';
     }
 
     /**
      * Create Booking Product.
+     *
+     * @return \Webkul\BookingProduct\Contracts\Booking|void
      */
-    public function create(array $data): void
+    public function create(array $data)
     {
         $order = $data['order'];
 
@@ -71,8 +70,10 @@ class BookingRepository extends Repository
 
     /**
      * Get all bookings for the given date and time range.
+     *
+     * @return mixed
      */
-    public function getBookings(array $dateRange): Collection
+    public function getBookings(array $dateRange)
     {
         return $this->select(
             'bookings.id',
@@ -83,14 +84,17 @@ class BookingRepository extends Repository
             'orders.customer_email as email',
             'orders.grand_total as total',
             'orders.created_at as created_at',
-            'addresses.address as address',
             'addresses.phone as contact',
+            'addresses.address1 as address1',
+            'addresses.address2 as address2',
             'addresses.city as city',
             'addresses.state as state',
             'addresses.country as country',
             'addresses.postcode as postcode',
         )
-            ->addSelect(DB::raw('CONCAT(orders.customer_first_name, " ", orders.customer_last_name) as full_name'))
+            ->addSelect(
+                \DB::raw('CONCAT(orders.customer_first_name, " ", orders.customer_last_name) as full_name')
+            )
             ->leftJoin('orders', 'bookings.order_id', '=', 'orders.id')
             ->leftJoin('addresses', 'bookings.order_id', '=', 'addresses.order_id')
             ->whereBetween('bookings.from', $dateRange)
