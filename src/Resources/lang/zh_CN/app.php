@@ -70,6 +70,7 @@ return [
                             'edit'               => '编辑',
 
                             'modal'              => [
+                                'edit' => '编辑门票',
                                 'save' => '保存',
                             ],
 

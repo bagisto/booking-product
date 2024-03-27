@@ -70,6 +70,7 @@ return [
                             'edit'               => 'Bewerken',
 
                             'modal'              => [
+                                'edit' => 'Tickets bewerken',
                                 'save' => 'Opslaan',
                             ],
 

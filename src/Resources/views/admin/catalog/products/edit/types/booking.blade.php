@@ -172,7 +172,7 @@
                         'table'
                     ];
                 @endphp
-    
+
                 @foreach ($bookingTypes as $bookingType)
                     <template v-if="booking.type === '{{ $bookingType }}'">
                         @include('booking::admin.catalog.products.edit.booking.' . $bookingType, ['bookingProduct' => $bookingProduct])

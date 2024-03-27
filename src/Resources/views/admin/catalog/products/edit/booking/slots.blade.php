@@ -319,9 +319,9 @@
                 }
 
                 if (this.bookingProduct.same_slot_all_days) {
-                    this.slots['same_for_week'] = this.bookingProduct.slots;
+                    this.slots['same_for_week'] = this.bookingProduct.slots ?? [];
                 } else {
-                    this.slots['different_for_week'] = this.bookingProduct.slots;
+                    this.slots['different_for_week'] = this.bookingProduct.slots ?? [];
                 }
             },
 
