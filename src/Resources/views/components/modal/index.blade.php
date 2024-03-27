@@ -2,7 +2,7 @@
     'isActive' => false,
 ])
 
-<v-modal
+<v-booking-modal
     is-active="{{ $isActive }}"
     {{ $attributes }}
 >
@@ -41,12 +41,12 @@
             </div>
         </template>
     @endisset
-</v-modal>
+</v-booking-modal>
 
 @pushOnce('scripts')
     <script
         type="text/x-template"
-        id="v-modal-template"
+        id="v-booking-modal-template"
     >
         <div>
             <div @click="open">
@@ -100,8 +100,8 @@
     </script>
 
     <script type="module">
-        app.component('v-modal', {
-            template: '#v-modal-template',
+        app.component('v-booking-modal', {
+            template: '#v-booking-modal-template',
 
             props: ['isActive'],
 
