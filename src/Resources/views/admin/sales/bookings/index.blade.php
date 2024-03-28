@@ -56,7 +56,7 @@
                 
                 data() {
                     return {
-                        viewType: 'calendar',
+                        viewType: 'table',
                     };
                 },
             });

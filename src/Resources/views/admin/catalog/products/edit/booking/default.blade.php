@@ -22,7 +22,7 @@
                 rules="required"
                 v-model="default_booking.booking_type"
                 :label="trans('booking::app.admin.catalog.products.edit.booking.default.description')"
-                @change="change"
+                @slotType="slotType"
             >
                 @foreach (['many', 'one'] as $item)
                     <option value="{{ $item }}">
@@ -595,7 +595,7 @@
                     this.$refs.drawerform.toggle();
                 },
 
-                change() {
+                slotType() {
                     if (this.default_booking.booking_type == 'one') {
                         this.slots['one'] = [];
                     } else {
