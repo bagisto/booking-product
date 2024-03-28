@@ -302,6 +302,7 @@ return [
                         'book-an-appointment' => '预订约会',
                         'date'                => '日期',
                         'no-slots-available'  => '没有可用时间段',
+                        'select-slot'         => '选择时间段',
                         'title'               => '时间段',
                     ],
 

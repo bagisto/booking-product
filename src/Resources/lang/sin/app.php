@@ -302,6 +302,7 @@ return [
                         'book-an-appointment' => 'ගිනුම් ලකුණු නිර්මාණය කරන්න',
                         'date'                => 'දිනය',
                         'no-slots-available'  => 'ලකුණු නොමැත',
+                        'select-slot'         => 'ස්ලොට් තෝරන්න',
                         'title'               => 'ස්ලොට්',
                     ],
 

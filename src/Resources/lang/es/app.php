@@ -302,6 +302,7 @@ return [
                         'book-an-appointment' => 'Reservar una Cita',
                         'date'                => 'Fecha',
                         'no-slots-available'  => 'No hay ranuras disponibles',
+                        'select-slot'         => 'Seleccionar Ranura',
                         'title'               => 'Ranura',
                     ],
 

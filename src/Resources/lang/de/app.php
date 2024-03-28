@@ -302,6 +302,7 @@ return [
                         'book-an-appointment' => 'Termin buchen',
                         'date'                => 'Datum',
                         'no-slots-available'  => 'Keine Slots verfügbar',
+                        'select-slot'         => 'Slot auswählen',
                         'title'               => 'Slot',
                     ],
 

@@ -43,18 +43,23 @@
                         class="py-4"
                         name="booking[slot]"
                         rules="required"
+                        v-model="selectedSlot"
                         :label="trans('booking::app.shop.products.view.booking.slots.title')"
                         :placeholder="trans('booking::app.shop.products.view.booking.slots.title')"
                     >
+                        <option value="">
+                            @lang('Select Slot')
+                        </option>
+                        
+                        <option v-if="! slots?.length">
+                            @lang('booking::app.shop.products.view.booking.slots.no-slots-available')
+                        </option>
+
                         <option
                             v-for="slot in slots"
                             :value="slot.timestamp"
                         >
                             @{{ slot.from + ' - ' + slot.to }}
-                        </option>
-
-                        <option v-if="! slots?.length">
-                            @lang('booking::app.shop.products.view.booking.slots.no-slots-available')
                         </option>
                     </x-shop::form.control-group.control>
 
@@ -73,6 +78,8 @@
             data() {
                 return {
                     slots: [],
+
+                    selectedSlot: '',
                 }
             },
 
@@ -85,6 +92,8 @@
                     })
                         .then((response) => {
                             this.slots = response.data.data;
+
+                            this.selectedSlot = '';
                         })
                         .catch(error => {
                             if (error.response.status == 422) {
