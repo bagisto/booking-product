@@ -302,6 +302,7 @@ return [
                         'book-an-appointment' => 'Prendre un rendez-vous',
                         'date'                => 'Date',
                         'no-slots-available'  => 'Aucun créneau disponible',
+                        'select-slot'         => 'Sélectionner un créneau',
                         'title'               => 'Créneau',
                     ],
 

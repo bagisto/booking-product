@@ -302,6 +302,7 @@ return [
                         'book-an-appointment' => 'अपॉइंटमेंट बुक करें',
                         'date'                => 'तारीख',
                         'no-slots-available'  => 'कोई स्लॉट उपलब्ध नहीं है',
+                        'select-slot'         => 'स्लॉट चुनें',
                         'title'               => 'स्लॉट',
                     ],
 

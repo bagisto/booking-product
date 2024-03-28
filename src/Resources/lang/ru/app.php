@@ -302,6 +302,7 @@ return [
                         'book-an-appointment' => 'Записаться на прием',
                         'date'                => 'Дата',
                         'no-slots-available'  => 'Нет доступных слотов',
+                        'select-slot'         => 'Выбрать слот',
                         'title'               => 'Слот',
                     ],
 

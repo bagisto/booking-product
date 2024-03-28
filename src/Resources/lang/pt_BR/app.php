@@ -308,6 +308,7 @@ return [
                         'book-an-appointment' => 'Marcar uma Consulta',
                         'date'                => 'Data',
                         'no-slots-available'  => 'Sem slots disponíveis',
+                        'select-slot'         => 'Selecionar Slot',
                         'title'               => 'Slots',
                     ],
 

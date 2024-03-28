@@ -302,6 +302,7 @@ return [
                         'book-an-appointment' => '予約する',
                         'date'                => '日付',
                         'no-slots-available'  => '利用可能なスロットはありません',
+                        'select-slot'         => 'スロットを選択する',
                         'title'               => 'スロット',
                     ],
 

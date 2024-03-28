@@ -302,6 +302,7 @@ return [
                         'book-an-appointment' => 'رزرو یک جلسه',
                         'date'                => 'تاریخ',
                         'no-slots-available'  => 'هیچ شکافی در دسترس نیست',
+                        'select-slot'         => 'انتخاب شکاف',
                         'title'               => 'شکاف',
                     ],
 
