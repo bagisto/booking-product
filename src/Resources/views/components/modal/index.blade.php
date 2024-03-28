@@ -18,7 +18,7 @@
                 {{ $header }}
 
                 <span
-                    class="icon-cancel-1 text-3xl  cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-950 hover:rounded-md"
+                    class="icon-cancel-1 text-3xl cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-950 hover:rounded-md"
                     @click="close"
                 >
                 </span>
@@ -36,7 +36,7 @@
 
     @isset($footer)
         <template v-slot:footer>
-            <div {{ $content->attributes->merge(['class' => 'flex gap-4 justify-end py-2.5']) }}>
+            <div {{ $footer->attributes->merge(['class' => 'flex gap-4 justify-end py-2.5']) }}>
                 {{ $footer }}
             </div>
         </template>
@@ -77,7 +77,7 @@
             >
                 <div
                     class="calendar absolute bg-white border border-gray-300 text-xs transform -translate-x-1/2 rounded-md transition-all duration-300 shadow-md z-[9999]"
-                    :class="isOpen ? 'w-[300px] h-fit px-4 py-3' : 'hidden'"
+                    :class="isOpen ? 'w-[305px] h-fit px-4 py-3' : 'hidden'"
                 >
                     <slot
                         name="header"

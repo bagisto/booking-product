@@ -514,7 +514,7 @@
                     let lastIndex = Object.keys(this.default_booking.slots).pop();
 
                     if (lastIndex) {
-                        this.optionRowCount = this.default_booking.slots[lastIndex][0]?.id;
+                        this.optionRowCount = this.default_booking.id;
                     }
                 }
 
@@ -529,22 +529,17 @@
                 store(params) {
                     if (params.booking_type === 'one') {
                         if (! params.id) {
-                            this.optionRowCount++;
+                            params.id = this.optionRowCount;
 
-                            params.id = 'option_' + this.optionRowCount;
+                            this.optionRowCount++;
                         }
 
-                        let foundIndex = this.slots.one?.findIndex(item => item.id === params.id);
+                        const foundIndex = this.slots.one.findIndex(item => (item.from == params.from && item.to == params.to));
 
                         if (foundIndex !== -1) {
-                            this.slots.one[foundIndex] = { 
-                                ...this.slots.one[foundIndex].params, 
-                                ...params
-                            };
+                            this.slots.one.splice(foundIndex, 1, params);
                         } else {
-                            if (! this.slots.one.some(item => item.id === params.id)) {
-                                this.slots.one.push(params);
-                            }
+                            this.slots.one.push(params);
                         }
 
                         this.$refs.drawerform.toggle();
