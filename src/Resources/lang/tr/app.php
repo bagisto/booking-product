@@ -70,6 +70,7 @@ return [
                             'edit'               => 'Düzenle',
 
                             'modal'              => [
+                                'edit' => 'Biletleri Düzenle',
                                 'save' => 'Kaydet',
                             ],
 

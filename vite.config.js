@@ -28,7 +28,7 @@ export default defineConfig(({ mode }) => {
                 publicDirectory: "publishable",
                 input: [
                     "src/Resources/assets/css/app.css",
-                    "src/Resources/assets/js/vue-cal.js",
+                    "src/Resources/assets/js/app.js",
                 ],
                 refresh: true,
             }),

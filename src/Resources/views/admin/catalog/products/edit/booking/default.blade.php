@@ -22,7 +22,7 @@
                 rules="required"
                 v-model="default_booking.booking_type"
                 :label="trans('booking::app.admin.catalog.products.edit.booking.default.description')"
-                @change="change"
+                @slotType="slotType"
             >
                 @foreach (['many', 'one'] as $item)
                     <option value="{{ $item }}">
@@ -514,7 +514,7 @@
                     let lastIndex = Object.keys(this.default_booking.slots).pop();
 
                     if (lastIndex) {
-                        this.optionRowCount = this.default_booking.id;
+                        this.optionRowCount = this.default_booking.slots[lastIndex][0]?.id;
                     }
                 }
 
@@ -529,17 +529,22 @@
                 store(params) {
                     if (params.booking_type === 'one') {
                         if (! params.id) {
-                            params.id = this.optionRowCount;
-
                             this.optionRowCount++;
+
+                            params.id = 'option_' + this.optionRowCount;
                         }
 
-                        const foundIndex = this.slots.one.findIndex(item => (item.from_day == params.from_day && item.to_day == params.to_day));
+                        let foundIndex = this.slots.one?.findIndex(item => item.id === params.id);
 
                         if (foundIndex !== -1) {
-                            this.slots.one.splice(foundIndex, 1, params);
+                            this.slots.one[foundIndex] = { 
+                                ...this.slots.one[foundIndex].params, 
+                                ...params
+                            };
                         } else {
-                            this.slots.one.push(params);
+                            if (! this.slots.one.some(item => item.id === params.id)) {
+                                this.slots.one.push(params);
+                            }
                         }
 
                         this.$refs.drawerform.toggle();
@@ -590,7 +595,7 @@
                     this.$refs.drawerform.toggle();
                 },
 
-                change() {
+                slotType() {
                     if (this.default_booking.booking_type == 'one') {
                         this.slots['one'] = [];
                     } else {

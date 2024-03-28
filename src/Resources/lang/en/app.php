@@ -70,6 +70,7 @@ return [
                             'edit'               => 'Edit',
 
                             'modal'              => [
+                                'edit' => 'Edit Tickets',
                                 'save' => 'Save',
                             ],
 

@@ -29,6 +29,13 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
+        /**
+         * Styles loading.
+         */
+        Event::listen('bagisto.admin.layout.head', function ($viewRenderEventManager) {
+            $viewRenderEventManager->addTemplate('booking::components.layouts.style');
+        });
+
         Event::listen('bagisto.admin.catalog.product.edit.form.videos.after', static function (ViewRenderEventManager $viewRenderEventManager) {
             if (View::exists('booking::admin.catalog.products.edit.types.booking')) {
                 $viewRenderEventManager->addTemplate('booking::admin.catalog.products.edit.types.booking');

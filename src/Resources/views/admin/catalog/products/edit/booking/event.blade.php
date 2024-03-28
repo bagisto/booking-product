@@ -170,8 +170,12 @@
                 <x-admin::drawer ref="drawerform">
                     <x-slot:header>
                         <div class="flex justify-between items-center">
-                            <p class="my-2.5 text-xl font-medium dark:text-white">
-                                @lang('booking::app.admin.catalog.products.edit.booking.event.add')
+                            <p
+                                class="my-2.5 text-xl font-medium dark:text-white"
+                                v-text="this.ticketItem.id 
+                                    ? '@lang('booking::app.admin.catalog.products.edit.booking.event.modal.edit')'
+                                    : '@lang('booking::app.admin.catalog.products.edit.booking.event.add')'"
+                            >
                             </p>
         
                             <div class="ltr:mr-11 rtl:ml-11">
@@ -349,6 +353,7 @@
                 store(params) {
                     if (! params.id) {
                             this.optionRowCount++;
+
                             params.id = 'option_' + this.optionRowCount;
                         }
 
@@ -363,13 +368,13 @@
                             this.tickets.push(params);
                         }
 
-                    this.$refs.drawerform.toggle();
+                    this.toggle();
                 },
 
                 edit(values) {
                     this.ticketItem = values;
 
-                    this.$refs.drawerform.toggle();
+                    this.toggle();
                 },
 
                 add() {
@@ -383,7 +388,7 @@
                         special_price_to: ''
                     };
 
-                    this.$refs.drawerform.toggle();
+                    this.toggle();
                 },
 
                 remove(id) {
@@ -392,6 +397,10 @@
                             this.tickets = this.tickets.filter(option => option.id !== id);
                         },
                     });
+                },
+
+                toggle() {
+                    this.$refs.drawerform.toggle();
                 },
             }
         });
