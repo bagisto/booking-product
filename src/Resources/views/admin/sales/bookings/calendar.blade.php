@@ -65,7 +65,7 @@
 
             <x-booking::modal ref="myModal">
                 <!-- Modal Header -->
-                <x-slot:header class="!pb-0">
+                <x-slot:header class="!p-0">
                     <div class="text-lg font-medium text-[#1F2937]">
                         @lang('booking::app.admin.sales.bookings.calendar.booking-detailes')
                     </div>
@@ -74,7 +74,7 @@
                 <!-- Modal Content -->
                 <x-slot:content>
                     <div class="grid text-sm font-normal">
-                        <div class="grid grid-cols-1 gap-2.5 pb-4  px-4 border-b">
+                        <div class="grid grid-cols-1 gap-2.5 pb-4 border-b">
                             <div class="grid grid-cols-[100px_auto] gap-2">
                                 <div
                                     class="text-gray-500"
@@ -102,7 +102,7 @@
                             </div>
                         </div>
         
-                        <div class="grid grid-cols-[80px_80px_auto] gap-2.5 py-4  px-4 border-b">
+                        <div class="grid grid-cols-[80px_80px_auto] gap-2.5 py-4 border-b">
                             <div class="grid grid-cols-1 gap-2">
                                 <div
                                     class="text-gray-500"
@@ -158,7 +158,7 @@
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 gap-2.5 pt-4  px-4 items-center font-medium text-[#1F2937]">
+                        <div class="grid grid-cols-1 gap-2.5 pt-4 items-center font-medium text-[#1F2937]">
                             <!-- Customer Name -->
                             <div class="flex gap-2 items-center">
                                 <span class="icon-customer-2 text-2xl text-gray-500"></span>
@@ -202,7 +202,7 @@
                 <!-- Modal Footer -->
                 <x-slot:footer class="!pb-0">
                     <button
-                        class="primary-button p-2.5 text-base"
+                        class="primary-button h-9 p-2.5 text-base"
                         @click="redirect"
                     >
                         @lang('booking::app.admin.sales.bookings.calendar.view-details')
