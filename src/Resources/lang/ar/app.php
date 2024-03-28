@@ -244,10 +244,11 @@ return [
                 'cart'   => [
                     'booking-from' => 'الحجز من تاريخ',
                     'booking-till' => 'الحجز حتى تاريخ',
-                    'daily'        => 'يومياً',
+                    'daily'        => 'أساس يومي',
                     'event-from'   => 'بداية الحدث',
                     'event-ticket' => 'تذكرة الحدث',
                     'event-till'   => 'نهاية الحدث',
+                    'hourly'       => 'بالساعة',
 
                     'integrity'    => [
                         'missing_options'        => 'الخيارات مفقودة لهذا المنتج.',
@@ -294,6 +295,7 @@ return [
                         'select-date'        => 'اختر التاريخ',
                         'select-rent-time'   => 'حدد وقت الإيجار',
                         'select-slot'        => 'اختر الفترة',
+                        'select-time-slot'   => 'حدد فتحة زمنية',
                         'slot'               => 'فترة',
                         'to'                 => 'إلى',
                     ],

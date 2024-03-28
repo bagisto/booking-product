@@ -244,10 +244,11 @@ return [
                 'cart'             => [
                     'booking-from' => 'Prenotazione Da',
                     'booking-till' => 'Prenotazione Fino A',
-                    'daily'        => 'Giornaliero',
+                    'daily'        => 'Quotidianamente',
                     'event-from'   => 'Evento Da',
                     'event-ticket' => 'Biglietto Evento',
                     'event-till'   => 'Evento Fino A',
+                    'hourly'       => 'Base oraria',
 
                     'integrity'    => [
                         'missing_options'        => 'Opzioni mancanti per questo prodotto.',
@@ -294,6 +295,7 @@ return [
                         'select-date'        => 'Seleziona data',
                         'select-rent-time'   => 'Seleziona Orario Affitto',
                         'select-slot'        => 'Seleziona Slot',
+                        'select-time-slot'   => 'Seleziona fascia oraria',
                         'slot'               => 'Slot',
                         'to'                 => 'A',
                     ],

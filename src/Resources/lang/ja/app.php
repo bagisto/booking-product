@@ -244,10 +244,11 @@ return [
                 'cart'             => [
                     'booking-from' => '予約開始日時',
                     'booking-till' => '予約終了日時',
-                    'daily'        => '毎日',
+                    'daily'        => '日常的',
                     'event-from'   => 'イベント開始',
                     'event-ticket' => 'イベントチケット',
                     'event-till'   => 'イベント終了',
+                    'hourly'       => '時間単位',
 
                     'integrity'    => [
                         'missing_options'        => 'この製品のオプションがありません。',
@@ -294,6 +295,7 @@ return [
                         'select-date'        => '日付を選択する',
                         'select-rent-time'   => 'レンタル時間を選択する',
                         'select-slot'        => 'スロットを選択する',
+                        'select-time-slot'   => '時間帯を選択してください',
                         'slot'               => 'スロット',
                         'to'                 => '終了',
                     ],

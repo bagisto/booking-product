@@ -248,6 +248,7 @@ return [
                     'event-from'   => 'Event von',
                     'event-ticket' => 'Event-Ticket',
                     'event-till'   => 'Event bis',
+                    'hourly'       => 'Stündliche Basis',
 
                     'integrity'    => [
                         'missing_options'        => 'Optionen fehlen für dieses Produkt.',
@@ -294,6 +295,7 @@ return [
                         'select-date'        => 'Datum wählen',
                         'select-rent-time'   => 'Mietzeit auswählen',
                         'select-slot'        => 'Slot auswählen',
+                        'select-time-slot'   => 'Wählen Sie Zeitfenster',
                         'slot'               => 'Slot',
                         'to'                 => 'Bis',
                     ],

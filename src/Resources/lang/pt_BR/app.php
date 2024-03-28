@@ -202,12 +202,6 @@ return [
             ],
         ],
 
-        'component' => [
-            'modal' => [
-                'close' => 'Fechar',
-            ],
-        ],
-
         'sales'   => [
             'bookings' => [
                 'calendar' => [
@@ -250,10 +244,11 @@ return [
                 'cart'             => [
                     'booking-from' => 'Reserva De',
                     'booking-till' => 'Reserva Até',
-                    'daily'        => 'Diário',
+                    'daily'        => 'Diariamente',
                     'event-from'   => 'Evento De',
                     'event-ticket' => 'Bilhete de Evento',
                     'event-till'   => 'Evento Até',
+                    'hourly'       => 'Base horária',
 
                     'integrity'    => [
                         'missing_options'        => 'Opções em falta para este produto.',
@@ -300,6 +295,7 @@ return [
                         'select-date'        => 'Selecionar Data',
                         'select-rent-time'   => 'Selecionar Tempo de Aluguer',
                         'select-slot'        => 'Selecionar Slot',
+                        'select-time-slot'   => 'Selecione o intervalo de tempo',
                         'slot'               => 'Slot',
                         'to'                 => 'Até',
                     ],

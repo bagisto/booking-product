@@ -248,6 +248,7 @@ return [
                     'event-from'   => 'Событие с',
                     'event-ticket' => 'Билет на событие',
                     'event-till'   => 'Событие до',
+                    'hourly'       => 'Почасовая основа',
 
                     'integrity'    => [
                         'missing_options'        => 'Отсутствуют опции для этого продукта.',
@@ -294,6 +295,7 @@ return [
                         'select-date'        => 'Выбрать дату',
                         'select-rent-time'   => 'Выбрать время аренды',
                         'select-slot'        => 'Выбрать слот',
+                        'select-time-slot'   => 'Выберите временной интервал',
                         'slot'               => 'Слот',
                         'to'                 => 'К',
                     ],
