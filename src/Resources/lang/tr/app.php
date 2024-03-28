@@ -239,79 +239,81 @@ return [
     'shop'  => [
         'products' => [
             'booking' => [
-                'closed'           => 'Closed',
+                'closed'           => 'Kapalı',
 
                 'cart'             => [
-                    'booking-from' => 'Booking From',
-                    'booking-till' => 'Booking Till',
-                    'daily'        => 'Daily',
-                    'event-from'   => 'Event From',
-                    'event-ticket' => 'Event Ticket',
-                    'event-till'   => 'Event Till',
+                    'booking-from' => 'Rezervasyon Başlangıç ​​Tarihi:',
+                    'booking-till' => 'Şu tarihe kadar rezervasyon:',
+                    'daily'        => 'Günlük Bazda',
+                    'event-from'   => 'Etkinlik Başlangıç ​​Tarihi',
+                    'event-ticket' => 'Etkinlik Bileti',
+                    'event-till'   => 'Etkinlik Bitiş Tarihi',
+                    'hourly'       => 'Saatlik bazda',
 
                     'integrity'    => [
-                        'missing_options'        => 'Options are missing for this product.',
-                        'select_hourly_duration' => 'Select a slot duration of one hour.',
+                        'missing_options'        => 'Bu ürün için seçenekler eksik.',
+                        'select_hourly_duration' => 'Bir saatlik bir aralık süresi seçin.',
                     ],
 
-                    'rent-from'    => 'Rent From',
-                    'rent-till'    => 'Rent Till',
-                    'rent-type'    => 'Rent Type',
-                    'renting_type' => 'Rent Type',
-                    'special-note' => 'Special Request/Notes',
+                    'rent-from'    => 'Kiralama Yeri',
+                    'rent-till'    => 'Şu Kadar Kirala',
+                    'rent-type'    => 'Kira Türü',
+                    'renting_type' => 'Kira Türü',
+                    'special-note' => 'Özel İstek/Notlar',
                 ],
 
-                'per-ticket-price' => ':price Per Ticket',
+                'per-ticket-price' => ':price Bilet Başına',
             ],
 
             'view'    => [
                 'types'   => [
                     'booking' => [
-                        'event-on'                 => 'Event On',
-                        'location'                 => 'Location',
-                        'slot-duration-in-minutes' => ':minutes Minutes',
-                        'slot-duration'            => 'Slot Duration',
-                        'view-on-map'              => 'View on Map',
+                        'event-on'                 => 'Etkinlik Açık',
+                        'location'                 => 'Konum',
+                        'slot-duration-in-minutes' => ':minutes dakika',
+                        'slot-duration'            => 'Yuva Süresi',
+                        'view-on-map'              => 'Haritada görüntüle',
                     ],
                 ],
 
                 'booking' => [
                     'appointment' => [
-                        'closed'             => 'Closed',
-                        'today-availability' => 'Today Availability',
+                        'closed'             => 'Kapalı',
+                        'today-availability' => 'Bugün Kullanılabilirlik',
                     ],
 
                     'event'       => [
-                        'book-your-ticket' => 'Book Your Ticket',
+                        'book-your-ticket' => 'Biletinizi Ayırın',
                     ],
 
                     'rental'      => [
-                        'choose-rent-option' => 'Choose Rent Option',
-                        'daily-basis'        => 'Daily Basis',
-                        'from'               => 'From',
-                        'hourly-basis'       => 'Hourly Basis',
-                        'rent-an-item'       => 'Rent an Item',
-                        'select-date'        => 'Select date',
-                        'select-rent-time'   => 'Select Rent Time',
-                        'select-slot'        => 'Select Slot',
-                        'slot'               => 'Slot',
-                        'to'                 => 'To',
+                        'choose-rent-option' => 'Kiralama Seçeneğini Seçin',
+                        'daily-basis'        => 'Günlük Bazda',
+                        'from'               => 'İtibaren',
+                        'hourly-basis'       => 'Saatlik bazda',
+                        'rent-an-item'       => 'Bir Ürün Kirala',
+                        'select-date'        => 'Tarih seç',
+                        'select-rent-time'   => 'Kiralama Süresini Seçin',
+                        'select-slot'        => 'Yuva Seç',
+                        'select-time-slot'   => 'Zaman Aralığını Seçin',
+                        'slot'               => 'Yuva',
+                        'to'                 => 'İle',
                     ],
 
                     'slots'       => [
-                        'book-an-appointment' => 'Book an Appointment',
-                        'date'                => 'Date',
-                        'no-slots-available'  => 'No slots available',
-                        'select-slot'         => 'Select Slot',
-                        'title'               => 'Slot',
+                        'book-an-appointment' => 'Randevu Alın',
+                        'date'                => 'Tarih',
+                        'no-slots-available'  => 'Kullanılabilir yuva yok',
+                        'select-slot'         => 'Yuva Seç',
+                        'title'               => 'Yuva',
                     ],
 
                     'table'       => [
-                        'book-a-table'       => 'Book a Table',
-                        'closed'             => 'Closed',
-                        'slots-for-all-days' => 'Show for all days',
-                        'special-notes'      => 'Special Request/Notes',
-                        'today-availability' => 'Today Availability',
+                        'book-a-table'       => 'Bir masa rezervasyonu',
+                        'closed'             => 'Kapalı',
+                        'slots-for-all-days' => 'Tüm günler için göster',
+                        'special-notes'      => 'Özel İstek/Notlar',
+                        'today-availability' => 'Bugün Kullanılabilirlik',
                     ],
                 ],
             ],

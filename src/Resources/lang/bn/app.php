@@ -244,10 +244,11 @@ return [
                 'cart' => [
                     'booking-from' => 'থেকে বুকিং',
                     'booking-till' => 'পর্যন্ত বুকিং',
-                    'daily'        => 'দৈনিক',
+                    'daily'        => 'দৈনিক ভিত্তিতে',
                     'event-from'   => 'ইভেন্ট থেকে',
                     'event-ticket' => 'ইভেন্ট টিকিট',
                     'event-till'   => 'ইভেন্ট পর্যন্ত',
+                    'hourly'       => 'ঘন্টার ভিত্তিতে',
 
                     'integrity'    => [
                         'missing_options'        => 'এই পণ্যের জন্য অপশন অনুপস্থিত।',
@@ -294,6 +295,7 @@ return [
                         'select-date'        => 'তারিখ নির্বাচন করুন',
                         'select-rent-time'   => 'ভাড়ার সময় নির্বাচন করুন',
                         'select-slot'        => 'স্লট নির্বাচন করুন',
+                        'select-time-slot'   => 'টাইম স্লট নির্বাচন করুন',
                         'slot'               => 'স্লট',
                         'to'                 => 'পর্যন্ত',
                     ],

@@ -244,10 +244,11 @@ return [
                 'cart'             => [
                     'booking-from' => 'הזמנה מתאריך',
                     'booking-till' => 'הזמנה עד',
-                    'daily'        => 'יומי',
+                    'daily'        => 'בסיס יומי',
                     'event-from'   => 'אירוע מתאריך',
                     'event-ticket' => 'כרטיס לאירוע',
                     'event-till'   => 'אירוע עד',
+                    'hourly'       => 'בסיס שעתי',
 
                     'integrity'    => [
                         'missing_options'        => 'אפשרויות חסרות עבור מוצר זה.',
@@ -294,6 +295,7 @@ return [
                         'select-date'        => 'בחר תאריך',
                         'select-rent-time'   => 'בחר זמן השכרה',
                         'select-slot'        => 'בחר מקטע',
+                        'select-time-slot'   => 'בחר משבצת זמן',
                         'slot'               => 'מקטע',
                         'to'                 => 'עד',
                     ],

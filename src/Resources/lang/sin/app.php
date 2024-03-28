@@ -244,10 +244,11 @@ return [
                 'cart'             => [
                     'booking-from' => 'ගිනුම් කිරීම දිනය',
                     'booking-till' => 'ගිනුම් කිරීම කැපවූ දිනය',
-                    'daily'        => 'දිනපතා',
+                    'daily'        => 'දෛනික පදනම',
                     'event-from'   => 'සිද්ධිය කිරීමේ දිනය',
                     'event-ticket' => 'සිද්ධිය ප්‍රවේශය',
                     'event-till'   => 'සිද්ධිය කැපවූ දිනය',
+                    'hourly'       => 'පැය පදනම',
 
                     'integrity'    => [
                         'missing_options'        => 'මෙම නිෂ්පාදනය සඳහා විකල්ප නැත.',
@@ -294,6 +295,7 @@ return [
                         'select-date'        => 'දිනය තෝරන්න',
                         'select-rent-time'   => 'ක්ෂේත්‍ර කාලය තෝරන්න',
                         'select-slot'        => 'ස්ලොට් තෝරන්න',
+                        'select-time-slot'   => 'Time Slot තෝරන්න',
                         'slot'               => 'ස්ලොට්',
                         'to'                 => 'දක්වා',
                     ],

@@ -248,6 +248,7 @@ return [
                     'event-from'   => 'Evenement Van',
                     'event-ticket' => 'Evenement Ticket',
                     'event-till'   => 'Evenement Tot',
+                    'hourly'       => 'Uurbasis',
 
                     'integrity'    => [
                         'missing_options'        => 'Opties ontbreken voor dit product.',
@@ -294,6 +295,7 @@ return [
                         'select-date'        => 'Selecteer datum',
                         'select-rent-time'   => 'Selecteer Verhuurtijd',
                         'select-slot'        => 'Selecteer Slot',
+                        'select-time-slot'   => 'Selecteer Tijdslot',
                         'slot'               => 'Slot',
                         'to'                 => 'Tot',
                     ],

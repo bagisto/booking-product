@@ -244,10 +244,11 @@ return [
                 'cart'             => [
                     'booking-from' => 'Desde la reserva',
                     'booking-till' => 'Hasta la reserva',
-                    'daily'        => 'Diario',
+                    'daily'        => 'Base Diaria',
                     'event-from'   => 'Desde el evento',
                     'event-ticket' => 'Boleto de evento',
                     'event-till'   => 'Hasta el evento',
+                    'hourly'       => 'Por hora',
 
                     'integrity'    => [
                         'missing_options'        => 'Faltan opciones para este producto.',
@@ -294,6 +295,7 @@ return [
                         'select-date'        => 'Seleccionar Fecha',
                         'select-rent-time'   => 'Seleccionar Hora de Renta',
                         'select-slot'        => 'Seleccionar Ranura',
+                        'select-time-slot'   => 'Seleccionar franja horaria',
                         'slot'               => 'Ranura',
                         'to'                 => 'Hasta',
                     ],

@@ -244,10 +244,11 @@ return [
                 'cart'             => [
                     'booking-from' => 'Rezerwacja Od',
                     'booking-till' => 'Rezerwacja Do',
-                    'daily'        => 'Codziennie',
+                    'daily'        => 'Podstawa dzienna',
                     'event-from'   => 'Wydarzenie Od',
                     'event-ticket' => 'Bilet na Wydarzenie',
                     'event-till'   => 'Wydarzenie Do',
+                    'hourly'       => 'Co godzinę',
 
                     'integrity'    => [
                         'missing_options'        => 'Brak opcji dla tego produktu.',
@@ -294,6 +295,7 @@ return [
                         'select-date'        => 'Wybierz datę',
                         'select-rent-time'   => 'Wybierz Czas Wynajmu',
                         'select-slot'        => 'Wybierz Slot',
+                        'select-time-slot'   => 'Wybierz Przedział czasowy',
                         'slot'               => 'Slot',
                         'to'                 => 'Do',
                     ],

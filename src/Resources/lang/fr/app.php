@@ -244,10 +244,11 @@ return [
                 'cart'             => [
                     'booking-from' => 'Réservation à partir de',
                     'booking-till' => 'Réservation jusqu\'à',
-                    'daily'        => 'Quotidien',
+                    'daily'        => 'Base quotidienne',
                     'event-from'   => 'Événement à partir de',
                     'event-ticket' => 'Billet d\'événement',
                     'event-till'   => 'Événement jusqu\'à',
+                    'hourly'       => 'Base horaire',
 
                     'integrity'    => [
                         'missing_options'        => 'Options manquantes pour ce produit.',
@@ -294,6 +295,7 @@ return [
                         'select-date'        => 'Sélectionner une date',
                         'select-rent-time'   => 'Sélectionnez l\'heure de location',
                         'select-slot'        => 'Sélectionner un créneau',
+                        'select-time-slot'   => 'Sélectionnez un créneau horaire',
                         'slot'               => 'Créneau',
                         'to'                 => 'À',
                     ],

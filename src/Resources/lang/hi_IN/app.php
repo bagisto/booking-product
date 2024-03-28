@@ -244,10 +244,11 @@ return [
                 'cart'             => [
                     'booking-from' => 'बुकिंग से',
                     'booking-till' => 'बुकिंग तक',
-                    'daily'        => 'दैनिक',
+                    'daily'        => 'दैनिक आधार पर',
                     'event-from'   => 'इवेंट से',
                     'event-ticket' => 'इवेंट टिकट',
                     'event-till'   => 'इवेंट तक',
+                    'hourly'       => 'प्रति घंटा आधार',
 
                     'integrity'    => [
                         'missing_options'        => 'इस प्रोडक्ट के लिए विकल्प गायब हैं।',
@@ -294,6 +295,7 @@ return [
                         'select-date'        => 'तारीख चुनें',
                         'select-rent-time'   => 'किराया समय चुनें',
                         'select-slot'        => 'स्लॉट चुनें',
+                        'select-time-slot'   => 'टाइम स्लॉट चुनें',
                         'slot'               => 'स्लॉट',
                         'to'                 => 'तक',
                     ],

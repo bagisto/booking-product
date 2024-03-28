@@ -244,10 +244,11 @@ return [
                 'cart'             => [
                     'booking-from' => 'Booking From',
                     'booking-till' => 'Booking Till',
-                    'daily'        => 'Daily',
+                    'daily'        => 'Daily Basis',
                     'event-from'   => 'Event From',
                     'event-ticket' => 'Event Ticket',
                     'event-till'   => 'Event Till',
+                    'hourly'       => 'Hourly Basis',
 
                     'integrity'    => [
                         'missing_options'        => 'Options are missing for this product.',
@@ -294,6 +295,7 @@ return [
                         'select-date'        => 'Select date',
                         'select-rent-time'   => 'Select Rent Time',
                         'select-slot'        => 'Select Slot',
+                        'select-time-slot'   => 'Select Time Slot',
                         'slot'               => 'Slot',
                         'to'                 => 'To',
                     ],

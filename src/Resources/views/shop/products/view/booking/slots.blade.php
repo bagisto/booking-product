@@ -24,8 +24,7 @@
                         rules="required"
                         :label="trans('booking::app.shop.products.view.booking.slots.date')"
                         :placeholder="trans('YYYY-MM-DD')"
-                        minDate="{{ $bookingProduct->available_from }}"
-                        maxDate="{{ $bookingProduct->available_to }}"
+                        data-min-date="today"
                         @change="getAvailableSlots"
                     />
 

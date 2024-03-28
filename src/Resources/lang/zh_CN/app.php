@@ -244,10 +244,11 @@ return [
                 'cart'             => [
                     'booking-from' => '预订从',
                     'booking-till' => '预订至',
-                    'daily'        => '每日',
+                    'daily'        => '每日基础',
                     'event-from'   => '活动开始于',
                     'event-ticket' => '活动门票',
                     'event-till'   => '活动结束于',
+                    'hourly'       => '按小时计算',
 
                     'integrity'    => [
                         'missing_options'        => '该产品缺少选项。',
@@ -294,6 +295,7 @@ return [
                         'select-date'        => '选择日期',
                         'select-rent-time'   => '选择租赁时间',
                         'select-slot'        => '选择时间段',
+                        'select-time-slot'   => '选择时段',
                         'slot'               => '时间段',
                         'to'                 => '至',
                     ],

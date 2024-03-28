@@ -244,10 +244,11 @@ return [
                 'cart'             => [
                     'booking-from' => 'رزرو از',
                     'booking-till' => 'رزرو تا',
-                    'daily'        => 'روزانه',
+                    'daily'        => 'به صورت روزانه',
                     'event-from'   => 'رویداد از',
                     'event-ticket' => 'بلیط رویداد',
                     'event-till'   => 'رویداد تا',
+                    'hourly'       => 'مبنای ساعتی',
 
                     'integrity'    => [
                         'missing_options'        => 'گزینه‌ها برای این محصول وجود ندارند.',
@@ -294,6 +295,7 @@ return [
                         'select-date'        => 'انتخاب تاریخ',
                         'select-rent-time'   => 'انتخاب زمان اجاره',
                         'select-slot'        => 'انتخاب شکاف',
+                        'select-time-slot'   => 'Time Slot را انتخاب کنید',
                         'slot'               => 'شکاف',
                         'to'                 => 'تا',
                     ],
