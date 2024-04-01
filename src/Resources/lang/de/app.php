@@ -250,9 +250,14 @@ return [
                     'event-till'   => 'Event bis',
                     'hourly'       => 'Stündliche Basis',
 
-                    'integrity'    => [
+                    'integrity' => [
+                        'event' => [
+                            'expired' => 'Dieses Ereignis ist abgelaufen.',
+                        ],
+
                         'missing_options'        => 'Optionen fehlen für dieses Produkt.',
-                        'select_hourly_duration' => 'Wählen Sie eine Zeitdauer von einer Stunde.',
+                        'inventory_warning'      => 'Die angeforderte Menge ist nicht verfügbar, bitte versuchen Sie es später erneut.',
+                        'select_hourly_duration' => 'Wählen Sie eine Zeitdauer von einer Stunde aus.',
                     ],
 
                     'rent-from'    => 'Vermietung von',

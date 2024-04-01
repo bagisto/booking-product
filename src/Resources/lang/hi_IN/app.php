@@ -250,9 +250,14 @@ return [
                     'event-till'   => 'इवेंट तक',
                     'hourly'       => 'प्रति घंटा आधार',
 
-                    'integrity'    => [
-                        'missing_options'        => 'इस प्रोडक्ट के लिए विकल्प गायब हैं।',
-                        'select_hourly_duration' => 'एक घंटे की स्लॉट अवधि का चयन करें।',
+                    'integrity' => [
+                        'event' => [
+                            'expired' => 'यह घटना समाप्त हो गई है।',
+                        ],
+
+                        'missing_options'        => 'इस उत्पाद के लिए विकल्प गायब हैं।',
+                        'inventory_warning'      => 'अनुरोधित मात्रा उपलब्ध नहीं है, कृपया बाद में पुनः प्रयास करें।',
+                        'select_hourly_duration' => 'एक घंटे की अवधि का स्लॉट चुनें।',
                     ],
 
                     'rent-from'    => 'किराया से',

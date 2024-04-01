@@ -96,7 +96,7 @@ class Booking
             $slots = [];
 
             if ($isOpen) {
-                $slots = $bookingProductSlot->same_slot_all_days ? $bookingProductSlot->slots : ($bookingProductSlot->slots[$index] ?? []);
+                $slots = $bookingProductSlot->same_slot_all_days ? ($bookingProductSlot->slots ?? []) : ($bookingProductSlot->slots[$index] ?? []);
             }
 
             $slotsByDays[] = [

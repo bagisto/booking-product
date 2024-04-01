@@ -250,9 +250,14 @@ return [
                     'event-till'   => 'Event Till',
                     'hourly'       => 'Погодинна плата',
 
-                    'integrity'    => [
-                        'missing_options'        => 'Options are missing for this product.',
-                        'select_hourly_duration' => 'Select a slot duration of one hour.',
+                    'integrity' => [
+                        'event' => [
+                            'expired' => 'Ця подія закінчилася.',
+                        ],
+
+                        'missing_options'        => 'Для цього продукту відсутні варіанти.',
+                        'inventory_warning'      => 'Запитана кількість недоступна, будь ласка, спробуйте пізніше.',
+                        'select_hourly_duration' => 'Виберіть тривалість слота одну годину.',
                     ],
 
                     'rent-from'    => 'Rent From',

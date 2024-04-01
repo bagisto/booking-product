@@ -250,8 +250,13 @@ return [
                     'event-till'   => 'Événement jusqu\'à',
                     'hourly'       => 'Base horaire',
 
-                    'integrity'    => [
-                        'missing_options'        => 'Options manquantes pour ce produit.',
+                    'integrity' => [
+                        'event' => [
+                            'expired' => 'Cet événement a expiré.',
+                        ],
+
+                        'missing_options'        => 'Des options sont manquantes pour ce produit.',
+                        'inventory_warning'      => 'La quantité demandée n\'est pas disponible, veuillez réessayer plus tard.',
                         'select_hourly_duration' => 'Sélectionnez une durée de créneau d\'une heure.',
                     ],
 

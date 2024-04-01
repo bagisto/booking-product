@@ -250,9 +250,14 @@ return [
                     'event-till'   => 'Etkinlik Bitiş Tarihi',
                     'hourly'       => 'Saatlik bazda',
 
-                    'integrity'    => [
+                    'integrity' => [
+                        'event' => [
+                            'expired' => 'Bu etkinlik süresi doldu.',
+                        ],
+
                         'missing_options'        => 'Bu ürün için seçenekler eksik.',
-                        'select_hourly_duration' => 'Bir saatlik bir aralık süresi seçin.',
+                        'inventory_warning'      => 'İstenen miktar mevcut değil, lütfen daha sonra tekrar deneyin.',
+                        'select_hourly_duration' => 'Bir saatlik bir zaman aralığı seçin.',
                     ],
 
                     'rent-from'    => 'Kiralama Yeri',

@@ -250,8 +250,13 @@ return [
                     'event-till'   => 'Evenement Tot',
                     'hourly'       => 'Uurbasis',
 
-                    'integrity'    => [
+                    'integrity' => [
+                        'event' => [
+                            'expired' => 'Dit evenement is verlopen.',
+                        ],
+
                         'missing_options'        => 'Opties ontbreken voor dit product.',
+                        'inventory_warning'      => 'De aangevraagde hoeveelheid is niet beschikbaar, probeer het later opnieuw.',
                         'select_hourly_duration' => 'Selecteer een duur van één uur.',
                     ],
 

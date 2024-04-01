@@ -250,9 +250,14 @@ return [
                     'event-till'   => 'אירוע עד',
                     'hourly'       => 'בסיס שעתי',
 
-                    'integrity'    => [
-                        'missing_options'        => 'אפשרויות חסרות עבור מוצר זה.',
-                        'select_hourly_duration' => 'בחר משך זמן של שעה אחת.',
+                    'integrity' => [
+                        'event' => [
+                            'expired' => 'האירוע הזה פג תוקפו.',
+                        ],
+
+                        'missing_options'        => 'אפשרויות חסרות למוצר זה.',
+                        'inventory_warning'      => 'הכמות שנדרשת אינה זמינה, נסה שוב מאוחר יותר.',
+                        'select_hourly_duration' => 'בחר משך שעתי של שעה אחת.',
                     ],
 
                     'rent-from'    => 'השכר מתאריך',

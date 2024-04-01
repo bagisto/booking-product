@@ -23,7 +23,7 @@ class BookingProductServiceProvider extends ServiceProvider
         Blade::anonymousComponentPath(__DIR__.'/../Resources/views/components', 'booking');
 
         $this->publishes([
-            __DIR__ . '/../../publishable/build' => public_path('themes/booking/build'),
+            __DIR__.'/../../publishable/build' => public_path('themes/booking/build'),
         ], 'public');
 
         $this->app->register(EventServiceProvider::class);
