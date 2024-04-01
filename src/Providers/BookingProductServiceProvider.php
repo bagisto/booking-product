@@ -4,6 +4,7 @@ namespace Webkul\BookingProduct\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Webkul\BookingProduct\Console\Commands\Booking as BookingCommand;
 
 class BookingProductServiceProvider extends ServiceProvider
 {
@@ -36,10 +37,24 @@ class BookingProductServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        $this->registerCommands();
+
         $this->mergeConfigFrom(dirname(__DIR__).'/Config/product_types.php', 'product_types');
 
         $this->mergeConfigFrom(
             dirname(__DIR__).'/Config/menu.php', 'menu.admin'
         );
+    }
+
+    /**
+     * Register the Booking Product Command of this package.
+     */
+    protected function registerCommands(): void
+    {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                BookingCommand::class,
+            ]);
+        }
     }
 }

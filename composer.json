@@ -18,7 +18,8 @@
         "laravel": {
             "providers": [
                 "Webkul\\BookingProduct\\Providers\\BookingProductServiceProvider"
-            ]
+            ],
+            "aliases": {}
         }
     },
     "minimum-stability": "dev"

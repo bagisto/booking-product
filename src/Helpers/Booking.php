@@ -218,7 +218,7 @@ class Booking
 
         $requestedDate = Carbon::createFromTimeString($date.' 00:00:00');
 
-       return $this->slotsCalculation($bookingProduct, $requestedDate, $bookingProductSlot);
+        return $this->slotsCalculation($bookingProduct, $requestedDate, $bookingProductSlot);
     }
 
     /**
@@ -512,12 +512,12 @@ class Booking
                     $tempStartDayTime->addMinutes(60);
                 } else {
                     $tempStartDayTime->addMinutes($bookingProductSlot->duration);
-    
+
                     if ($isFirstIteration) {
                         $isFirstIteration = false;
                     } else {
                         $from->modify('+'.$bookingProductSlot->break_time.' minutes');
-    
+
                         $tempStartDayTime->modify('+'.$bookingProductSlot->break_time.' minutes');
                     }
                 }
@@ -548,9 +548,9 @@ class Booking
                     ) {
                         if ($bookingProduct->type == 'rental') {
                             if (! isset($slots[$index])) {
-                                $slots[$index]['time'] = $startDayTime->format('h:i A') . ' - ' . $endDayTime->format('h:i A');
+                                $slots[$index]['time'] = $startDayTime->format('h:i A').' - '.$endDayTime->format('h:i A');
                             }
-    
+
                             $slots[$index]['slots'][] = [
                                 'from'           => $from->format('h:i A'),
                                 'to'             => $to->format('h:i A'),
