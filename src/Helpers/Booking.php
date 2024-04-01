@@ -463,6 +463,8 @@ class Booking
             $availableTo = $bookingProduct->available_to
                 ? Carbon::createFromTimeString($bookingProduct->available_to)
                 : Carbon::createFromTimeString('2080-01-01 00:00:00');
+
+            $timeDurations = $bookingProductSlot->slots[$requestedDate->format('w')] ?? [];
         } else {
             $availableFrom = ! $bookingProduct->available_every_week && $bookingProduct->available_from
                 ? Carbon::createFromTimeString($bookingProduct->available_from)
@@ -471,11 +473,7 @@ class Booking
             $availableTo = ! $bookingProduct->available_every_week && $bookingProduct->available_from
                 ? Carbon::createFromTimeString($bookingProduct->available_to)
                 : Carbon::createFromTimeString('2080-01-01 00:00:00');
-        }
 
-        if ($bookingProduct->type == 'default') {
-            $timeDurations = $bookingProductSlot->slots[$requestedDate->format('w')] ?? [];
-        } else {
             $timeDurations = $bookingProductSlot->same_slot_all_days
                 ? $bookingProductSlot->slots
                 : ($bookingProductSlot->slots[$requestedDate->format('w')] ?? []);
