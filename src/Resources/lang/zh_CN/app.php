@@ -250,9 +250,14 @@ return [
                     'event-till'   => '活动结束于',
                     'hourly'       => '按小时计算',
 
-                    'integrity'    => [
-                        'missing_options'        => '该产品缺少选项。',
-                        'select_hourly_duration' => '选择一个小时的时间段。',
+                    'integrity' => [
+                        'event' => [
+                            'expired' => '此活动已过期。',
+                        ],
+
+                        'missing_options'        => '此产品缺少选项。',
+                        'inventory_warning'      => '所请求的数量不可用，请稍后重试。',
+                        'select_hourly_duration' => '选择一个小时的时段。',
                     ],
 
                     'rent-from'    => '租赁从',

@@ -250,9 +250,14 @@ return [
                     'event-till'   => 'Wydarzenie Do',
                     'hourly'       => 'Co godzinę',
 
-                    'integrity'    => [
+                    'integrity' => [
+                        'event' => [
+                            'expired' => 'To wydarzenie wygasło.',
+                        ],
+
                         'missing_options'        => 'Brak opcji dla tego produktu.',
-                        'select_hourly_duration' => 'Wybierz czas trwania jednej godziny.',
+                        'inventory_warning'      => 'Żądana ilość nie jest dostępna, spróbuj ponownie później.',
+                        'select_hourly_duration' => 'Wybierz slot o długości jednej godziny.',
                     ],
 
                     'rent-from'    => 'Wynajem Od',

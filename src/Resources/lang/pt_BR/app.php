@@ -250,9 +250,14 @@ return [
                     'event-till'   => 'Evento Até',
                     'hourly'       => 'Base horária',
 
-                    'integrity'    => [
-                        'missing_options'        => 'Opções em falta para este produto.',
-                        'select_hourly_duration' => 'Selecione uma duração do slot de uma hora.',
+                    'integrity' => [
+                        'event' => [
+                            'expired' => 'Este evento expirou.',
+                        ],
+
+                        'missing_options'        => 'Opções estão faltando para este produto.',
+                        'inventory_warning'      => 'A quantidade solicitada não está disponível, tente novamente mais tarde.',
+                        'select_hourly_duration' => 'Selecione uma duração de uma hora.',
                     ],
 
                     'rent-from'    => 'Aluguer De',

@@ -250,9 +250,14 @@ return [
                     'event-till'   => 'نهاية الحدث',
                     'hourly'       => 'بالساعة',
 
-                    'integrity'    => [
+                    'integrity' => [
+                        'event'                  => [
+                            'expired' => 'انتهت هذه الفعالية.',
+                        ],
+
                         'missing_options'        => 'الخيارات مفقودة لهذا المنتج.',
-                        'select_hourly_duration' => 'يرجى اختيار مدة فترة ساعة واحدة.',
+                        'inventory_warning'      => 'الكمية المطلوبة غير متوفرة، يرجى المحاولة مرة أخرى في وقت لاحق.',
+                        'select_hourly_duration' => 'اختر مدة فترة زمنية ساعة واحدة.',
                     ],
 
                     'rent-from'    => 'الإيجار من تاريخ',

@@ -250,9 +250,14 @@ return [
                     'event-till'   => 'Evento Fino A',
                     'hourly'       => 'Base oraria',
 
-                    'integrity'    => [
-                        'missing_options'        => 'Opzioni mancanti per questo prodotto.',
-                        'select_hourly_duration' => 'Seleziona una durata dello slot di un\'ora.',
+                    'integrity' => [
+                        'event' => [
+                            'expired' => 'Questo evento è scaduto.',
+                        ],
+
+                        'missing_options'        => 'Mancano le opzioni per questo prodotto.',
+                        'inventory_warning'      => 'La quantità richiesta non è disponibile, si prega di riprovare più tardi.',
+                        'select_hourly_duration' => 'Seleziona una durata oraria di un\'ora.',
                     ],
 
                     'rent-from'    => 'Affitto Da',

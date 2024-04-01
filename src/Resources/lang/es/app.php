@@ -250,9 +250,14 @@ return [
                     'event-till'   => 'Hasta el evento',
                     'hourly'       => 'Por hora',
 
-                    'integrity'    => [
+                    'integrity' => [
+                        'event' => [
+                            'expired' => 'Este evento ha caducado.',
+                        ],
+
                         'missing_options'        => 'Faltan opciones para este producto.',
-                        'select_hourly_duration' => 'Seleccione una duración de ranura de una hora.',
+                        'inventory_warning'      => 'La cantidad solicitada no está disponible, por favor intente de nuevo más tarde.',
+                        'select_hourly_duration' => 'Seleccione una duración de una hora.',
                     ],
 
                     'rent-from'    => 'Alquiler desde',

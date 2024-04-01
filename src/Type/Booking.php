@@ -136,7 +136,7 @@ class Booking extends Virtual
                 Carbon::now() > $bookingProduct->available_from
                 && Carbon::now() > $bookingProduct->available_to
             ) {
-                return trans('booking::app.cart.event.expired');
+                return trans('booking::app.shop.products.booking.cart.integrity.event.expired');
             }
 
             $filtered = Arr::where($data['booking']['qty'], function ($qty, $key) {
@@ -144,7 +144,7 @@ class Booking extends Virtual
             });
 
             if (! count($filtered)) {
-                return trans('booking::app.cart.integrity.missing_options');
+                return trans('booking::app.shop.products.booking.cart.integrity.missing_options');
             }
 
             $cartProductsList = [];
@@ -174,7 +174,7 @@ class Booking extends Virtual
         $typeHelper = app($this->bookingHelper->getTypeHelper($bookingProduct->type));
 
         if (! $typeHelper->isSlotAvailable($products)) {
-            return trans('booking::app.cart.quantity.inventory_warning');
+            return trans('booking::app.shop.products.booking.cart.integrity.inventory_warning');
         }
 
         $products = $typeHelper->addAdditionalPrices($products);

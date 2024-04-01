@@ -250,9 +250,14 @@ return [
                     'event-till'   => 'イベント終了',
                     'hourly'       => '時間単位',
 
-                    'integrity'    => [
+                    'integrity' => [
+                        'event' => [
+                            'expired' => 'このイベントは終了しました。',
+                        ],
+
                         'missing_options'        => 'この製品のオプションがありません。',
-                        'select_hourly_duration' => '1時間のスロットの期間を選択してください。',
+                        'inventory_warning'      => '要求された数量は利用できません。後でもう一度やり直してください。',
+                        'select_hourly_duration' => '1時間のスロット期間を選択してください。',
                     ],
 
                     'rent-from'    => 'レンタル開始',

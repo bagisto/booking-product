@@ -6,8 +6,8 @@ use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Event;
-use Webkul\Core\Eloquent\Repository;
 use Webkul\BookingProduct\Contracts\Booking;
+use Webkul\Core\Eloquent\Repository;
 
 class BookingRepository extends Repository
 {
