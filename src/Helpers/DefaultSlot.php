@@ -95,19 +95,6 @@ class DefaultSlot extends Booking
      */
     public function getManyBookingsForOneDaySlots($bookingProductSlot, object $requestedDate)
     {
-        $bookingProduct = $bookingProductSlot->booking_product;
-
-        $availableFrom = $bookingProduct->available_from
-            ? Carbon::createFromTimeString($bookingProduct->available_from)
-            : Carbon::now()->copy()->startOfDay();
-
-        $availableTo = $bookingProduct->available_to
-            ? Carbon::createFromTimeString($bookingProduct->available_to)
-            : Carbon::createFromTimeString('2080-01-01 00:00:00');
-
-        $timeDurations = $bookingProductSlot->slots[$requestedDate->format('w')] ?? [];
-
-
-        return $this->slotsCalculation($bookingProduct, $requestedDate, $availableFrom, $availableTo, $timeDurations, $bookingProductSlot);
+        return $this->slotsCalculation($bookingProductSlot->booking_product, $requestedDate, $bookingProductSlot);
     }
 }

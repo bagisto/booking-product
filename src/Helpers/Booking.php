@@ -141,18 +141,16 @@ class Booking
 
         $days = [];
 
-        $currentTime = Carbon::now();
-
         $availableFrom = ! $bookingProduct->available_from && $bookingProduct->available_from
             ? Carbon::createFromTimeString($bookingProduct->available_from)
-            : Carbon::createFromTimeString($currentTime->format('Y-m-d 00:00:00'));
+            : Carbon::now()->copy()->startOfDay();
 
         $availableTo = ! $bookingProduct->available_from && $bookingProduct->available_to
             ? Carbon::createFromTimeString($bookingProduct->available_to)
             : Carbon::createFromTimeString('2080-01-01 00:00:00');
 
         for ($i = 0; $i < 7; $i++) {
-            $date = clone $currentTime;
+            $date = clone Carbon::now();
 
             $date->addDays($i);
 
@@ -220,19 +218,7 @@ class Booking
 
         $requestedDate = Carbon::createFromTimeString($date.' 00:00:00');
 
-        $availableFrom = ! $bookingProduct->available_every_week && $bookingProduct->available_from
-            ? Carbon::createFromTimeString($bookingProduct->available_from)
-            : Carbon::now()->copy()->startOfDay();
-
-        $availableTo = ! $bookingProduct->available_every_week && $bookingProduct->available_from
-            ? Carbon::createFromTimeString($bookingProduct->available_to)
-            : Carbon::createFromTimeString('2080-01-01 00:00:00');
-
-        $timeDurations = $bookingProductSlot->same_slot_all_days
-            ? $bookingProductSlot->slots
-            : ($bookingProductSlot->slots[$requestedDate->format('w')] ?? []);
-
-       return $this->slotsCalculation($bookingProduct, $requestedDate, $availableFrom, $availableTo, $timeDurations, $bookingProductSlot);
+       return $this->slotsCalculation($bookingProduct, $requestedDate, $bookingProductSlot);
     }
 
     /**
@@ -467,8 +453,34 @@ class Booking
     /**
      * Slots Calculation for all types of booking products.
      */
-    public function slotsCalculation(object $bookingProduct, object $requestedDate, object $availableFrom, object $availableTo, array $timeDurations, object $bookingProductSlot): mixed
+    public function slotsCalculation(object $bookingProduct, object $requestedDate, object $bookingProductSlot): mixed
     {
+        if ($bookingProduct->type == 'default') {
+            $availableFrom = $bookingProduct->available_from
+                ? Carbon::createFromTimeString($bookingProduct->available_from)
+                : Carbon::now()->copy()->startOfDay();
+
+            $availableTo = $bookingProduct->available_to
+                ? Carbon::createFromTimeString($bookingProduct->available_to)
+                : Carbon::createFromTimeString('2080-01-01 00:00:00');
+        } else {
+            $availableFrom = ! $bookingProduct->available_every_week && $bookingProduct->available_from
+                ? Carbon::createFromTimeString($bookingProduct->available_from)
+                : Carbon::now()->copy()->startOfDay();
+
+            $availableTo = ! $bookingProduct->available_every_week && $bookingProduct->available_from
+                ? Carbon::createFromTimeString($bookingProduct->available_to)
+                : Carbon::createFromTimeString('2080-01-01 00:00:00');
+        }
+
+        if ($bookingProduct->type == 'default') {
+            $timeDurations = $bookingProductSlot->slots[$requestedDate->format('w')] ?? [];
+        } else {
+            $timeDurations = $bookingProductSlot->same_slot_all_days
+                ? $bookingProductSlot->slots
+                : ($bookingProductSlot->slots[$requestedDate->format('w')] ?? []);
+        }
+
         if (
             $requestedDate < $availableFrom
             || $requestedDate > $availableTo

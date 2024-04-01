@@ -23,19 +23,7 @@ class RentalSlot extends Booking
 
         $requestedDate = Carbon::createFromTimeString($date.' 00:00:00');
 
-        $availableFrom = ! $bookingProduct->available_every_week && $bookingProduct->available_from
-            ? Carbon::createFromTimeString($bookingProduct->available_from)
-            : Carbon::now()->copy()->startOfDay();
-
-        $availableTo = ! $bookingProduct->available_every_week && $bookingProduct->available_from
-            ? Carbon::createFromTimeString($bookingProduct->available_to)
-            : Carbon::createFromTimeString('2080-01-01 00:00:00');
-
-        $timeDurations = $bookingProductSlot->same_slot_all_days
-            ? $bookingProductSlot->slots
-            : $bookingProductSlot->slots[$requestedDate->format('w')] ?? [];
-
-        return $this->slotsCalculation($bookingProduct, $requestedDate, $availableFrom, $availableTo, $timeDurations, $bookingProductSlot);
+        return $this->slotsCalculation($bookingProduct, $requestedDate, $bookingProductSlot);
     }
 
     /**
@@ -97,15 +85,13 @@ class RentalSlot extends Booking
 
             return true;
         } else {
-            $currentTime = Carbon::now();
-
             $requestedFromDate = Carbon::createFromTimeString($cartItem['additional']['booking']['date_from'].' 00:00:00');
 
             $requestedToDate = Carbon::createFromTimeString($cartItem['additional']['booking']['date_to'].' 23:59:59');
 
             $availableFrom = ! $bookingProduct->available_every_week && $bookingProduct->available_from
                 ? Carbon::createFromTimeString($bookingProduct->available_from->format('Y-m-d').' 00:00:00')
-                : Carbon::createFromTimeString($currentTime->format('Y-m-d 00:00:00'));
+                : Carbon::now()->copy()->startOfDay();
 
             $availableTo = ! $bookingProduct->available_every_week && $bookingProduct->available_from
                 ? Carbon::createFromTimeString($bookingProduct->available_to->format('Y-m-d').' 23:59:59')
