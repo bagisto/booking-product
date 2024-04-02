@@ -1,6 +1,6 @@
 {!! view_render_event('bagisto.admin.catalog.product.edit.booking.event.before', ['product' => $product]) !!}
 
-<v-event-booking />
+<v-event-booking></v-event-booking>
 
 {!! view_render_event('bagisto.admin.catalog.product.edit.booking.event.after', ['product' => $product]) !!}
 
@@ -156,7 +156,7 @@
 
             <!-- For Empty Illustration -->
             <div v-else>
-                <v-empty-info ::type="event" />
+                <v-empty-info ::type="event"></v-empty-info>
             </div>
         </div>
 
