@@ -5,163 +5,6 @@ return [
         'catalog' => [
             'products' => [
                 'edit'  => [
-                    'booking' => [
-                        'appointment' => [
-                            'break-duration'         => 'Break Time b/w Slots (Mins)',
-                            'slot-duration'          => 'Slot Duration (Mins)',
-
-                            'same-slot-for-all-days' => [
-                                'no'    => 'No',
-                                'title' => 'Same Slot For All days',
-                                'yes'   => 'Yes',
-                            ],
-                        ],
-
-                        'default'     => [
-                            'add'              => 'Add',
-                            'break-duration'   => 'Break Time b/w Slots (Mins)',
-                            'close'            => 'Close',
-                            'description'      => 'Booking Information',
-                            'description-info' => 'According to slots the time duration will be created and visible.',
-                            'edit'             => 'Edit',
-                            'many'             => 'Many Bookings For One Days',
-
-                            'modal'            => [
-                                'slot' => [
-                                    'add-title'  => 'Add Slots',
-                                    'close'      => 'Close',
-                                    'day'        => 'Day',
-                                    'edit-title' => 'Edit Slots',
-                                    'friday'     => 'Friday',
-                                    'from'       => 'From',
-                                    'from-day'   => 'From Day',
-                                    'from-time'  => 'From Time',
-                                    'monday'     => 'Monday',
-                                    'open'       => 'Open',
-                                    'saturday'   => 'Saturday',
-                                    'save'       => 'Save',
-                                    'select'     => 'Select',
-                                    'status'     => 'Status',
-                                    'sunday'     => 'Sunday',
-                                    'thursday'   => 'Thursday',
-                                    'to'         => 'To',
-                                    'to-day'     => 'To Day',
-                                    'to-time'    => 'To Time',
-                                    'tuesday'    => 'Tuesday',
-                                    'wednesday'  => 'Wednesday',
-                                    'week'       => ':day',
-                                ],
-                            ],
-
-                            'one'              => 'One Booking For Many Days',
-                            'open'             => 'Open',
-                            'slot-add'         => 'Add Slots',
-                            'slot-title'       => 'Slots Time Duration',
-                            'slot-duration'    => 'Slot Duration (Mins)',
-                            'title'            => 'Default',
-                            'unavailable'      => 'Unavailable',
-                        ],
-
-                        'event'       => [
-                            'add'                => 'Add Tickets',
-                            'delete'             => 'Delete',
-                            'description-info'   => 'There is no tickets available.',
-                            'description'        => 'Description',
-                            'edit'               => 'Edit',
-
-                            'modal'              => [
-                                'edit' => 'Edit Tickets',
-                                'save' => 'Save',
-                            ],
-
-                            'name'               => 'Name',
-                            'price'              => 'Price',
-                            'qty'                => 'Quantity',
-                            'special-price-from' => 'Special Price From',
-                            'special-price-to'   => 'Special Price To',
-                            'special-price'      => 'Special Price',
-                            'title'              => 'Tickets',
-                            'valid-from'         => 'Valid From',
-                            'valid-until'        => 'Valid Until',
-                        ],
-
-                        'empty-info'  => [
-                            'tickets' => [
-                                'add' => 'Add Tickets',
-                            ],
-
-                            'slots'   => [
-                                'add'         => 'Add Slots',
-                                'description' => 'Available Slots with time Duration.',
-                            ],
-                        ],
-
-                        'rental'      => [
-                            'daily-hourly'           => 'Both (Daily and Hourly Basis)',
-                            'daily-price'            => 'Daily Price',
-                            'daily'                  => 'Daily Basis',
-                            'hourly-price'           => 'Hourly Price',
-                            'hourly'                 => 'Hourly Basis',
-
-                            'same-slot-for-all-days' => [
-                                'no'    => 'No',
-                                'title' => 'Same Slot For All days',
-                                'yes'   => 'Yes',
-                            ],
-
-                            'title'                  => 'Renting Type',
-                        ],
-
-                        'slots'       => [
-                            'add'              => 'Add Slots',
-
-                            'action'           => [
-                                'add' => 'Add',
-                            ],
-
-                            'description-info' => 'According to slots the time duration will be created and visible.',
-
-                            'modal'            => [
-                                'slot' => [
-                                    'friday'     => 'Friday',
-                                    'from'       => 'From',
-                                    'monday'     => 'Monday',
-                                    'saturday'   => 'Saturday',
-                                    'sunday'     => 'Sunday',
-                                    'thursday'   => 'Thursday',
-                                    'to'         => 'To',
-                                    'tuesday'    => 'Tuesday',
-                                    'wednesday'  => 'Wednesday',
-                                ],
-                            ],
-
-                            'save'             => 'Save',
-                            'title'            => 'Slots Time Duration',
-                            'unavailable'      => 'Unavailable',
-                        ],
-
-                        'table'       => [
-                            'break-duration'            => 'Break Time b/w Slots (Mins)',
-
-                            'charged-per'               => [
-                                'guest'  => 'Guest',
-                                'table'  => 'Table',
-                                'title'  => 'Charged Per',
-                            ],
-
-                            'guest-capacity'            => 'Guest Capacity',
-                            'guest-limit'               => 'Guest Limit Per Table',
-                            'prevent-scheduling-before' => 'Prevent Scheduling Before',
-                            'slot-duration'             => 'Slot Duration (Mins)',
-
-                            'same-slot-for-all-days'    => [
-                                'no'    => 'No',
-                                'title' => 'Same Slot For All days',
-                                'yes'   => 'Yes',
-                            ],
-                        ],
-                    ],
-
                     'types'   => [
                         'booking' => [
                             'available-from'       => 'Available From',
@@ -173,8 +16,163 @@ return [
                                 'yes'   => 'Yes',
                             ],
 
+                            'appointment' => [
+                                'break-duration'         => 'Break Time b/w Slots (Mins)',
+                                'slot-duration'          => 'Slot Duration (Mins)',
+    
+                                'same-slot-for-all-days' => [
+                                    'no'    => 'No',
+                                    'title' => 'Same Slot For All days',
+                                    'yes'   => 'Yes',
+                                ],
+                            ],
+
+                            'default'     => [
+                                'add'              => 'Add',
+                                'break-duration'   => 'Break Time b/w Slots (Mins)',
+                                'close'            => 'Close',
+                                'description'      => 'Booking Information',
+                                'description-info' => 'According to slots the time duration will be created and visible.',
+                                'edit'             => 'Edit',
+                                'many'             => 'Many Bookings For One Days',
+    
+                                'modal'            => [
+                                    'slot' => [
+                                        'add-title'  => 'Add Slots',
+                                        'close'      => 'Close',
+                                        'day'        => 'Day',
+                                        'edit-title' => 'Edit Slots',
+                                        'friday'     => 'Friday',
+                                        'from'       => 'From',
+                                        'from-day'   => 'From Day',
+                                        'from-time'  => 'From Time',
+                                        'monday'     => 'Monday',
+                                        'open'       => 'Open',
+                                        'saturday'   => 'Saturday',
+                                        'save'       => 'Save',
+                                        'select'     => 'Select',
+                                        'status'     => 'Status',
+                                        'sunday'     => 'Sunday',
+                                        'thursday'   => 'Thursday',
+                                        'to'         => 'To',
+                                        'to-day'     => 'To Day',
+                                        'to-time'    => 'To Time',
+                                        'tuesday'    => 'Tuesday',
+                                        'wednesday'  => 'Wednesday',
+                                        'week'       => ':day',
+                                    ],
+                                ],
+    
+                                'one'              => 'One Booking For Many Days',
+                                'open'             => 'Open',
+                                'slot-add'         => 'Add Slots',
+                                'slot-title'       => 'Slots Time Duration',
+                                'slot-duration'    => 'Slot Duration (Mins)',
+                                'title'            => 'Default',
+                                'unavailable'      => 'Unavailable',
+                            ],
+    
+                            'event'       => [
+                                'add'                => 'Add Tickets',
+                                'delete'             => 'Delete',
+                                'description-info'   => 'There is no tickets available.',
+                                'description'        => 'Description',
+                                'edit'               => 'Edit',
+    
+                                'modal'              => [
+                                    'edit' => 'Edit Tickets',
+                                    'save' => 'Save',
+                                ],
+    
+                                'name'               => 'Name',
+                                'price'              => 'Price',
+                                'qty'                => 'Quantity',
+                                'special-price-from' => 'Special Price From',
+                                'special-price-to'   => 'Special Price To',
+                                'special-price'      => 'Special Price',
+                                'title'              => 'Tickets',
+                                'valid-from'         => 'Valid From',
+                                'valid-until'        => 'Valid Until',
+                            ],
+    
+                            'empty-info'  => [
+                                'tickets' => [
+                                    'add' => 'Add Tickets',
+                                ],
+    
+                                'slots'   => [
+                                    'add'         => 'Add Slots',
+                                    'description' => 'Available Slots with time Duration.',
+                                ],
+                            ],
+
                             'location'             => 'Location',
                             'qty'                  => 'Qty',
+
+                            'rental'      => [
+                                'daily-hourly'           => 'Both (Daily and Hourly Basis)',
+                                'daily-price'            => 'Daily Price',
+                                'daily'                  => 'Daily Basis',
+                                'hourly-price'           => 'Hourly Price',
+                                'hourly'                 => 'Hourly Basis',
+    
+                                'same-slot-for-all-days' => [
+                                    'no'    => 'No',
+                                    'title' => 'Same Slot For All days',
+                                    'yes'   => 'Yes',
+                                ],
+    
+                                'title'                  => 'Renting Type',
+                            ],
+    
+                            'slots'       => [
+                                'add'              => 'Add Slots',
+    
+                                'action'           => [
+                                    'add' => 'Add',
+                                ],
+    
+                                'description-info' => 'According to slots the time duration will be created and visible.',
+    
+                                'modal'            => [
+                                    'slot' => [
+                                        'friday'     => 'Friday',
+                                        'from'       => 'From',
+                                        'monday'     => 'Monday',
+                                        'saturday'   => 'Saturday',
+                                        'sunday'     => 'Sunday',
+                                        'thursday'   => 'Thursday',
+                                        'to'         => 'To',
+                                        'tuesday'    => 'Tuesday',
+                                        'wednesday'  => 'Wednesday',
+                                    ],
+                                ],
+    
+                                'save'             => 'Save',
+                                'title'            => 'Slots Time Duration',
+                                'unavailable'      => 'Unavailable',
+                            ],
+    
+                            'table'       => [
+                                'break-duration'            => 'Break Time b/w Slots (Mins)',
+    
+                                'charged-per'               => [
+                                    'guest'  => 'Guest',
+                                    'table'  => 'Table',
+                                    'title'  => 'Charged Per',
+                                ],
+    
+                                'guest-capacity'            => 'Guest Capacity',
+                                'guest-limit'               => 'Guest Limit Per Table',
+                                'prevent-scheduling-before' => 'Prevent Scheduling Before',
+                                'slot-duration'             => 'Slot Duration (Mins)',
+    
+                                'same-slot-for-all-days'    => [
+                                    'no'    => 'No',
+                                    'title' => 'Same Slot For All days',
+                                    'yes'   => 'Yes',
+                                ],
+                            ],
 
                             'type'                 => [
                                 'appointment' => 'Appointment Booking',
