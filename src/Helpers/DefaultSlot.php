@@ -34,17 +34,13 @@ class DefaultSlot extends Booking
 
         $requestedDate = Carbon::createFromTimeString($date.' 00:00:00');
 
-        $currentTime = Carbon::now();
+        $availableFrom = ! $bookingProduct->available_every_week && $bookingProduct->available_from
+            ? Carbon::createFromTimeString($bookingProduct->available_from)
+            : Carbon::now()->copy()->startOfDay();
 
-        $availableFrom = Carbon::createFromTimeString($currentTime->format('Y-m-d 00:00:00'));
-
-        $availableTo = Carbon::createFromTimeString('2080-01-01 00:00:00');
-
-        if (! $bookingProduct->available_every_week && $bookingProduct->available_from) {
-            $availableFrom = Carbon::createFromTimeString($bookingProduct->available_from);
-
-            $availableTo = Carbon::createFromTimeString($bookingProduct->available_to);
-        }
+        $availableTo = ! $bookingProduct->available_every_week && $bookingProduct->available_from
+            ? Carbon::createFromTimeString($bookingProduct->available_to)
+            : Carbon::createFromTimeString('2080-01-01 00:00:00');
 
         if (
             $requestedDate < $availableFrom
@@ -99,97 +95,6 @@ class DefaultSlot extends Booking
      */
     public function getManyBookingsForOneDaySlots($bookingProductSlot, object $requestedDate)
     {
-        $bookingProduct = $bookingProductSlot->booking_product;
-
-        $currentTime = Carbon::now();
-
-        $availableFrom = $bookingProduct->available_from
-            ? Carbon::createFromTimeString($bookingProduct->available_from)
-            : Carbon::createFromTimeString($currentTime->format('Y-m-d 00:00:00'));
-
-        $availableTo = $bookingProduct->available_to
-            ? Carbon::createFromTimeString($bookingProduct->available_to)
-            : Carbon::createFromTimeString('2080-01-01 00:00:00');
-
-        $timeDurations = $bookingProductSlot->slots[$requestedDate->format('w')] ?? [];
-
-        if (
-            $requestedDate < $availableFrom
-            || $requestedDate > $availableTo
-        ) {
-            return [];
-        }
-
-        $slots = [];
-
-        foreach ($timeDurations as $timeDuration) {
-            $fromChunks = explode(':', $timeDuration['from']);
-            $toChunks = explode(':', $timeDuration['to']);
-
-            $startDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d').' 00:00:00')
-                ->addMinutes(($fromChunks[0] * 60) + $fromChunks[1]);
-
-            $tempStartDayTime = clone $startDayTime;
-
-            $endDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d').' 00:00:00')
-                ->addMinutes(($toChunks[0] * 60) + $toChunks[1]);
-
-            $isFirstIteration = true;
-
-            while (1) {
-                $from = clone $tempStartDayTime;
-
-                $tempStartDayTime->addMinutes($bookingProductSlot->duration);
-
-                if ($isFirstIteration) {
-                    $isFirstIteration = false;
-                } else {
-                    $from->modify('+'.$bookingProductSlot->break_time.' minutes');
-
-                    $tempStartDayTime->modify('+'.$bookingProductSlot->break_time.' minutes');
-                }
-
-                $to = clone $tempStartDayTime;
-
-                if (
-                    ($startDayTime <= $from
-                        && $from <= $availableTo
-                    )
-                    && (
-                        $availableTo >= $to
-                        && $to >= $startDayTime
-                    )
-                    && (
-                        $startDayTime <= $from
-                        && $from <= $endDayTime
-                    )
-                    && (
-                        $endDayTime >= $to
-                        && $to >= $startDayTime
-                    )
-                ) {
-                    // Get already ordered qty for this slot
-                    $orderedQty = 0;
-
-                    $qty = isset($timeDuration['qty']) ? ($timeDuration['qty'] - $orderedQty) : 1;
-
-                    if (
-                        $qty = $timeDuration['qty'] ?? 1
-                        && $currentTime <= $from
-                    ) {
-                        $slots[] = [
-                            'from'      => $from->format('h:i A'),
-                            'to'        => $to->format('h:i A'),
-                            'timestamp' => $from->getTimestamp().'-'.$to->getTimestamp(),
-                            'qty'       => $qty,
-                        ];
-                    }
-                } else {
-                    break;
-                }
-            }
-        }
-
-        return $slots;
+        return $this->slotsCalculation($bookingProductSlot->booking_product, $requestedDate, $bookingProductSlot);
     }
 }

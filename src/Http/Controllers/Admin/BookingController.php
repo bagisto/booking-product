@@ -54,6 +54,8 @@ class BookingController extends Controller
 
                     $booking['end'] = Carbon::createFromTimestamp($booking->end)->format('Y-m-d h:i A');
 
+                    $booking->total = core()->formatBasePrice($booking->total);
+
                     return $booking;
                 });
 
