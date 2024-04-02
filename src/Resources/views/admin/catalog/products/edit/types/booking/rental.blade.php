@@ -1,7 +1,7 @@
 {!! view_render_event('bagisto.admin.catalog.product.edit.booking.rental.before', ['product' => $product]) !!}
 
 <!-- Vue Component -->
-<v-rental-booking />
+<v-rental-booking></v-rental-booking>
 
 {!! view_render_event('bagisto.admin.catalog.product.edit.booking.rental.after', ['product' => $product]) !!}
 
@@ -115,7 +115,8 @@
             :booking-product="rental_booking"
             :booking-type="'rental_slot'"
             :same-slot-all-days="rental_booking.same_slot_all_days"
-        />
+        >
+        </v-slots>
     </script>
 
     <script type="module">

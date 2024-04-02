@@ -67,7 +67,7 @@
 
                 <template v-else>
                     <!-- For Empty Illustration -->
-                    <v-empty-info ::type="bookingType" />
+                    <v-empty-info ::type="bookingType"></v-empty-info>
                 </template>
             </template>
             
@@ -211,7 +211,7 @@
 
                         <template v-else>
                             <!-- For Empty Illustration -->
-                            <v-empty-info ::type="bookingType" />
+                            <v-empty-info ::type="bookingType"></v-empty-info>
                         </template>
                     </x-slot:content>
                 </x-admin::drawer>
