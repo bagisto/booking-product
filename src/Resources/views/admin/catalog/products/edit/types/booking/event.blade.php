@@ -13,7 +13,7 @@
         <div class="flex gap-5 justify-between items-center py-2">
             <div class="flex flex-col gap-2">
                 <p class="text-base text-gray-800 dark:text-white font-semibold">
-                    @lang('booking::app.admin.catalog.products.edit.booking.event.title')
+                    @lang('booking::app.admin.catalog.products.edit.types.booking.event.title')
                 </p>
             </div>
 
@@ -23,7 +23,7 @@
                     class="secondary-button"
                     @click="add"
                 >
-                    @lang('booking::app.admin.catalog.products.edit.booking.event.add')
+                    @lang('booking::app.admin.catalog.products.edit.types.booking.event.add')
                 </div>
             </div>
         </div>
@@ -93,7 +93,7 @@
                                     class="text-sm font-normal dark:text-gray-300"
                                     v-if="element.price"
                                 >
-                                    @lang('booking::app.admin.catalog.products.edit.booking.event.price') - @{{ element.price }},
+                                    @lang('booking::app.admin.catalog.products.edit.types.booking.event.price') - @{{ element.price }},
                                 </span>
 
                                 <!-- Special Price -->
@@ -101,12 +101,12 @@
                                     class="text-sm font-normal dark:text-gray-300"
                                     v-if="element.special_price"
                                 >
-                                    @lang('booking::app.admin.catalog.products.edit.booking.event.special-price') - @{{ element.special_price }},
+                                    @lang('booking::app.admin.catalog.products.edit.types.booking.event.special-price') - @{{ element.special_price }},
                                 </span>
     
                                  <!-- Qty -->
                                 <span class="text-sm font-normal dark:text-gray-300">
-                                    @lang('booking::app.admin.catalog.products.edit.booking.event.qty') - @{{ element.qty }}
+                                    @lang('booking::app.admin.catalog.products.edit.types.booking.event.qty') - @{{ element.qty }}
                                 </span>
                             </p>
 
@@ -116,7 +116,7 @@
                                     class="text-sm text-gray-600 dark:text-gray-300"
                                     v-if="element.special_price_from"
                                 >
-                                    @lang('booking::app.admin.catalog.products.edit.booking.event.special-price-from') - @{{ element.special_price_from }},
+                                    @lang('booking::app.admin.catalog.products.edit.types.booking.event.special-price-from') - @{{ element.special_price_from }},
                                 </span>
 
                                 <!-- Valid Until -->
@@ -124,13 +124,13 @@
                                     class="text-sm text-gray-600 dark:text-gray-300"
                                     v-if="element.special_price_to"
                                 >
-                                    @lang('booking::app.admin.catalog.products.edit.booking.event.special-price-to') - @{{ element.special_price_to }}
+                                    @lang('booking::app.admin.catalog.products.edit.types.booking.event.special-price-to') - @{{ element.special_price_to }}
                                 </span>
                             </p>
 
                             <!-- Description -->
                             <p class="text-gray-600 dark:text-gray-300">
-                                @lang('booking::app.admin.catalog.products.edit.booking.event.description') - @{{ element.description }}
+                                @lang('booking::app.admin.catalog.products.edit.types.booking.event.description') - @{{ element.description }}
                             </p>
                         </div>
                         
@@ -140,14 +140,14 @@
                                 class="text-blue-600 cursor-pointer transition-all hover:underline"
                                 @click="edit(element)"
                             >
-                                @lang('booking::app.admin.catalog.products.edit.booking.event.edit')
+                                @lang('booking::app.admin.catalog.products.edit.types.booking.event.edit')
                             </p>
                             
                             <p
                                 class="text-red-600 cursor-pointer transition-all hover:underline"
                                 @click="remove(element.id)"
                             >
-                                @lang('booking::app.admin.catalog.products.edit.booking.event.delete')
+                                @lang('booking::app.admin.catalog.products.edit.types.booking.event.delete')
                             </p>
                         </div>
                     </div>
@@ -173,8 +173,8 @@
                             <p
                                 class="my-2.5 text-xl font-medium dark:text-white"
                                 v-text="this.ticketItem.id 
-                                    ? '@lang('booking::app.admin.catalog.products.edit.booking.event.modal.edit')'
-                                    : '@lang('booking::app.admin.catalog.products.edit.booking.event.add')'"
+                                    ? '@lang('booking::app.admin.catalog.products.edit.types.booking.event.modal.edit')'
+                                    : '@lang('booking::app.admin.catalog.products.edit.types.booking.event.add')'"
                             >
                             </p>
         
@@ -183,7 +183,7 @@
                                     type="submit"
                                     class="primary-button"
                                 >
-                                    @lang('booking::app.admin.catalog.products.edit.booking.event.modal.save')
+                                    @lang('booking::app.admin.catalog.products.edit.types.booking.event.modal.save')
                                 </button>
                             </div>
                         </div>
@@ -201,7 +201,7 @@
                             <!-- Name -->
                             <x-admin::form.control-group>
                                 <x-admin::form.control-group.label class="required">
-                                    @lang('booking::app.admin.catalog.products.edit.booking.event.name')
+                                    @lang('booking::app.admin.catalog.products.edit.types.booking.event.name')
                                 </x-admin::form.control-group.label>
 
                                 <x-admin::form.control-group.control
@@ -209,8 +209,8 @@
                                     name="name"
                                     rules="required"
                                     v-model="ticketItem.name"
-                                    :label="trans('booking::app.admin.catalog.products.edit.booking.event.name')"
-                                    :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.name')"
+                                    :label="trans('booking::app.admin.catalog.products.edit.types.booking.event.name')"
+                                    :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.event.name')"
                                 />
 
                                 <x-admin::form.control-group.error control-name="name" />
@@ -219,7 +219,7 @@
                             <!-- Quantity -->
                             <x-admin::form.control-group>
                                 <x-admin::form.control-group.label class="required">
-                                    @lang('booking::app.admin.catalog.products.edit.booking.event.qty')
+                                    @lang('booking::app.admin.catalog.products.edit.types.booking.event.qty')
                                 </x-admin::form.control-group.label>
             
                                 <x-admin::form.control-group.control
@@ -227,8 +227,8 @@
                                     name="qty"
                                     rules="required|min_value:0"
                                     v-model="ticketItem.qty"
-                                    :label="trans('booking::app.admin.catalog.products.edit.booking.event.qty')"
-                                    :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.qty')"
+                                    :label="trans('booking::app.admin.catalog.products.edit.types.booking.event.qty')"
+                                    :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.event.qty')"
                                 />
             
                                 <x-admin::form.control-group.error control-name="qty" />
@@ -239,7 +239,7 @@
                             <!-- Price -->
                             <x-admin::form.control-group>
                                 <x-admin::form.control-group.label class="required">
-                                    @lang('booking::app.admin.catalog.products.edit.booking.event.price')
+                                    @lang('booking::app.admin.catalog.products.edit.types.booking.event.price')
                                 </x-admin::form.control-group.label>
             
                                 <x-admin::form.control-group.control
@@ -247,8 +247,8 @@
                                     name="price"
                                     rules="required"
                                     v-model="ticketItem.price"
-                                    :label="trans('booking::app.admin.catalog.products.edit.booking.event.price')"
-                                    :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.price')"
+                                    :label="trans('booking::app.admin.catalog.products.edit.types.booking.event.price')"
+                                    :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.event.price')"
                                 />
 
                                 <x-admin::form.control-group.error control-name="price" />
@@ -257,7 +257,7 @@
                             <!-- Special Price -->
                             <x-admin::form.control-group>
                                 <x-admin::form.control-group.label>
-                                    @lang('booking::app.admin.catalog.products.edit.booking.event.special-price')
+                                    @lang('booking::app.admin.catalog.products.edit.types.booking.event.special-price')
                                 </x-admin::form.control-group.label>
 
                                 <x-admin::form.control-group.control
@@ -265,8 +265,8 @@
                                     name="special_price"
                                     ::rules="'min_value:0|max_value:' + ticketItem.price"
                                     v-model="ticketItem.special_price"
-                                    :label="trans('booking::app.admin.catalog.products.edit.booking.event.special-price')"
-                                    :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.special-price')"
+                                    :label="trans('booking::app.admin.catalog.products.edit.types.booking.event.special-price')"
+                                    :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.event.special-price')"
                                 />
 
                                 <x-admin::form.control-group.error control-name="special_price" />
@@ -277,7 +277,7 @@
                             <!-- Special Price From -->
                             <x-booking::form.control-group>
                                 <x-booking::form.control-group.label>
-                                    @lang('booking::app.admin.catalog.products.edit.booking.event.valid-from')
+                                    @lang('booking::app.admin.catalog.products.edit.types.booking.event.valid-from')
                                 </x-booking::form.control-group.label>
 
                                 <x-booking::form.control-group.control
@@ -285,8 +285,8 @@
                                     name="special_price_from"
                                     ::rules="ticketItem.special_price_from ? 'required|after:{{\Carbon\Carbon::yesterday()->format('Y-m-d 23:59:59')}}' : ''" 
                                     v-model="ticketItem.special_price_from"
-                                    :label="trans('booking::app.admin.catalog.products.edit.booking.event.valid-from')"
-                                    :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.valid-from')"
+                                    :label="trans('booking::app.admin.catalog.products.edit.types.booking.event.valid-from')"
+                                    :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.event.valid-from')"
                                 />
 
                                 <x-booking::form.control-group.error control-name="special_price_from" />
@@ -295,7 +295,7 @@
                             <!-- Special Price To -->
                             <x-admin::form.control-group>
                                 <x-admin::form.control-group.label>
-                                    @lang('booking::app.admin.catalog.products.edit.booking.event.valid-until')
+                                    @lang('booking::app.admin.catalog.products.edit.types.booking.event.valid-until')
                                 </x-admin::form.control-group.label>
 
                                 <x-admin::form.control-group.control
@@ -303,8 +303,8 @@
                                     name="special_price_to"
                                     ::rules="ticketItem.special_price_from ? 'after:' + ticketItem.special_price_from : ''"
                                     v-model="ticketItem.special_price_to"
-                                    :label="trans('booking::app.admin.catalog.products.edit.booking.event.valid-until')"
-                                    :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.valid-until')"
+                                    :label="trans('booking::app.admin.catalog.products.edit.types.booking.event.valid-until')"
+                                    :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.event.valid-until')"
                                 />
             
                                 <x-admin::form.control-group.error control-name="special_price_to" />
@@ -314,7 +314,7 @@
                         <!-- Description -->
                         <x-admin::form.control-group class="!mb-0">
                             <x-admin::form.control-group.label class="required">
-                                @lang('booking::app.admin.catalog.products.edit.booking.event.description')
+                                @lang('booking::app.admin.catalog.products.edit.types.booking.event.description')
                             </x-admin::form.control-group.label>
         
                             <x-admin::form.control-group.control
@@ -322,8 +322,8 @@
                                 name="[description]"
                                 rules="required"
                                 v-model="ticketItem.description" 
-                                :label="trans('booking::app.admin.catalog.products.edit.booking.event.description')"
-                                :placeholder="trans('booking::app.admin.catalog.products.edit.booking.event.description')"
+                                :label="trans('booking::app.admin.catalog.products.edit.types.booking.event.description')"
+                                :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.event.description')"
                                 rows="9"
                             />
 
