@@ -10,7 +10,7 @@
     {!! view_render_event('bagisto.admin.catalog.product.edit.types.booking.before', ['product' => $product]) !!}
 
     <!-- Vue Component -->
-    <v-booking-information />
+    <v-booking-information></v-booking-information>
 
     {!! view_render_event('bagisto.admin.catalog.product.edit.types.booking.after', ['product' => $product]) !!}
 

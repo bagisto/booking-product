@@ -1,7 +1,7 @@
 {!! view_render_event('bagisto.admin.catalog.product.edit.booking.table.before', ['product' => $product]) !!}
 
 <!-- Vue Component -->
-<v-table-booking />
+<v-table-booking></v-table-booking>
 
 {!! view_render_event('bagisto.admin.catalog.product.edit.booking.table.after', ['product' => $product]) !!}
 
@@ -157,7 +157,8 @@
             :booking-product="table_booking"
             :booking-type="'table_slot'"
             :same-slot-all-days="table_booking.same_slot_all_days"
-        />
+        >
+        </v-slots>
     </script>
 
     <script type="module">
