@@ -152,7 +152,7 @@
 
                 <template v-else>
                     <!-- For Empty Illustration -->
-                    <v-empty-info ::type="bookingType"></empty-info>
+                    <v-empty-info ::type="bookingType"></v-empty-info>
                 </template>
             </template>
 
