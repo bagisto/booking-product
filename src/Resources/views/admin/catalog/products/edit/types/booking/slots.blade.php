@@ -6,11 +6,11 @@
         <div class="flex gap-5 justify-between items-center py-2">
             <div class="flex flex-col gap-1">
                 <p class="text-base text-gray-800 dark:text-white font-semibold">
-                    @lang('booking::app.admin.catalog.products.edit.booking.slots.title')
+                    @lang('booking::app.admin.catalog.products.edit.types.booking.slots.title')
                 </p>
 
                 <p class="text-xs text-gray-500 dark:text-gray-300 font-medium">
-                    @lang('booking::app.admin.catalog.products.edit.booking.slots.description-info')
+                    @lang('booking::app.admin.catalog.products.edit.types.booking.slots.description-info')
                  </p>
             </div>
 
@@ -23,7 +23,7 @@
                     class="secondary-button"
                     @click="toggle()"
                 >
-                    @lang('booking::app.admin.catalog.products.edit.booking.slots.add')
+                    @lang('booking::app.admin.catalog.products.edit.types.booking.slots.add')
                 </div>
             </div>
         </div>
@@ -115,7 +115,7 @@
 
                             <template v-else>
                                 <p class="text-gray-500">
-                                    @lang('booking::app.admin.catalog.products.edit.booking.slots.unavailable')
+                                    @lang('booking::app.admin.catalog.products.edit.types.booking.slots.unavailable')
                                 </p>
                             </template>
                         </div>
@@ -124,7 +124,7 @@
                             class="place-content-start text-right text-blue-600 cursor-pointer transition-all hover:underline"
                             @click="currentIndex=dayIndex;toggle()"
                         >
-                            @lang('booking::app.admin.catalog.products.edit.booking.slots.action.add')
+                            @lang('booking::app.admin.catalog.products.edit.types.booking.slots.action.add')
                         </p>
                     </div>
                 </div>
@@ -144,7 +144,7 @@
                     <x-slot:header>
                         <div class="flex justify-between items-center">
                             <p class="my-2.5 text-xl font-medium dark:text-white">
-                                @lang('booking::app.admin.catalog.products.edit.booking.slots.title')
+                                @lang('booking::app.admin.catalog.products.edit.types.booking.slots.title')
                             </p>
 
                             <div class="flex gap-4 items-center ltr:mr-11 rtl:ml-11">
@@ -153,14 +153,14 @@
                                     class="cursor-pointer font-medium text-blue-600 dark:text-white w-fit"
                                     @click="add"
                                 >
-                                    @lang('booking::app.admin.catalog.products.edit.booking.slots.add')
+                                    @lang('booking::app.admin.catalog.products.edit.types.booking.slots.add')
                                 </div>
 
                                 <button
                                     type="submit"
                                     class="primary-button"
                                 >
-                                    @lang('booking::app.admin.catalog.products.edit.booking.slots.save')
+                                    @lang('booking::app.admin.catalog.products.edit.types.booking.slots.save')
                                 </button>
                             </div>
                         </div>
@@ -170,11 +170,11 @@
                         <template v-if="field['same_for_week']?.length">
                             <div class="flex gap-2.5 pb-2.5 text-gray-800 dark:text-white">
                                 <div class="w-full">
-                                    @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')
+                                    @lang('booking::app.admin.catalog.products.edit.types.booking.slots.modal.slot.from')
                                 </div>
                     
                                 <div class="w-full">
-                                    @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.to')
+                                    @lang('booking::app.admin.catalog.products.edit.types.booking.slots.modal.slot.to')
                                 </div>
                             </div>
 
@@ -191,11 +191,11 @@
                         <template v-else-if="field['different_for_week'][currentIndex]?.length">
                             <div class="flex gap-2.5 mx-2.5 pb-2.5 text-gray-800 dark:text-white">
                                 <div class="w-full">
-                                    @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')
+                                    @lang('booking::app.admin.catalog.products.edit.types.booking.slots.modal.slot.from')
                                 </div>
                     
                                 <div class="w-full">
-                                    @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.to')
+                                    @lang('booking::app.admin.catalog.products.edit.types.booking.slots.modal.slot.to')
                                 </div>
                             </div>
 
@@ -234,7 +234,7 @@
             <!-- From -->
             <x-booking::form.control-group class="w-full">
                 <x-booking::form.control-group.label class="hidden">
-                    @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')
+                    @lang('booking::app.admin.catalog.products.edit.types.booking.slots.modal.slot.from')
                 </x-booking::form.control-group.label>
 
                 <x-booking::form.control-group.control
@@ -242,8 +242,8 @@
                     ::id="controlName + '[from]'"
                     ::name="controlName + '[from]'"
                     rules="required"
-                    :label="trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')"
-                    :placeholder="trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.from')"
+                    :label="trans('booking::app.admin.catalog.products.edit.types.booking.slots.modal.slot.from')"
+                    :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.slots.modal.slot.from')"
                 />
 
                 <x-booking::form.control-group.error ::control-name="controlName + '[from]'" />
@@ -252,7 +252,7 @@
             <!-- To -->
             <x-booking::form.control-group class="w-full">
                 <x-booking::form.control-group.label class="hidden">
-                    @lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.to')
+                    @lang('booking::app.admin.catalog.products.edit.types.booking.slots.modal.slot.to')
                 </x-booking::form.control-group.label>
 
                 <x-booking::form.control-group.control
@@ -260,8 +260,8 @@
                     ::id="controlName + '[to]'"
                     ::name="controlName + '[to]'"
                     rules="required"
-                    :label="trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.to')"
-                    :placeholder="trans('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.to')"
+                    :label="trans('booking::app.admin.catalog.products.edit.types.booking.slots.modal.slot.to')"
+                    :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.slots.modal.slot.to')"
                 />
 
                 <!-- Form Avoiding object value in last input field -->
@@ -300,13 +300,13 @@
                     },
 
                     week_days: [
-                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.sunday')",
-                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.monday')",
-                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.tuesday')",
-                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.wednesday')",
-                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.thursday')",
-                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.friday')",
-                        "@lang('booking::app.admin.catalog.products.edit.booking.slots.modal.slot.saturday')"
+                        "@lang('booking::app.admin.catalog.products.edit.types.booking.slots.modal.slot.sunday')",
+                        "@lang('booking::app.admin.catalog.products.edit.types.booking.slots.modal.slot.monday')",
+                        "@lang('booking::app.admin.catalog.products.edit.types.booking.slots.modal.slot.tuesday')",
+                        "@lang('booking::app.admin.catalog.products.edit.types.booking.slots.modal.slot.wednesday')",
+                        "@lang('booking::app.admin.catalog.products.edit.types.booking.slots.modal.slot.thursday')",
+                        "@lang('booking::app.admin.catalog.products.edit.types.booking.slots.modal.slot.friday')",
+                        "@lang('booking::app.admin.catalog.products.edit.types.booking.slots.modal.slot.saturday')"
                     ],
 
                     currentIndex: '',

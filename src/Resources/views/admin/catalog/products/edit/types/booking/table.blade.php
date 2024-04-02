@@ -13,7 +13,7 @@
         <!-- Charged Per -->
         <x-admin::form.control-group class="w-full">
             <x-admin::form.control-group.label class="required">
-                @lang('booking::app.admin.catalog.products.edit.booking.table.charged-per.title')
+                @lang('booking::app.admin.catalog.products.edit.types.booking.table.charged-per.title')
             </x-admin::form.control-group.label>
 
             <x-admin::form.control-group.control
@@ -21,12 +21,12 @@
                 name="booking[price_type]"
                 rules="required"
                 v-model="table_booking.price_type"
-                :label="trans('booking::app.admin.catalog.products.edit.booking.charged-per.title')"
-                :placeholder="trans('booking::app.admin.catalog.products.edit.booking.charged-per.title')"
+                :label="trans('booking::app.admin.catalog.products.edit.types.booking.charged-per.title')"
+                :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.charged-per.title')"
             >
                 @foreach (['guest', 'table'] as $item)
                     <option value="{{ $item }}">
-                        @lang('booking::app.admin.catalog.products.edit.booking.table.charged-per.' . $item)
+                        @lang('booking::app.admin.catalog.products.edit.types.booking.table.charged-per.' . $item)
                     </option>
                 @endforeach
             </x-admin::form.control-group.control>
@@ -40,7 +40,7 @@
             v-if="table_booking.price_type == 'table'"
         >
             <x-admin::form.control-group.label class="required">
-                @lang('booking::app.admin.catalog.products.edit.booking.table.guest-limit')
+                @lang('booking::app.admin.catalog.products.edit.types.booking.table.guest-limit')
             </x-admin::form.control-group.label>
 
             <x-admin::form.control-group.control
@@ -48,8 +48,8 @@
                 name="booking[guest_limit]"
                 rules="required|min_value:1"
                 v-model="table_booking.guest_limit"
-                :label="trans('booking::app.admin.catalog.products.edit.booking.table.guest-limit')"
-                :placeholder="trans('booking::app.admin.catalog.products.edit.booking.table.guest-limit')"
+                :label="trans('booking::app.admin.catalog.products.edit.types.booking.table.guest-limit')"
+                :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.table.guest-limit')"
             />
 
             <x-admin::form.control-group.error  control-name="booking[guest_limit]" />
@@ -58,7 +58,7 @@
         <!-- Guest Capacity -->
         <x-admin::form.control-group class="w-full">
             <x-admin::form.control-group.label class="required">
-                @lang('booking::app.admin.catalog.products.edit.booking.table.guest-capacity')
+                @lang('booking::app.admin.catalog.products.edit.types.booking.table.guest-capacity')
             </x-admin::form.control-group.label>
 
             <x-admin::form.control-group.control
@@ -66,8 +66,8 @@
                 name="booking[qty]"
                 value="{{ $bookingProduct ? $bookingProduct->qty : 0 }}"
                 rules="required|min_value:1"
-                :label="trans('booking::app.admin.catalog.products.edit.booking.table.guest-capacity')"
-                :placeholder="trans('booking::app.admin.catalog.products.edit.booking.table.guest-capacity')"
+                :label="trans('booking::app.admin.catalog.products.edit.types.booking.table.guest-capacity')"
+                :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.table.guest-capacity')"
             />
 
             <x-admin::form.control-group.error control-name="booking[qty]" />
@@ -76,7 +76,7 @@
         <!-- Slot Duration -->
         <x-admin::form.control-group class="w-full">
             <x-admin::form.control-group.label class="required">
-                @lang('booking::app.admin.catalog.products.edit.booking.table.slot-duration')
+                @lang('booking::app.admin.catalog.products.edit.types.booking.table.slot-duration')
             </x-admin::form.control-group.label>
 
             <x-admin::form.control-group.control
@@ -84,8 +84,8 @@
                 name="booking[duration]"
                 rules="required|min_value:1"
                 v-model="table_booking.duration"
-                :label="trans('booking::app.admin.catalog.products.edit.booking.table.slot-duration')"
-                :placeholder="trans('booking::app.admin.catalog.products.edit.booking.table.slot-duration')"
+                :label="trans('booking::app.admin.catalog.products.edit.types.booking.table.slot-duration')"
+                :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.table.slot-duration')"
             />
 
             <x-admin::form.control-group.error control-name="booking[duration]" />
@@ -94,7 +94,7 @@
         <!-- Break Time -->
         <x-admin::form.control-group class="w-full">
             <x-admin::form.control-group.label class="required">
-                @lang('booking::app.admin.catalog.products.edit.booking.table.break-duration')
+                @lang('booking::app.admin.catalog.products.edit.types.booking.table.break-duration')
             </x-admin::form.control-group.label>
 
             <x-admin::form.control-group.control
@@ -102,8 +102,8 @@
                 name="booking[break_time]"
                 rules="required|min_value:1"
                 v-model="table_booking.break_time"
-                :label="trans('booking::app.admin.catalog.products.edit.booking.table.break-duration')"
-                :placeholder="trans('booking::app.admin.catalog.products.edit.booking.table.break-duration')"
+                :label="trans('booking::app.admin.catalog.products.edit.types.booking.table.break-duration')"
+                :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.table.break-duration')"
             />
 
             <x-admin::form.control-group.error control-name="booking[break_time]" />
@@ -112,7 +112,7 @@
         <!-- Prevent Scheduling Before -->
         <x-admin::form.control-group class="w-full">
             <x-admin::form.control-group.label class="required">
-                @lang('booking::app.admin.catalog.products.edit.booking.table.prevent-scheduling-before')
+                @lang('booking::app.admin.catalog.products.edit.types.booking.table.prevent-scheduling-before')
             </x-admin::form.control-group.label>
 
             <x-admin::form.control-group.control
@@ -120,8 +120,8 @@
                 name="booking[prevent_scheduling_before]"
                 rules="required|min_value:1"
                 v-model="table_booking.prevent_scheduling_before"
-                :label="trans('booking::app.admin.catalog.products.edit.booking.table.prevent-scheduling-before')"
-                :placeholder="trans('booking::app.admin.catalog.products.edit.booking.table.prevent-scheduling-before')"
+                :label="trans('booking::app.admin.catalog.products.edit.types.booking.table.prevent-scheduling-before')"
+                :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.table.prevent-scheduling-before')"
             />
 
             <x-admin::form.control-group.error control-name="booking[prevent_scheduling_before]" />
@@ -130,7 +130,7 @@
         <!-- Same slot all days -->
         <x-admin::form.control-group class="w-full">
             <x-admin::form.control-group.label class="required">
-                @lang('booking::app.admin.catalog.products.edit.booking.table.same-slot-for-all-days.title')
+                @lang('booking::app.admin.catalog.products.edit.types.booking.table.same-slot-for-all-days.title')
             </x-admin::form.control-group.label>
 
             <x-admin::form.control-group.control
@@ -138,14 +138,14 @@
                 name="booking[same_slot_all_days]`"
                 rules="required"
                 v-model="table_booking.same_slot_all_days"
-                :label="trans('booking::app.admin.catalog.products.edit.booking.table.same-slot-for-all-days.title')"
+                :label="trans('booking::app.admin.catalog.products.edit.types.booking.table.same-slot-for-all-days.title')"
             >
                 <option value="1">
-                    @lang('booking::app.admin.catalog.products.edit.booking.table.same-slot-for-all-days.yes')
+                    @lang('booking::app.admin.catalog.products.edit.types.booking.table.same-slot-for-all-days.yes')
                 </option>
 
                 <option value="0">
-                    @lang('booking::app.admin.catalog.products.edit.booking.table.same-slot-for-all-days.no')
+                    @lang('booking::app.admin.catalog.products.edit.types.booking.table.same-slot-for-all-days.no')
                 </option>
             </x-admin::form.control-group.control>
 
