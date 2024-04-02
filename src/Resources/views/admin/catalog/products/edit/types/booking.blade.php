@@ -239,9 +239,9 @@
         </script>
 
         <!-- Slots component Included -->
-        @include('booking::admin.catalog.products.edit.booking.slots')
+        @include('booking::admin.catalog.products.edit.types.booking.slots')
 
         <!-- Empty Info Page Included -->
-        @include('booking::admin.catalog.products.edit.booking.empty-info')
+        @include('booking::admin.catalog.products.edit.types.booking.empty-info')
     @endpushOnce
 @endif
