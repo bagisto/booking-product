@@ -1,10 +1,9 @@
 {!! view_render_event('bagisto.admin.catalog.product.edit.booking.appointment.before', ['product' => $product]) !!}
 
 <!-- Vue Component -->
-<v-appointment-booking :bookingProduct = "$bookingProduct ?? []" />
+<v-appointment-booking :bookingProduct = "$bookingProduct ?? []"></v-appointment-booking>
 
 {!! view_render_event('bagisto.admin.catalog.product.edit.booking.appointment.after', ['product' => $product]) !!}
-
 
 @pushOnce('scripts')
     <script
@@ -78,7 +77,8 @@
             :booking-product="appointment_booking"
             :booking-type="'appointment_slot'"
             :same-slot-all-days="appointment_booking.same_slot_all_days"
-        />
+        >
+        </v-slots>
     </script>
 
     <script type="module">

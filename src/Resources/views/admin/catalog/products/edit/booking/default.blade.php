@@ -1,7 +1,7 @@
 {!! view_render_event('bagisto.admin.catalog.product.edit.booking.default.before', ['product' => $product]) !!}
 
 <!-- Vue Component -->
-<v-default-booking />
+<v-default-booking></v-default-booking>
 
 {!! view_render_event('bagisto.admin.catalog.product.edit.booking.default.after', ['product' => $product]) !!}
 
@@ -152,7 +152,7 @@
 
                 <template v-else>
                     <!-- For Empty Illustration -->
-                    <v-empty-info ::type="bookingType" />
+                    <v-empty-info ::type="bookingType"></v-empty-info>
                 </template>
             </template>
 
