@@ -135,17 +135,17 @@ class Booking
      */
     public function getAvailableWeekDays(BookingProduct $bookingProduct)
     {
-        if ($bookingProduct->available_every_week) {
+        if (! isset($bookingProduct->available_every_week) || $bookingProduct->available_every_week) {
             return $this->daysOfWeek;
         }
 
         $days = [];
 
-        $availableFrom = ! $bookingProduct->available_from && $bookingProduct->available_from
+        $availableFrom = ! isset($bookingProduct->available_from) || $bookingProduct->available_from
             ? Carbon::createFromTimeString($bookingProduct->available_from)
             : Carbon::now()->copy()->startOfDay();
 
-        $availableTo = ! $bookingProduct->available_from && $bookingProduct->available_to
+        $availableTo = ! isset($bookingProduct->available_to) || $bookingProduct->available_from && $bookingProduct->available_to
             ? Carbon::createFromTimeString($bookingProduct->available_to)
             : Carbon::createFromTimeString('2080-01-01 00:00:00');
 
@@ -453,7 +453,7 @@ class Booking
     /**
      * Slots Calculation for all types of booking products.
      */
-    public function slotsCalculation(object $bookingProduct, object $requestedDate, object $bookingProductSlot): mixed
+    public function slotsCalculation(object $bookingProduct, object $requestedDate, object $bookingProductSlot): array
     {
         if ($bookingProduct->type == 'default') {
             $availableFrom = $bookingProduct->available_from
@@ -464,7 +464,7 @@ class Booking
                 ? Carbon::createFromTimeString($bookingProduct->available_to)
                 : Carbon::createFromTimeString('2080-01-01 00:00:00');
 
-            $timeDurations = $bookingProductSlot->slots[$requestedDate->format('w')] ?? [];
+            $timeDurations = $bookingProductSlot->slots[$requestedDate->format('w')] ?? [[]];
 
             if (
                 ! count($timeDurations[0])
@@ -497,16 +497,15 @@ class Booking
 
         foreach ($timeDurations as $index => $timeDuration) {
             $fromChunks = explode(':', $timeDuration['from']);
-
             $toChunks = explode(':', $timeDuration['to']);
 
             $startDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d').' 00:00:00')
-                ->addMinutes(($fromChunks[0] * 60) + $fromChunks[1]);
+                ->addMinutes($fromChunks[0] * 60 + $fromChunks[1]);
 
             $tempStartDayTime = clone $startDayTime;
 
             $endDayTime = Carbon::createFromTimeString($requestedDate->format('Y-m-d').' 00:00:00')
-                ->addMinutes(($toChunks[0] * 60) + $toChunks[1]);
+                ->addMinutes($toChunks[0] * 60 + $toChunks[1]);
 
             $isFirstIteration = true;
 
@@ -522,7 +521,6 @@ class Booking
                         $isFirstIteration = false;
                     } else {
                         $from->modify('+'.$bookingProductSlot->break_time.' minutes');
-
                         $tempStartDayTime->modify('+'.$bookingProductSlot->break_time.' minutes');
                     }
                 }
@@ -530,22 +528,14 @@ class Booking
                 $to = clone $tempStartDayTime;
 
                 if (
-                    (
-                        $startDayTime <= $from
-                        && $from <= $availableTo
-                    )
-                    && (
-                        $availableTo >= $to
-                        && $to >= $startDayTime
-                    )
-                    && (
-                        $startDayTime <= $from
-                        && $from <= $endDayTime
-                    )
-                    && (
-                        $endDayTime >= $to
-                        && $to >= $startDayTime
-                    )
+                    $startDayTime <= $from
+                    && $from <= $availableTo
+                    && $availableTo >= $to
+                    && $to >= $startDayTime
+                    && $startDayTime <= $from
+                    && $from <= $endDayTime
+                    && $endDayTime >= $to
+                    && $to >= $startDayTime
                 ) {
                     if (
                         $qty = $timeDuration['qty'] ?? 1

@@ -19,14 +19,14 @@ return [
                             'appointment' => [
                                 'break-duration'         => 'Slotlar Arası Mola Süresi (Dakika)',
                                 'slot-duration'          => 'Slot Süresi (Dakika)',
-    
+
                                 'same-slot-for-all-days' => [
                                     'no'    => 'Hayır',
                                     'title' => 'Tüm Günler İçin Aynı Slot',
                                     'yes'   => 'Evet',
                                 ],
                             ],
-    
+
                             'default'     => [
                                 'add'              => 'Ekle',
                                 'break-duration'   => 'Slotlar Arası Mola Süresi (Dakika)',
@@ -35,7 +35,7 @@ return [
                                 'description-info' => 'Slotlara göre zaman süresi oluşturulacak ve görünecektir.',
                                 'edit'             => 'Düzenle',
                                 'many'             => 'Bir Günde Çok Sayıda Rezervasyon',
-    
+
                                 'modal'            => [
                                     'slot' => [
                                         'add-title'  => 'Yuva Ekle',
@@ -62,7 +62,7 @@ return [
                                         'week'       => ':day',
                                     ],
                                 ],
-    
+
                                 'one'              => 'Bir Gün İçin Tek Rezervasyon',
                                 'open'             => 'Açık',
                                 'slot-add'         => 'Slot Ekle',
@@ -71,19 +71,19 @@ return [
                                 'title'            => 'Varsayılan',
                                 'unavailable'      => 'kullanım dışı',
                             ],
-    
+
                             'event'       => [
                                 'add'                => 'Bilet Ekle',
                                 'delete'             => 'Sil',
                                 'description-info'   => 'Uygun bilet bulunmamaktadır.',
                                 'description'        => 'Açıklama',
                                 'edit'               => 'Düzenle',
-    
+
                                 'modal'              => [
                                     'edit' => 'Biletleri Düzenle',
                                     'save' => 'Kaydet',
                                 ],
-    
+
                                 'name'               => 'Ad',
                                 'price'              => 'Fiyat',
                                 'qty'                => 'Miktar',
@@ -94,12 +94,12 @@ return [
                                 'valid-from'         => 'Geçerli Başlangıç',
                                 'valid-until'        => 'Geçerli Bitiş',
                             ],
-    
+
                             'empty-info'  => [
                                 'tickets' => [
                                     'add' => 'Bilet Ekle',
                                 ],
-    
+
                                 'slots'   => [
                                     'add'         => 'Slot Ekle',
                                     'description' => 'Mevcut Slotlar ve Zaman Süreleri.',
@@ -115,25 +115,25 @@ return [
                                 'daily'                  => 'Günlük',
                                 'hourly-price'           => 'Saatlik Fiyat',
                                 'hourly'                 => 'Saatlik',
-    
+
                                 'same-slot-for-all-days' => [
                                     'no'    => 'Hayır',
                                     'title' => 'Tüm Günler İçin Aynı Slot',
                                     'yes'   => 'Evet',
                                 ],
-    
+
                                 'title'                  => 'Kiralama Türü',
                             ],
-    
+
                             'slots'       => [
                                 'add'              => 'Slot Ekle',
-    
+
                                 'action'           => [
                                     'add' => 'Ekle',
                                 ],
-    
+
                                 'description-info' => 'Slotlara göre zaman süresi oluşturulacak ve görünecektir.',
-    
+
                                 'modal'            => [
                                     'slot' => [
                                         'friday'     => 'Cuma',
@@ -147,26 +147,26 @@ return [
                                         'wednesday'  => 'Çarşamba',
                                     ],
                                 ],
-    
+
                                 'save'             => 'Kaydet',
                                 'title'            => 'Slot Zaman Süresi',
                                 'unavailable'      => 'Uygun Değil',
                             ],
-    
+
                             'table'       => [
                                 'break-duration'            => 'Slotlar Arası Mola Süresi (Dakika)',
-    
+
                                 'charged-per'               => [
                                     'guest'  => 'Misafir',
                                     'table'  => 'Masa',
                                     'title'  => 'Kişi Başına Ücret',
                                 ],
-    
+
                                 'guest-capacity'            => 'Misafir Kapasitesi',
                                 'guest-limit'               => 'Masa Başına Misafir Sınırı',
                                 'prevent-scheduling-before' => 'Önceki Planlamayı Engelle',
                                 'slot-duration'             => 'Slot Süresi (Dakika)',
-    
+
                                 'same-slot-for-all-days'    => [
                                     'no'    => 'Hayır',
                                     'title' => 'Tüm Günler İçin Aynı Slot',

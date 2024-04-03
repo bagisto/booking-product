@@ -19,14 +19,14 @@ return [
                             'appointment' => [
                                 'break-duration'         => 'Pause zwischen den Slots (Minuten)',
                                 'slot-duration'          => 'Slot-Dauer (Minuten)',
-    
+
                                 'same-slot-for-all-days' => [
                                     'no'    => 'Nein',
                                     'title' => 'Gleicher Slot für alle Tage',
                                     'yes'   => 'Ja',
                                 ],
                             ],
-    
+
                             'default'     => [
                                 'add'              => 'Hinzufügen',
                                 'break-duration'   => 'Pause zwischen den Slots (Minuten)',
@@ -35,7 +35,7 @@ return [
                                 'description-info' => 'Gemäß den Slots wird die Zeitdauer erstellt und sichtbar.',
                                 'edit'             => 'Bearbeiten',
                                 'many'             => 'Viele Buchungen an einem Tag',
-    
+
                                 'modal'            => [
                                     'slot' => [
                                         'add-title'  => 'Slots hinzufügen',
@@ -62,7 +62,7 @@ return [
                                         'week'       => ':day',
                                     ],
                                 ],
-    
+
                                 'one'              => 'Eine Buchung für viele Tage',
                                 'open'             => 'Öffnen',
                                 'slot-add'         => 'Slots hinzufügen',
@@ -71,19 +71,19 @@ return [
                                 'title'            => 'Standard',
                                 'unavailable'      => 'nicht verfügbar',
                             ],
-    
+
                             'event'       => [
                                 'add'                => 'Tickets hinzufügen',
                                 'delete'             => 'Löschen',
                                 'description-info'   => 'Es gibt keine verfügbaren Tickets.',
                                 'description'        => 'Beschreibung',
                                 'edit'               => 'Bearbeiten',
-    
+
                                 'modal'              => [
                                     'edit' => 'Tickets bearbeiten',
                                     'save' => 'Speichern',
                                 ],
-    
+
                                 'name'               => 'Name',
                                 'price'              => 'Preis',
                                 'qty'                => 'Menge',
@@ -94,12 +94,12 @@ return [
                                 'valid-from'         => 'Gültig ab',
                                 'valid-until'        => 'Gültig bis',
                             ],
-    
+
                             'empty-info'  => [
                                 'tickets' => [
                                     'add' => 'Tickets hinzufügen',
                                 ],
-    
+
                                 'slots'   => [
                                     'add'         => 'Slots hinzufügen',
                                     'description' => 'Verfügbare Slots mit Zeitdauer.',
@@ -115,25 +115,25 @@ return [
                                 'daily'                  => 'Täglich',
                                 'hourly-price'           => 'Stundenpreis',
                                 'hourly'                 => 'Stündlich',
-    
+
                                 'same-slot-for-all-days' => [
                                     'no'    => 'Nein',
                                     'title' => 'Gleicher Slot für alle Tage',
                                     'yes'   => 'Ja',
                                 ],
-    
+
                                 'title'                  => 'Vermietungstyp',
                             ],
-    
+
                             'slots'       => [
                                 'add'              => 'Slots hinzufügen',
-    
+
                                 'action'           => [
                                     'add' => 'Hinzufügen',
                                 ],
-    
+
                                 'description-info' => 'Gemäß den Slots wird die Zeitdauer erstellt und sichtbar.',
-    
+
                                 'modal'            => [
                                     'slot' => [
                                         'friday'     => 'Freitag',
@@ -147,26 +147,26 @@ return [
                                         'wednesday'  => 'Mittwoch',
                                     ],
                                 ],
-    
+
                                 'save'             => 'Speichern',
                                 'title'            => 'Slot-Zeitdauer',
                                 'unavailable'      => 'Nicht verfügbar',
                             ],
-    
+
                             'table'       => [
                                 'break-duration'            => 'Pause zwischen den Slots (Minuten)',
-    
+
                                 'charged-per'               => [
                                     'guest'  => 'Gast',
                                     'table'  => 'Tisch',
                                     'title'  => 'Pro berechnet',
                                 ],
-    
+
                                 'guest-capacity'            => 'Gastkapazität',
                                 'guest-limit'               => 'Gastlimit pro Tisch',
                                 'prevent-scheduling-before' => 'Planung vorher verhindern',
                                 'slot-duration'             => 'Slot-Dauer (Minuten)',
-    
+
                                 'same-slot-for-all-days'    => [
                                     'no'    => 'Nein',
                                     'title' => 'Gleicher Slot für alle Tage',

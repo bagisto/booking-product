@@ -367,49 +367,55 @@
 
                 slotData(params) {
                     if (parseInt(this.sameSlotAllDays)) {
-                        for (let i = 0; i < Object.keys(params).length/3; i++) {
-                            if (params[`booking[slots][${i}][from]`] && params[`booking[slots][${i}][to]`]) {
+                        for (let i = 0; i < Object.keys(params).length / 3; i++) {
+                            const fromKey = `booking[slots][${i}][from]`;
+                            const toKey = `booking[slots][${i}][to]`;
+                            const fromValue = params[fromKey];
+                            const toValue = params[toKey];
+
+                            if (fromValue && toValue) {
+                                const slot = {
+                                    'id': i + 1,
+                                    'from': fromValue,
+                                    'to': toValue,
+                                };
+
                                 if (this.slots['same_for_week']?.length) {
-                                    this.slots['same_for_week'] = this.slots['same_for_week'].concat({ 
-                                        'id': i + 1, 
-                                        'from': params[`booking[slots][${i}][from]`],
-                                        'to': params[`booking[slots][${i}][to]`],
-                                    });
+                                    this.slots['same_for_week'] = this.slots['same_for_week'].concat(slot);
                                 } else {
-                                    this.slots['same_for_week'].push({ 
-                                        'id': i + 1, 
-                                        'from': params[`booking[slots][${i}][from]`], 
-                                        'to': params[`booking[slots][${i}][to]`],
-                                    });
+                                    this.slots['same_for_week'].push(slot);
                                 }
                             }
                         }
 
-                        for (let i = 0; i < this.slots['same_for_week'].length; i++) {
-                            this.slots['same_for_week'][i].id = i + 1;
-                        }
+                        this.slots['same_for_week'].forEach((slot, index) => {
+                            slot.id = index + 1;
+                        });
                     } else {
-                        for (let i = 0; i < Object.keys(params).length/3; i++) {
-                            if (params[`booking[slots][${this.currentIndex}][${i}][from]`] && params[`booking[slots][${this.currentIndex}][${i}][to]`]) {
+                        for (let i = 0; i < Object.keys(params).length / 3; i++) {
+                            const fromKey = `booking[slots][${this.currentIndex}][${i}][from]`;
+                            const toKey = `booking[slots][${this.currentIndex}][${i}][to]`;
+                            const fromValue = params[fromKey];
+                            const toValue = params[toKey];
+
+                            if (fromValue && toValue) {
+                                const slot = {
+                                    'id': i + 1,
+                                    'from': fromValue,
+                                    'to': toValue,
+                                };
+
                                 if (this.slots['different_for_week'][this.currentIndex]?.length) {
-                                    this.slots['different_for_week'][this.currentIndex] = this.slots['different_for_week'][this.currentIndex].concat({ 
-                                        'id': i + 1, 
-                                        'from': params[`booking[slots][${this.currentIndex}][${i}][from]`],
-                                        'to': params[`booking[slots][${this.currentIndex}][${i}][to]`],
-                                    });
+                                    this.slots['different_for_week'][this.currentIndex] = this.slots['different_for_week'][this.currentIndex].concat(slot);
                                 } else {
-                                    this.slots['different_for_week'][this.currentIndex].push({ 
-                                        'id': i + 1, 
-                                        'from': params[`booking[slots][${this.currentIndex}][${i}][from]`],
-                                        'to': params[`booking[slots][${this.currentIndex}][${i}][to]`],
-                                    });
+                                    this.slots['different_for_week'][this.currentIndex].push(slot);
                                 }
                             }
                         }
 
-                        for (let i = 0; i < this.slots['different_for_week'][this.currentIndex].length; i++) {
-                            this.slots['different_for_week'][this.currentIndex][i].id = i + 1;
-                        }
+                        this.slots['different_for_week'][this.currentIndex].forEach((slot, index) => {
+                            slot.id = index + 1;
+                        });
                     }
                 },
 

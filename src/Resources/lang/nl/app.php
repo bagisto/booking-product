@@ -19,14 +19,14 @@ return [
                             'appointment' => [
                                 'break-duration'         => 'Pauzetijd tussen slots (minuten)',
                                 'slot-duration'          => 'Slotduur (minuten)',
-    
+
                                 'same-slot-for-all-days' => [
                                     'no'    => 'Nee',
                                     'title' => 'Zelfde slot voor alle dagen',
                                     'yes'   => 'Ja',
                                 ],
                             ],
-    
+
                             'default'     => [
                                 'add'              => 'Toevoegen',
                                 'break-duration'   => 'Pauzetijd tussen slots (minuten)',
@@ -35,7 +35,7 @@ return [
                                 'description-info' => 'Volgens slots wordt de tijdsduur gecreëerd en zichtbaar.',
                                 'edit'             => 'Bewerken',
                                 'many'             => 'Veel boekingen voor één dag',
-    
+
                                 'modal'            => [
                                     'slot' => [
                                         'add-title'  => 'Slots Toevoegen',
@@ -62,7 +62,7 @@ return [
                                         'week'       => ':day',
                                     ],
                                 ],
-    
+
                                 'one'              => 'Eén boeking voor meerdere dagen',
                                 'open'             => 'Open',
                                 'slot-add'         => 'Slots toevoegen',
@@ -71,19 +71,19 @@ return [
                                 'title'            => 'Standaard',
                                 'unavailable'      => 'niet beschikbaar',
                             ],
-    
+
                             'event'       => [
                                 'add'                => 'Tickets toevoegen',
                                 'delete'             => 'Verwijderen',
                                 'description-info'   => 'Er zijn geen tickets beschikbaar.',
                                 'description'        => 'Omschrijving',
                                 'edit'               => 'Bewerken',
-    
+
                                 'modal'              => [
                                     'edit' => 'Tickets bewerken',
                                     'save' => 'Opslaan',
                                 ],
-    
+
                                 'name'               => 'Naam',
                                 'price'              => 'Prijs',
                                 'qty'                => 'Hoeveelheid',
@@ -94,12 +94,12 @@ return [
                                 'valid-from'         => 'Geldig vanaf',
                                 'valid-until'        => 'Geldig tot',
                             ],
-    
+
                             'empty-info'  => [
                                 'tickets' => [
                                     'add' => 'Tickets toevoegen',
                                 ],
-    
+
                                 'slots'   => [
                                     'add'         => 'Slots toevoegen',
                                     'description' => 'Beschikbare slots met tijdsduur.',
@@ -115,25 +115,25 @@ return [
                                 'daily'                  => 'Dagbasis',
                                 'hourly-price'           => 'Uurprijs',
                                 'hourly'                 => 'Uurbasis',
-    
+
                                 'same-slot-for-all-days' => [
                                     'no'    => 'Nee',
                                     'title' => 'Zelfde slot voor alle dagen',
                                     'yes'   => 'Ja',
                                 ],
-    
+
                                 'title'                  => 'Verhuurtype',
                             ],
-    
+
                             'slots'       => [
                                 'add'              => 'Slots toevoegen',
-    
+
                                 'action'           => [
                                     'add' => 'Toevoegen',
                                 ],
-    
+
                                 'description-info' => 'Volgens slots wordt de tijdsduur gecreëerd en zichtbaar.',
-    
+
                                 'modal'            => [
                                     'slot' => [
                                         'friday'     => 'Vrijdag',
@@ -147,26 +147,26 @@ return [
                                         'wednesday'  => 'Woensdag',
                                     ],
                                 ],
-    
+
                                 'save'             => 'Opslaan',
                                 'title'            => 'Tijdsduur van slots',
                                 'unavailable'      => 'Niet beschikbaar',
                             ],
-    
+
                             'table'       => [
                                 'break-duration'            => 'Pauzetijd tussen slots (minuten)',
-    
+
                                 'charged-per'               => [
                                     'guest'  => 'Gast',
                                     'table'  => 'Tafel',
                                     'title'  => 'In rekening brengen per',
                                 ],
-    
+
                                 'guest-capacity'            => 'Gastencapaciteit',
                                 'guest-limit'               => 'Gastenlimiet per tafel',
                                 'prevent-scheduling-before' => 'Voorkom plannen voor',
                                 'slot-duration'             => 'Slotduur (minuten)',
-    
+
                                 'same-slot-for-all-days'    => [
                                     'no'    => 'Nee',
                                     'title' => 'Zelfde slot voor alle dagen',

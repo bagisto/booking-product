@@ -511,53 +511,46 @@
 
             created() {
                 if (this.default_booking.slots) {
-                    let lastIndex = Object.keys(this.default_booking.slots).pop();
+                    const lastIndex = Object.keys(this.default_booking.slots).pop();
 
-                    if (lastIndex) {
-                        this.optionRowCount = this.default_booking.id;
-                    }
+                    this.optionRowCount = lastIndex ? this.default_booking.id : 0;
                 }
 
-                if (this.default_booking.booking_type === 'one') {
-                    this.slots['one'] = this.default_booking.slots ?? this.slots['one'];
-                } else {
-                    this.slots['many'] = this.default_booking.slots ?? this.slots['many'];
-                }
+                const bookingType = this.default_booking.booking_type;
+                this.slots[bookingType] = this.default_booking.slots ?? this.slots[bookingType];
             },
 
             methods: {
                 store(params) {
                     if (params.booking_type === 'one') {
                         if (! params.id) {
-                            params.id = this.optionRowCount;
-
-                            this.optionRowCount++;
+                            params.id = this.optionRowCount++;
                         }
 
-                        const foundIndex = this.slots.one.findIndex(item => (item.from == params.from && item.to == params.to));
+                        const foundIndex = this.slots.one.findIndex(item => item.from_day === params.from_day && item.to_day === params.to_day);
 
-                        if (foundIndex !== -1) {
-                            this.slots.one.splice(foundIndex, 1, params);
-                        } else {
+                        if (foundIndex === -1) {
                             this.slots.one.push(params);
+                        } else {
+                            this.slots.one.splice(foundIndex, 1, params);
                         }
-
-                        this.$refs.drawerform.toggle();
                     } else {
                         params.id = this.currentIndex;
 
                         if (params.from && params.to) {
-                            if (! this.slots['many'][this.currentIndex].length) {
-                                this.slots['many'][this.currentIndex].push(params);
-                            } else {
-                                this.slots['many'][this.currentIndex].splice(0, 1, params);
-                            }
-    
-                            this.selectedStatus[this.currentIndex]  = params.status;
-                        }
+                            const currentSlot = this.slots['many'][this.currentIndex];
 
-                        this.$refs.drawerform.toggle();
+                            if (! currentSlot.length) {
+                                currentSlot.push(params);
+                            } else {
+                                currentSlot.splice(0, 1, params);
+                            }
+
+                            this.selectedStatus[this.currentIndex] = params.status;
+                        }
                     }
+
+                    this.$refs.drawerform.toggle();
                 },
 
                 convertIndexToDay(day) {

@@ -19,14 +19,14 @@ return [
                             'appointment' => [
                                 'break-duration'         => 'スロット間の休憩時間（分）',
                                 'slot-duration'          => 'スロットの期間（分）',
-    
+
                                 'same-slot-for-all-days' => [
                                     'no'    => 'いいえ',
                                     'title' => '全ての日で同じスロット',
                                     'yes'   => 'はい',
                                 ],
                             ],
-    
+
                             'default'     => [
                                 'add'              => '追加',
                                 'break-duration'   => 'スロット間の休憩時間（分）',
@@ -35,7 +35,7 @@ return [
                                 'description-info' => 'スロットに基づいて時間の期間が作成され、表示されます。',
                                 'edit'             => '編集',
                                 'many'             => '1日に複数の予約',
-    
+
                                 'modal'            => [
                                     'slot' => [
                                         'add-title'  => 'スロットを追加',
@@ -62,7 +62,7 @@ return [
                                         'week'       => ':day',
                                     ],
                                 ],
-    
+
                                 'one'              => '複数日のための1つの予約',
                                 'open'             => '開く',
                                 'slot-add'         => 'スロットを追加',
@@ -71,19 +71,19 @@ return [
                                 'title'            => 'デフォルト',
                                 'unavailable'      => '利用不可',
                             ],
-    
+
                             'event'       => [
                                 'add'                => 'チケットを追加',
                                 'delete'             => '削除',
                                 'description-info'   => '利用可能なチケットはありません。',
                                 'description'        => '説明',
                                 'edit'               => '編集',
-    
+
                                 'modal'              => [
                                     'edit' => 'チケットを編集する',
                                     'save' => '保存する',
                                 ],
-    
+
                                 'name'               => '名前',
                                 'price'              => '価格',
                                 'qty'                => '数量',
@@ -94,12 +94,12 @@ return [
                                 'valid-from'         => '有効開始日',
                                 'valid-until'        => '有効終了日',
                             ],
-    
+
                             'empty-info'  => [
                                 'tickets' => [
                                     'add' => 'チケットを追加',
                                 ],
-    
+
                                 'slots'   => [
                                     'add'         => 'スロットを追加',
                                     'description' => '利用可能なスロットと時間の期間。',
@@ -115,25 +115,25 @@ return [
                                 'daily'                  => 'デイリーベース',
                                 'hourly-price'           => '時間単位の価格',
                                 'hourly'                 => '時間単位のベース',
-    
+
                                 'same-slot-for-all-days' => [
                                     'no'    => 'いいえ',
                                     'title' => '全ての日で同じスロット',
                                     'yes'   => 'はい',
                                 ],
-    
+
                                 'title'                  => 'レンタルタイプ',
                             ],
-    
+
                             'slots'       => [
                                 'add'              => 'スロットを追加',
-    
+
                                 'action'           => [
                                     'add' => '追加',
                                 ],
-    
+
                                 'description-info' => 'スロットに基づいて時間の期間が作成され、表示されます。',
-    
+
                                 'modal'            => [
                                     'slot' => [
                                         'friday'     => '金曜日',
@@ -147,26 +147,26 @@ return [
                                         'wednesday'  => '水曜日',
                                     ],
                                 ],
-    
+
                                 'save'             => '保存',
                                 'title'            => 'スロットの時間の期間',
                                 'unavailable'      => '利用不可',
                             ],
-    
+
                             'table'       => [
                                 'break-duration'            => 'スロット間の休憩時間（分）',
-    
+
                                 'charged-per'               => [
                                     'guest'  => 'ゲスト',
                                     'table'  => 'テーブル',
                                     'title'  => 'プライトチャージ',
                                 ],
-    
+
                                 'guest-capacity'            => 'ゲスト収容人数',
                                 'guest-limit'               => 'テーブルごとのゲスト制限',
                                 'prevent-scheduling-before' => '前日予約防止',
                                 'slot-duration'             => 'スロットの期間（分）',
-    
+
                                 'same-slot-for-all-days'    => [
                                     'no'    => 'いいえ',
                                     'title' => '全ての日で同じスロット',

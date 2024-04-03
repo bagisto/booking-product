@@ -19,7 +19,7 @@ return [
                             'appointment' => [
                                 'break-duration'         => 'Break Time b/w Slots (Mins)',
                                 'slot-duration'          => 'Slot Duration (Mins)',
-    
+
                                 'same-slot-for-all-days' => [
                                     'no'    => 'No',
                                     'title' => 'Same Slot For All days',
@@ -35,7 +35,7 @@ return [
                                 'description-info' => 'According to slots the time duration will be created and visible.',
                                 'edit'             => 'Edit',
                                 'many'             => 'Many Bookings For One Days',
-    
+
                                 'modal'            => [
                                     'slot' => [
                                         'add-title'  => 'Add Slots',
@@ -62,7 +62,7 @@ return [
                                         'week'       => ':day',
                                     ],
                                 ],
-    
+
                                 'one'              => 'One Booking For Many Days',
                                 'open'             => 'Open',
                                 'slot-add'         => 'Add Slots',
@@ -71,19 +71,19 @@ return [
                                 'title'            => 'Default',
                                 'unavailable'      => 'Unavailable',
                             ],
-    
+
                             'event'       => [
                                 'add'                => 'Add Tickets',
                                 'delete'             => 'Delete',
                                 'description-info'   => 'There is no tickets available.',
                                 'description'        => 'Description',
                                 'edit'               => 'Edit',
-    
+
                                 'modal'              => [
                                     'edit' => 'Edit Tickets',
                                     'save' => 'Save',
                                 ],
-    
+
                                 'name'               => 'Name',
                                 'price'              => 'Price',
                                 'qty'                => 'Quantity',
@@ -94,12 +94,12 @@ return [
                                 'valid-from'         => 'Valid From',
                                 'valid-until'        => 'Valid Until',
                             ],
-    
+
                             'empty-info'  => [
                                 'tickets' => [
                                     'add' => 'Add Tickets',
                                 ],
-    
+
                                 'slots'   => [
                                     'add'         => 'Add Slots',
                                     'description' => 'Available Slots with time Duration.',
@@ -115,25 +115,25 @@ return [
                                 'daily'                  => 'Daily Basis',
                                 'hourly-price'           => 'Hourly Price',
                                 'hourly'                 => 'Hourly Basis',
-    
+
                                 'same-slot-for-all-days' => [
                                     'no'    => 'No',
                                     'title' => 'Same Slot For All days',
                                     'yes'   => 'Yes',
                                 ],
-    
+
                                 'title'                  => 'Renting Type',
                             ],
-    
+
                             'slots'       => [
                                 'add'              => 'Add Slots',
-    
+
                                 'action'           => [
                                     'add' => 'Add',
                                 ],
-    
+
                                 'description-info' => 'According to slots the time duration will be created and visible.',
-    
+
                                 'modal'            => [
                                     'slot' => [
                                         'friday'     => 'Friday',
@@ -147,26 +147,26 @@ return [
                                         'wednesday'  => 'Wednesday',
                                     ],
                                 ],
-    
+
                                 'save'             => 'Save',
                                 'title'            => 'Slots Time Duration',
                                 'unavailable'      => 'Unavailable',
                             ],
-    
+
                             'table'       => [
                                 'break-duration'            => 'Break Time b/w Slots (Mins)',
-    
+
                                 'charged-per'               => [
                                     'guest'  => 'Guest',
                                     'table'  => 'Table',
                                     'title'  => 'Charged Per',
                                 ],
-    
+
                                 'guest-capacity'            => 'Guest Capacity',
                                 'guest-limit'               => 'Guest Limit Per Table',
                                 'prevent-scheduling-before' => 'Prevent Scheduling Before',
                                 'slot-duration'             => 'Slot Duration (Mins)',
-    
+
                                 'same-slot-for-all-days'    => [
                                     'no'    => 'No',
                                     'title' => 'Same Slot For All days',
