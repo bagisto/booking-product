@@ -314,18 +314,43 @@
             },
 
             created() {
-                if (! this.bookingProduct && ! this.bookingProduct.slots) {
+                if ( ! this.bookingProduct || ! this.bookingProduct.slots) {
                     return;
                 }
 
+                const slots = this.bookingProduct.slots;
+
                 if (this.bookingProduct.same_slot_all_days) {
-                    this.slots['same_for_week'] = this.bookingProduct.slots ?? this.slots['same_for_week'];
+                    this.slots['same_for_week'] = slots ?? this.slots['same_for_week'];
                 } else {
-                    this.slots['different_for_week'] = this.bookingProduct.slots ?? this.slots['different_for_week'];
+                    this.slots['different_for_week'] = slots.slice(0, 7);
+                }
+
+                this.slots['different_for_week'].forEach((slot, index) => {
+                    if (this.slotSpansTwoDays(slot)) {
+                        const secondDaySlot = { ...slot, from: '00:00' };
+                        this.slots['different_for_week'].splice(index + 1, 0, secondDaySlot);
+                        index++;
+                    }
+                });
+
+                if (slots.length > 7) {
+                    this.slots['different_for_week'] = this.slots['different_for_week'].concat(slots.slice(7));
                 }
             },
 
             methods: {
+                slotSpansTwoDays(slot) {
+                    if (slot.length) {
+                        slot.forEach(element => {
+                            const from = element['from'].split(':');
+                            const to = element['to'].split(':');
+
+                            return parseInt(from) > parseInt(to);
+                        });
+                    }
+                },
+
                 add() {
                     if (parseInt(this.sameSlotAllDays)) {
                         this.field['same_for_week'].push({

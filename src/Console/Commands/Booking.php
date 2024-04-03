@@ -25,9 +25,6 @@ class Booking extends Command
      */
     public function handle()
     {
-        $this->info('Step: Dumping autoload files...');
-        $this->info(shell_exec('composer dump-autoload'));
-
         $this->info('Step: Running database migrations...');
         $this->call('migrate');
 

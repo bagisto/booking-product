@@ -37,6 +37,10 @@ Webkul\BookingProduct\Providers\BookingProductServiceProvider::class,
 ##### 5. Run the following commands to complete the setup:
 
 ~~~
+composer dump-autoload
+~~~
+
+~~~
 php artisan booking-product:install
 ~~~
 

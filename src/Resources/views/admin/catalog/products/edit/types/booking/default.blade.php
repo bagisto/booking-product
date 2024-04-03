@@ -512,12 +512,16 @@
             created() {
                 if (this.default_booking.slots) {
                     const lastIndex = Object.keys(this.default_booking.slots).pop();
-
                     this.optionRowCount = lastIndex ? this.default_booking.id : 0;
                 }
 
-                const bookingType = this.default_booking.booking_type;
-                this.slots[bookingType] = this.default_booking.slots ?? this.slots[bookingType];
+                if (this.default_booking.booking_type === 'one') {
+                    this.slots['one'] = this.default_booking.slots ?? this.slots['one'];
+                } else {
+                    this.slots['many'] = this.slots['many'].map((_, index) => {
+                        return this.default_booking.slots[index] ?? [];
+                    });
+                }
             },
 
             methods: {
