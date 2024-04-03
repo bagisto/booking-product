@@ -101,7 +101,7 @@
                                 </div>
                             </div>
                         </div>
-        
+
                         <div class="grid grid-cols-[80px_80px_auto] gap-2.5 py-4 border-b">
                             <div class="grid grid-cols-1 gap-2">
                                 <div
@@ -109,33 +109,33 @@
                                     v-text="'@lang('booking::app.admin.sales.bookings.calendar.order-id')'"
                                 >
                                 </div>
-        
+
                                 <div class="font-medium text-[#1F2937]">
                                     #@{{ event.order_id }}
                                 </div>
                             </div>
-        
+
                             <div class="grid grid-cols-1 gap-2">
-                                <div    
+                                <div
                                     class="text-gray-500"
                                     v-text="'@lang('booking::app.admin.sales.bookings.calendar.price')'"
                                 >
                                 </div>
-        
-                                <div    
+
+                                <div
                                     class="font-medium text-[#1F2937]"
                                     v-text="event.total"
                                 >
                                 </div>
                             </div>
-        
+
                             <div class="grid grid-cols-1 gap-2">
                                 <div
                                     class="text-gray-500"
                                     v-text="'@lang('booking::app.admin.sales.bookings.calendar.status')'"
                                 >
                                 </div>
-        
+
                                 <div
                                     class="w-fit px-2.5 py-1 text-white font-medium rounded-2xl "
                                     :class="[
@@ -225,32 +225,25 @@
             },
 
             methods: {
-                getBookings({startDate, endDate}) {
+                getBookings({ startDate, endDate }) {
+                    const formattedStartDate = new Date(startDate).toLocaleDateString("en-US");
+                    const formattedEndDate = new Date(endDate).toLocaleDateString("en-US");
+
                     this.$axios.get("{{ route('admin.sales.bookings.get') }}", {
                         params: {
                             view_type: 'calendar',
-                            startDate: new Date(startDate).toLocaleDateString("en-US"),
-                            endDate: new Date(endDate).toLocaleDateString("en-US")
+                            startDate: formattedStartDate,
+                            endDate: formattedEndDate
                         }
                     })
                     .then(response => {
                         this.events = response.data.bookings;
 
-                        // Getting a difference between start time and end time.
                         this.events.forEach(element => {
                             const differenceInMinutes = Math.floor((new Date(element.end) - new Date(element.start)) / (1000 * 60));
+                            const totalMinutes = Math.floor(differenceInMinutes / 60) * 60 + (differenceInMinutes % 60);
 
-                            const formattedHours = String(Math.floor(differenceInMinutes / 60)).padStart(2, '0');
-
-                            const formattedMinutes = String(differenceInMinutes % 60).padStart(2, '0');
-                            
-                            const totalMinutes = formattedHours * 60 + formattedMinutes;
-
-                            if (totalMinutes > 60) {
-                                element.time_difference = true;
-                            } else {
-                                element.time_difference = false;
-                            }
+                            element.time_difference = totalMinutes > 60;
                         });
                     })
                     .catch(error => {});
@@ -264,49 +257,33 @@
 
                 showTooltip(event) {
                     const element = event.currentTarget;
-
                     const elementTopOffset = element.getBoundingClientRect().top + window.pageYOffset;
-
                     const parentOffsetLeft = element.closest(".vuecal__cell--has-events")?.offsetLeft;
-
-                    const sidebar = document.getElementsByClassName('sidebar-collapsed');
-
-                    const sidebarNotCollapsed = document.getElementsByClassName('sidebar-not-collapsed');
-
-                    const parentLeftOffset = sidebar.length ? parentOffsetLeft : parentOffsetLeft + 200;
-                    
+                    const sidebar = document.querySelector('.sidebar-collapsed, .sidebar-not-collapsed');
+                    const parentLeftOffset = sidebar ? parentOffsetLeft : parentOffsetLeft + 200;
                     const calendar = document.querySelector('.calendar');
-
                     const elementWidth = element.offsetWidth;
-
                     const calendarWidth = calendar.offsetWidth;
 
                     calendar.style.top = Math.min(elementTopOffset, document.body.clientHeight - calendar.offsetHeight) + 'px';
-
                     calendar.style.right = '';
-
                     calendar.style.left = '';
 
-                    let sidebarFirstChildWidth;
-
-                    if (sidebarNotCollapsed?.length && ! sidebar.length) {
-                        sidebarFirstChildWidth = sidebarNotCollapsed[0].firstChild.clientWidth;
-                    }
+                    const sidebarFirstChildWidth = sidebar?.querySelector(':first-child')?.clientWidth;
 
                     if (parentLeftOffset > calendarWidth) {
-                        if (sidebar.length) {
+                        if (sidebar) {
                             calendar.style.left = parentLeftOffset - 75 + "px";
-                        } else if ((parentLeftOffset - sidebarFirstChildWidth) > calendarWidth) {
+                        } else if (parentLeftOffset - sidebarFirstChildWidth > calendarWidth) {
                             calendar.style.left = parentLeftOffset - 75 + "px";
                         } else {
-                            calendar.style.right = (parentLeftOffset - sidebarFirstChildWidth - 5)  + elementWidth + "px";
+                            calendar.style.right = parentLeftOffset - sidebarFirstChildWidth - 5 + elementWidth + "px";
                         }
-                    } else if(elementWidth < parentLeftOffset) {
+                    } else if (elementWidth < parentLeftOffset) {
                         calendar.style.right = parentLeftOffset + elementWidth + 10 + "px";
                     } else {
                         calendar.style.left = calendarWidth + (elementWidth - parentLeftOffset) + 60 + "px";
                     }
-
                     calendar.classList.add('show');
                 },
 
