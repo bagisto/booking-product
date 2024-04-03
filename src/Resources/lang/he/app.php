@@ -19,14 +19,14 @@ return [
                             'appointment' => [
                                 'break-duration'         => 'זמן הפסק בין המקומות (דקות)',
                                 'slot-duration'          => 'משך זמן המקום (דקות)',
-    
+
                                 'same-slot-for-all-days' => [
                                     'no'    => 'לא',
                                     'title' => 'אותו מקום לכל הימים',
                                     'yes'   => 'כן',
                                 ],
                             ],
-    
+
                             'default'     => [
                                 'add'              => 'הוסף',
                                 'break-duration'   => 'זמן הפסק בין המקומות (דקות)',
@@ -35,7 +35,7 @@ return [
                                 'description-info' => 'על פי המקומות, ייצר זמן המקום שיהיה גלוי.',
                                 'edit'             => 'ערוך',
                                 'many'             => 'המון הזמנות ליום אחד',
-    
+
                                 'modal'            => [
                                     'slot' => [
                                         'add-title'  => 'הוסף יחידות זמן',
@@ -62,7 +62,7 @@ return [
                                         'week'       => ':day',
                                     ],
                                 ],
-    
+
                                 'one'              => 'הזמנה אחת למספר ימים',
                                 'open'             => 'פתח',
                                 'slot-add'         => 'הוסף מקומות',
@@ -71,19 +71,19 @@ return [
                                 'title'            => 'ברירת מחדל',
                                 'unavailable'      => 'אינו זמין',
                             ],
-    
+
                             'event'       => [
                                 'add'                => 'הוסף כרטיסים',
                                 'delete'             => 'מחק',
                                 'description-info'   => 'אין כרטיסים זמינים.',
                                 'description'        => 'תיאור',
                                 'edit'               => 'ערוך',
-    
+
                                 'modal'              => [
                                     'edit' => 'ערוך כרטיסים',
                                     'save' => 'שמור',
                                 ],
-    
+
                                 'name'               => 'שם',
                                 'price'              => 'מחיר',
                                 'qty'                => 'כמות',
@@ -94,12 +94,12 @@ return [
                                 'valid-from'         => 'בתוקף מ',
                                 'valid-until'        => 'בתוקף עד',
                             ],
-    
+
                             'empty-info'  => [
                                 'tickets' => [
                                     'add' => 'הוסף כרטיסים',
                                 ],
-    
+
                                 'slots'   => [
                                     'add'         => 'הוסף מקומות',
                                     'description' => 'מקומות זמינים עם משך זמן.',
@@ -115,25 +115,25 @@ return [
                                 'daily'                  => 'לפי יום',
                                 'hourly-price'           => 'מחיר שעתי',
                                 'hourly'                 => 'לפי שעה',
-    
+
                                 'same-slot-for-all-days' => [
                                     'no'    => 'לא',
                                     'title' => 'אותו מקום לכל הימים',
                                     'yes'   => 'כן',
                                 ],
-    
+
                                 'title'                  => 'סוג השכרה',
                             ],
-    
+
                             'slots'       => [
                                 'add'              => 'הוסף מקומות',
-    
+
                                 'action'           => [
                                     'add' => 'הוסף',
                                 ],
-    
+
                                 'description-info' => 'על פי המקומות, ייצר זמן המקום שיהיה גלוי.',
-    
+
                                 'modal'            => [
                                     'slot' => [
                                         'friday'     => 'יום שישי',
@@ -147,26 +147,26 @@ return [
                                         'wednesday'  => 'יום רביעי',
                                     ],
                                 ],
-    
+
                                 'save'             => 'שמור',
                                 'title'            => 'משך זמן המקומות',
                                 'unavailable'      => 'לא זמין',
                             ],
-    
+
                             'table'       => [
                                 'break-duration'            => 'זמן הפסק בין המקומות (דקות)',
-    
+
                                 'charged-per'               => [
                                     'guest'  => 'אורח',
                                     'table'  => 'שולחן',
                                     'title'  => 'חייב בכל',
                                 ],
-    
+
                                 'guest-capacity'            => 'קיבולת אורחים',
                                 'guest-limit'               => 'מגבלת אורחים לכל שולחן',
                                 'prevent-scheduling-before' => 'מנע קביעת תור לפני',
                                 'slot-duration'             => 'משך זמן המקום (דקות)',
-    
+
                                 'same-slot-for-all-days'    => [
                                     'no'    => 'לא',
                                     'title' => 'אותו מקום לכל הימים',

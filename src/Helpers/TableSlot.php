@@ -13,14 +13,15 @@ class TableSlot extends Booking
     {
         $bookingProduct = $this->bookingProductRepository->findOneByField('product_id', $cartItem['product_id']);
 
-        $bookedQty = $this->getBookedQuantity($cartItem);
+        $bookedQty = $this->getBookedQuantity([$cartItem]);
+
+        $tableSlot = $bookingProduct->table_slot;
 
         $requestedQty = $cartItem['quantity'];
 
-        if ($bookingProduct->table_slot->price_type == 'table') {
-            $requestedQty *= $bookingProduct->table_slot->guest_limit;
-
-            $bookedQty *= $bookingProduct->table_slot->guest_limit;
+        if ($tableSlot->price_type == 'table') {
+            $requestedQty *= $tableSlot->guest_limit;
+            $bookedQty *= $tableSlot->guest_limit;
         }
 
         if (

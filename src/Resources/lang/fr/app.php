@@ -19,14 +19,14 @@ return [
                             'appointment' => [
                                 'break-duration'         => 'Temps de pause entre les créneaux (minutes)',
                                 'slot-duration'          => 'Durée du créneau (minutes)',
-    
+
                                 'same-slot-for-all-days' => [
                                     'no'    => 'Non',
                                     'title' => 'Même créneau pour tous les jours',
                                     'yes'   => 'Oui',
                                 ],
                             ],
-    
+
                             'default'     => [
                                 'add'              => 'Ajouter',
                                 'break-duration'   => 'Temps de pause entre les créneaux (minutes)',
@@ -35,7 +35,7 @@ return [
                                 'description-info' => 'Selon les créneaux, la durée sera créée et visible.',
                                 'edit'             => 'Modifier',
                                 'many'             => 'Nombreuses réservations pour un jour',
-    
+
                                 'modal'            => [
                                     'slot' => [
                                         'add-title'  => 'Ajouter des créneaux',
@@ -62,7 +62,7 @@ return [
                                         'week'       => ':day',
                                     ],
                                 ],
-    
+
                                 'one'              => 'Une réservation pour plusieurs jours',
                                 'open'             => 'Ouvrir',
                                 'slot-add'         => 'Ajouter des créneaux',
@@ -71,19 +71,19 @@ return [
                                 'title'            => 'Par défaut',
                                 'unavailable'      => 'indisponible',
                             ],
-    
+
                             'event'       => [
                                 'add'                => 'Ajouter des billets',
                                 'delete'             => 'Supprimer',
                                 'description-info'   => 'Aucun billet disponible.',
                                 'description'        => 'Description',
                                 'edit'               => 'Modifier',
-    
+
                                 'modal'              => [
                                     'edit' => 'Modifier les billets',
                                     'save' => 'Enregistrer',
                                 ],
-    
+
                                 'name'               => 'Nom',
                                 'price'              => 'Prix',
                                 'qty'                => 'Quantité',
@@ -94,12 +94,12 @@ return [
                                 'valid-from'         => 'Valable à partir du',
                                 'valid-until'        => 'Valable jusqu\'au',
                             ],
-    
+
                             'empty-info'  => [
                                 'tickets' => [
                                     'add' => 'Ajouter des billets',
                                 ],
-    
+
                                 'slots'   => [
                                     'add'         => 'Ajouter des créneaux',
                                     'description' => 'Créneaux disponibles avec une durée.',
@@ -115,25 +115,25 @@ return [
                                 'daily'                  => 'Quotidien',
                                 'hourly-price'           => 'Prix horaire',
                                 'hourly'                 => 'Horaire',
-    
+
                                 'same-slot-for-all-days' => [
                                     'no'    => 'Non',
                                     'title' => 'Même créneau pour tous les jours',
                                     'yes'   => 'Oui',
                                 ],
-    
+
                                 'title'                  => 'Type de location',
                             ],
-    
+
                             'slots'       => [
                                 'add'              => 'Ajouter des créneaux',
-    
+
                                 'action'           => [
                                     'add' => 'Ajouter',
                                 ],
-    
+
                                 'description-info' => 'Selon les créneaux, la durée sera créée et visible.',
-    
+
                                 'modal'            => [
                                     'slot' => [
                                         'friday'     => 'Vendredi',
@@ -147,26 +147,26 @@ return [
                                         'wednesday'  => 'Mercredi',
                                     ],
                                 ],
-    
+
                                 'save'             => 'Enregistrer',
                                 'title'            => 'Durée des créneaux',
                                 'unavailable'      => 'Indisponible',
                             ],
-    
+
                             'table'       => [
                                 'break-duration'            => 'Temps de pause entre les créneaux (minutes)',
-    
+
                                 'charged-per'               => [
                                     'guest'  => 'Invité',
                                     'table'  => 'Table',
                                     'title'  => 'Facturé par',
                                 ],
-    
+
                                 'guest-capacity'            => 'Capacité d\'accueil des invités',
                                 'guest-limit'               => 'Limite d\'invités par table',
                                 'prevent-scheduling-before' => 'Empêcher la planification avant',
                                 'slot-duration'             => 'Durée du créneau (minutes)',
-    
+
                                 'same-slot-for-all-days'    => [
                                     'no'    => 'Non',
                                     'title' => 'Même créneau pour tous les jours',

@@ -151,7 +151,7 @@ class Booking
 
         for ($i = 0; $i < 7; $i++) {
             $date = clone Carbon::now();
- 
+
             $date->addDays($i);
 
             if (

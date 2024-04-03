@@ -5,12 +5,6 @@ return [
         'catalog' => [
             'products' => [
                 'edit' => [
-                    'booking' => [
-                        
-
-                        
-                    ],
-
                     'types'   => [
                         'booking' => [
                             'available-from'       => '从可用',
@@ -25,14 +19,14 @@ return [
                             'appointment' => [
                                 'break-duration'         => '时间间隔（分钟）',
                                 'slot-duration'          => '时隙时长（分钟）',
-    
+
                                 'same-slot-for-all-days' => [
                                     'no'    => '否',
                                     'title' => '所有天使用相同时隙',
                                     'yes'   => '是',
                                 ],
                             ],
-    
+
                             'default'     => [
                                 'add'              => '添加',
                                 'break-duration'   => '时间间隔（分钟）',
@@ -41,7 +35,7 @@ return [
                                 'description-info' => '根据时隙将创建并显示时间段。',
                                 'edit'             => '编辑',
                                 'many'             => '一天内的多次预约',
-    
+
                                 'modal'            => [
                                     'slot' => [
                                         'add-title'  => '添加时间段',
@@ -68,7 +62,7 @@ return [
                                         'week'       => ':day',
                                     ],
                                 ],
-    
+
                                 'one'              => '一天内的一次预约',
                                 'open'             => '开放',
                                 'slot-add'         => '添加时隙',
@@ -77,19 +71,19 @@ return [
                                 'title'            => '默认',
                                 'unavailable'      => '不可用',
                             ],
-    
+
                             'event'       => [
                                 'add'                => '添加门票',
                                 'delete'             => '删除',
                                 'description-info'   => '没有可用的门票。',
                                 'description'        => '描述',
                                 'edit'               => '编辑',
-    
+
                                 'modal'              => [
                                     'edit' => '编辑门票',
                                     'save' => '保存',
                                 ],
-    
+
                                 'name'               => '名称',
                                 'price'              => '价格',
                                 'qty'                => '数量',
@@ -100,12 +94,12 @@ return [
                                 'valid-from'         => '有效开始时间',
                                 'valid-until'        => '有效结束时间',
                             ],
-    
+
                             'empty-info'  => [
                                 'tickets' => [
                                     'add' => '添加门票',
                                 ],
-    
+
                                 'slots'   => [
                                     'add'         => '添加时隙',
                                     'description' => '可用时隙及时长。',
@@ -121,25 +115,25 @@ return [
                                 'daily'                  => '每日',
                                 'hourly-price'           => '每小时价格',
                                 'hourly'                 => '每小时',
-    
+
                                 'same-slot-for-all-days' => [
                                     'no'    => '否',
                                     'title' => '所有天使用相同时隙',
                                     'yes'   => '是',
                                 ],
-    
+
                                 'title'                  => '租赁类型',
                             ],
-    
+
                             'slots'       => [
                                 'add'              => '添加时隙',
-    
+
                                 'action'           => [
                                     'add' => '添加',
                                 ],
-    
+
                                 'description-info' => '根据时隙将创建并显示时间段。',
-    
+
                                 'modal'            => [
                                     'slot' => [
                                         'friday'     => '星期五',
@@ -153,26 +147,26 @@ return [
                                         'wednesday'  => '星期三',
                                     ],
                                 ],
-    
+
                                 'save'             => '保存',
                                 'title'            => '时隙时长',
                                 'unavailable'      => '不可用',
                             ],
-    
+
                             'table'       => [
                                 'break-duration'            => '时间间隔（分钟）',
-    
+
                                 'charged-per'               => [
                                     'guest'  => '客人',
                                     'table'  => '桌子',
                                     'title'  => '计费方式',
                                 ],
-    
+
                                 'guest-capacity'            => '客人容量',
                                 'guest-limit'               => '每桌客人限制',
                                 'prevent-scheduling-before' => '在此之前禁止预订',
                                 'slot-duration'             => '时隙时长（分钟）',
-    
+
                                 'same-slot-for-all-days'    => [
                                     'no'    => '否',
                                     'title' => '所有天使用相同时隙',
