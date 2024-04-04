@@ -24,7 +24,7 @@
                 :label="trans('booking::app.admin.catalog.products.edit.types.booking.default.description')"
                 @slotType="slotType"
             >
-                @foreach (['many', 'one'] as $item)
+                @foreach (['one', 'many'] as $item)
                     <option value="{{ $item }}">
                         @lang('booking::app.admin.catalog.products.edit.types.booking.default.' . $item)
                     </option>
