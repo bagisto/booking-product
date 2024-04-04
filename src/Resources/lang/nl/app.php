@@ -271,52 +271,52 @@ return [
             'view'   => [
                 'types'   => [
                     'booking' => [
+                        'appointment' => [
+                            'closed'             => 'Gesloten',
+                            'today-availability' => 'Vandaag Beschikbaarheid',
+                        ],
+    
+                        'event'       => [
+                            'book-your-ticket' => 'Boek Uw Ticket',
+                        ],
+
                         'event-on'                 => 'Evenement Op',
                         'location'                 => 'Locatie',
+
+                        'rental'      => [
+                            'choose-rent-option' => 'Kies Verhuuroptie',
+                            'daily-basis'        => 'Dagelijkse Basis',
+                            'from'               => 'Van',
+                            'hourly-basis'       => 'Uurlijkse Basis',
+                            'rent-an-item'       => 'Verhuur een Item',
+                            'select-date'        => 'Selecteer datum',
+                            'select-rent-time'   => 'Selecteer Verhuurtijd',
+                            'select-slot'        => 'Selecteer Slot',
+                            'select-time-slot'   => 'Selecteer Tijdslot',
+                            'slot'               => 'Slot',
+                            'to'                 => 'Tot',
+                        ],
+
                         'slot-duration-in-minutes' => ':minutes Minuten',
                         'slot-duration'            => 'Slotduur',
+
+                        'slots'       => [
+                            'book-an-appointment' => 'Boek een Afspraak',
+                            'date'                => 'Datum',
+                            'no-slots-available'  => 'Geen slots beschikbaar',
+                            'select-slot'         => 'Selecteer Slot',
+                            'title'               => 'Slot',
+                        ],
+    
+                        'table'       => [
+                            'book-a-table'       => 'Boek een Tafel',
+                            'closed'             => 'Gesloten',
+                            'slots-for-all-days' => 'Toon voor alle dagen',
+                            'special-notes'      => 'Speciale Verzoeken/Notities',
+                            'today-availability' => 'Vandaag Beschikbaarheid',
+                        ],
+
                         'view-on-map'              => 'Bekijken op Kaart',
-                    ],
-                ],
-
-                'booking' => [
-                    'appointment' => [
-                        'closed'             => 'Gesloten',
-                        'today-availability' => 'Vandaag Beschikbaarheid',
-                    ],
-
-                    'event'       => [
-                        'book-your-ticket' => 'Boek Uw Ticket',
-                    ],
-
-                    'rental'      => [
-                        'choose-rent-option' => 'Kies Verhuuroptie',
-                        'daily-basis'        => 'Dagelijkse Basis',
-                        'from'               => 'Van',
-                        'hourly-basis'       => 'Uurlijkse Basis',
-                        'rent-an-item'       => 'Verhuur een Item',
-                        'select-date'        => 'Selecteer datum',
-                        'select-rent-time'   => 'Selecteer Verhuurtijd',
-                        'select-slot'        => 'Selecteer Slot',
-                        'select-time-slot'   => 'Selecteer Tijdslot',
-                        'slot'               => 'Slot',
-                        'to'                 => 'Tot',
-                    ],
-
-                    'slots'       => [
-                        'book-an-appointment' => 'Boek een Afspraak',
-                        'date'                => 'Datum',
-                        'no-slots-available'  => 'Geen slots beschikbaar',
-                        'select-slot'         => 'Selecteer Slot',
-                        'title'               => 'Slot',
-                    ],
-
-                    'table'       => [
-                        'book-a-table'       => 'Boek een Tafel',
-                        'closed'             => 'Gesloten',
-                        'slots-for-all-days' => 'Toon voor alle dagen',
-                        'special-notes'      => 'Speciale Verzoeken/Notities',
-                        'today-availability' => 'Vandaag Beschikbaarheid',
                     ],
                 ],
             ],

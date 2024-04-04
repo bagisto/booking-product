@@ -271,52 +271,52 @@ return [
             'view' => [
                 'types'   => [
                     'booking' => [
+                        'appointment' => [
+                            'closed'             => 'Geschlossen',
+                            'today-availability' => 'Heutige Verfügbarkeit',
+                        ],
+    
+                        'event'       => [
+                            'book-your-ticket' => 'Buchen Sie Ihr Ticket',
+                        ],
+
                         'event-on'                 => 'Event am',
                         'location'                 => 'Ort',
+
+                        'rental'      => [
+                            'choose-rent-option' => 'Wählen Sie die Mietoption',
+                            'daily-basis'        => 'Tägliche Basis',
+                            'from'               => 'Von',
+                            'hourly-basis'       => 'Stündliche Basis',
+                            'rent-an-item'       => 'Artikel mieten',
+                            'select-date'        => 'Datum wählen',
+                            'select-rent-time'   => 'Mietzeit auswählen',
+                            'select-slot'        => 'Slot auswählen',
+                            'select-time-slot'   => 'Wählen Sie Zeitfenster',
+                            'slot'               => 'Slot',
+                            'to'                 => 'Bis',
+                        ],
+
                         'slot-duration-in-minutes' => ':minutes Minuten',
                         'slot-duration'            => 'Zeitspanne',
+
+                        'slots'       => [
+                            'book-an-appointment' => 'Termin buchen',
+                            'date'                => 'Datum',
+                            'no-slots-available'  => 'Keine Slots verfügbar',
+                            'select-slot'         => 'Slot auswählen',
+                            'title'               => 'Slot',
+                        ],
+    
+                        'table'       => [
+                            'book-a-table'       => 'Tisch buchen',
+                            'closed'             => 'Geschlossen',
+                            'slots-for-all-days' => 'Für alle Tage anzeigen',
+                            'special-notes'      => 'Besondere Anfragen/Notizen',
+                            'today-availability' => 'Heutige Verfügbarkeit',
+                        ],
+
                         'view-on-map'              => 'Auf Karte anzeigen',
-                    ],
-                ],
-
-                'booking' => [
-                    'appointment' => [
-                        'closed'             => 'Geschlossen',
-                        'today-availability' => 'Heutige Verfügbarkeit',
-                    ],
-
-                    'event'       => [
-                        'book-your-ticket' => 'Buchen Sie Ihr Ticket',
-                    ],
-
-                    'rental'      => [
-                        'choose-rent-option' => 'Wählen Sie die Mietoption',
-                        'daily-basis'        => 'Tägliche Basis',
-                        'from'               => 'Von',
-                        'hourly-basis'       => 'Stündliche Basis',
-                        'rent-an-item'       => 'Artikel mieten',
-                        'select-date'        => 'Datum wählen',
-                        'select-rent-time'   => 'Mietzeit auswählen',
-                        'select-slot'        => 'Slot auswählen',
-                        'select-time-slot'   => 'Wählen Sie Zeitfenster',
-                        'slot'               => 'Slot',
-                        'to'                 => 'Bis',
-                    ],
-
-                    'slots'       => [
-                        'book-an-appointment' => 'Termin buchen',
-                        'date'                => 'Datum',
-                        'no-slots-available'  => 'Keine Slots verfügbar',
-                        'select-slot'         => 'Slot auswählen',
-                        'title'               => 'Slot',
-                    ],
-
-                    'table'       => [
-                        'book-a-table'       => 'Tisch buchen',
-                        'closed'             => 'Geschlossen',
-                        'slots-for-all-days' => 'Für alle Tage anzeigen',
-                        'special-notes'      => 'Besondere Anfragen/Notizen',
-                        'today-availability' => 'Heutige Verfügbarkeit',
                     ],
                 ],
             ],

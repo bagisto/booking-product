@@ -271,52 +271,52 @@ return [
             'view'    => [
                 'types'   => [
                     'booking' => [
+                        'appointment' => [
+                            'closed'             => '已关闭',
+                            'today-availability' => '今日可预订',
+                        ],
+    
+                        'event'       => [
+                            'book-your-ticket' => '预订您的门票',
+                        ],
+
                         'event-on'                 => '活动时间',
                         'location'                 => '地点',
+
+                        'rental'      => [
+                            'choose-rent-option' => '选择租赁选项',
+                            'daily-basis'        => '按日计费',
+                            'from'               => '从',
+                            'hourly-basis'       => '按小时计费',
+                            'rent-an-item'       => '租赁物品',
+                            'select-date'        => '选择日期',
+                            'select-rent-time'   => '选择租赁时间',
+                            'select-slot'        => '选择时间段',
+                            'select-time-slot'   => '选择时段',
+                            'slot'               => '时间段',
+                            'to'                 => '至',
+                        ],
+
                         'slot-duration-in-minutes' => ':minutes 分钟',
                         'slot-duration'            => '时间段',
+
+                        'slots'       => [
+                            'book-an-appointment' => '预订约会',
+                            'date'                => '日期',
+                            'no-slots-available'  => '没有可用时间段',
+                            'select-slot'         => '选择时间段',
+                            'title'               => '时间段',
+                        ],
+    
+                        'table'       => [
+                            'book-a-table'       => '预订桌位',
+                            'closed'             => '已关闭',
+                            'slots-for-all-days' => '显示所有日期',
+                            'special-notes'      => '特殊要求/备注',
+                            'today-availability' => '今日可用',
+                        ],
+
                         'view-on-map'              => '在地图上查看',
-                    ],
-                ],
-
-                'booking' => [
-                    'appointment' => [
-                        'closed'             => '已关闭',
-                        'today-availability' => '今日可预订',
-                    ],
-
-                    'event'       => [
-                        'book-your-ticket' => '预订您的门票',
-                    ],
-
-                    'rental'      => [
-                        'choose-rent-option' => '选择租赁选项',
-                        'daily-basis'        => '按日计费',
-                        'from'               => '从',
-                        'hourly-basis'       => '按小时计费',
-                        'rent-an-item'       => '租赁物品',
-                        'select-date'        => '选择日期',
-                        'select-rent-time'   => '选择租赁时间',
-                        'select-slot'        => '选择时间段',
-                        'select-time-slot'   => '选择时段',
-                        'slot'               => '时间段',
-                        'to'                 => '至',
-                    ],
-
-                    'slots'       => [
-                        'book-an-appointment' => '预订约会',
-                        'date'                => '日期',
-                        'no-slots-available'  => '没有可用时间段',
-                        'select-slot'         => '选择时间段',
-                        'title'               => '时间段',
-                    ],
-
-                    'table'       => [
-                        'book-a-table'       => '预订桌位',
-                        'closed'             => '已关闭',
-                        'slots-for-all-days' => '显示所有日期',
-                        'special-notes'      => '特殊要求/备注',
-                        'today-availability' => '今日可用',
                     ],
                 ],
             ],

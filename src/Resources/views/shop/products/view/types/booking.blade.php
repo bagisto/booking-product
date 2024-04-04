@@ -36,7 +36,7 @@
                 @endif
 
                 <div class="w-full max-w-[470px]">
-                    @include ('booking::shop.products.view.booking.' . $bookingProduct->type, ['bookingProduct' => $bookingProduct])
+                    @include ('booking::shop.products.view.types.booking.' . $bookingProduct->type, ['bookingProduct' => $bookingProduct])
                 </div>
             </div>
         </script>

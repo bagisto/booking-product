@@ -271,52 +271,52 @@ return [
             'view'    => [
                 'types'   => [
                     'booking' => [
+                        'appointment' => [
+                            'closed'             => 'Chiuso',
+                            'today-availability' => 'Disponibilità Oggi',
+                        ],
+    
+                        'event'       => [
+                            'book-your-ticket' => 'Prenota Il Tuo Biglietto',
+                        ],
+
                         'event-on'                 => 'Evento Il',
                         'location'                 => 'Posizione',
+
+                        'rental'      => [
+                            'choose-rent-option' => 'Scegli Opzione di Affitto',
+                            'daily-basis'        => 'Base Giornaliera',
+                            'from'               => 'Da',
+                            'hourly-basis'       => 'Base Oraria',
+                            'rent-an-item'       => 'Affitta un Oggetto',
+                            'select-date'        => 'Seleziona data',
+                            'select-rent-time'   => 'Seleziona Orario Affitto',
+                            'select-slot'        => 'Seleziona Slot',
+                            'select-time-slot'   => 'Seleziona fascia oraria',
+                            'slot'               => 'Slot',
+                            'to'                 => 'A',
+                        ],
+
                         'slot-duration-in-minutes' => ':minutes Minuti',
                         'slot-duration'            => 'Durata dello Slot',
+
+                        'slots'       => [
+                            'book-an-appointment' => 'Prenota un Appuntamento',
+                            'date'                => 'Data',
+                            'no-slots-available'  => 'Nessuno slot disponibile',
+                            'select-slot'         => 'Seleziona Slot',
+                            'title'               => 'Slot',
+                        ],
+    
+                        'table'       => [
+                            'book-a-table'       => 'Prenota un Tavolo',
+                            'closed'             => 'Chiuso',
+                            'slots-for-all-days' => 'Mostra per tutti i giorni',
+                            'special-notes'      => 'Richieste Speciali/Note',
+                            'today-availability' => 'Disponibilità Oggi',
+                        ],
+
                         'view-on-map'              => 'Visualizza sulla Mappa',
-                    ],
-                ],
-
-                'booking' => [
-                    'appointment' => [
-                        'closed'             => 'Chiuso',
-                        'today-availability' => 'Disponibilità Oggi',
-                    ],
-
-                    'event'       => [
-                        'book-your-ticket' => 'Prenota Il Tuo Biglietto',
-                    ],
-
-                    'rental'      => [
-                        'choose-rent-option' => 'Scegli Opzione di Affitto',
-                        'daily-basis'        => 'Base Giornaliera',
-                        'from'               => 'Da',
-                        'hourly-basis'       => 'Base Oraria',
-                        'rent-an-item'       => 'Affitta un Oggetto',
-                        'select-date'        => 'Seleziona data',
-                        'select-rent-time'   => 'Seleziona Orario Affitto',
-                        'select-slot'        => 'Seleziona Slot',
-                        'select-time-slot'   => 'Seleziona fascia oraria',
-                        'slot'               => 'Slot',
-                        'to'                 => 'A',
-                    ],
-
-                    'slots'       => [
-                        'book-an-appointment' => 'Prenota un Appuntamento',
-                        'date'                => 'Data',
-                        'no-slots-available'  => 'Nessuno slot disponibile',
-                        'select-slot'         => 'Seleziona Slot',
-                        'title'               => 'Slot',
-                    ],
-
-                    'table'       => [
-                        'book-a-table'       => 'Prenota un Tavolo',
-                        'closed'             => 'Chiuso',
-                        'slots-for-all-days' => 'Mostra per tutti i giorni',
-                        'special-notes'      => 'Richieste Speciali/Note',
-                        'today-availability' => 'Disponibilità Oggi',
                     ],
                 ],
             ],

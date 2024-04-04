@@ -271,52 +271,52 @@ return [
             'view'    => [
                 'types'   => [
                     'booking' => [
+                        'appointment' => [
+                            'closed'             => 'Closed',
+                            'today-availability' => 'Today Availability',
+                        ],
+    
+                        'event'       => [
+                            'book-your-ticket' => 'Book Your Ticket',
+                        ],
+
                         'event-on'                 => 'Event On',
                         'location'                 => 'Location',
+
+                        'rental'      => [
+                            'choose-rent-option' => 'Choose Rent Option',
+                            'daily-basis'        => 'Daily Basis',
+                            'from'               => 'From',
+                            'hourly-basis'       => 'Hourly Basis',
+                            'rent-an-item'       => 'Rent an Item',
+                            'select-date'        => 'Select date',
+                            'select-rent-time'   => 'Select Rent Time',
+                            'select-slot'        => 'Select Slot',
+                            'select-time-slot'   => 'Select Time Slot',
+                            'slot'               => 'Slot',
+                            'to'                 => 'To',
+                        ],
+
                         'slot-duration-in-minutes' => ':minutes Minutes',
                         'slot-duration'            => 'Slot Duration',
+
+                        'slots'       => [
+                            'book-an-appointment' => 'Book an Appointment',
+                            'date'                => 'Date',
+                            'no-slots-available'  => 'No slots available',
+                            'select-slot'         => 'Select Slot',
+                            'title'               => 'Slot',
+                        ],
+    
+                        'table'       => [
+                            'book-a-table'       => 'Book a Table',
+                            'closed'             => 'Closed',
+                            'slots-for-all-days' => 'Show for all days',
+                            'special-notes'      => 'Special Request/Notes',
+                            'today-availability' => 'Today Availability',
+                        ],
+
                         'view-on-map'              => 'View on Map',
-                    ],
-                ],
-
-                'booking' => [
-                    'appointment' => [
-                        'closed'             => 'Closed',
-                        'today-availability' => 'Today Availability',
-                    ],
-
-                    'event'       => [
-                        'book-your-ticket' => 'Book Your Ticket',
-                    ],
-
-                    'rental'      => [
-                        'choose-rent-option' => 'Choose Rent Option',
-                        'daily-basis'        => 'Daily Basis',
-                        'from'               => 'From',
-                        'hourly-basis'       => 'Hourly Basis',
-                        'rent-an-item'       => 'Rent an Item',
-                        'select-date'        => 'Select date',
-                        'select-rent-time'   => 'Select Rent Time',
-                        'select-slot'        => 'Select Slot',
-                        'select-time-slot'   => 'Select Time Slot',
-                        'slot'               => 'Slot',
-                        'to'                 => 'To',
-                    ],
-
-                    'slots'       => [
-                        'book-an-appointment' => 'Book an Appointment',
-                        'date'                => 'Date',
-                        'no-slots-available'  => 'No slots available',
-                        'select-slot'         => 'Select Slot',
-                        'title'               => 'Slot',
-                    ],
-
-                    'table'       => [
-                        'book-a-table'       => 'Book a Table',
-                        'closed'             => 'Closed',
-                        'slots-for-all-days' => 'Show for all days',
-                        'special-notes'      => 'Special Request/Notes',
-                        'today-availability' => 'Today Availability',
                     ],
                 ],
             ],

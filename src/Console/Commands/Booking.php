@@ -30,5 +30,10 @@ class Booking extends Command
 
         $this->info('Step: Clearing cached optimization files...');
         $this->call('optimize:clear');
+
+        $this->info('Step: Publishing vendor assets...');
+        $this->call('vendor:publish', [
+            '--provider' => \Webkul\BookingProduct\Providers\BookingProductServiceProvider::class
+        ]);
     }
 }

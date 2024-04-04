@@ -271,52 +271,52 @@ return [
             'view'    => [
                 'types'   => [
                     'booking' => [
+                        'appointment' => [
+                            'closed'             => '閉じています',
+                            'today-availability' => '今日の利用可能性',
+                        ],
+    
+                        'event'       => [
+                            'book-your-ticket' => 'チケットを予約する',
+                        ],
+
                         'event-on'                 => 'イベント日',
                         'location'                 => '場所',
+
+                        'rental'      => [
+                            'choose-rent-option' => 'レンタルオプションを選択する',
+                            'daily-basis'        => '日次ベース',
+                            'from'               => '開始',
+                            'hourly-basis'       => '時間単位ベース',
+                            'rent-an-item'       => 'アイテムをレンタルする',
+                            'select-date'        => '日付を選択する',
+                            'select-rent-time'   => 'レンタル時間を選択する',
+                            'select-slot'        => 'スロットを選択する',
+                            'select-time-slot'   => '時間帯を選択してください',
+                            'slot'               => 'スロット',
+                            'to'                 => '終了',
+                        ],
+
                         'slot-duration-in-minutes' => ':minutes 分',
                         'slot-duration'            => 'スロット期間',
+
+                        'slots'       => [
+                            'book-an-appointment' => '予約する',
+                            'date'                => '日付',
+                            'no-slots-available'  => '利用可能なスロットはありません',
+                            'select-slot'         => 'スロットを選択する',
+                            'title'               => 'スロット',
+                        ],
+    
+                        'table'       => [
+                            'book-a-table'       => 'テーブルを予約する',
+                            'closed'             => '閉じています',
+                            'slots-for-all-days' => 'すべての日にちを表示',
+                            'special-notes'      => '特別リクエスト/メモ',
+                            'today-availability' => '今日の利用可能性',
+                        ],
+
                         'view-on-map'              => 'マップで表示',
-                    ],
-                ],
-
-                'booking' => [
-                    'appointment' => [
-                        'closed'             => '閉じています',
-                        'today-availability' => '今日の利用可能性',
-                    ],
-
-                    'event'       => [
-                        'book-your-ticket' => 'チケットを予約する',
-                    ],
-
-                    'rental'      => [
-                        'choose-rent-option' => 'レンタルオプションを選択する',
-                        'daily-basis'        => '日次ベース',
-                        'from'               => '開始',
-                        'hourly-basis'       => '時間単位ベース',
-                        'rent-an-item'       => 'アイテムをレンタルする',
-                        'select-date'        => '日付を選択する',
-                        'select-rent-time'   => 'レンタル時間を選択する',
-                        'select-slot'        => 'スロットを選択する',
-                        'select-time-slot'   => '時間帯を選択してください',
-                        'slot'               => 'スロット',
-                        'to'                 => '終了',
-                    ],
-
-                    'slots'       => [
-                        'book-an-appointment' => '予約する',
-                        'date'                => '日付',
-                        'no-slots-available'  => '利用可能なスロットはありません',
-                        'select-slot'         => 'スロットを選択する',
-                        'title'               => 'スロット',
-                    ],
-
-                    'table'       => [
-                        'book-a-table'       => 'テーブルを予約する',
-                        'closed'             => '閉じています',
-                        'slots-for-all-days' => 'すべての日にちを表示',
-                        'special-notes'      => '特別リクエスト/メモ',
-                        'today-availability' => '今日の利用可能性',
                     ],
                 ],
             ],

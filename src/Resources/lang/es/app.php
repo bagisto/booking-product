@@ -271,52 +271,52 @@ return [
             'view'    => [
                 'types'   => [
                     'booking' => [
+                        'appointment' => [
+                            'closed'             => 'Cerrado',
+                            'today-availability' => 'Disponibilidad de Hoy',
+                        ],
+    
+                        'event'       => [
+                            'book-your-ticket' => 'Reserve su Boleto',
+                        ],
+
                         'event-on'                 => 'Evento En',
                         'location'                 => 'Ubicación',
+
+                        'rental'      => [
+                            'choose-rent-option' => 'Elegir Opción de Renta',
+                            'daily-basis'        => 'Base Diaria',
+                            'from'               => 'Desde',
+                            'hourly-basis'       => 'Base por Hora',
+                            'rent-an-item'       => 'Rentar un Artículo',
+                            'select-date'        => 'Seleccionar Fecha',
+                            'select-rent-time'   => 'Seleccionar Hora de Renta',
+                            'select-slot'        => 'Seleccionar Ranura',
+                            'select-time-slot'   => 'Seleccionar franja horaria',
+                            'slot'               => 'Ranura',
+                            'to'                 => 'Hasta',
+                        ],
+
                         'slot-duration-in-minutes' => ':minutes Minutos',
                         'slot-duration'            => 'Duración de la Ranura',
+
+                        'slots'       => [
+                            'book-an-appointment' => 'Reservar una Cita',
+                            'date'                => 'Fecha',
+                            'no-slots-available'  => 'No hay ranuras disponibles',
+                            'select-slot'         => 'Seleccionar Ranura',
+                            'title'               => 'Ranura',
+                        ],
+    
+                        'table'       => [
+                            'book-a-table'       => 'Reservar una Mesa',
+                            'closed'             => 'Cerrado',
+                            'slots-for-all-days' => 'Mostrar para todos los días',
+                            'special-notes'      => 'Solicitudes Especiales/Notas',
+                            'today-availability' => 'Disponibilidad de Hoy',
+                        ],
+
                         'view-on-map'              => 'Ver en el Mapa',
-                    ],
-                ],
-
-                'booking' => [
-                    'appointment' => [
-                        'closed'             => 'Cerrado',
-                        'today-availability' => 'Disponibilidad de Hoy',
-                    ],
-
-                    'event'       => [
-                        'book-your-ticket' => 'Reserve su Boleto',
-                    ],
-
-                    'rental'      => [
-                        'choose-rent-option' => 'Elegir Opción de Renta',
-                        'daily-basis'        => 'Base Diaria',
-                        'from'               => 'Desde',
-                        'hourly-basis'       => 'Base por Hora',
-                        'rent-an-item'       => 'Rentar un Artículo',
-                        'select-date'        => 'Seleccionar Fecha',
-                        'select-rent-time'   => 'Seleccionar Hora de Renta',
-                        'select-slot'        => 'Seleccionar Ranura',
-                        'select-time-slot'   => 'Seleccionar franja horaria',
-                        'slot'               => 'Ranura',
-                        'to'                 => 'Hasta',
-                    ],
-
-                    'slots'       => [
-                        'book-an-appointment' => 'Reservar una Cita',
-                        'date'                => 'Fecha',
-                        'no-slots-available'  => 'No hay ranuras disponibles',
-                        'select-slot'         => 'Seleccionar Ranura',
-                        'title'               => 'Ranura',
-                    ],
-
-                    'table'       => [
-                        'book-a-table'       => 'Reservar una Mesa',
-                        'closed'             => 'Cerrado',
-                        'slots-for-all-days' => 'Mostrar para todos los días',
-                        'special-notes'      => 'Solicitudes Especiales/Notas',
-                        'today-availability' => 'Disponibilidad de Hoy',
                     ],
                 ],
             ],

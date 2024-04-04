@@ -4,7 +4,7 @@
 
 ### Requirements:
 
--   **Bagisto**: v2.1.2
+-   **Bagisto**: v2.1.x
 
 ### Installation:
 
@@ -44,10 +44,4 @@ composer dump-autoload
 php artisan booking-product:install
 ~~~
 
-~~~
-php artisan vendor:publish
-~~~
-
--> Search the "Webkul\BookingProduct\Providers\BookingProductServiceProvider" and press enter to initiate the publishing of all assets and configurations.
-
-After following these steps, the Booking Product Extension should be successfully installed and ready for use in your Bagisto v2.1.2 project.
+After following these steps, the Booking Product Extension should be successfully installed and ready for use in your Bagisto v2.1.x project.

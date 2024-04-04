@@ -271,52 +271,52 @@ return [
             'view'    => [
                 'types' => [
                     'booking' => [
+                        'appointment' => [
+                            'closed'             => 'مغلق',
+                            'today-availability' => 'التوافر اليوم',
+                        ],
+    
+                        'event'       => [
+                            'book-your-ticket' => 'احجز تذكرتك',
+                        ],
+
                         'event-on'                 => 'الحدث في',
                         'location'                 => 'الموقع',
+
+                        'rental'      => [
+                            'choose-rent-option' => 'اختر خيار الإيجار',
+                            'daily-basis'        => 'على أساس يومي',
+                            'from'               => 'من',
+                            'hourly-basis'       => 'على أساس ساعي',
+                            'rent-an-item'       => 'استأجر عنصرًا',
+                            'select-date'        => 'اختر التاريخ',
+                            'select-rent-time'   => 'حدد وقت الإيجار',
+                            'select-slot'        => 'اختر الفترة',
+                            'select-time-slot'   => 'حدد فتحة زمنية',
+                            'slot'               => 'فترة',
+                            'to'                 => 'إلى',
+                        ],
+
                         'slot-duration-in-minutes' => ':minutes دقائق',
                         'slot-duration'            => 'مدة الفترة',
+
+                        'slots'       => [
+                            'book-an-appointment' => 'احجز موعدًا',
+                            'date'                => 'التاريخ',
+                            'no-slots-available'  => 'لا توجد فترات متاحة',
+                            'select-slot'         => 'اختر الفترة',
+                            'title'               => 'الفترة',
+                        ],
+    
+                        'table'       => [
+                            'book-a-table'       => 'احجز طاولة',
+                            'closed'             => 'مغلق',
+                            'slots-for-all-days' => 'عرض لكل الأيام',
+                            'special-notes'      => 'طلبات/ملاحظات خاصة',
+                            'today-availability' => 'التوافر اليوم',
+                        ],
+
                         'view-on-map'              => 'عرض على الخريطة',
-                    ],
-                ],
-
-                'booking' => [
-                    'appointment' => [
-                        'closed'             => 'مغلق',
-                        'today-availability' => 'التوافر اليوم',
-                    ],
-
-                    'event'       => [
-                        'book-your-ticket' => 'احجز تذكرتك',
-                    ],
-
-                    'rental'      => [
-                        'choose-rent-option' => 'اختر خيار الإيجار',
-                        'daily-basis'        => 'على أساس يومي',
-                        'from'               => 'من',
-                        'hourly-basis'       => 'على أساس ساعي',
-                        'rent-an-item'       => 'استأجر عنصرًا',
-                        'select-date'        => 'اختر التاريخ',
-                        'select-rent-time'   => 'حدد وقت الإيجار',
-                        'select-slot'        => 'اختر الفترة',
-                        'select-time-slot'   => 'حدد فتحة زمنية',
-                        'slot'               => 'فترة',
-                        'to'                 => 'إلى',
-                    ],
-
-                    'slots'       => [
-                        'book-an-appointment' => 'احجز موعدًا',
-                        'date'                => 'التاريخ',
-                        'no-slots-available'  => 'لا توجد فترات متاحة',
-                        'select-slot'         => 'اختر الفترة',
-                        'title'               => 'الفترة',
-                    ],
-
-                    'table'       => [
-                        'book-a-table'       => 'احجز طاولة',
-                        'closed'             => 'مغلق',
-                        'slots-for-all-days' => 'عرض لكل الأيام',
-                        'special-notes'      => 'طلبات/ملاحظات خاصة',
-                        'today-availability' => 'التوافر اليوم',
                     ],
                 ],
             ],

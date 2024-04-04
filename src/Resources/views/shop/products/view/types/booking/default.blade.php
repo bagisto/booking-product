@@ -15,5 +15,5 @@
         </div>
     @endif
 
-    @include('booking::shop.products.view.booking.slots', ['bookingProduct' => $bookingProduct])
+    @include('booking::shop.products.view.types.booking.slots', ['bookingProduct' => $bookingProduct])
 </div>

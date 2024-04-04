@@ -26,7 +26,7 @@
     >
         <div class="grid grid-cols-1 gap-4">
             <div class="text-xl font-medium">
-                @lang('booking::app.shop.products.view.booking.event.book-your-ticket')
+                @lang('booking::app.shop.products.view.types.booking.event.book-your-ticket')
             </div>
 
             <div

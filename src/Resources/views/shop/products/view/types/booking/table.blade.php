@@ -21,7 +21,7 @@
         <div class="grid grid-cols-1 gap-4">
             <div class="grid grid-cols-1 gap-1.5 text-sm font-medium">
                 <p class="text-[#6E6E6E]">
-                    @lang('booking::app.shop.products.view.booking.table.today-availability')
+                    @lang('booking::app.shop.products.view.types.booking.table.today-availability')
                 </p>
     
                 <span>
@@ -34,15 +34,15 @@
         </div>
     </div>
 
-    @include ('booking::shop.products.view.booking.slots', [
+    @include ('booking::shop.products.view.types.booking.slots', [
         'bookingProduct' => $bookingProduct, 
-        'title' => trans('booking::app.shop.products.view.booking.table.book-a-table')
+        'title' => trans('booking::app.shop.products.view.types.booking.table.book-a-table')
     ])
 
     <!-- Notes -->
     <x-shop::form.control-group class="w-full !mb-0">
         <x-shop::form.control-group.label class="required">
-            @lang('booking::app.shop.products.view.booking.table.special-notes')
+            @lang('booking::app.shop.products.view.types.booking.table.special-notes')
         </x-shop::form.control-group.label>
 
         <x-shop::form.control-group.control
@@ -50,8 +50,8 @@
             class="!mb-0"
             name="booking[note]"
             rules="required"
-            :label="trans('booking::app.shop.products.view.booking.table.special-notes')"
-            :placeholder="trans('booking::app.shop.products.view.booking.table.special-notes')"
+            :label="trans('booking::app.shop.products.view.types.booking.table.special-notes')"
+            :placeholder="trans('booking::app.shop.products.view.types.booking.table.special-notes')"
         />
 
         <x-shop::form.control-group.error control-name="booking[note]" />
@@ -69,7 +69,7 @@
                 class="flex gap-x-[15px] items-center text-blue-600 text-sm font-medium cursor-pointer"
                 @click="showDaysAvailability = ! showDaysAvailability"
             >
-                @lang('booking::app.shop.products.view.booking.table.slots-for-all-days')
+                @lang('booking::app.shop.products.view.types.booking.table.slots-for-all-days')
 
                 <span
                     class="text-xl font-bold"
@@ -98,7 +98,7 @@
                     </template>
 
                     <div v-else>
-                        @lang('booking::app.shop.products.view.booking.table.closed')
+                        @lang('booking::app.shop.products.view.types.booking.table.closed')
                     </div>
                 </p>
             </div>
