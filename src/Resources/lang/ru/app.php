@@ -271,52 +271,52 @@ return [
             'view'    => [
                 'types'   => [
                     'booking' => [
+                        'appointment' => [
+                            'closed'             => 'Закрыто',
+                            'today-availability' => 'Доступность сегодня',
+                        ],
+    
+                        'event'       => [
+                            'book-your-ticket' => 'Забронируйте свой билет',
+                        ],
+
                         'event-on'                 => 'Событие на',
                         'location'                 => 'Местоположение',
+
+                        'rental'      => [
+                            'choose-rent-option' => 'Выберите вариант аренды',
+                            'daily-basis'        => 'Ежедневно',
+                            'from'               => 'От',
+                            'hourly-basis'       => 'Почасовая оплата',
+                            'rent-an-item'       => 'Арендовать предмет',
+                            'select-date'        => 'Выбрать дату',
+                            'select-rent-time'   => 'Выбрать время аренды',
+                            'select-slot'        => 'Выбрать слот',
+                            'select-time-slot'   => 'Выберите временной интервал',
+                            'slot'               => 'Слот',
+                            'to'                 => 'К',
+                        ],
+
                         'slot-duration-in-minutes' => ':minutes Минут',
                         'slot-duration'            => 'Продолжительность слота',
+
+                        'slots'       => [
+                            'book-an-appointment' => 'Записаться на прием',
+                            'date'                => 'Дата',
+                            'no-slots-available'  => 'Нет доступных слотов',
+                            'select-slot'         => 'Выбрать слот',
+                            'title'               => 'Слот',
+                        ],
+    
+                        'table'       => [
+                            'book-a-table'       => 'Забронировать стол',
+                            'closed'             => 'Закрыто',
+                            'slots-for-all-days' => 'Показать для всех дней',
+                            'special-notes'      => 'Особые пожелания/заметки',
+                            'today-availability' => 'Доступность сегодня',
+                        ],
+
                         'view-on-map'              => 'Посмотреть на карте',
-                    ],
-                ],
-
-                'booking' => [
-                    'appointment' => [
-                        'closed'             => 'Закрыто',
-                        'today-availability' => 'Доступность сегодня',
-                    ],
-
-                    'event'       => [
-                        'book-your-ticket' => 'Забронируйте свой билет',
-                    ],
-
-                    'rental'      => [
-                        'choose-rent-option' => 'Выберите вариант аренды',
-                        'daily-basis'        => 'Ежедневно',
-                        'from'               => 'От',
-                        'hourly-basis'       => 'Почасовая оплата',
-                        'rent-an-item'       => 'Арендовать предмет',
-                        'select-date'        => 'Выбрать дату',
-                        'select-rent-time'   => 'Выбрать время аренды',
-                        'select-slot'        => 'Выбрать слот',
-                        'select-time-slot'   => 'Выберите временной интервал',
-                        'slot'               => 'Слот',
-                        'to'                 => 'К',
-                    ],
-
-                    'slots'       => [
-                        'book-an-appointment' => 'Записаться на прием',
-                        'date'                => 'Дата',
-                        'no-slots-available'  => 'Нет доступных слотов',
-                        'select-slot'         => 'Выбрать слот',
-                        'title'               => 'Слот',
-                    ],
-
-                    'table'       => [
-                        'book-a-table'       => 'Забронировать стол',
-                        'closed'             => 'Закрыто',
-                        'slots-for-all-days' => 'Показать для всех дней',
-                        'special-notes'      => 'Особые пожелания/заметки',
-                        'today-availability' => 'Доступность сегодня',
                     ],
                 ],
             ],

@@ -271,52 +271,52 @@ return [
             'view'    => [
                 'types'   => [
                     'booking' => [
+                        'appointment' => [
+                            'closed'             => 'වසා දමා ඇත',
+                            'today-availability' => 'අද ලබාදීම්',
+                        ],
+    
+                        'event'       => [
+                            'book-your-ticket' => 'ඔබගේ ප්‍රවේශය නිර්මාණය කරන්න',
+                        ],
+
                         'event-on'                 => 'සිද්ධිය',
                         'location'                 => 'ස්ථානය',
+
+                        'rental'      => [
+                            'choose-rent-option' => 'ක්ෂේත්‍රය තෝරන්න',
+                            'daily-basis'        => 'දිනපතා මත',
+                            'from'               => 'සිට',
+                            'hourly-basis'       => 'පැය මත',
+                            'rent-an-item'       => 'අයිතමය ක්ෂේත්‍රයට එක් කරන්න',
+                            'select-date'        => 'දිනය තෝරන්න',
+                            'select-rent-time'   => 'ක්ෂේත්‍ර කාලය තෝරන්න',
+                            'select-slot'        => 'ස්ලොට් තෝරන්න',
+                            'select-time-slot'   => 'Time Slot තෝරන්න',
+                            'slot'               => 'ස්ලොට්',
+                            'to'                 => 'දක්වා',
+                        ],
+
                         'slot-duration-in-minutes' => ':minutes මිනිත්තු',
                         'slot-duration'            => 'ස්ලොට් කාලය',
+
+                        'slots'       => [
+                            'book-an-appointment' => 'ගිනුම් ලකුණු නිර්මාණය කරන්න',
+                            'date'                => 'දිනය',
+                            'no-slots-available'  => 'ලකුණු නොමැත',
+                            'select-slot'         => 'ස්ලොට් තෝරන්න',
+                            'title'               => 'ස්ලොට්',
+                        ],
+    
+                        'table'       => [
+                            'book-a-table'       => 'වගාව නිර්මාණය කරන්න',
+                            'closed'             => 'වසා දමා ඇත',
+                            'slots-for-all-days' => 'සියල්ල දින සඳහා පෙන්වන්න',
+                            'special-notes'      => 'විශේෂ ඉල්ලීම්/සටහන්',
+                            'today-availability' => 'අද ලබාදීම්',
+                        ],
+
                         'view-on-map'              => 'මාප් දර්ශනය කරන්න',
-                    ],
-                ],
-
-                'booking' => [
-                    'appointment' => [
-                        'closed'             => 'වසා දමා ඇත',
-                        'today-availability' => 'අද ලබාදීම්',
-                    ],
-
-                    'event'       => [
-                        'book-your-ticket' => 'ඔබගේ ප්‍රවේශය නිර්මාණය කරන්න',
-                    ],
-
-                    'rental'      => [
-                        'choose-rent-option' => 'ක්ෂේත්‍රය තෝරන්න',
-                        'daily-basis'        => 'දිනපතා මත',
-                        'from'               => 'සිට',
-                        'hourly-basis'       => 'පැය මත',
-                        'rent-an-item'       => 'අයිතමය ක්ෂේත්‍රයට එක් කරන්න',
-                        'select-date'        => 'දිනය තෝරන්න',
-                        'select-rent-time'   => 'ක්ෂේත්‍ර කාලය තෝරන්න',
-                        'select-slot'        => 'ස්ලොට් තෝරන්න',
-                        'select-time-slot'   => 'Time Slot තෝරන්න',
-                        'slot'               => 'ස්ලොට්',
-                        'to'                 => 'දක්වා',
-                    ],
-
-                    'slots'       => [
-                        'book-an-appointment' => 'ගිනුම් ලකුණු නිර්මාණය කරන්න',
-                        'date'                => 'දිනය',
-                        'no-slots-available'  => 'ලකුණු නොමැත',
-                        'select-slot'         => 'ස්ලොට් තෝරන්න',
-                        'title'               => 'ස්ලොට්',
-                    ],
-
-                    'table'       => [
-                        'book-a-table'       => 'වගාව නිර්මාණය කරන්න',
-                        'closed'             => 'වසා දමා ඇත',
-                        'slots-for-all-days' => 'සියල්ල දින සඳහා පෙන්වන්න',
-                        'special-notes'      => 'විශේෂ ඉල්ලීම්/සටහන්',
-                        'today-availability' => 'අද ලබාදීම්',
                     ],
                 ],
             ],

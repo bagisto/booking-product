@@ -271,52 +271,52 @@ return [
             'view'    => [
                 'types'   => [
                     'booking' => [
+                        'appointment' => [
+                            'closed'             => 'Kapalı',
+                            'today-availability' => 'Bugün Kullanılabilirlik',
+                        ],
+    
+                        'event'       => [
+                            'book-your-ticket' => 'Biletinizi Ayırın',
+                        ],
+
                         'event-on'                 => 'Etkinlik Açık',
                         'location'                 => 'Konum',
+
+                        'rental'      => [
+                            'choose-rent-option' => 'Kiralama Seçeneğini Seçin',
+                            'daily-basis'        => 'Günlük Bazda',
+                            'from'               => 'İtibaren',
+                            'hourly-basis'       => 'Saatlik bazda',
+                            'rent-an-item'       => 'Bir Ürün Kirala',
+                            'select-date'        => 'Tarih seç',
+                            'select-rent-time'   => 'Kiralama Süresini Seçin',
+                            'select-slot'        => 'Yuva Seç',
+                            'select-time-slot'   => 'Zaman Aralığını Seçin',
+                            'slot'               => 'Yuva',
+                            'to'                 => 'İle',
+                        ],
+
                         'slot-duration-in-minutes' => ':minutes dakika',
                         'slot-duration'            => 'Yuva Süresi',
+
+                        'slots'       => [
+                            'book-an-appointment' => 'Randevu Alın',
+                            'date'                => 'Tarih',
+                            'no-slots-available'  => 'Kullanılabilir yuva yok',
+                            'select-slot'         => 'Yuva Seç',
+                            'title'               => 'Yuva',
+                        ],
+    
+                        'table'       => [
+                            'book-a-table'       => 'Bir masa rezervasyonu',
+                            'closed'             => 'Kapalı',
+                            'slots-for-all-days' => 'Tüm günler için göster',
+                            'special-notes'      => 'Özel İstek/Notlar',
+                            'today-availability' => 'Bugün Kullanılabilirlik',
+                        ],
+
                         'view-on-map'              => 'Haritada görüntüle',
-                    ],
-                ],
-
-                'booking' => [
-                    'appointment' => [
-                        'closed'             => 'Kapalı',
-                        'today-availability' => 'Bugün Kullanılabilirlik',
-                    ],
-
-                    'event'       => [
-                        'book-your-ticket' => 'Biletinizi Ayırın',
-                    ],
-
-                    'rental'      => [
-                        'choose-rent-option' => 'Kiralama Seçeneğini Seçin',
-                        'daily-basis'        => 'Günlük Bazda',
-                        'from'               => 'İtibaren',
-                        'hourly-basis'       => 'Saatlik bazda',
-                        'rent-an-item'       => 'Bir Ürün Kirala',
-                        'select-date'        => 'Tarih seç',
-                        'select-rent-time'   => 'Kiralama Süresini Seçin',
-                        'select-slot'        => 'Yuva Seç',
-                        'select-time-slot'   => 'Zaman Aralığını Seçin',
-                        'slot'               => 'Yuva',
-                        'to'                 => 'İle',
-                    ],
-
-                    'slots'       => [
-                        'book-an-appointment' => 'Randevu Alın',
-                        'date'                => 'Tarih',
-                        'no-slots-available'  => 'Kullanılabilir yuva yok',
-                        'select-slot'         => 'Yuva Seç',
-                        'title'               => 'Yuva',
-                    ],
-
-                    'table'       => [
-                        'book-a-table'       => 'Bir masa rezervasyonu',
-                        'closed'             => 'Kapalı',
-                        'slots-for-all-days' => 'Tüm günler için göster',
-                        'special-notes'      => 'Özel İstek/Notlar',
-                        'today-availability' => 'Bugün Kullanılabilirlik',
                     ],
                 ],
             ],

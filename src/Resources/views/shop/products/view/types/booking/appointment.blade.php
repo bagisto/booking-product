@@ -8,7 +8,9 @@
             </p>
 
             <div>
-                @lang('booking::app.shop.products.view.types.booking.slot-duration-in-minutes', ['minutes' => $bookingProduct->appointment_slot->duration])
+                @lang('booking::app.shop.products.view.types.booking.slot-duration-in-minutes', [
+                    'minutes' => $bookingProduct->appointment_slot->duration
+                ])
             </div>
         </div>
     </div>
@@ -21,7 +23,7 @@
         <div class="grid grid-cols-1 gap-4">
             <div class="grid grid-cols-1 gap-1.5 text-sm font-medium">
                 <p class="text-[#6E6E6E]">
-                    @lang('booking::app.shop.products.view.booking.appointment.today-availability')
+                    @lang('booking::app.shop.products.view.types.booking.appointment.today-availability')
                 </p>
     
                 <span>
@@ -34,7 +36,7 @@
         </div>
     </div>
     
-    @include ('booking::shop.products.view.booking.slots', ['bookingProduct' => $bookingProduct])
+    @include ('booking::shop.products.view.types.booking.slots', ['bookingProduct' => $bookingProduct])
 </div>
 
 @pushOnce('scripts')
@@ -77,7 +79,7 @@
                     </template>
 
                     <div v-else>
-                        @lang('booking::app.shop.products.view.booking.appointment.closed')
+                        @lang('booking::app.shop.products.view.types.booking.appointment.closed')
                     </div>
                 </p>
             </div>

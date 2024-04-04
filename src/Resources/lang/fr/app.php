@@ -271,52 +271,52 @@ return [
             'view'    => [
                 'types'   => [
                     'booking' => [
+                        'appointment' => [
+                            'closed'             => 'Fermé',
+                            'today-availability' => "Disponibilité d'aujourd'hui",
+                        ],
+    
+                        'event'       => [
+                            'book-your-ticket' => 'Réservez votre billet',
+                        ],
+
                         'event-on'                 => 'Événement le',
                         'location'                 => 'Emplacement',
+
+                        'rental'      => [
+                            'choose-rent-option' => 'Choisissez une option de location',
+                            'daily-basis'        => 'Journalier',
+                            'from'               => 'De',
+                            'hourly-basis'       => 'Horaire',
+                            'rent-an-item'       => 'Louer un article',
+                            'select-date'        => 'Sélectionner une date',
+                            'select-rent-time'   => 'Sélectionnez l\'heure de location',
+                            'select-slot'        => 'Sélectionner un créneau',
+                            'select-time-slot'   => 'Sélectionnez un créneau horaire',
+                            'slot'               => 'Créneau',
+                            'to'                 => 'À',
+                        ],
+
                         'slot-duration-in-minutes' => ':minutes minutes',
                         'slot-duration'            => 'Durée de créneau',
+
+                        'slots'       => [
+                            'book-an-appointment' => 'Prendre un rendez-vous',
+                            'date'                => 'Date',
+                            'no-slots-available'  => 'Aucun créneau disponible',
+                            'select-slot'         => 'Sélectionner un créneau',
+                            'title'               => 'Créneau',
+                        ],
+    
+                        'table'       => [
+                            'book-a-table'       => 'Réservez une table',
+                            'closed'             => 'Fermé',
+                            'slots-for-all-days' => 'Afficher pour tous les jours',
+                            'special-notes'      => 'Demandes spéciales/Remarques',
+                            'today-availability' => "Disponibilité d'aujourd'hui",
+                        ],
+
                         'view-on-map'              => 'Voir sur la carte',
-                    ],
-                ],
-
-                'booking' => [
-                    'appointment' => [
-                        'closed'             => 'Fermé',
-                        'today-availability' => "Disponibilité d'aujourd'hui",
-                    ],
-
-                    'event'       => [
-                        'book-your-ticket' => 'Réservez votre billet',
-                    ],
-
-                    'rental'      => [
-                        'choose-rent-option' => 'Choisissez une option de location',
-                        'daily-basis'        => 'Journalier',
-                        'from'               => 'De',
-                        'hourly-basis'       => 'Horaire',
-                        'rent-an-item'       => 'Louer un article',
-                        'select-date'        => 'Sélectionner une date',
-                        'select-rent-time'   => 'Sélectionnez l\'heure de location',
-                        'select-slot'        => 'Sélectionner un créneau',
-                        'select-time-slot'   => 'Sélectionnez un créneau horaire',
-                        'slot'               => 'Créneau',
-                        'to'                 => 'À',
-                    ],
-
-                    'slots'       => [
-                        'book-an-appointment' => 'Prendre un rendez-vous',
-                        'date'                => 'Date',
-                        'no-slots-available'  => 'Aucun créneau disponible',
-                        'select-slot'         => 'Sélectionner un créneau',
-                        'title'               => 'Créneau',
-                    ],
-
-                    'table'       => [
-                        'book-a-table'       => 'Réservez une table',
-                        'closed'             => 'Fermé',
-                        'slots-for-all-days' => 'Afficher pour tous les jours',
-                        'special-notes'      => 'Demandes spéciales/Remarques',
-                        'today-availability' => "Disponibilité d'aujourd'hui",
                     ],
                 ],
             ],

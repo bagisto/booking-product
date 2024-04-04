@@ -271,52 +271,52 @@ return [
             'view'    => [
                 'types'   => [
                     'booking' => [
+                        'appointment' => [
+                            'closed'             => 'बंद',
+                            'today-availability' => 'आज की उपलब्धता',
+                        ],
+    
+                        'event'       => [
+                            'book-your-ticket' => 'अपना टिकट बुक करें',
+                        ],
+
                         'event-on'                 => 'इवेंट पर',
                         'location'                 => 'स्थान',
+
+                        'rental'      => [
+                            'choose-rent-option' => 'किराया विकल्प चुनें',
+                            'daily-basis'        => 'दैनिक आधार',
+                            'from'               => 'से',
+                            'hourly-basis'       => 'प्रति घंटा आधार',
+                            'rent-an-item'       => 'वस्त्र किराए पर लें',
+                            'select-date'        => 'तारीख चुनें',
+                            'select-rent-time'   => 'किराया समय चुनें',
+                            'select-slot'        => 'स्लॉट चुनें',
+                            'select-time-slot'   => 'टाइम स्लॉट चुनें',
+                            'slot'               => 'स्लॉट',
+                            'to'                 => 'तक',
+                        ],
+
                         'slot-duration-in-minutes' => ':minutes मिनट',
                         'slot-duration'            => 'स्लॉट अवधि',
+
+                        'slots'       => [
+                            'book-an-appointment' => 'अपॉइंटमेंट बुक करें',
+                            'date'                => 'तारीख',
+                            'no-slots-available'  => 'कोई स्लॉट उपलब्ध नहीं है',
+                            'select-slot'         => 'स्लॉट चुनें',
+                            'title'               => 'स्लॉट',
+                        ],
+    
+                        'table'       => [
+                            'book-a-table'       => 'तालिका बुक करें',
+                            'closed'             => 'बंद',
+                            'slots-for-all-days' => 'सभी दिनों के लिए दिखाएं',
+                            'special-notes'      => 'विशेष अनुरोध/नोट्स',
+                            'today-availability' => 'आज की उपलब्धता',
+                        ],
+
                         'view-on-map'              => 'नक्शे पर देखें',
-                    ],
-                ],
-
-                'booking' => [
-                    'appointment' => [
-                        'closed'             => 'बंद',
-                        'today-availability' => 'आज की उपलब्धता',
-                    ],
-
-                    'event'       => [
-                        'book-your-ticket' => 'अपना टिकट बुक करें',
-                    ],
-
-                    'rental'      => [
-                        'choose-rent-option' => 'किराया विकल्प चुनें',
-                        'daily-basis'        => 'दैनिक आधार',
-                        'from'               => 'से',
-                        'hourly-basis'       => 'प्रति घंटा आधार',
-                        'rent-an-item'       => 'वस्त्र किराए पर लें',
-                        'select-date'        => 'तारीख चुनें',
-                        'select-rent-time'   => 'किराया समय चुनें',
-                        'select-slot'        => 'स्लॉट चुनें',
-                        'select-time-slot'   => 'टाइम स्लॉट चुनें',
-                        'slot'               => 'स्लॉट',
-                        'to'                 => 'तक',
-                    ],
-
-                    'slots'       => [
-                        'book-an-appointment' => 'अपॉइंटमेंट बुक करें',
-                        'date'                => 'तारीख',
-                        'no-slots-available'  => 'कोई स्लॉट उपलब्ध नहीं है',
-                        'select-slot'         => 'स्लॉट चुनें',
-                        'title'               => 'स्लॉट',
-                    ],
-
-                    'table'       => [
-                        'book-a-table'       => 'तालिका बुक करें',
-                        'closed'             => 'बंद',
-                        'slots-for-all-days' => 'सभी दिनों के लिए दिखाएं',
-                        'special-notes'      => 'विशेष अनुरोध/नोट्स',
-                        'today-availability' => 'आज की उपलब्धता',
                     ],
                 ],
             ],

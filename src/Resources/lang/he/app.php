@@ -271,52 +271,52 @@ return [
             'view'    => [
                 'types' => [
                     'booking' => [
+                        'appointment' => [
+                            'closed'             => 'סגור',
+                            'today-availability' => 'זמינות היום',
+                        ],
+    
+                        'event' => [
+                            'book-your-ticket' => 'הזמן כרטיס',
+                        ],
+
                         'event-on'                 => 'אירוע בתאריך',
                         'location'                 => 'מיקום',
+
+                        'rental' => [
+                            'choose-rent-option' => 'בחר אפשרות השכרה',
+                            'daily-basis'        => 'על בסיס יומי',
+                            'from'               => 'מתאריך',
+                            'hourly-basis'       => 'על בסיס שעתי',
+                            'rent-an-item'       => 'השכר פריט',
+                            'select-date'        => 'בחר תאריך',
+                            'select-rent-time'   => 'בחר זמן השכרה',
+                            'select-slot'        => 'בחר מקטע',
+                            'select-time-slot'   => 'בחר משבצת זמן',
+                            'slot'               => 'מקטע',
+                            'to'                 => 'עד',
+                        ],
+
                         'slot-duration-in-minutes' => ':minutes דקות',
                         'slot-duration'            => 'משך המקטע',
+
+                        'slots' => [
+                            'book-an-appointment' => 'קבע פגישה',
+                            'date'                => 'תאריך',
+                            'no-slots-available'  => 'אין מקטעים זמינים',
+                            'select-slot'         => 'בחר מקטע',
+                            'title'               => 'מקטע',
+                        ],
+    
+                        'table' => [
+                            'book-a-table'       => 'הזמן שולחן',
+                            'closed'             => 'סגור',
+                            'slots-for-all-days' => 'הצג לכל הימים',
+                            'special-notes'      => 'בקשות מיוחדות/הערות',
+                            'today-availability' => 'זמינות היום',
+                        ],
+
                         'view-on-map'              => 'צפה במפה',
-                    ],
-                ],
-
-                'booking' => [
-                    'appointment' => [
-                        'closed'             => 'סגור',
-                        'today-availability' => 'זמינות היום',
-                    ],
-
-                    'event' => [
-                        'book-your-ticket' => 'הזמן כרטיס',
-                    ],
-
-                    'rental' => [
-                        'choose-rent-option' => 'בחר אפשרות השכרה',
-                        'daily-basis'        => 'על בסיס יומי',
-                        'from'               => 'מתאריך',
-                        'hourly-basis'       => 'על בסיס שעתי',
-                        'rent-an-item'       => 'השכר פריט',
-                        'select-date'        => 'בחר תאריך',
-                        'select-rent-time'   => 'בחר זמן השכרה',
-                        'select-slot'        => 'בחר מקטע',
-                        'select-time-slot'   => 'בחר משבצת זמן',
-                        'slot'               => 'מקטע',
-                        'to'                 => 'עד',
-                    ],
-
-                    'slots' => [
-                        'book-an-appointment' => 'קבע פגישה',
-                        'date'                => 'תאריך',
-                        'no-slots-available'  => 'אין מקטעים זמינים',
-                        'select-slot'         => 'בחר מקטע',
-                        'title'               => 'מקטע',
-                    ],
-
-                    'table' => [
-                        'book-a-table'       => 'הזמן שולחן',
-                        'closed'             => 'סגור',
-                        'slots-for-all-days' => 'הצג לכל הימים',
-                        'special-notes'      => 'בקשות מיוחדות/הערות',
-                        'today-availability' => 'זמינות היום',
                     ],
                 ],
             ],

@@ -271,52 +271,52 @@ return [
             'view' => [
                 'types' => [
                     'booking' => [
+                        'appointment' => [
+                            'closed'             => 'بسته شده',
+                            'today-availability' => 'دسترسی امروز',
+                        ],
+    
+                        'event' => [
+                            'book-your-ticket' => 'رزرو بلیط خود را',
+                        ],
+
                         'event-on'                 => 'رویداد در',
                         'location'                 => 'مکان',
+
+                        'rental' => [
+                            'choose-rent-option' => 'انتخاب گزینه اجاره',
+                            'daily-basis'        => 'بر اساس روزانه',
+                            'from'               => 'از',
+                            'hourly-basis'       => 'بر اساس ساعتی',
+                            'rent-an-item'       => 'اجاره یک مورد',
+                            'select-date'        => 'انتخاب تاریخ',
+                            'select-rent-time'   => 'انتخاب زمان اجاره',
+                            'select-slot'        => 'انتخاب شکاف',
+                            'select-time-slot'   => 'Time Slot را انتخاب کنید',
+                            'slot'               => 'شکاف',
+                            'to'                 => 'تا',
+                        ],
+
                         'slot-duration-in-minutes' => ':minutes دقیقه',
                         'slot-duration'            => 'مدت زمان شکاف',
+
+                        'slots' => [
+                            'book-an-appointment' => 'رزرو یک جلسه',
+                            'date'                => 'تاریخ',
+                            'no-slots-available'  => 'هیچ شکافی در دسترس نیست',
+                            'select-slot'         => 'انتخاب شکاف',
+                            'title'               => 'شکاف',
+                        ],
+    
+                        'table' => [
+                            'book-a-table'       => 'رزرو یک میز',
+                            'closed'             => 'بسته شده',
+                            'slots-for-all-days' => 'نمایش برای تمام روزها',
+                            'special-notes'      => 'درخواست‌های ویژه/یادداشت‌ها',
+                            'today-availability' => 'دسترسی امروز',
+                        ],
+
                         'view-on-map'              => 'نمایش در نقشه',
-                    ],
-                ],
-
-                'booking' => [
-                    'appointment' => [
-                        'closed'             => 'بسته شده',
-                        'today-availability' => 'دسترسی امروز',
-                    ],
-
-                    'event' => [
-                        'book-your-ticket' => 'رزرو بلیط خود را',
-                    ],
-
-                    'rental' => [
-                        'choose-rent-option' => 'انتخاب گزینه اجاره',
-                        'daily-basis'        => 'بر اساس روزانه',
-                        'from'               => 'از',
-                        'hourly-basis'       => 'بر اساس ساعتی',
-                        'rent-an-item'       => 'اجاره یک مورد',
-                        'select-date'        => 'انتخاب تاریخ',
-                        'select-rent-time'   => 'انتخاب زمان اجاره',
-                        'select-slot'        => 'انتخاب شکاف',
-                        'select-time-slot'   => 'Time Slot را انتخاب کنید',
-                        'slot'               => 'شکاف',
-                        'to'                 => 'تا',
-                    ],
-
-                    'slots' => [
-                        'book-an-appointment' => 'رزرو یک جلسه',
-                        'date'                => 'تاریخ',
-                        'no-slots-available'  => 'هیچ شکافی در دسترس نیست',
-                        'select-slot'         => 'انتخاب شکاف',
-                        'title'               => 'شکاف',
-                    ],
-
-                    'table' => [
-                        'book-a-table'       => 'رزرو یک میز',
-                        'closed'             => 'بسته شده',
-                        'slots-for-all-days' => 'نمایش برای تمام روزها',
-                        'special-notes'      => 'درخواست‌های ویژه/یادداشت‌ها',
-                        'today-availability' => 'دسترسی امروز',
                     ],
                 ],
             ],

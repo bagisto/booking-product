@@ -271,52 +271,52 @@ return [
             'view'    => [
                 'types'   => [
                     'booking' => [
+                        'appointment' => [
+                            'closed'             => 'বন্ধ',
+                            'today-availability' => 'আজকের উপলব্ধতা',
+                        ],
+    
+                        'event'       => [
+                            'book-your-ticket' => 'আপনার টিকিট বুক করুন',
+                        ],
+
                         'event-on'                 => 'ইভেন্ট অন',
                         'location'                 => 'লোকেশন',
+
+                        'rental'      => [
+                            'choose-rent-option' => 'ভাড়ার অপশন নির্বাচন করুন',
+                            'daily-basis'        => 'দৈনিক ভিত্তিতে',
+                            'from'               => 'থেকে',
+                            'hourly-basis'       => 'প্রতি ঘন্টায়',
+                            'rent-an-item'       => 'একটি আইটেম ভাড়া নিন',
+                            'select-date'        => 'তারিখ নির্বাচন করুন',
+                            'select-rent-time'   => 'ভাড়ার সময় নির্বাচন করুন',
+                            'select-slot'        => 'স্লট নির্বাচন করুন',
+                            'select-time-slot'   => 'টাইম স্লট নির্বাচন করুন',
+                            'slot'               => 'স্লট',
+                            'to'                 => 'পর্যন্ত',
+                        ],
+
                         'slot-duration-in-minutes' => ':minutes মিনিট',
                         'slot-duration'            => 'স্লট সময়কাল',
+
+                        'slots'       => [
+                            'book-an-appointment' => 'একটি অ্যাপয়েন্টমেন্ট বুক করুন',
+                            'date'                => 'তারিখ',
+                            'no-slots-available'  => 'কোনও স্লট উপলব্ধ নেই',
+                            'select-slot'         => 'স্লট নির্বাচন করুন',
+                            'title'               => 'স্লট',
+                        ],
+    
+                        'table'       => [
+                            'book-a-table'       => 'একটি টেবিল বুক করুন',
+                            'closed'             => 'বন্ধ',
+                            'slots-for-all-days' => 'সমস্ত দিনের জন্য দেখান',
+                            'special-notes'      => 'বিশেষ অনুরোধ/নোট',
+                            'today-availability' => 'আজকের উপলব্ধতা',
+                        ],
+
                         'view-on-map'              => 'মানচিত্রে দেখুন',
-                    ],
-                ],
-
-                'booking' => [
-                    'appointment' => [
-                        'closed'             => 'বন্ধ',
-                        'today-availability' => 'আজকের উপলব্ধতা',
-                    ],
-
-                    'event'       => [
-                        'book-your-ticket' => 'আপনার টিকিট বুক করুন',
-                    ],
-
-                    'rental'      => [
-                        'choose-rent-option' => 'ভাড়ার অপশন নির্বাচন করুন',
-                        'daily-basis'        => 'দৈনিক ভিত্তিতে',
-                        'from'               => 'থেকে',
-                        'hourly-basis'       => 'প্রতি ঘন্টায়',
-                        'rent-an-item'       => 'একটি আইটেম ভাড়া নিন',
-                        'select-date'        => 'তারিখ নির্বাচন করুন',
-                        'select-rent-time'   => 'ভাড়ার সময় নির্বাচন করুন',
-                        'select-slot'        => 'স্লট নির্বাচন করুন',
-                        'select-time-slot'   => 'টাইম স্লট নির্বাচন করুন',
-                        'slot'               => 'স্লট',
-                        'to'                 => 'পর্যন্ত',
-                    ],
-
-                    'slots'       => [
-                        'book-an-appointment' => 'একটি অ্যাপয়েন্টমেন্ট বুক করুন',
-                        'date'                => 'তারিখ',
-                        'no-slots-available'  => 'কোনও স্লট উপলব্ধ নেই',
-                        'select-slot'         => 'স্লট নির্বাচন করুন',
-                        'title'               => 'স্লট',
-                    ],
-
-                    'table'       => [
-                        'book-a-table'       => 'একটি টেবিল বুক করুন',
-                        'closed'             => 'বন্ধ',
-                        'slots-for-all-days' => 'সমস্ত দিনের জন্য দেখান',
-                        'special-notes'      => 'বিশেষ অনুরোধ/নোট',
-                        'today-availability' => 'আজকের উপলব্ধতা',
                     ],
                 ],
             ],

@@ -25,13 +25,15 @@ class Booking extends Command
      */
     public function handle()
     {
-        $this->info('Step: Dumping autoload files...');
-        $this->info(shell_exec('composer dump-autoload'));
-
         $this->info('Step: Running database migrations...');
         $this->call('migrate');
 
         $this->info('Step: Clearing cached optimization files...');
         $this->call('optimize:clear');
+
+        $this->info('Step: Publishing vendor assets...');
+        $this->call('vendor:publish', [
+            '--provider' => \Webkul\BookingProduct\Providers\BookingProductServiceProvider::class
+        ]);
     }
 }

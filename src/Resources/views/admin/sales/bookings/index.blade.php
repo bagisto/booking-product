@@ -42,10 +42,10 @@
             </div>
 
             <template v-if="viewType == 'table'">
-                <x-admin::datagrid src="{{ route('admin.sales.bookings.index') }}" />
+                <x-admin::datagrid :src="route('admin.sales.bookings.index')" />
             </template>
 
-            <template v-if="viewType == 'calendar'">
+            <template v-else>
                 @include('booking::admin.sales.bookings.calendar')
             </template>
         </script>
