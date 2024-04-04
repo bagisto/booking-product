@@ -16,7 +16,7 @@
     </div>
 
     <!-- Event Vue Component -->
-    <v-event-tickets />
+    <v-event-tickets></v-event-tickets>
 </div>
 
 @pushOnce('scripts')
@@ -31,10 +31,11 @@
 
             <div
                 class="flex justify-between border-b border-slate-500 last:border-b-0"
-                v-for="(ticket, index) in tickets"
                 :class="tickets?.length - index == 1 ? '' : 'pb-4'"
+                v-for="(ticket, index) in tickets"
             >
                 <div class="grid gap-1.5">
+                    <!-- Name -->
                     <p  
                         class="font-medium"
                         v-text="ticket.name"
@@ -58,12 +59,14 @@
                         </p>
                     </div>
 
+                    <!-- Fromatted Price -->
                     <p
                         v-else
                         v-text="ticket.formatted_price_text"
                     >
                     </p>
 
+                    <!-- Description -->
                     <div v-text="ticket.description"></div>
                 </div>
 
