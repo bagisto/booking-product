@@ -13,9 +13,8 @@ class EventTicket extends Booking
      * Returns event date
      *
      * @param  \Webkul\BookingProduct\Contracts\BookingProduct  $bookingProduct
-     * @return string
      */
-    public function getEventDate($bookingProduct)
+    public function getEventDate($bookingProduct): string
     {
         $from = Carbon::createFromTimeString($bookingProduct->available_from)->format('d F, Y h:i A');
 
@@ -70,9 +69,8 @@ class EventTicket extends Booking
      * Return the item if it has a quantity.
      *
      * @param  \Webkul\Checkout\Contracts\CartItem|array  $cartItem
-     * @return bool
      */
-    public function isItemHaveQuantity($cartItem)
+    public function isItemHaveQuantity($cartItem): bool
     {
         $bookingProduct = $this->bookingProductRepository->findOneByField('product_id', $cartItem['product_id']);
 
@@ -87,10 +85,8 @@ class EventTicket extends Booking
 
     /**
      * Returns the quantity of booked product.
-     *
-     * @param  array  $data
      */
-    public function getBookedQuantity($data): int
+    public function getBookedQuantity(array $data): int
     {
         $result = $this->bookingRepository->getModel()
             ->leftJoin('order_items', 'bookings.order_item_id', '=', 'order_items.id')
