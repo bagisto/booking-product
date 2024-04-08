@@ -207,9 +207,9 @@
                             type="date"
                             name="booking[date_from]"
                             rules="required"
-                            data-min-date="today"
                             :label="trans('booking::app.shop.products.view.types.booking.rental.from')"
                             :placeholder="trans('booking::app.shop.products.view.types.booking.rental.from')"
+                            data-min-date="today"
                             @change="dateSelected($event)"
                         />
 
@@ -226,9 +226,9 @@
                             type="date"
                             name="booking[date_to]"
                             rules="required"
-                            data-min-date="today"
                             :label="trans('booking::app.shop.products.view.types.booking.rental.to')"
                             :placeholder="trans('booking::app.shop.products.view.types.booking.rental.to')"
+                            data-min-date="today"
                             @change="dateSelected($event)"
                         />
 

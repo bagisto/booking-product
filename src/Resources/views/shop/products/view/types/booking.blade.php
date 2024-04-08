@@ -3,7 +3,7 @@
     && $bookingProduct = app('\Webkul\BookingProduct\Repositories\BookingProductRepository')->findOneByField('product_id', $product->id)
 )
     <!-- Vue Component -->
-    <v-booking-information />
+    <v-booking-information></v-booking-information>
 
     @pushOnce('scripts')
         <script

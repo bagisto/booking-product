@@ -65,12 +65,14 @@
                 v-show="showDaysAvailability"
                 v-for="day in days"
             >
+                <!-- Name -->
                 <p
                     class="text-sm text-gray font-medium"
                     v-text="day.name"
                 >
                 </p>
 
+                <!-- Slot Duration -->
                 <p class="grid gap-y-2.5 text-sm text-gray-600">
                     <template v-if="day.slots && day.slots?.length">
                         <div v-for="slot in day.slots">

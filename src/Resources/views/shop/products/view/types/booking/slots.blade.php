@@ -47,7 +47,7 @@
                         :placeholder="trans('booking::app.shop.products.view.types.booking.slots.title')"
                     >
                         <option value="">
-                            @lang('Select Slot')
+                            @lang('booking::app.shop.products.view.types.booking.slots.select-slot')
                         </option>
                         
                         <option v-if="! slots?.length">

@@ -30,7 +30,7 @@
             </div>
 
             <!-- Toggler Vue Component -->
-            <v-toggler />
+            <v-toggler></v-toggler>
         </div>
     </div>
 

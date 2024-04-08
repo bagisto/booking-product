@@ -24,7 +24,7 @@
                 :label="trans('booking::app.admin.catalog.products.edit.types.booking.default.description')"
                 @slotType="slotType"
             >
-                @foreach (['many', 'one'] as $item)
+                @foreach (['one', 'many'] as $item)
                     <option value="{{ $item }}">
                         @lang('booking::app.admin.catalog.products.edit.types.booking.default.' . $item)
                     </option>
@@ -375,7 +375,7 @@
                                     <x-admin::form.control-group.error control-name="to_day" />
                                 </x-admin::form.control-group>
                     
-                                <!-- TO Time -->
+                                <!-- To Time -->
                                 <x-booking::form.control-group class="w-full">
                                     <x-booking::form.control-group.label class="required">
                                         @lang('booking::app.admin.catalog.products.edit.types.booking.default.modal.slot.to-time')
@@ -531,12 +531,10 @@
                             params.id = this.optionRowCount++;
                         }
 
-                        const foundIndex = this.slots.one.findIndex(item => item.from_day === params.from_day && item.to_day === params.to_day);
+                        const foundIndex = this.slots.one.findIndex(item => (item.from_day === params.from_day && item.from === params.from) && (item.to_day === params.to_day && item.to === params.to));
 
                         if (foundIndex === -1) {
                             this.slots.one.push(params);
-                        } else {
-                            this.slots.one.splice(foundIndex, 1, params);
                         }
                     } else {
                         params.id = this.currentIndex;

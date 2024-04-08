@@ -13,7 +13,7 @@ class TableSlot extends Booking
     {
         $bookingProduct = $this->bookingProductRepository->findOneByField('product_id', $cartItem['product_id']);
 
-        $bookedQty = $this->getBookedQuantity([$cartItem]);
+        $bookedQty = $this->getBookedQuantity($cartItem);
 
         $tableSlot = $bookingProduct->table_slot;
 

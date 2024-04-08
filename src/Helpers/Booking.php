@@ -13,7 +13,6 @@ use Webkul\BookingProduct\Repositories\BookingProductRentalSlotRepository;
 use Webkul\BookingProduct\Repositories\BookingProductRepository;
 use Webkul\BookingProduct\Repositories\BookingProductTableSlotRepository;
 use Webkul\BookingProduct\Repositories\BookingRepository;
-use Webkul\Checkout\Contracts\CartItem as CartItemContracts;
 use Webkul\Checkout\Models\CartItem;
 use Webkul\Product\DataTypes\CartItemValidationResult;
 
@@ -277,10 +276,8 @@ class Booking
 
     /**
      * Returns get booked quantity.
-     *
-     * @param  array  $data
      */
-    public function getBookedQuantity($data): int
+    public function getBookedQuantity(array $data): int
     {
         $timestamps = explode('-', $data['additional']['booking']['slot']);
 
@@ -444,8 +441,10 @@ class Booking
 
     /**
      * Returns true if the cart item is inactive.
+     * 
+     * @param  \Webkul\Checkout\Contracts\CartItem|array  $cartItem
      */
-    public function isCartItemInactive(CartItemContracts $item): bool
+    public function isCartItemInactive($item): bool
     {
         return ! $item->product->status;
     }
