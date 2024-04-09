@@ -85,8 +85,10 @@ class EventTicket extends Booking
 
     /**
      * Returns the quantity of booked product.
+     * 
+     * @param array $data
      */
-    public function getBookedQuantity(array $data): int
+    public function getBookedQuantity($data): int
     {
         $result = $this->bookingRepository->getModel()
             ->leftJoin('order_items', 'bookings.order_item_id', '=', 'order_items.id')

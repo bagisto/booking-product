@@ -57,8 +57,8 @@
                         <option
                             v-for="slot in slots"
                             :value="slot.timestamp"
+                            v-text="slot.from + ' - ' + slot.to"
                         >
-                            @{{ slot.from + ' - ' + slot.to }}
                         </option>
                     </x-shop::form.control-group.control>
 
