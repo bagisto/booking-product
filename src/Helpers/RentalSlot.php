@@ -28,8 +28,10 @@ class RentalSlot extends Booking
 
     /**
      * Returns get booked quantity.
+     *
+     * @param array $data
      */
-    public function getBookedQuantity(array $data): int
+    public function getBookedQuantity($data): int
     {
         $bookingProduct = $this->bookingProductRepository->findOneByField('product_id', $data['product_id']);
 
