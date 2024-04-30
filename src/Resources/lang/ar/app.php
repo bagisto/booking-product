@@ -66,8 +66,8 @@ return [
                                 'one'              => 'حجز واحد لعدة أيام',
                                 'open'             => 'فتح',
                                 'slot-add'         => 'إضافة فترات',
-                                'slot-title'       => 'مدة زمنية للفترات',
                                 'slot-duration'    => 'مدة الفترة (دقائق)',
+                                'slot-title'       => 'مدة زمنية للفترات',
                                 'title'            => 'افتراضي',
                                 'unavailable'      => 'غير متوفره',
                             ],
@@ -75,8 +75,8 @@ return [
                             'event'       => [
                                 'add'                => 'إضافة تذاكر',
                                 'delete'             => 'حذف',
-                                'description-info'   => 'لا تتوفر تذاكر.',
                                 'description'        => 'الوصف',
+                                'description-info'   => 'لا تتوفر تذاكر.',
                                 'edit'               => 'تعديل',
 
                                 'modal'              => [
@@ -87,9 +87,9 @@ return [
                                 'name'               => 'الاسم',
                                 'price'              => 'السعر',
                                 'qty'                => 'الكمية',
+                                'special-price'      => 'السعر الخاص',
                                 'special-price-from' => 'السعر الخاص من',
                                 'special-price-to'   => 'السعر الخاص إلى',
-                                'special-price'      => 'السعر الخاص',
                                 'title'              => 'التذاكر',
                                 'valid-from'         => 'صالح من',
                                 'valid-until'        => 'صالح حتى',
@@ -110,11 +110,11 @@ return [
                             'qty'                  => 'الكمية',
 
                             'rental'      => [
+                                'daily'                  => 'يومي',
                                 'daily-hourly'           => 'كليهما (يومي وساعي)',
                                 'daily-price'            => 'السعر اليومي',
-                                'daily'                  => 'يومي',
-                                'hourly-price'           => 'السعر الساعي',
                                 'hourly'                 => 'ساعي',
+                                'hourly-price'           => 'السعر الساعي',
 
                                 'same-slot-for-all-days' => [
                                     'no'    => 'لا',

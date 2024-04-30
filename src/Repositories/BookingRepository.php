@@ -65,7 +65,7 @@ class BookingRepository extends Repository
                 'booking_product_event_ticket_id' => $bookingItem['ticket_id'] ?? null,
             ]);
 
-            Event::dispatch('marketplace.booking.save.after', $booking);
+            Event::dispatch('booking_product.booking.save.after', $booking);
         }
     }
 

@@ -66,8 +66,8 @@ return [
                                 'one'              => 'یک رزرو برای چند روز',
                                 'open'             => 'باز',
                                 'slot-add'         => 'افزودن اسلات‌ها',
-                                'slot-title'       => 'مدت زمان اسلات',
                                 'slot-duration'    => 'مدت زمان اسلات (دقیقه)',
+                                'slot-title'       => 'مدت زمان اسلات',
                                 'title'            => 'پیش‌فرض',
                                 'unavailable'      => 'غیر قابل دسترسی',
                             ],
@@ -75,8 +75,8 @@ return [
                             'event'       => [
                                 'add'                => 'افزودن بلیت',
                                 'delete'             => 'حذف',
-                                'description-info'   => 'هیچ بلیتی در دسترس نیست.',
                                 'description'        => 'توضیحات',
+                                'description-info'   => 'هیچ بلیتی در دسترس نیست.',
                                 'edit'               => 'ویرایش',
 
                                 'modal'              => [
@@ -87,9 +87,9 @@ return [
                                 'name'               => 'نام',
                                 'price'              => 'قیمت',
                                 'qty'                => 'تعداد',
+                                'special-price'      => 'قیمت ویژه',
                                 'special-price-from' => 'قیمت ویژه از',
                                 'special-price-to'   => 'قیمت ویژه تا',
-                                'special-price'      => 'قیمت ویژه',
                                 'title'              => 'بلیت‌ها',
                                 'valid-from'         => 'معتبر از',
                                 'valid-until'        => 'معتبر تا',
@@ -110,11 +110,11 @@ return [
                             'qty'                  => 'تعداد',
 
                             'rental'      => [
+                                'daily'                  => 'بر اساس روز',
                                 'daily-hourly'           => 'هر دو (روزانه و ساعتی)',
                                 'daily-price'            => 'قیمت روزانه',
-                                'daily'                  => 'بر اساس روز',
-                                'hourly-price'           => 'قیمت ساعتی',
                                 'hourly'                 => 'بر اساس ساعت',
+                                'hourly-price'           => 'قیمت ساعتی',
 
                                 'same-slot-for-all-days' => [
                                     'no'    => 'خیر',

@@ -66,8 +66,8 @@ return [
                                 'one'              => 'একটি দিনের জন্য একটি বুকিং',
                                 'open'             => 'খোলা',
                                 'slot-add'         => 'স্লট যোগ করুন',
-                                'slot-title'       => 'স্লটের সময় দৈর্ঘ্য',
                                 'slot-duration'    => 'স্লট সময়কাল (মিনিট)',
+                                'slot-title'       => 'স্লটের সময় দৈর্ঘ্য',
                                 'title'            => 'ডিফল্ট',
                                 'unavailable'      => 'অনুপলব্ধ',
                             ],
@@ -75,8 +75,8 @@ return [
                             'event'       => [
                                 'add'                => 'টিকেট যোগ করুন',
                                 'delete'             => 'মুছে ফেলুন',
-                                'description-info'   => 'কোনও টিকেট পাওয়া যায়নি।',
                                 'description'        => 'বর্ণনা',
+                                'description-info'   => 'কোনও টিকেট পাওয়া যায়নি।',
                                 'edit'               => 'সম্পাদনা',
 
                                 'modal'              => [
@@ -87,9 +87,9 @@ return [
                                 'name'               => 'নাম',
                                 'price'              => 'মূল্য',
                                 'qty'                => 'পরিমাণ',
+                                'special-price'      => 'বিশেষ মূল্য',
                                 'special-price-from' => 'বিশেষ মূল্য থেকে',
                                 'special-price-to'   => 'বিশেষ মূল্য পর্যন্ত',
-                                'special-price'      => 'বিশেষ মূল্য',
                                 'title'              => 'টিকেটগুলি',
                                 'valid-from'         => 'বৈধ হবে হবে',
                                 'valid-until'        => 'বৈধ থাকবে',
@@ -110,11 +110,11 @@ return [
                             'qty'                  => 'পরিমাণ',
 
                             'rental'      => [
+                                'daily'                  => 'দৈনিক ভিত্তিতে',
                                 'daily-hourly'           => 'দৈনিক এবং প্রতি ঘণ্টা উভয় (Both)',
                                 'daily-price'            => 'দৈনিক মূল্য',
-                                'daily'                  => 'দৈনিক ভিত্তিতে',
-                                'hourly-price'           => 'প্রতি ঘণ্টা মূল্য',
                                 'hourly'                 => 'প্রতি ঘণ্টা ভিত্তিতে',
+                                'hourly-price'           => 'প্রতি ঘণ্টা মূল্য',
 
                                 'same-slot-for-all-days' => [
                                     'no'    => 'না',

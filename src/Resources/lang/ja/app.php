@@ -66,8 +66,8 @@ return [
                                 'one'              => '複数日のための1つの予約',
                                 'open'             => '開く',
                                 'slot-add'         => 'スロットを追加',
-                                'slot-title'       => 'スロットの時間の期間',
                                 'slot-duration'    => 'スロットの期間（分）',
+                                'slot-title'       => 'スロットの時間の期間',
                                 'title'            => 'デフォルト',
                                 'unavailable'      => '利用不可',
                             ],
@@ -75,8 +75,8 @@ return [
                             'event'       => [
                                 'add'                => 'チケットを追加',
                                 'delete'             => '削除',
-                                'description-info'   => '利用可能なチケットはありません。',
                                 'description'        => '説明',
+                                'description-info'   => '利用可能なチケットはありません。',
                                 'edit'               => '編集',
 
                                 'modal'              => [
@@ -87,9 +87,9 @@ return [
                                 'name'               => '名前',
                                 'price'              => '価格',
                                 'qty'                => '数量',
+                                'special-price'      => '特別価格',
                                 'special-price-from' => '特別価格 開始',
                                 'special-price-to'   => '特別価格 終了',
-                                'special-price'      => '特別価格',
                                 'title'              => 'チケット',
                                 'valid-from'         => '有効開始日',
                                 'valid-until'        => '有効終了日',
@@ -110,11 +110,11 @@ return [
                             'qty'                  => '数量',
 
                             'rental'      => [
+                                'daily'                  => 'デイリーベース',
                                 'daily-hourly'           => '両方（デイリーおよび時間単位）',
                                 'daily-price'            => 'デイリープライス',
-                                'daily'                  => 'デイリーベース',
-                                'hourly-price'           => '時間単位の価格',
                                 'hourly'                 => '時間単位のベース',
+                                'hourly-price'           => '時間単位の価格',
 
                                 'same-slot-for-all-days' => [
                                     'no'    => 'いいえ',

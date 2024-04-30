@@ -66,8 +66,8 @@ return [
                                 'one'              => 'एक दिन के लिए एक बुकिंग',
                                 'open'             => 'खोलें',
                                 'slot-add'         => 'स्लॉट जोड़ें',
-                                'slot-title'       => 'स्लॉट समय अवधि',
                                 'slot-duration'    => 'स्लॉट की अवधि (मिनट)',
+                                'slot-title'       => 'स्लॉट समय अवधि',
                                 'title'            => 'डिफ़ॉल्ट',
                                 'unavailable'      => 'अनुपलब्ध',
                             ],
@@ -75,8 +75,8 @@ return [
                             'event'       => [
                                 'add'                => 'टिकट जोड़ें',
                                 'delete'             => 'हटाएं',
-                                'description-info'   => 'कोई टिकट उपलब्ध नहीं है।',
                                 'description'        => 'विवरण',
+                                'description-info'   => 'कोई टिकट उपलब्ध नहीं है।',
                                 'edit'               => 'संपादित करें',
 
                                 'modal'              => [
@@ -87,9 +87,9 @@ return [
                                 'name'               => 'नाम',
                                 'price'              => 'मूल्य',
                                 'qty'                => 'मात्रा',
+                                'special-price'      => 'विशेष मूल्य',
                                 'special-price-from' => 'विशेष मूल्य से',
                                 'special-price-to'   => 'विशेष मूल्य तक',
-                                'special-price'      => 'विशेष मूल्य',
                                 'title'              => 'टिकट्स',
                                 'valid-from'         => 'मान्यता प्राप्त होने की तिथि',
                                 'valid-until'        => 'मान्यता रखने की तिथि',
@@ -110,11 +110,11 @@ return [
                             'qty'      => 'मात्रा',
 
                             'rental'      => [
+                                'daily'                  => 'दैनिक आधार पर',
                                 'daily-hourly'           => 'दोनों (दैनिक और प्रति घंटा)',
                                 'daily-price'            => 'दैनिक मूल्य',
-                                'daily'                  => 'दैनिक आधार पर',
-                                'hourly-price'           => 'प्रति घंटा मूल्य',
                                 'hourly'                 => 'प्रति घंटा आधार पर',
+                                'hourly-price'           => 'प्रति घंटा मूल्य',
 
                                 'same-slot-for-all-days' => [
                                     'no'    => 'नहीं',

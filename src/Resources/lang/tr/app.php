@@ -66,8 +66,8 @@ return [
                                 'one'              => 'Bir Gün İçin Tek Rezervasyon',
                                 'open'             => 'Açık',
                                 'slot-add'         => 'Slot Ekle',
-                                'slot-title'       => 'Slot Zaman Süresi',
                                 'slot-duration'    => 'Slot Süresi (Dakika)',
+                                'slot-title'       => 'Slot Zaman Süresi',
                                 'title'            => 'Varsayılan',
                                 'unavailable'      => 'kullanım dışı',
                             ],
@@ -75,8 +75,8 @@ return [
                             'event'       => [
                                 'add'                => 'Bilet Ekle',
                                 'delete'             => 'Sil',
-                                'description-info'   => 'Uygun bilet bulunmamaktadır.',
                                 'description'        => 'Açıklama',
+                                'description-info'   => 'Uygun bilet bulunmamaktadır.',
                                 'edit'               => 'Düzenle',
 
                                 'modal'              => [
@@ -87,9 +87,9 @@ return [
                                 'name'               => 'Ad',
                                 'price'              => 'Fiyat',
                                 'qty'                => 'Miktar',
+                                'special-price'      => 'Özel Fiyat',
                                 'special-price-from' => 'Özel Fiyat - Başlangıç',
                                 'special-price-to'   => 'Özel Fiyat - Bitiş',
-                                'special-price'      => 'Özel Fiyat',
                                 'title'              => 'Biletler',
                                 'valid-from'         => 'Geçerli Başlangıç',
                                 'valid-until'        => 'Geçerli Bitiş',
@@ -110,11 +110,11 @@ return [
                             'qty'                  => 'Adet',
 
                             'rental'      => [
+                                'daily'                  => 'Günlük',
                                 'daily-hourly'           => 'Hem Günlük Hem Saatlik',
                                 'daily-price'            => 'Günlük Fiyat',
-                                'daily'                  => 'Günlük',
-                                'hourly-price'           => 'Saatlik Fiyat',
                                 'hourly'                 => 'Saatlik',
+                                'hourly-price'           => 'Saatlik Fiyat',
 
                                 'same-slot-for-all-days' => [
                                     'no'    => 'Hayır',

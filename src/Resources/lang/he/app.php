@@ -66,8 +66,8 @@ return [
                                 'one'              => 'הזמנה אחת למספר ימים',
                                 'open'             => 'פתח',
                                 'slot-add'         => 'הוסף מקומות',
-                                'slot-title'       => 'משך זמן המקומות',
                                 'slot-duration'    => 'משך זמן המקום (דקות)',
+                                'slot-title'       => 'משך זמן המקומות',
                                 'title'            => 'ברירת מחדל',
                                 'unavailable'      => 'אינו זמין',
                             ],
@@ -75,8 +75,8 @@ return [
                             'event'       => [
                                 'add'                => 'הוסף כרטיסים',
                                 'delete'             => 'מחק',
-                                'description-info'   => 'אין כרטיסים זמינים.',
                                 'description'        => 'תיאור',
+                                'description-info'   => 'אין כרטיסים זמינים.',
                                 'edit'               => 'ערוך',
 
                                 'modal'              => [
@@ -87,9 +87,9 @@ return [
                                 'name'               => 'שם',
                                 'price'              => 'מחיר',
                                 'qty'                => 'כמות',
+                                'special-price'      => 'מחיר מיוחד',
                                 'special-price-from' => 'מחיר מיוחד מ',
                                 'special-price-to'   => 'מחיר מיוחד עד',
-                                'special-price'      => 'מחיר מיוחד',
                                 'title'              => 'כרטיסים',
                                 'valid-from'         => 'בתוקף מ',
                                 'valid-until'        => 'בתוקף עד',
@@ -110,11 +110,11 @@ return [
                             'qty'                  => 'כמות',
 
                             'rental'      => [
+                                'daily'                  => 'לפי יום',
                                 'daily-hourly'           => 'שניים (יומי ושעתי)',
                                 'daily-price'            => 'מחיר יומי',
-                                'daily'                  => 'לפי יום',
-                                'hourly-price'           => 'מחיר שעתי',
                                 'hourly'                 => 'לפי שעה',
+                                'hourly-price'           => 'מחיר שעתי',
 
                                 'same-slot-for-all-days' => [
                                     'no'    => 'לא',
