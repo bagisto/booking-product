@@ -66,8 +66,8 @@ return [
                                 'one'              => 'Uma Reserva Para Muitos Dias',
                                 'open'             => 'Abrir',
                                 'slot-add'         => 'Adicionar Slots',
-                                'slot-title'       => 'Duração do Tempo dos Slots',
                                 'slot-duration'    => 'Duração do Slot (minutos)',
+                                'slot-title'       => 'Duração do Tempo dos Slots',
                                 'title'            => 'Padrão',
                                 'unavailable'      => 'indisponível',
                             ],
@@ -75,8 +75,8 @@ return [
                             'event'       => [
                                 'add'                => 'Adicionar Ingressos',
                                 'delete'             => 'Excluir',
-                                'description-info'   => 'Não há ingressos disponíveis.',
                                 'description'        => 'Descrição',
+                                'description-info'   => 'Não há ingressos disponíveis.',
                                 'edit'               => 'Editar',
 
                                 'modal'              => [
@@ -87,9 +87,9 @@ return [
                                 'name'               => 'Nome',
                                 'price'              => 'Preço',
                                 'qty'                => 'Quantidade',
+                                'special-price'      => 'Preço Especial',
                                 'special-price-from' => 'Preço Especial De',
                                 'special-price-to'   => 'Preço Especial Até',
-                                'special-price'      => 'Preço Especial',
                                 'title'              => 'Ingressos',
                                 'valid-from'         => 'Válido De',
                                 'valid-until'        => 'Válido Até',
@@ -110,11 +110,11 @@ return [
                             'qty'                  => 'Quantidade',
 
                             'rental'      => [
+                                'daily'                  => 'Com Base Diária',
                                 'daily-hourly'           => 'Ambos (Diário e Por Hora)',
                                 'daily-price'            => 'Preço Diário',
-                                'daily'                  => 'Com Base Diária',
-                                'hourly-price'           => 'Preço Por Hora',
                                 'hourly'                 => 'Com Base Horária',
+                                'hourly-price'           => 'Preço Por Hora',
 
                                 'same-slot-for-all-days' => [
                                     'no'    => 'Não',

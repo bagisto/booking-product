@@ -66,8 +66,8 @@ return [
                                 'one'              => 'Una prenotazione per molti giorni',
                                 'open'             => 'Aperto',
                                 'slot-add'         => 'Aggiungi slot',
-                                'slot-title'       => 'Durata temporale degli slot',
                                 'slot-duration'    => 'Durata dello slot (minuti)',
+                                'slot-title'       => 'Durata temporale degli slot',
                                 'title'            => 'Predefinito',
                                 'unavailable'      => 'non disponibile',
                             ],
@@ -75,8 +75,8 @@ return [
                             'event'       => [
                                 'add'                => 'Aggiungi biglietto',
                                 'delete'             => 'Elimina',
-                                'description-info'   => 'Non ci sono biglietti disponibili.',
                                 'description'        => 'Descrizione',
+                                'description-info'   => 'Non ci sono biglietti disponibili.',
                                 'edit'               => 'Modifica',
 
                                 'modal'              => [
@@ -87,9 +87,9 @@ return [
                                 'name'               => 'Nome',
                                 'price'              => 'Prezzo',
                                 'qty'                => 'Quantità',
+                                'special-price'      => 'Prezzo speciale',
                                 'special-price-from' => 'Prezzo speciale da',
                                 'special-price-to'   => 'Prezzo speciale a',
-                                'special-price'      => 'Prezzo speciale',
                                 'title'              => 'Biglietti',
                                 'valid-from'         => 'Valido dal',
                                 'valid-until'        => 'Valido fino al',
@@ -110,11 +110,11 @@ return [
                             'qty'      => 'Quantità',
 
                             'rental'      => [
+                                'daily'                  => 'Su base giornaliera',
                                 'daily-hourly'           => 'Sia giornaliero che per ore',
                                 'daily-price'            => 'Prezzo giornaliero',
-                                'daily'                  => 'Su base giornaliera',
-                                'hourly-price'           => 'Prezzo orario',
                                 'hourly'                 => 'Su base oraria',
+                                'hourly-price'           => 'Prezzo orario',
 
                                 'same-slot-for-all-days' => [
                                     'no'    => 'No',

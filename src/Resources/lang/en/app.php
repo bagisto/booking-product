@@ -66,8 +66,8 @@ return [
                                 'one'              => 'One Booking For Many Days',
                                 'open'             => 'Open',
                                 'slot-add'         => 'Add Slots',
-                                'slot-title'       => 'Slots Time Duration',
                                 'slot-duration'    => 'Slot Duration (Mins)',
+                                'slot-title'       => 'Slots Time Duration',
                                 'title'            => 'Default',
                                 'unavailable'      => 'Unavailable',
                             ],
@@ -75,8 +75,8 @@ return [
                             'event'       => [
                                 'add'                => 'Add Tickets',
                                 'delete'             => 'Delete',
-                                'description-info'   => 'There is no tickets available.',
                                 'description'        => 'Description',
+                                'description-info'   => 'There is no tickets available.',
                                 'edit'               => 'Edit',
 
                                 'modal'              => [
@@ -87,9 +87,9 @@ return [
                                 'name'               => 'Name',
                                 'price'              => 'Price',
                                 'qty'                => 'Quantity',
+                                'special-price'      => 'Special Price',
                                 'special-price-from' => 'Special Price From',
                                 'special-price-to'   => 'Special Price To',
-                                'special-price'      => 'Special Price',
                                 'title'              => 'Tickets',
                                 'valid-from'         => 'Valid From',
                                 'valid-until'        => 'Valid Until',
@@ -110,11 +110,11 @@ return [
                             'qty'                  => 'Qty',
 
                             'rental'      => [
+                                'daily'                  => 'Daily Basis',
                                 'daily-hourly'           => 'Both (Daily and Hourly Basis)',
                                 'daily-price'            => 'Daily Price',
-                                'daily'                  => 'Daily Basis',
-                                'hourly-price'           => 'Hourly Price',
                                 'hourly'                 => 'Hourly Basis',
+                                'hourly-price'           => 'Hourly Price',
 
                                 'same-slot-for-all-days' => [
                                     'no'    => 'No',

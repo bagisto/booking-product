@@ -66,8 +66,8 @@ return [
                                 'one'              => 'Jedna rezerwacja na wiele dni',
                                 'open'             => 'Otwórz',
                                 'slot-add'         => 'Dodaj sloty',
-                                'slot-title'       => 'Czas trwania slotów',
                                 'slot-duration'    => 'Czas trwania slotu (minuty)',
+                                'slot-title'       => 'Czas trwania slotów',
                                 'title'            => 'Domyślne',
                                 'unavailable'      => 'niedostępne',
                             ],
@@ -75,8 +75,8 @@ return [
                             'event'       => [
                                 'add'                => 'Dodaj bilety',
                                 'delete'             => 'Usuń',
-                                'description-info'   => 'Brak dostępnych biletów.',
                                 'description'        => 'Opis',
+                                'description-info'   => 'Brak dostępnych biletów.',
                                 'edit'               => 'Edytuj',
 
                                 'modal'              => [
@@ -87,9 +87,9 @@ return [
                                 'name'               => 'Nazwa',
                                 'price'              => 'Cena',
                                 'qty'                => 'Ilość',
+                                'special-price'      => 'Specjalna cena',
                                 'special-price-from' => 'Specjalna cena od',
                                 'special-price-to'   => 'Specjalna cena do',
-                                'special-price'      => 'Specjalna cena',
                                 'title'              => 'Bilety',
                                 'valid-from'         => 'Ważne od',
                                 'valid-until'        => 'Ważne do',
@@ -110,11 +110,11 @@ return [
                             'qty'                  => 'Ilość',
 
                             'rental'      => [
+                                'daily'                  => 'Na podstawie dnia',
                                 'daily-hourly'           => 'Obydwa (dziennie i godzinowo)',
                                 'daily-price'            => 'Cena dzienna',
-                                'daily'                  => 'Na podstawie dnia',
-                                'hourly-price'           => 'Cena za godzinę',
                                 'hourly'                 => 'Na podstawie godziny',
+                                'hourly-price'           => 'Cena za godzinę',
 
                                 'same-slot-for-all-days' => [
                                     'no'    => 'Nie',

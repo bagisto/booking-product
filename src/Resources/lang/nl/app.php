@@ -66,8 +66,8 @@ return [
                                 'one'              => 'Eén boeking voor meerdere dagen',
                                 'open'             => 'Open',
                                 'slot-add'         => 'Slots toevoegen',
-                                'slot-title'       => 'Tijdsduur van slots',
                                 'slot-duration'    => 'Slotduur (minuten)',
+                                'slot-title'       => 'Tijdsduur van slots',
                                 'title'            => 'Standaard',
                                 'unavailable'      => 'niet beschikbaar',
                             ],
@@ -75,8 +75,8 @@ return [
                             'event'       => [
                                 'add'                => 'Tickets toevoegen',
                                 'delete'             => 'Verwijderen',
-                                'description-info'   => 'Er zijn geen tickets beschikbaar.',
                                 'description'        => 'Omschrijving',
+                                'description-info'   => 'Er zijn geen tickets beschikbaar.',
                                 'edit'               => 'Bewerken',
 
                                 'modal'              => [
@@ -87,9 +87,9 @@ return [
                                 'name'               => 'Naam',
                                 'price'              => 'Prijs',
                                 'qty'                => 'Hoeveelheid',
+                                'special-price'      => 'Speciale prijs',
                                 'special-price-from' => 'Speciale prijs vanaf',
                                 'special-price-to'   => 'Speciale prijs tot',
-                                'special-price'      => 'Speciale prijs',
                                 'title'              => 'Tickets',
                                 'valid-from'         => 'Geldig vanaf',
                                 'valid-until'        => 'Geldig tot',
@@ -110,11 +110,11 @@ return [
                             'qty'                  => 'Aantal',
 
                             'rental'      => [
+                                'daily'                  => 'Dagbasis',
                                 'daily-hourly'           => 'Beide (dagelijks en per uur)',
                                 'daily-price'            => 'Dagprijs',
-                                'daily'                  => 'Dagbasis',
-                                'hourly-price'           => 'Uurprijs',
                                 'hourly'                 => 'Uurbasis',
+                                'hourly-price'           => 'Uurprijs',
 
                                 'same-slot-for-all-days' => [
                                     'no'    => 'Nee',

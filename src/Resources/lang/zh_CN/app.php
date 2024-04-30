@@ -66,8 +66,8 @@ return [
                                 'one'              => '一天内的一次预约',
                                 'open'             => '开放',
                                 'slot-add'         => '添加时隙',
-                                'slot-title'       => '时隙时长',
                                 'slot-duration'    => '时隙时长（分钟）',
+                                'slot-title'       => '时隙时长',
                                 'title'            => '默认',
                                 'unavailable'      => '不可用',
                             ],
@@ -75,8 +75,8 @@ return [
                             'event'       => [
                                 'add'                => '添加门票',
                                 'delete'             => '删除',
-                                'description-info'   => '没有可用的门票。',
                                 'description'        => '描述',
+                                'description-info'   => '没有可用的门票。',
                                 'edit'               => '编辑',
 
                                 'modal'              => [
@@ -87,9 +87,9 @@ return [
                                 'name'               => '名称',
                                 'price'              => '价格',
                                 'qty'                => '数量',
+                                'special-price'      => '特价',
                                 'special-price-from' => '特价开始时间',
                                 'special-price-to'   => '特价结束时间',
-                                'special-price'      => '特价',
                                 'title'              => '门票',
                                 'valid-from'         => '有效开始时间',
                                 'valid-until'        => '有效结束时间',
@@ -110,11 +110,11 @@ return [
                             'qty'                  => '数量',
 
                             'rental'      => [
+                                'daily'                  => '每日',
                                 'daily-hourly'           => '日常和每小时',
                                 'daily-price'            => '每日价格',
-                                'daily'                  => '每日',
-                                'hourly-price'           => '每小时价格',
                                 'hourly'                 => '每小时',
+                                'hourly-price'           => '每小时价格',
 
                                 'same-slot-for-all-days' => [
                                     'no'    => '否',

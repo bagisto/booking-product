@@ -66,8 +66,8 @@ return [
                                 'one'              => 'එක් දිනක් සඳහා බොකින් හොයමු',
                                 'open'             => 'විවෘත',
                                 'slot-add'         => 'ස්ලොට් එක් කරන්න',
-                                'slot-title'       => 'ස්ලොට්ස් කාල කාලසේක්',
                                 'slot-duration'    => 'ස්ලොට් කාලය (මිනිත්තු)',
+                                'slot-title'       => 'ස්ලොට්ස් කාල කාලසේක්',
                                 'title'            => 'පෙරනිමි',
                                 'unavailable'      => 'ලබා ගත නොහැක',
                             ],
@@ -75,8 +75,8 @@ return [
                             'event'       => [
                                 'add'                => 'ක්ෂණික එකතු කරන්න',
                                 'delete'             => 'මකන්න',
-                                'description-info'   => 'කිසිවක් නොමැත.',
                                 'description'        => 'විස්තර',
+                                'description-info'   => 'කිසිවක් නොමැත.',
                                 'edit'               => 'සංස්කරණය',
 
                                 'modal'              => [
@@ -87,9 +87,9 @@ return [
                                 'name'               => 'නම',
                                 'price'              => 'මිල',
                                 'qty'                => 'ප්රමාණය',
+                                'special-price'      => 'විශේෂ මිලාව',
                                 'special-price-from' => 'විශේෂ මිලාව',
                                 'special-price-to'   => 'විශේෂ මිලාව දක්වා',
-                                'special-price'      => 'විශේෂ මිලාව',
                                 'title'              => 'ක්ෂණික එකතු',
                                 'valid-from'         => 'වලංගු වන්නේ',
                                 'valid-until'        => 'වලංගු වේ',
@@ -110,11 +110,11 @@ return [
                             'qty'                  => 'ප්‍රමාණය',
 
                             'rental'      => [
+                                'daily'                  => 'දින පද්ධතියේ',
                                 'daily-hourly'           => 'සිසුන් (දිනවල් සහ පැයක්)',
                                 'daily-price'            => 'දින මිල',
-                                'daily'                  => 'දින පද්ධතියේ',
-                                'hourly-price'           => 'පැයක් මිල',
                                 'hourly'                 => 'පැයක් පද්ධතියේ',
+                                'hourly-price'           => 'පැයක් මිල',
 
                                 'same-slot-for-all-days' => [
                                     'no'    => 'නැත',

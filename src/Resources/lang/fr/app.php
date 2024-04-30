@@ -66,8 +66,8 @@ return [
                                 'one'              => 'Une réservation pour plusieurs jours',
                                 'open'             => 'Ouvrir',
                                 'slot-add'         => 'Ajouter des créneaux',
-                                'slot-title'       => 'Durée des créneaux',
                                 'slot-duration'    => 'Durée du créneau (minutes)',
+                                'slot-title'       => 'Durée des créneaux',
                                 'title'            => 'Par défaut',
                                 'unavailable'      => 'indisponible',
                             ],
@@ -75,8 +75,8 @@ return [
                             'event'       => [
                                 'add'                => 'Ajouter des billets',
                                 'delete'             => 'Supprimer',
-                                'description-info'   => 'Aucun billet disponible.',
                                 'description'        => 'Description',
+                                'description-info'   => 'Aucun billet disponible.',
                                 'edit'               => 'Modifier',
 
                                 'modal'              => [
@@ -87,9 +87,9 @@ return [
                                 'name'               => 'Nom',
                                 'price'              => 'Prix',
                                 'qty'                => 'Quantité',
+                                'special-price'      => 'Prix spécial',
                                 'special-price-from' => 'Prix spécial à partir de',
                                 'special-price-to'   => 'Prix spécial jusqu\'à',
-                                'special-price'      => 'Prix spécial',
                                 'title'              => 'Billets',
                                 'valid-from'         => 'Valable à partir du',
                                 'valid-until'        => 'Valable jusqu\'au',
@@ -110,11 +110,11 @@ return [
                             'qty'      => 'Quantité',
 
                             'rental'      => [
+                                'daily'                  => 'Quotidien',
                                 'daily-hourly'           => 'Les deux (quotidien et horaire)',
                                 'daily-price'            => 'Prix quotidien',
-                                'daily'                  => 'Quotidien',
-                                'hourly-price'           => 'Prix horaire',
                                 'hourly'                 => 'Horaire',
+                                'hourly-price'           => 'Prix horaire',
 
                                 'same-slot-for-all-days' => [
                                     'no'    => 'Non',
