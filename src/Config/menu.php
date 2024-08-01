@@ -6,6 +6,6 @@ return [
         'name'       => 'booking::app.admin.sales.bookings.title',
         'route'      => 'admin.sales.bookings.index',
         'sort'       => 6,
-        'icon-class' => '',
+        'icon' => '',
     ],
 ];
