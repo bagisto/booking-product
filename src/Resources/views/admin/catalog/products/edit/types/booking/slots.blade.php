@@ -3,20 +3,20 @@
         type="text/x-template"
         id="v-slots-template"
     >
-        <div class="flex gap-5 justify-between items-center py-2">
+        <div class="flex items-center justify-between gap-5 py-2">
             <div class="flex flex-col gap-1">
-                <p class="text-base text-gray-800 dark:text-white font-semibold">
+                <p class="text-base font-semibold text-gray-800 dark:text-white">
                     @lang('booking::app.admin.catalog.products.edit.types.booking.slots.title')
                 </p>
 
-                <p class="text-xs text-gray-500 dark:text-gray-300 font-medium">
+                <p class="text-xs font-medium text-gray-500 dark:text-gray-300">
                     @lang('booking::app.admin.catalog.products.edit.types.booking.slots.description-info')
                  </p>
             </div>
 
             <!-- Add Slots Button -->
             <div
-                class="flex gap-x-1 items-center"
+                class="flex items-center gap-x-1"
                 v-if="parseInt(sameSlotAllDays)"
             >
                 <div
@@ -35,7 +35,7 @@
                 <template v-if="slots['same_for_week']?.length">
                     <div class="flex flex-wrap gap-x-2.5">
                         <div
-                            class="flex flex-wrap gap-1 items-center min-h-[38px] dark:border-gray-800"
+                            class="flex min-h-[38px] flex-wrap items-center gap-1 dark:border-gray-800"
                             v-for="(data, index) in slots['same_for_week']"
                         >
                             <!-- Hidden Inputs -->
@@ -51,12 +51,12 @@
                                 :value="data.to"
                             />
 
-                            <!-- Pannel Detailes -->
-                            <p class="flex items-center py-1 px-2 bg-gray-600 rounded text-white font-semibold">
+                            <!-- Panel Details -->
+                            <p class="flex items-center rounded bg-gray-600 px-2 py-1 font-semibold text-white">
                                 @{{ data.from }} - @{{ data.to }}
     
                                 <span
-                                    class="icon-cross text-white text-lg ltr:ml-1.5 rtl:mr-1.5 cursor-pointer"
+                                    class="icon-cross cursor-pointer text-lg text-white ltr:ml-1.5 rtl:mr-1.5"
                                     @click="removeIndex(index)"
                                 >
                                 </span>
@@ -73,7 +73,7 @@
             
             <template v-else>
                 <div
-                    class="grid grid-cols-[0.5fr_2fr] gap-2.5 items-center py-2 border-b border-slate-300 dark:border-gray-800 last:border-b-0"
+                    class="grid grid-cols-[0.5fr_2fr] items-center gap-2.5 border-b border-slate-300 py-2 last:border-b-0 dark:border-gray-800"
                     v-for="(day, dayIndex) in week_days"
                 >
                     <p
@@ -83,7 +83,7 @@
                     </p>
 
                     <div class="flex grid-cols-2 items-center justify-between">
-                        <div class="flex flex-wrap gap-1 items-center min-h-[38px] dark:border-gray-800">
+                        <div class="flex min-h-[38px] flex-wrap items-center gap-1 dark:border-gray-800">
                             <template
                                 v-if="slots['different_for_week'][dayIndex]?.length"
                                 v-for="(item, itemIndex) in slots['different_for_week'][dayIndex]"
@@ -101,12 +101,12 @@
                                     :value="item.to"
                                 />
 
-                                <!-- Panel Detailes -->
-                                <p class="flex items-center py-1 px-2 bg-gray-600 rounded text-white font-semibold">
+                                <!-- Panel Details -->
+                                <p class="flex items-center rounded bg-gray-600 px-2 py-1 font-semibold text-white">
                                     @{{ item.from }} - @{{ item.to }}
 
                                     <span
-                                        class="icon-cross text-white text-lg ltr:ml-1.5 rtl:mr-1.5 cursor-pointer"
+                                        class="icon-cross cursor-pointer text-lg text-white ltr:ml-1.5 rtl:mr-1.5"
                                         @click="removeIndex(dayIndex,itemIndex)"
                                     >
                                     </span>
@@ -121,7 +121,7 @@
                         </div>
 
                         <p
-                            class="place-content-start text-right text-blue-600 cursor-pointer transition-all hover:underline"
+                            class="cursor-pointer place-content-start text-right text-blue-600 transition-all hover:underline"
                             @click="currentIndex=dayIndex;toggle()"
                         >
                             @lang('booking::app.admin.catalog.products.edit.types.booking.slots.action.add')
@@ -142,15 +142,15 @@
             >
                 <x-admin::drawer ref="drawerform">
                     <x-slot:header>
-                        <div class="flex justify-between items-center">
+                        <div class="flex items-center justify-between">
                             <p class="my-2.5 text-xl font-medium dark:text-white">
                                 @lang('booking::app.admin.catalog.products.edit.types.booking.slots.title')
                             </p>
 
-                            <div class="flex gap-4 items-center ltr:mr-11 rtl:ml-11">
+                            <div class="flex items-center gap-4 ltr:mr-11 rtl:ml-11">
                                 <!-- Add Slots Button -->
                                 <div
-                                    class="cursor-pointer font-medium text-blue-600 dark:text-white w-fit"
+                                    class="w-fit cursor-pointer font-medium text-blue-600 dark:text-white"
                                     @click="add"
                                 >
                                     @lang('booking::app.admin.catalog.products.edit.types.booking.slots.add')
@@ -189,7 +189,7 @@
                         </template>
 
                         <template v-else-if="field['different_for_week'][currentIndex]?.length">
-                            <div class="flex gap-2.5 mx-2.5 pb-2.5 text-gray-800 dark:text-white">
+                            <div class="mx-2.5 flex gap-2.5 pb-2.5 text-gray-800 dark:text-white">
                                 <div class="w-full">
                                     @lang('booking::app.admin.catalog.products.edit.types.booking.slots.modal.slot.from')
                                 </div>
@@ -272,7 +272,7 @@
 
             <!-- Delete Icon -->
             <div
-                class="icon-delete w-fit text-2xl p-1.5 cursor-pointer transition-all"
+                class="icon-delete w-fit cursor-pointer p-1.5 text-2xl transition-all"
                 @click="remove"
             >
             </div>
@@ -456,7 +456,7 @@
                     });
                 },
 
-                toggle() {
+                toggle() {                   
                     this.field['same_for_week'] = [];
 
                     this.field['different_for_week'] = [[], [], [], [], [], [], []];

@@ -4,10 +4,10 @@
 
 @pushOnce('scripts')
     <script type="text/x-template" id="v-time-picker-template">
-        <span class="w-full relative inline-block">
+        <span class="relative inline-block w-full">
             <slot></slot>
 
-            <i class="icon-clock text-[24px] text-gray-400 absolute ltr:right-[8px] rtl:left-[8px] top-[50%] -translate-y-[50%]"></i>
+            <i class="icon-clock absolute top-[50%] -translate-y-[50%] text-[24px] text-gray-400 ltr:right-[8px] rtl:left-[8px]"></i>
         </span>
     </script>
 
@@ -47,7 +47,7 @@
 
                 activate (options) {
                     let element = this.$el.getElementsByTagName("input")[0];
-
+                    
                     this.timepicker = new Flatpickr(element, options);
                 },
             }

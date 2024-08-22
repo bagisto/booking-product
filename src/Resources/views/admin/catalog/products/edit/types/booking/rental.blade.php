@@ -52,13 +52,13 @@
             <x-admin::form.control-group.control
                 type="text"
                 name="booking[daily_price]"
-                rules="required"
+                rules="required|min_value:0"
                 v-model="rental_booking.daily_price"
                 :label="trans('booking::app.admin.catalog.products.edit.types.booking.rental.daily-price')"
                 :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.rental.daily-price')"
             />
 
-            <x-admin::form.control-group.error control-name="booking[renting_type]" />
+            <x-admin::form.control-group.error control-name="booking[daily_price]" />
         </x-admin::form.control-group>
 
         <!-- Hourly Price -->
@@ -73,7 +73,7 @@
             <x-admin::form.control-group.control
                 type="text"
                 name="booking[hourly_price]"
-                rules="required"
+                rules="required|min_value:0"
                 v-model="rental_booking.hourly_price"
                 :label="trans('booking::app.admin.catalog.products.edit.types.booking.rental.hourly-price')"
                 :placeholder="trans('booking::app.admin.catalog.products.edit.types.booking.rental.hourly-price')"

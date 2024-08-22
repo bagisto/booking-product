@@ -60,6 +60,240 @@ return [
                                         'tuesday'    => 'سه‌شنبه',
                                         'wednesday'  => 'چهارشنبه',
                                         'week'       => ':day',
+                                        'warning'    => 'اسلات از قبل وجود دارد',
+                                    ],
+                                ],
+
+                                'one'              => 'یک رزرو برای چند روز',
+                                'open'             => 'باز',
+                                'slot-add'         => 'افزودن اسلات‌ها',
+                                'slot-duration'    => 'مدت زمان اسلات (دقیقه)',
+                                'slot-title'       => 'مدت زمان اسلات',
+                                'title'            => 'پیش‌فرض',
+                                'unavailable'      => 'غیر قابل دسترسی',
+                            ],
+
+                            'event'       => [
+                                'add'                => 'افزودن بلیت',
+                                'delete'             => 'حذف',
+                                'description'        => 'توضیحات',
+                                'description-info'   => 'هیچ بلیتی در دسترس نیست.',
+                                'edit'               => 'ویرایش',
+
+                                'modal'              => [
+                                    'edit' => 'ویرایش بلیط ها',
+                                    'save' => 'ذخیره',
+                                ],
+
+                                'name'               => 'نام',
+                                'price'              => 'قیمت',
+                                'qty'                => 'تعداد',
+                                'special-price'      => 'قیمت ویژه',
+                                'special-price-from' => 'قیمت ویژه از',
+                                'special-price-to'   => 'قیمت ویژه تا',
+                                'title'              => 'بلیت‌ها',
+                                'valid-from'         => 'معتبر از',
+                                'valid-until'        => 'معتبر تا',
+                            ],
+
+                            'empty-info'  => [
+                                'tickets' => [
+                                    'add' => 'افزودن بلیت',
+                                ],
+
+                                'slots'   => [
+                                    'add'         => 'افزودن اسلات‌ها',
+                                    'description' => 'اسلات‌های موجود با مدت زمان.',
+                                ],
+                            ],
+
+                            'location'             => 'موقعیت',
+                            'qty'                  => 'تعداد',
+
+                            'rental'      => [
+                                'daily'                  => 'بر اساس روز',
+                                'daily-hourly'           => 'هر دو (روزانه و ساعتی)',
+                                'daily-price'            => 'قیمت روزانه',
+                                'hourly'                 => 'بر اساس ساعت',
+                                'hourly-price'           => 'قیمت ساعتی',
+
+                                'same-slot-for-all-days' => [
+                                    'no'    => 'خیر',
+                                    'title' => 'همان اسلات برای تمام روزها',
+                                    'yes'   => 'بله',
+                                ],
+
+                                'title'                  => 'نوع اجاره',
+                            ],
+
+                            'slots'       => [
+                                'add'              => 'افزودن اسلات‌ها',
+
+                                'action'           => [
+                                    'add' => 'افزودن',
+                                ],
+
+                                'description-info' => 'بر اساس اسلات‌ها، مدت زمان ساخته شده و قابل مشاهده خواهد بود.',
+
+                                'modal'            => [
+                                    'slot' => [
+                                        'friday'     => 'جمعه',
+                                        'from'       => 'از',
+                                        'monday'     => 'دوشنبه',
+                                        'saturday'   => 'شنبه',
+                                        'sunday'     => 'یک‌شنبه',
+                                        'thursday'   => 'پنج‌شنبه',
+                                        'to'         => 'تا',
+                                        'tuesday'    => 'سه‌شنبه',
+                                        'wednesday'  => 'چهارشنبه',
+                                    ],
+                                ],
+
+                                'save'             => 'ذخیره',
+                                'title'            => 'مدت زمان اسلات',
+                                'unavailable'      => 'در دسترس نیست',
+                            ],
+
+                            'table'       => [
+                                'break-duration'            => 'زمان استراحت بین اسلات‌ها (دقیقه)',
+
+                                'charged-per'               => [
+                                    'guest'  => 'مهمان',
+                                    'table'  => 'میز',
+                                    'title'  => 'هزینه بر اساس',
+                                ],
+
+                                'guest-capacity'            => 'ظرفیت مهمان',
+                                'guest-limit'               => 'محدودیت مهمان برای هر میز',
+                                'prevent-scheduling-before' => 'جلوگیری از برنامه‌ریزی قبل از',
+                                'slot-duration'             => 'مدت زمان اسلات (دقیقه)',
+
+                                'same-slot-for-all-days'    => [
+                                    'no'    => 'خیر',
+                                    'title' => 'همان اسلات برای تمام روزها',
+                                    'yes'   => 'بله',
+                                ],
+                            ],
+
+                            'type' => [
+                                'appointment' => 'رزرو وقت ملاقات',
+                                'default'     => 'رزرو پیش‌فرض',
+                                'event'       => 'رزرو رویداد',
+                                'many'        => 'بسیاری',
+                                'one'         => 'یک',
+                                'rental'      => 'رزرو اجاره',
+                                'table'       => 'رزرو میز',
+                                'title'       => 'نوع',
+                            ],
+
+                            'title'                => 'نوع رزرو',
+                        ],
+                    ],
+                ],
+
+                'index' => [
+                    'booking' => 'رزرو',
+                ],
+
+                'type' => [
+                    'booking' => 'رزرو',
+                ],
+            ],
+        ],
+
+        'sales'   => [
+            'bookings' => [
+                'calendar' => [
+                    'booking-date'     => 'تاریخ رزرو',
+                    'booking-detailes' => 'جزئیات رزرو',
+                    'canceled'         => 'لغو شده',
+                    'closed'           => 'بسته',
+                    'done'             => 'انجام شده',
+                    'order-id'         => 'شناسه سفارش',
+                    'pending'          => 'در انتظار',
+                    'price'            => 'قیمت',
+                    'status'           => 'وضعیت',
+                    'time-slot'        => 'تایم‌اسلات:',
+                    'view-details'     => 'مشاهده جزئیات',
+                ],
+
+                'index' => [
+                    'datagrid' => [
+                        'created-date' => 'تاریخ ایجاد',
+                        'from'         => 'از',
+                        'id'           => 'شناسه',
+                        'order-id'     => 'شناسه سفارش',
+                        'qty'          => 'تعداد',
+                        'to'           => 'تا',
+                    ],
+
+                    'title' => 'محصول رزروها',
+                ],
+
+                'title' => 'محصول رزروها',
+            ],
+        ],
+    ],
+
+    'marketplace' => [
+        'catalog' => [
+            'products' => [
+                'edit'  => [
+                    'types'   => [
+                        'booking' => [
+                            'available-from'       => 'موجود از',
+                            'available-to'         => 'موجود تا',
+
+                            'available-every-week' => [
+                                'no'    => 'نه',
+                                'title' => 'هر هفته موجود است',
+                                'yes'   => 'بله',
+                            ],
+
+                            'appointment' => [
+                                'break-duration'         => 'زمان استراحت بین اسلات‌ها (دقیقه)',
+                                'slot-duration'          => 'مدت زمان اسلات (دقیقه)',
+
+                                'same-slot-for-all-days' => [
+                                    'no'    => 'خیر',
+                                    'title' => 'همان اسلات برای تمام روزها',
+                                    'yes'   => 'بله',
+                                ],
+                            ],
+
+                            'default'     => [
+                                'add'              => 'افزودن',
+                                'break-duration'   => 'زمان استراحت بین اسلات‌ها (دقیقه)',
+                                'close'            => 'بستن',
+                                'description'      => 'اطلاعات رزرو',
+                                'description-info' => 'بر اساس اسلات‌ها، مدت زمان ساخته شده و قابل مشاهده خواهد بود.',
+                                'edit'             => 'ویرایش',
+                                'many'             => 'رزروهای زیاد برای یک روز',
+
+                                'modal'            => [
+                                    'slot' => [
+                                        'add-title'  => 'افزودن اسلات',
+                                        'close'      => 'بستن',
+                                        'day'        => 'روز',
+                                        'edit-title' => 'ویرایش اسلات‌ها',
+                                        'friday'     => 'جمعه',
+                                        'from'       => 'از',
+                                        'from-day'   => 'از روز',
+                                        'from-time'  => 'از زمان',
+                                        'monday'     => 'دوشنبه',
+                                        'open'       => 'باز کردن',
+                                        'saturday'   => 'شنبه',
+                                        'save'       => 'ذخیره',
+                                        'select'     => 'انتخاب',
+                                        'status'     => 'وضعیت',
+                                        'sunday'     => 'یک‌شنبه',
+                                        'thursday'   => 'پنج‌شنبه',
+                                        'to'         => 'تا',
+                                        'to-day'     => 'تا روز',
+                                        'to-time'    => 'تا زمان',
+                                        'tuesday'    => 'سه‌شنبه',
+                                        'wednesday'  => 'چهارشنبه',
+                                        'week'       => ':day',
                                     ],
                                 ],
 
@@ -294,7 +528,7 @@ return [
                             'select-slot'        => 'انتخاب شکاف',
                             'select-time-slot'   => 'Time Slot را انتخاب کنید',
                             'slot'               => 'شکاف',
-                            'to'                 => 'تا',
+                            'to'                 => 'انتخابتا',
                         ],
 
                         'slot-duration-in-minutes' => ':minutes دقیقه',

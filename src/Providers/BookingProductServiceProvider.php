@@ -30,6 +30,18 @@ class BookingProductServiceProvider extends ServiceProvider
         $this->app->register(EventServiceProvider::class);
 
         $this->app->register(ModuleServiceProvider::class);
+
+        if (core()->getConfigData('marketplace.settings.general.status')) {
+            $this->mergeConfigFrom(
+                dirname(__DIR__) . '/Config/product_types.php',
+                'product_types'
+            );
+
+            $this->mergeConfigFrom(
+                dirname(__DIR__) . '/Config/menu.php',
+                'menu.admin'
+            );
+        }
     }
 
     /**
@@ -38,12 +50,6 @@ class BookingProductServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->registerCommands();
-
-        $this->mergeConfigFrom(dirname(__DIR__).'/Config/product_types.php', 'product_types');
-
-        $this->mergeConfigFrom(
-            dirname(__DIR__).'/Config/menu.php', 'menu.admin'
-        );
     }
 
     /**

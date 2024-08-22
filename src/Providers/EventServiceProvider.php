@@ -42,6 +42,13 @@ class EventServiceProvider extends ServiceProvider
             }
         });
 
+        // Marketplace event for adding booking type
+        Event::listen('marketplace.seller.account.products.edit.videos.after', static function (ViewRenderEventManager $viewRenderEventManager) {
+            if (View::exists('booking::mp-seller.catalog.products.edit.types.booking')) {
+                $viewRenderEventManager->addTemplate('booking::mp-seller.catalog.products.edit.types.booking');
+            }
+        });
+
         Event::listen('bagisto.shop.products.short_description.after', static function (ViewRenderEventManager $viewRenderEventManager) {
             if (View::exists('booking::shop.products.view.types.booking')) {
                 $viewRenderEventManager->addTemplate('booking::shop.products.view.types.booking');
