@@ -39,10 +39,14 @@ class BookingProductServiceProvider extends ServiceProvider
     {
         $this->registerCommands();
 
-        $this->mergeConfigFrom(dirname(__DIR__).'/Config/product_types.php', 'product_types');
+        $this->mergeConfigFrom(
+            dirname(__DIR__) . '/Config/product_types.php',
+            'product_types'
+        );
 
         $this->mergeConfigFrom(
-            dirname(__DIR__).'/Config/menu.php', 'menu.admin'
+            dirname(__DIR__) . '/Config/menu.php',
+            'menu.admin'
         );
     }
 

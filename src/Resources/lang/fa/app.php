@@ -60,6 +60,7 @@ return [
                                         'tuesday'    => 'سه‌شنبه',
                                         'wednesday'  => 'چهارشنبه',
                                         'week'       => ':day',
+                                        'warning'    => 'اسلات از قبل وجود دارد',
                                     ],
                                 ],
 
@@ -294,7 +295,7 @@ return [
                             'select-slot'        => 'انتخاب شکاف',
                             'select-time-slot'   => 'Time Slot را انتخاب کنید',
                             'slot'               => 'شکاف',
-                            'to'                 => 'تا',
+                            'to'                 => 'انتخابتا',
                         ],
 
                         'slot-duration-in-minutes' => ':minutes دقیقه',

@@ -60,6 +60,7 @@ return [
                                         'tuesday'    => 'Martedì',
                                         'wednesday'  => 'Mercoledì',
                                         'week'       => ':day',
+                                        'warning'    => 'Lo slot esiste già',
                                     ],
                                 ],
 

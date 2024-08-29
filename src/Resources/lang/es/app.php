@@ -60,6 +60,7 @@ return [
                                         'tuesday'    => 'Martes',
                                         'wednesday'  => 'Miércoles',
                                         'week'       => ':day',
+                                        'warning'    => 'La ranura ya existe',
                                     ],
                                 ],
 
@@ -294,7 +295,7 @@ return [
                             'select-slot'        => 'Seleccionar Ranura',
                             'select-time-slot'   => 'Seleccionar franja horaria',
                             'slot'               => 'Ranura',
-                            'to'                 => 'Hasta',
+                            'to'                 => 'Hasta Fecha',
                         ],
 
                         'slot-duration-in-minutes' => ':minutes Minutos',

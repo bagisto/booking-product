@@ -60,6 +60,7 @@ return [
                                         'tuesday'    => 'අඟහරුවාදා',
                                         'wednesday'  => 'බදාදා',
                                         'week'       => ':day',
+                                        'warning'    => 'Slot දැනටමත් පවතී',
                                     ],
                                 ],
 

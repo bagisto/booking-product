@@ -60,6 +60,7 @@ return [
                                         'tuesday'    => 'मंगलवार',
                                         'wednesday'  => 'बुधवार',
                                         'week'       => ':day',
+                                        'warning'    => 'स्लॉट पहले से मौजूद है',
                                     ],
                                 ],
 

@@ -60,6 +60,7 @@ return [
                                         'tuesday'    => 'Wtorek',
                                         'wednesday'  => 'Środa',
                                         'week'       => ':day',
+                                        'warning'    => 'Gniazdo już istnieje',
                                     ],
                                 ],
 
@@ -233,7 +234,7 @@ return [
             ],
         ],
     ],
-
+    
     'shop'  => [
         'products' => [
             'booking' => [

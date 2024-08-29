@@ -60,6 +60,7 @@ return [
                                         'tuesday'    => 'মঙ্গলবার',
                                         'wednesday'  => 'বুধবার',
                                         'week'       => ':day',
+                                        'warning'    => 'স্লট ইতিমধ্যেই বিদ্যমান',
                                     ],
                                 ],
 
@@ -294,7 +295,7 @@ return [
                             'select-slot'        => 'স্লট নির্বাচন করুন',
                             'select-time-slot'   => 'টাইম স্লট নির্বাচন করুন',
                             'slot'               => 'স্লট',
-                            'to'                 => 'পর্যন্ত',
+                            'to'                 => 'পর্যন্ত নির্বাচন করুন',
                         ],
 
                         'slot-duration-in-minutes' => ':minutes মিনিট',

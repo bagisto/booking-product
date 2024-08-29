@@ -36,7 +36,7 @@
                     <!-- Contecnt -->
                     <template #event="{ event, view }">
                         <div
-                            class="slot relative h-full border-l-4 rounded-l text-left text-xs cursor-pointer"
+                            class="slot relative h-full cursor-pointer rounded-l border-l-4 text-left text-xs"
                             :class="[
                                 event.status === 'pending' ? 'bg-yellow-100 border-yellow-500' :
                                 event.status === 'completed' ? 'bg-green-100 border-green-500' :
@@ -74,7 +74,7 @@
                 <!-- Modal Content -->
                 <x-slot:content>
                     <div class="grid text-sm font-normal">
-                        <div class="grid grid-cols-1 gap-2.5 pb-4 border-b">
+                        <div class="grid grid-cols-1 gap-2.5 border-b pb-4">
                             <div class="grid grid-cols-[100px_auto] gap-2">
                                 <div
                                     class="text-gray-500"
@@ -102,7 +102,7 @@
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-[80px_80px_auto] gap-2.5 py-4 border-b">
+                        <div class="grid grid-cols-[80px_80px_auto] gap-2.5 border-b py-4">
                             <div class="grid grid-cols-1 gap-2">
                                 <div
                                     class="text-gray-500"
@@ -137,7 +137,7 @@
                                 </div>
 
                                 <div
-                                    class="w-fit px-2.5 py-1 text-white font-medium rounded-2xl "
+                                    class="w-fit rounded-2xl px-2.5 py-1 font-medium text-white"
                                     :class="[
                                         event.status === 'pending' ? 'bg-yellow-500' :
                                         event.status === 'completed' ? 'bg-darkGreen' :
@@ -158,16 +158,16 @@
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 gap-2.5 pt-4 items-center font-medium text-[#1F2937]">
+                        <div class="grid grid-cols-1 items-center gap-2.5 pt-4 font-medium text-[#1F2937]">
                             <!-- Customer Name -->
-                            <div class="flex gap-2 items-center">
+                            <div class="flex items-center gap-2">
                                 <span class="icon-customer-2 text-2xl text-gray-500"></span>
 
                                 <span v-text="event.full_name"></span>
                             </div>
 
                             <!-- Customer Email -->
-                            <div class="flex gap-2 items-center">
+                            <div class="flex items-center gap-2">
                                 <span class="icon-mail text-2xl text-gray-500"></span>
 
                                 <span v-text="event.email"></span>

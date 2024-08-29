@@ -60,6 +60,7 @@ return [
                                         'tuesday'    => 'יום שלישי',
                                         'wednesday'  => 'יום רביעי',
                                         'week'       => ':day',
+                                        'warning'    => 'Slot already exist',
                                     ],
                                 ],
 

@@ -60,6 +60,7 @@ return [
                                         'tuesday'    => 'Salı',
                                         'wednesday'  => 'Çarşamba',
                                         'week'       => ':day',
+                                        'warning'    => 'Yuva zaten mevcut',
                                     ],
                                 ],
 
@@ -233,7 +234,7 @@ return [
             ],
         ],
     ],
-
+    
     'shop'  => [
         'products' => [
             'booking' => [

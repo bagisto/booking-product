@@ -60,6 +60,7 @@ return [
                                         'tuesday'    => '星期二',
                                         'wednesday'  => '星期三',
                                         'week'       => ':day',
+                                        'warning'    => '插槽已存在',
                                     ],
                                 ],
 

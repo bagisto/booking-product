@@ -60,6 +60,7 @@ return [
                                         'tuesday'    => '火曜日',
                                         'wednesday'  => '水曜日',
                                         'week'       => ':day',
+                                        'warning'    => 'スロットはすでに存在します',
                                     ],
                                 ],
 

@@ -60,6 +60,7 @@ return [
                                         'tuesday'    => 'Dienstag',
                                         'wednesday'  => 'Mittwoch',
                                         'week'       => ':day',
+                                        'warning'    => 'Slot existiert bereits',
                                     ],
                                 ],
 
@@ -294,7 +295,7 @@ return [
                             'select-slot'        => 'Slot auswählen',
                             'select-time-slot'   => 'Wählen Sie Zeitfenster',
                             'slot'               => 'Slot',
-                            'to'                 => 'Bis',
+                            'to'                 => 'Bis wählen',
                         ],
 
                         'slot-duration-in-minutes' => ':minutes Minuten',

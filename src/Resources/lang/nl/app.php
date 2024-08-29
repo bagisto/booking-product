@@ -60,6 +60,7 @@ return [
                                         'tuesday'    => 'Dinsdag',
                                         'wednesday'  => 'Woensdag',
                                         'week'       => ':day',
+                                        'warning'    => 'Slot bestaat al',
                                     ],
                                 ],
 

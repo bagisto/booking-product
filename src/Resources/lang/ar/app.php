@@ -4,11 +4,11 @@ return [
     'admin' => [
         'catalog' => [
             'products' => [
-                'edit'  => [
-                    'types'   => [
+                'edit' => [
+                    'types' => [
                         'booking' => [
-                            'available-from'       => 'متاح من',
-                            'available-to'         => 'متاح إلى',
+                            'available-from' => 'متاح من',
+                            'available-to'   => 'متاح إلى',
 
                             'available-every-week' => [
                                 'no'    => 'لا',
@@ -17,8 +17,8 @@ return [
                             ],
 
                             'appointment' => [
-                                'break-duration'         => 'وقت الراحة بين الفترات (دقائق)',
-                                'slot-duration'          => 'مدة الفترة (دقائق)',
+                                'break-duration' => 'وقت الراحة بين الفترات (دقائق)',
+                                'slot-duration'  => 'مدة الفترة (دقائق)',
 
                                 'same-slot-for-all-days' => [
                                     'no'    => 'لا',
@@ -27,7 +27,7 @@ return [
                                 ],
                             ],
 
-                            'default'     => [
+                            'default' => [
                                 'add'              => 'إضافة',
                                 'break-duration'   => 'وقت الراحة بين الفترات (دقائق)',
                                 'close'            => 'إغلاق',
@@ -36,7 +36,7 @@ return [
                                 'edit'             => 'تعديل',
                                 'many'             => 'العديد من الحجوزات ليوم واحد',
 
-                                'modal'            => [
+                                'modal' => [
                                     'slot' => [
                                         'add-title'  => 'إضافة فتحة',
                                         'close'      => 'إغلاق',
@@ -60,26 +60,27 @@ return [
                                         'tuesday'    => 'الثلاثاء',
                                         'wednesday'  => 'الأربعاء',
                                         'week'       => ':day',
+                                        'warning'    => 'الفتحة موجودة بالفعل',
                                     ],
                                 ],
 
-                                'one'              => 'حجز واحد لعدة أيام',
-                                'open'             => 'فتح',
-                                'slot-add'         => 'إضافة فترات',
-                                'slot-duration'    => 'مدة الفترة (دقائق)',
-                                'slot-title'       => 'مدة زمنية للفترات',
-                                'title'            => 'افتراضي',
-                                'unavailable'      => 'غير متوفره',
+                                'one'           => 'حجز واحد لعدة أيام',
+                                'open'          => 'فتح',
+                                'slot-add'      => 'إضافة فترات',
+                                'slot-duration' => 'مدة الفترة (دقائق)',
+                                'slot-title'    => 'مدة زمنية للفترات',
+                                'title'         => 'افتراضي',
+                                'unavailable'   => 'غير متوفره',
                             ],
 
-                            'event'       => [
-                                'add'                => 'إضافة تذاكر',
-                                'delete'             => 'حذف',
-                                'description'        => 'الوصف',
-                                'description-info'   => 'لا تتوفر تذاكر.',
-                                'edit'               => 'تعديل',
+                            'event' => [
+                                'add'              => 'إضافة تذاكر',
+                                'delete'           => 'حذف',
+                                'description'      => 'الوصف',
+                                'description-info' => 'لا تتوفر تذاكر.',
+                                'edit'             => 'تعديل',
 
-                                'modal'              => [
+                                'modal' => [
                                     'edit' => 'تحرير التذاكر',
                                     'save' => 'حفظ',
                                 ],
@@ -95,26 +96,26 @@ return [
                                 'valid-until'        => 'صالح حتى',
                             ],
 
-                            'empty-info'  => [
+                            'empty-info' => [
                                 'tickets' => [
                                     'add' => 'إضافة تذاكر',
                                 ],
 
-                                'slots'   => [
+                                'slots' => [
                                     'add'         => 'إضافة فترات',
                                     'description' => 'الفترات المتاحة مع مدة زمنية.',
                                 ],
                             ],
 
-                            'location'             => 'الموقع',
-                            'qty'                  => 'الكمية',
+                            'location' => 'الموقع',
+                            'qty'      => 'الكمية',
 
-                            'rental'      => [
-                                'daily'                  => 'يومي',
-                                'daily-hourly'           => 'كليهما (يومي وساعي)',
-                                'daily-price'            => 'السعر اليومي',
-                                'hourly'                 => 'ساعي',
-                                'hourly-price'           => 'السعر الساعي',
+                            'rental' => [
+                                'daily'        => 'يومي',
+                                'daily-hourly' => 'كليهما (يومي وساعي)',
+                                'daily-price'  => 'السعر اليومي',
+                                'hourly'       => 'ساعي',
+                                'hourly-price' => 'السعر الساعي',
 
                                 'same-slot-for-all-days' => [
                                     'no'    => 'لا',
@@ -122,44 +123,44 @@ return [
                                     'yes'   => 'نعم',
                                 ],
 
-                                'title'                  => 'نوع الإيجار',
+                                'title' => 'نوع الإيجار',
                             ],
 
-                            'slots'       => [
-                                'add'              => 'إضافة فترات',
+                            'slots' => [
+                                'add' => 'إضافة فترات',
 
-                                'action'           => [
+                                'action' => [
                                     'add' => 'إضافة',
                                 ],
 
                                 'description-info' => 'وفقًا للفترات، سيتم إنشاء مدة الزمن ويمكن رؤيتها.',
 
-                                'modal'            => [
+                                'modal' => [
                                     'slot' => [
-                                        'friday'     => 'الجمعة',
-                                        'from'       => 'من',
-                                        'monday'     => 'الاثنين',
-                                        'saturday'   => 'السبت',
-                                        'sunday'     => 'الأحد',
-                                        'thursday'   => 'الخميس',
-                                        'to'         => 'إلى',
-                                        'tuesday'    => 'الثلاثاء',
-                                        'wednesday'  => 'الأربعاء',
+                                        'friday'    => 'الجمعة',
+                                        'from'      => 'من',
+                                        'monday'    => 'الاثنين',
+                                        'saturday'  => 'السبت',
+                                        'sunday'    => 'الأحد',
+                                        'thursday'  => 'الخميس',
+                                        'to'        => 'إلى',
+                                        'tuesday'   => 'الثلاثاء',
+                                        'wednesday' => 'الأربعاء',
                                     ],
                                 ],
 
-                                'save'             => 'حفظ',
-                                'title'            => 'مدة زمنية للفترات',
-                                'unavailable'      => 'غير متاح',
+                                'save'        => 'حفظ',
+                                'title'       => 'مدة زمنية للفترات',
+                                'unavailable' => 'غير متاح',
                             ],
 
-                            'table'       => [
-                                'break-duration'            => 'وقت الراحة بين الفترات (دقائق)',
+                            'table' => [
+                                'break-duration' => 'وقت الراحة بين الفترات (دقائق)',
 
-                                'charged-per'               => [
-                                    'guest'  => 'الزائر',
-                                    'table'  => 'المقاعد',
-                                    'title'  => 'يتم التحقيق من',
+                                'charged-per' => [
+                                    'guest' => 'الزائر',
+                                    'table' => 'المقاعد',
+                                    'title' => 'يتم التحقيق من',
                                 ],
 
                                 'guest-capacity'            => 'سعة الزائر',
@@ -167,7 +168,7 @@ return [
                                 'prevent-scheduling-before' => 'منع الجدولة قبل',
                                 'slot-duration'             => 'مدة الفترة (دقائق)',
 
-                                'same-slot-for-all-days'    => [
+                                'same-slot-for-all-days' => [
                                     'no'    => 'لا',
                                     'title' => 'نفس الفترة لجميع الأيام',
                                     'yes'   => 'نعم',
@@ -185,7 +186,7 @@ return [
                                 'title'       => 'النوع',
                             ],
 
-                            'title'                => 'نوع الحجز',
+                            'title' => 'نوع الحجز',
                         ],
                     ],
                 ],
@@ -200,7 +201,7 @@ return [
             ],
         ],
 
-        'sales'   => [
+        'sales' => [
             'bookings' => [
                 'calendar' => [
                     'booking-date'     => 'تاريخ الحجز',
@@ -226,7 +227,7 @@ return [
                         'to'           => 'إلى',
                     ],
 
-                    'title'    => 'منتجات الحجوزات',
+                    'title' => 'منتجات الحجوزات',
                 ],
 
                 'title' => 'منتجات الحجوزات',
@@ -234,12 +235,12 @@ return [
         ],
     ],
 
-    'shop'  => [
+    'shop' => [
         'products' => [
             'booking' => [
                 'closed' => 'مغلق',
 
-                'cart'   => [
+                'cart' => [
                     'booking-from' => 'الحجز من تاريخ',
                     'booking-till' => 'الحجز حتى تاريخ',
                     'daily'        => 'أساس يومي',
@@ -249,7 +250,7 @@ return [
                     'hourly'       => 'بالساعة',
 
                     'integrity' => [
-                        'event'                  => [
+                        'event' => [
                             'expired' => 'انتهت هذه الفعالية.',
                         ],
 
@@ -268,7 +269,7 @@ return [
                 'per-ticket-price' => ':price لكل تذكرة',
             ],
 
-            'view'    => [
+            'view' => [
                 'types' => [
                     'booking' => [
                         'appointment' => [
@@ -280,10 +281,10 @@ return [
                             'book-your-ticket' => 'احجز تذكرتك',
                         ],
 
-                        'event-on'                 => 'الحدث في',
-                        'location'                 => 'الموقع',
+                        'event-on' => 'الحدث في',
+                        'location' => 'الموقع',
 
-                        'rental'      => [
+                        'rental' => [
                             'choose-rent-option' => 'اختر خيار الإيجار',
                             'daily-basis'        => 'على أساس يومي',
                             'from'               => 'من',
@@ -294,7 +295,7 @@ return [
                             'select-slot'        => 'اختر الفترة',
                             'select-time-slot'   => 'حدد فتحة زمنية',
                             'slot'               => 'فترة',
-                            'to'                 => 'إلى',
+                            'to'                 => 'إلىاختر',
                         ],
 
                         'slot-duration-in-minutes' => ':minutes دقائق',
@@ -308,7 +309,7 @@ return [
                             'title'               => 'الفترة',
                         ],
     
-                        'table'       => [
+                        'table' => [
                             'book-a-table'       => 'احجز طاولة',
                             'closed'             => 'مغلق',
                             'slots-for-all-days' => 'عرض لكل الأيام',
@@ -316,7 +317,7 @@ return [
                             'today-availability' => 'التوافر اليوم',
                         ],
 
-                        'view-on-map'              => 'عرض على الخريطة',
+                        'view-on-map' => 'عرض على الخريطة',
                     ],
                 ],
             ],

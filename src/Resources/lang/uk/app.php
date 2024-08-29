@@ -60,6 +60,7 @@ return [
                                         'tuesday'    => 'Вівторок',
                                         'wednesday'  => 'Середа',
                                         'week'       => ':day',
+                                        'warning'    => 'Слот вже існує',
                                     ],
                                 ],
 

@@ -60,6 +60,7 @@ return [
                                         'tuesday'    => 'Mardi',
                                         'wednesday'  => 'Mercredi',
                                         'week'       => ':day',
+                                        'warning'    => 'Un emplacement existe déjà',
                                     ],
                                 ],
 
@@ -294,7 +295,7 @@ return [
                             'select-slot'        => 'Sélectionner un créneau',
                             'select-time-slot'   => 'Sélectionnez un créneau horaire',
                             'slot'               => 'Créneau',
-                            'to'                 => 'À',
+                            'to'                 => 'À date',
                         ],
 
                         'slot-duration-in-minutes' => ':minutes minutes',
