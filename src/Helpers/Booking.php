@@ -305,6 +305,10 @@ class Booking
             return $data;
         }
 
+        $locale = app()->getLocale();
+        
+        Carbon::setlocale($locale);
+
         switch ($bookingProduct->type) {
             case 'event':
                 $ticket = $bookingProduct->event_tickets()->find($data['booking']['ticket_id']);
@@ -317,11 +321,11 @@ class Booking
                     ], [
                         'attribute_name' => trans('booking::app.shop.products.booking.cart.event-from'),
                         'option_id'      => 0,
-                        'option_label'   => Carbon::createFromTimeString($bookingProduct->available_from)->format('d F, Y'),
+                        'option_label'   => Carbon::createFromTimeString($bookingProduct->available_from)->translatedFormat('l j F, Y'),
                     ], [
                         'attribute_name' => trans('booking::app.shop.products.booking.cart.event-till'),
                         'option_id'      => 0,
-                        'option_label'   => Carbon::createFromTimeString($bookingProduct->available_to)->format('d F, Y'),
+                        'option_label'   => Carbon::createFromTimeString($bookingProduct->available_to)->translatedFormat('l j F, Y'),
                     ],
                 ];
 
@@ -330,13 +334,13 @@ class Booking
                 $rentingType = $data['booking']['renting_type'] ?? $bookingProduct->rental_slot->renting_type;
 
                 if ($rentingType == 'daily') {
-                    $from = Carbon::createFromTimeString($data['booking']['date_from'].' 00:00:01')->format('d F, Y');
+                    $from = Carbon::createFromTimeString($data['booking']['date_from'].' 00:00:01')->translatedFormat('l j F, Y');
 
-                    $to = Carbon::createFromTimeString($data['booking']['date_to'].' 23:59:59')->format('d F, Y');
+                    $to = Carbon::createFromTimeString($data['booking']['date_to'].' 23:59:59')->translatedFormat('l j F, Y');
                 } else {
-                    $from = Carbon::createFromTimestamp($data['booking']['slot']['from'])->format('d F, Y h:i A');
+                    $from = Carbon::createFromTimestamp($data['booking']['slot']['from'])->translatedFormat('l j F, Y h:i A');
 
-                    $to = Carbon::createFromTimestamp($data['booking']['slot']['to'])->format('d F, Y h:i A');
+                    $to = Carbon::createFromTimestamp($data['booking']['slot']['to'])->translatedFormat('l j F, Y h:i A');
                 }
 
                 $data['attributes'] = [
@@ -389,11 +393,11 @@ class Booking
                     [
                         'attribute_name' => trans('booking::app.shop.products.booking.cart.booking-from'),
                         'option_id'      => 0,
-                        'option_label'   => Carbon::createFromTimestamp($timestamps[0])->format('d F, Y h:i A'),
+                        'option_label'   => Carbon::createFromTimestamp($timestamps[0])->format('l j F, Y h:i A'),
                     ], [
                         'attribute_name' => trans('booking::app.shop.products.booking.cart.booking-till'),
                         'option_id'      => 0,
-                        'option_label'   => Carbon::createFromTimestamp($timestamps[1])->format('d F, Y h:i A'),
+                        'option_label'   => Carbon::createFromTimestamp($timestamps[1])->format('l j F, Y h:i A'),
                     ],
                 ];
 

@@ -17,10 +17,17 @@ class BookingDataGrid extends DataGrid
     {
         $queryBuilder = DB::table('bookings')
             ->leftJoin('orders', 'bookings.order_id', '=', 'orders.id')
-            ->select('bookings.id as id', 'orders.increment_id as order_id', 'bookings.from as from', 'bookings.to as to', 'bookings.qty as qty', 'orders.created_at as created_at');
+            ->select(
+                'bookings.id as id',
+                'orders.id as order_id',
+                'bookings.from_format as from_format',
+                'bookings.to_format as to_format',
+                'bookings.qty as qty',
+                'orders.created_at as created_at'
+            );
 
         $this->addFilter('id', 'bookings.id');
-        $this->addFilter('order_id', 'orders.increment_id');
+        $this->addFilter('order_id', 'orders.id');
         $this->addFilter('qty', 'bookings.qty');
         $this->addFilter('created_at', 'orders.created_at');
 
@@ -62,26 +69,26 @@ class BookingDataGrid extends DataGrid
         ]);
 
         $this->addColumn([
-            'index'      => 'from',
+            'index'      => 'from_format',
             'label'      => trans('booking::app.admin.sales.bookings.index.datagrid.from'),
             'type'       => 'string',
             'searchable' => true,
             'sortable'   => true,
             'filterable' => false,
-            'closure'    => function ($value) {
-                return Carbon::createFromTimestamp($value->from)->format('d F, Y H:iA');
+            'closure'    => function ($row) {
+                return Carbon::createFromTimeString($row->from_format)->format('d F, Y H:i A');
             },
         ]);
 
         $this->addColumn([
-            'index'      => 'to',
+            'index'      => 'to_format',
             'label'      => trans('booking::app.admin.sales.bookings.index.datagrid.to'),
             'type'       => 'string',
             'searchable' => true,
             'sortable'   => true,
             'filterable' => false,
-            'closure'    => function ($value) {
-                return Carbon::createFromTimestamp($value->to)->format('d F, Y H:iA');
+            'closure'    => function ($row) {
+                return Carbon::createFromTimeString($row->to_format)->format('d F, Y H:i A');
             },
         ]);
 

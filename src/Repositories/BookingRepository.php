@@ -58,7 +58,9 @@ class BookingRepository extends Repository
             $booking = parent::create([
                 'qty'                             => $item->qty_ordered,
                 'from'                            => $from,
+                'from_format'                     => Carbon::createFromTimeString($bookingItem['date_from'].' 00:00:00'),
                 'to'                              => $to,
+                'to_format'                       => Carbon::createFromTimeString($bookingItem['date_to'].' 23:59:59'),
                 'order_id'                        => $order->id,
                 'order_item_id'                   => $item->id,
                 'product_id'                      => $item->product_id,
