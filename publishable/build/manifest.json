@@ -1,376 +1,226 @@
 {
-  "../Admin/src/Resources/assets/fonts/bagisto-admin.woff": {
-    "file": "assets/bagisto-admin-37c2feba.woff",
-    "src": "../Admin/src/Resources/assets/fonts/bagisto-admin.woff"
-  },
-  "../Admin/src/Resources/assets/images/average-orders.svg": {
-    "file": "assets/average-orders-71c4bf9a.svg",
-    "src": "../Admin/src/Resources/assets/images/average-orders.svg"
-  },
-  "../Admin/src/Resources/assets/images/customers.svg": {
-    "file": "assets/customers-199df769.svg",
-    "src": "../Admin/src/Resources/assets/images/customers.svg"
-  },
-  "../Admin/src/Resources/assets/images/dark-logo.svg": {
-    "file": "assets/dark-logo-ea7984e7.svg",
-    "src": "../Admin/src/Resources/assets/images/dark-logo.svg"
-  },
-  "../Admin/src/Resources/assets/images/empty-placeholders/customers.svg": {
-    "file": "assets/customers-57f8166b.svg",
-    "src": "../Admin/src/Resources/assets/images/empty-placeholders/customers.svg"
-  },
-  "../Admin/src/Resources/assets/images/empty-placeholders/default.svg": {
-    "file": "assets/default-2c56169a.svg",
-    "src": "../Admin/src/Resources/assets/images/empty-placeholders/default.svg"
-  },
-  "../Admin/src/Resources/assets/images/empty-placeholders/orders.svg": {
-    "file": "assets/orders-5dd62d9d.svg",
-    "src": "../Admin/src/Resources/assets/images/empty-placeholders/orders.svg"
-  },
-  "../Admin/src/Resources/assets/images/empty-placeholders/report-empty.svg": {
-    "file": "assets/report-empty-c3bb4a01.svg",
-    "src": "../Admin/src/Resources/assets/images/empty-placeholders/report-empty.svg"
-  },
-  "../Admin/src/Resources/assets/images/empty-placeholders/reviews.svg": {
-    "file": "assets/reviews-17309002.svg",
-    "src": "../Admin/src/Resources/assets/images/empty-placeholders/reviews.svg"
-  },
-  "../Admin/src/Resources/assets/images/error.svg": {
-    "file": "assets/error-4179d5c7.svg",
-    "src": "../Admin/src/Resources/assets/images/error.svg"
-  },
-  "../Admin/src/Resources/assets/images/favicon.ico": {
-    "file": "assets/favicon-a4003609.ico",
-    "src": "../Admin/src/Resources/assets/images/favicon.ico"
-  },
-  "../Admin/src/Resources/assets/images/icon-add-product.svg": {
-    "file": "assets/icon-add-product-e3232d62.svg",
-    "src": "../Admin/src/Resources/assets/images/icon-add-product.svg"
-  },
-  "../Admin/src/Resources/assets/images/icon-discount.svg": {
-    "file": "assets/icon-discount-e37d1aed.svg",
-    "src": "../Admin/src/Resources/assets/images/icon-discount.svg"
-  },
-  "../Admin/src/Resources/assets/images/icon-options.svg": {
-    "file": "assets/icon-options-ebfcd268.svg",
-    "src": "../Admin/src/Resources/assets/images/settings/shipping-method.svg"
-  },
-  "../Admin/src/Resources/assets/images/logo.svg": {
-    "file": "assets/logo-f02a1643.svg",
-    "src": "../Admin/src/Resources/assets/images/logo.svg"
-  },
-  "../Admin/src/Resources/assets/images/product-placeholders/front.svg": {
-    "file": "assets/front-93490c30.svg",
-    "src": "../Admin/src/Resources/assets/images/product-placeholders/front.svg"
-  },
-  "../Admin/src/Resources/assets/images/product-placeholders/next-1.svg": {
-    "file": "assets/next-1-91bb148a.svg",
-    "src": "../Admin/src/Resources/assets/images/product-placeholders/next-1.svg"
-  },
-  "../Admin/src/Resources/assets/images/product-placeholders/next-2.svg": {
-    "file": "assets/next-2-6aace5ca.svg",
-    "src": "../Admin/src/Resources/assets/images/product-placeholders/next-2.svg"
-  },
-  "../Admin/src/Resources/assets/images/product-placeholders/size.svg": {
-    "file": "assets/size-04e2a252.svg",
-    "src": "../Admin/src/Resources/assets/images/product-placeholders/size.svg"
-  },
-  "../Admin/src/Resources/assets/images/product-placeholders/use-cases.svg": {
-    "file": "assets/use-cases-4a33de1a.svg",
-    "src": "../Admin/src/Resources/assets/images/product-placeholders/use-cases.svg"
-  },
-  "../Admin/src/Resources/assets/images/product-placeholders/zoom.svg": {
-    "file": "assets/zoom-0c75bed3.svg",
-    "src": "../Admin/src/Resources/assets/images/product-placeholders/zoom.svg"
-  },
-  "../Admin/src/Resources/assets/images/settings/address.svg": {
-    "file": "assets/address-c3d46b29.svg",
-    "src": "../Admin/src/Resources/assets/images/settings/address.svg"
-  },
-  "../Admin/src/Resources/assets/images/settings/captcha.svg": {
-    "file": "assets/captcha-061d77ab.svg",
-    "src": "../Admin/src/Resources/assets/images/settings/captcha.svg"
-  },
-  "../Admin/src/Resources/assets/images/settings/email.svg": {
-    "file": "assets/email-5653e8d5.svg",
-    "src": "../Admin/src/Resources/assets/images/settings/email.svg"
-  },
-  "../Admin/src/Resources/assets/images/settings/invoice.svg": {
-    "file": "assets/invoice-bbc6d6a8.svg",
-    "src": "../Admin/src/Resources/assets/images/settings/invoice.svg"
-  },
-  "../Admin/src/Resources/assets/images/settings/magic-ai.svg": {
-    "file": "assets/magic-ai-2b88cb86.svg",
-    "src": "../Admin/src/Resources/assets/images/settings/magic-ai.svg"
-  },
-  "../Admin/src/Resources/assets/images/settings/order.svg": {
-    "file": "assets/order-c8714dda.svg",
-    "src": "../Admin/src/Resources/assets/images/settings/order.svg"
-  },
-  "../Admin/src/Resources/assets/images/settings/payment-method.svg": {
-    "file": "assets/payment-method-10ea91e1.svg",
-    "src": "../Admin/src/Resources/assets/images/settings/payment-method.svg"
-  },
-  "../Admin/src/Resources/assets/images/settings/product.svg": {
-    "file": "assets/product-357134fb.svg",
-    "src": "../Admin/src/Resources/assets/images/settings/product.svg"
-  },
-  "../Admin/src/Resources/assets/images/settings/settings.svg": {
-    "file": "assets/settings-26b93165.svg",
-    "src": "../Admin/src/Resources/assets/images/settings/settings.svg"
-  },
-  "../Admin/src/Resources/assets/images/settings/shipping-method.svg": {
-    "file": "assets/icon-options-ebfcd268.svg",
-    "src": "../Admin/src/Resources/assets/images/settings/shipping-method.svg"
-  },
-  "../Admin/src/Resources/assets/images/settings/shipping.svg": {
-    "file": "assets/shipping-ceb1cb37.svg",
-    "src": "../Admin/src/Resources/assets/images/settings/shipping.svg"
-  },
-  "../Admin/src/Resources/assets/images/settings/store-information.svg": {
-    "file": "assets/store-information-a7d64429.svg",
-    "src": "../Admin/src/Resources/assets/images/settings/store-information.svg"
-  },
-  "../Admin/src/Resources/assets/images/settings/store.svg": {
-    "file": "assets/store-8d27c0df.svg",
-    "src": "../Admin/src/Resources/assets/images/settings/store.svg"
-  },
-  "../Admin/src/Resources/assets/images/settings/tax.svg": {
-    "file": "assets/tax-20f847de.svg",
-    "src": "../Admin/src/Resources/assets/images/settings/tax.svg"
-  },
-  "../Admin/src/Resources/assets/images/settings/theme.svg": {
-    "file": "assets/theme-f4d870b8.svg",
-    "src": "../Admin/src/Resources/assets/images/settings/theme.svg"
-  },
-  "../Admin/src/Resources/assets/images/spinner.svg": {
-    "file": "assets/spinner-08c27ad5.svg",
-    "src": "../Admin/src/Resources/assets/images/spinner.svg"
-  },
-  "../Admin/src/Resources/assets/images/total-orders.svg": {
-    "file": "assets/total-orders-f1b2017e.svg",
-    "src": "../Admin/src/Resources/assets/images/total-orders.svg"
-  },
-  "../Admin/src/Resources/assets/images/total-sales.svg": {
-    "file": "assets/total-sales-5b2c7b58.svg",
-    "src": "../Admin/src/Resources/assets/images/total-sales.svg"
-  },
-  "../Admin/src/Resources/assets/images/unpaid-invoices.svg": {
-    "file": "assets/unpaid-invoices-6c51662d.svg",
-    "src": "../Admin/src/Resources/assets/images/unpaid-invoices.svg"
-  },
   "node_modules/vue-cal/dist/drag-and-drop.es.js": {
-    "file": "assets/drag-and-drop.es-801b9187.js",
+    "file": "assets/drag-and-drop.es-0df93f71.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/drag-and-drop.es.js"
   },
   "node_modules/vue-cal/dist/i18n/ar.es.js": {
-    "file": "assets/ar.es-4173cb29.js",
+    "file": "assets/ar.es-2968a13f.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/ar.es.js"
   },
   "node_modules/vue-cal/dist/i18n/bg.es.js": {
-    "file": "assets/bg.es-3542f853.js",
+    "file": "assets/bg.es-182cdcb3.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/bg.es.js"
   },
   "node_modules/vue-cal/dist/i18n/bn.es.js": {
-    "file": "assets/bn.es-55ab5212.js",
+    "file": "assets/bn.es-3f8773a4.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/bn.es.js"
   },
   "node_modules/vue-cal/dist/i18n/bs.es.js": {
-    "file": "assets/bs.es-ba9dd541.js",
+    "file": "assets/bs.es-47a220af.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/bs.es.js"
   },
   "node_modules/vue-cal/dist/i18n/ca.es.js": {
-    "file": "assets/ca.es-3f4af411.js",
+    "file": "assets/ca.es-47a49a5a.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/ca.es.js"
   },
   "node_modules/vue-cal/dist/i18n/cs.es.js": {
-    "file": "assets/cs.es-4bf8e61a.js",
+    "file": "assets/cs.es-29e50c14.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/cs.es.js"
   },
   "node_modules/vue-cal/dist/i18n/da.es.js": {
-    "file": "assets/da.es-084484fb.js",
+    "file": "assets/da.es-eecb0b06.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/da.es.js"
   },
   "node_modules/vue-cal/dist/i18n/de.es.js": {
-    "file": "assets/de.es-0185602c.js",
+    "file": "assets/de.es-83841cfd.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/de.es.js"
   },
   "node_modules/vue-cal/dist/i18n/el.es.js": {
-    "file": "assets/el.es-b3db55e7.js",
+    "file": "assets/el.es-b1c0d142.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/el.es.js"
   },
   "node_modules/vue-cal/dist/i18n/en.es.js": {
-    "file": "assets/en.es-713916b0.js",
+    "file": "assets/en.es-d28ce695.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/en.es.js"
   },
   "node_modules/vue-cal/dist/i18n/es.es.js": {
-    "file": "assets/es.es-2f81ef8f.js",
+    "file": "assets/es.es-232cf334.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/es.es.js"
   },
   "node_modules/vue-cal/dist/i18n/et.es.js": {
-    "file": "assets/et.es-feab242e.js",
+    "file": "assets/et.es-7e6a3380.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/et.es.js"
   },
   "node_modules/vue-cal/dist/i18n/fa.es.js": {
-    "file": "assets/fa.es-e30ec481.js",
+    "file": "assets/fa.es-b08cd112.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/fa.es.js"
   },
+  "node_modules/vue-cal/dist/i18n/fi.es.js": {
+    "file": "assets/fi.es-d164093c.js",
+    "isDynamicEntry": true,
+    "src": "node_modules/vue-cal/dist/i18n/fi.es.js"
+  },
   "node_modules/vue-cal/dist/i18n/fr.es.js": {
-    "file": "assets/fr.es-fd781cdb.js",
+    "file": "assets/fr.es-bb780d19.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/fr.es.js"
   },
   "node_modules/vue-cal/dist/i18n/he.es.js": {
-    "file": "assets/he.es-ab017da7.js",
+    "file": "assets/he.es-38780c8b.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/he.es.js"
   },
   "node_modules/vue-cal/dist/i18n/hr.es.js": {
-    "file": "assets/hr.es-8ff4208c.js",
+    "file": "assets/hr.es-fdafdc21.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/hr.es.js"
   },
   "node_modules/vue-cal/dist/i18n/hu.es.js": {
-    "file": "assets/hu.es-a826dbea.js",
+    "file": "assets/hu.es-3630014a.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/hu.es.js"
   },
   "node_modules/vue-cal/dist/i18n/id.es.js": {
-    "file": "assets/id.es-09894c24.js",
+    "file": "assets/id.es-3e6a36ce.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/id.es.js"
   },
   "node_modules/vue-cal/dist/i18n/is.es.js": {
-    "file": "assets/is.es-9608cdad.js",
+    "file": "assets/is.es-a5785bf6.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/is.es.js"
   },
   "node_modules/vue-cal/dist/i18n/it.es.js": {
-    "file": "assets/it.es-8f484e02.js",
+    "file": "assets/it.es-a9d8c123.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/it.es.js"
   },
   "node_modules/vue-cal/dist/i18n/ja.es.js": {
-    "file": "assets/ja.es-b7fc0eb9.js",
+    "file": "assets/ja.es-6a0383c1.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/ja.es.js"
   },
   "node_modules/vue-cal/dist/i18n/ka.es.js": {
-    "file": "assets/ka.es-446e6e19.js",
+    "file": "assets/ka.es-75616353.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/ka.es.js"
   },
   "node_modules/vue-cal/dist/i18n/ko.es.js": {
-    "file": "assets/ko.es-45e7d699.js",
+    "file": "assets/ko.es-52b4fe30.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/ko.es.js"
   },
   "node_modules/vue-cal/dist/i18n/lt.es.js": {
-    "file": "assets/lt.es-bc184482.js",
+    "file": "assets/lt.es-fb2fe7b5.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/lt.es.js"
   },
   "node_modules/vue-cal/dist/i18n/mn.es.js": {
-    "file": "assets/mn.es-5fa17a96.js",
+    "file": "assets/mn.es-fcd02e46.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/mn.es.js"
   },
   "node_modules/vue-cal/dist/i18n/nl.es.js": {
-    "file": "assets/nl.es-f5998f61.js",
+    "file": "assets/nl.es-558331c7.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/nl.es.js"
   },
   "node_modules/vue-cal/dist/i18n/no.es.js": {
-    "file": "assets/no.es-7a7b8685.js",
+    "file": "assets/no.es-8b33619c.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/no.es.js"
   },
   "node_modules/vue-cal/dist/i18n/pl.es.js": {
-    "file": "assets/pl.es-2dc4cbea.js",
+    "file": "assets/pl.es-631374bd.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/pl.es.js"
   },
   "node_modules/vue-cal/dist/i18n/pt-br.es.js": {
-    "file": "assets/pt-br.es-82c2bfad.js",
+    "file": "assets/pt-br.es-a39b3c5f.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/pt-br.es.js"
   },
+  "node_modules/vue-cal/dist/i18n/pt-pt.es.js": {
+    "file": "assets/pt-pt.es-a39b3c5f.js",
+    "isDynamicEntry": true,
+    "src": "node_modules/vue-cal/dist/i18n/pt-pt.es.js"
+  },
   "node_modules/vue-cal/dist/i18n/ro.es.js": {
-    "file": "assets/ro.es-0b230c59.js",
+    "file": "assets/ro.es-8080c341.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/ro.es.js"
   },
   "node_modules/vue-cal/dist/i18n/ru.es.js": {
-    "file": "assets/ru.es-3bc3c295.js",
+    "file": "assets/ru.es-9e02a02e.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/ru.es.js"
   },
   "node_modules/vue-cal/dist/i18n/sk.es.js": {
-    "file": "assets/sk.es-477d958c.js",
+    "file": "assets/sk.es-7894e5cb.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/sk.es.js"
   },
   "node_modules/vue-cal/dist/i18n/sl.es.js": {
-    "file": "assets/sl.es-7f9e39ca.js",
+    "file": "assets/sl.es-886c86bd.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/sl.es.js"
   },
   "node_modules/vue-cal/dist/i18n/sq.es.js": {
-    "file": "assets/sq.es-484abfbf.js",
+    "file": "assets/sq.es-600bc51c.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/sq.es.js"
   },
   "node_modules/vue-cal/dist/i18n/sr.es.js": {
-    "file": "assets/sr.es-79173882.js",
+    "file": "assets/sr.es-f3348729.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/sr.es.js"
   },
   "node_modules/vue-cal/dist/i18n/sv.es.js": {
-    "file": "assets/sv.es-cc28424b.js",
+    "file": "assets/sv.es-f0a285bd.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/sv.es.js"
   },
   "node_modules/vue-cal/dist/i18n/tr.es.js": {
-    "file": "assets/tr.es-73d31d0a.js",
+    "file": "assets/tr.es-f57d7128.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/tr.es.js"
   },
   "node_modules/vue-cal/dist/i18n/uk.es.js": {
-    "file": "assets/uk.es-72aa5132.js",
+    "file": "assets/uk.es-0afcf35e.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/uk.es.js"
   },
   "node_modules/vue-cal/dist/i18n/vi.es.js": {
-    "file": "assets/vi.es-e48f04c7.js",
+    "file": "assets/vi.es-c0302793.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/vi.es.js"
   },
   "node_modules/vue-cal/dist/i18n/zh-cn.es.js": {
-    "file": "assets/zh-cn.es-d3b0ce92.js",
+    "file": "assets/zh-cn.es-b584d7c2.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/zh-cn.es.js"
   },
   "node_modules/vue-cal/dist/i18n/zh-hk.es.js": {
-    "file": "assets/zh-hk.es-f0804a56.js",
+    "file": "assets/zh-hk.es-3b3b5fba.js",
     "isDynamicEntry": true,
     "src": "node_modules/vue-cal/dist/i18n/zh-hk.es.js"
   },
   "src/Resources/assets/css/app.css": {
-    "file": "assets/app-f64a840b.css",
+    "file": "assets/app-d587aec7.css",
     "isEntry": true,
     "src": "src/Resources/assets/css/app.css"
   },
@@ -379,12 +229,12 @@
     "src": "src/Resources/assets/fonts/booking.woff"
   },
   "src/Resources/assets/js/app.css": {
-    "file": "assets/app-06ae2a33.css",
+    "file": "assets/app-43990e2b.css",
     "src": "src/Resources/assets/js/app.css"
   },
   "src/Resources/assets/js/app.js": {
     "css": [
-      "assets/app-06ae2a33.css"
+      "assets/app-43990e2b.css"
     ],
     "dynamicImports": [
       "node_modules/vue-cal/dist/i18n/en.es.js",
@@ -401,6 +251,7 @@
       "node_modules/vue-cal/dist/i18n/es.es.js",
       "node_modules/vue-cal/dist/i18n/et.es.js",
       "node_modules/vue-cal/dist/i18n/fa.es.js",
+      "node_modules/vue-cal/dist/i18n/fi.es.js",
       "node_modules/vue-cal/dist/i18n/fr.es.js",
       "node_modules/vue-cal/dist/i18n/he.es.js",
       "node_modules/vue-cal/dist/i18n/hr.es.js",
@@ -417,6 +268,7 @@
       "node_modules/vue-cal/dist/i18n/no.es.js",
       "node_modules/vue-cal/dist/i18n/pl.es.js",
       "node_modules/vue-cal/dist/i18n/pt-br.es.js",
+      "node_modules/vue-cal/dist/i18n/pt-pt.es.js",
       "node_modules/vue-cal/dist/i18n/ro.es.js",
       "node_modules/vue-cal/dist/i18n/ru.es.js",
       "node_modules/vue-cal/dist/i18n/sk.es.js",
@@ -431,7 +283,7 @@
       "node_modules/vue-cal/dist/i18n/zh-hk.es.js",
       "node_modules/vue-cal/dist/drag-and-drop.es.js"
     ],
-    "file": "assets/app-cb8bd438.js",
+    "file": "assets/app-9162ddf6.js",
     "isEntry": true,
     "src": "src/Resources/assets/js/app.js"
   }

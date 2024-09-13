@@ -40,14 +40,14 @@
     ])
 
     <!-- Notes -->
-    <x-shop::form.control-group class="w-full !mb-0">
+    <x-shop::form.control-group class="!mb-0 w-full">
         <x-shop::form.control-group.label class="required">
             @lang('booking::app.shop.products.view.types.booking.table.special-notes')
         </x-shop::form.control-group.label>
 
         <x-shop::form.control-group.control
             type="textarea"
-            class="!mb-0"
+            class="!mb-0 max-sm:px-2.5 max-sm:py-1.5 max-sm:text-xs"
             name="booking[note]"
             rules="required"
             :label="trans('booking::app.shop.products.view.types.booking.table.special-notes')"
@@ -63,10 +63,10 @@
         type="text/x-template"
         id="v-toggler-template"
     >
-        <div class="grid gap-3 w-max select-none">
+        <div class="grid w-max select-none gap-3">
             <!-- Details Toggler -->
             <p
-                class="flex gap-x-[15px] items-center text-blue-600 text-sm font-medium cursor-pointer"
+                class="flex cursor-pointer items-center gap-x-[15px] text-sm font-medium text-blue-600"
                 @click="showDaysAvailability = ! showDaysAvailability"
             >
                 @lang('booking::app.shop.products.view.types.booking.table.slots-for-all-days')
@@ -85,7 +85,7 @@
                 v-for="day in days"
             >
                 <p
-                    class="text-sm text-gray font-medium"
+                    class="text-gray text-sm font-medium"
                     v-text="day.name"
                 >
                 </p>

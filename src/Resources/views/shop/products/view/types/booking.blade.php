@@ -10,7 +10,7 @@
             type="text/x-template"
             id="v-booking-information-template"
         >
-            <div class="grid grid-cols-1 gap-6 w-full max-w-[470px] mt-6">
+            <div class="mt-6 grid w-full max-w-[470px] grid-cols-1 gap-6">
                 @if ($bookingProduct->location)
                     <div class="flex gap-4">
                         <span class="icon-location text-2xl"></span>
@@ -26,7 +26,7 @@
                                 <a
                                     href="https://maps.google.com/maps?q={{ $bookingProduct->location }}"
                                     target="_blank"
-                                    class="w-1/4 text-blue-600"
+                                    class="w-fit text-blue-600"
                                 >
                                     @lang('booking::app.shop.products.view.types.booking.view-on-map')
                                 </a>
