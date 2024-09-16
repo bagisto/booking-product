@@ -85,8 +85,8 @@ class EventTicket extends Booking
 
     /**
      * Returns the quantity of booked product.
-     * 
-     * @param array $data
+     *
+     * @param  array  $data
      */
     public function getBookedQuantity($data): int
     {
@@ -130,7 +130,7 @@ class EventTicket extends Booking
      */
     public function validateCartItem(CartItem $item): CartItemValidationResult
     {
-        $result = new CartItemValidationResult();
+        $result = new CartItemValidationResult;
 
         if (parent::isCartItemInactive($item)) {
             $result->itemIsInactive();

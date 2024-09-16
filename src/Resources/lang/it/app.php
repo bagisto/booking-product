@@ -275,7 +275,7 @@ return [
                             'closed'             => 'Chiuso',
                             'today-availability' => 'Disponibilità Oggi',
                         ],
-    
+
                         'event'       => [
                             'book-your-ticket' => 'Prenota Il Tuo Biglietto',
                         ],
@@ -307,7 +307,7 @@ return [
                             'select-slot'         => 'Seleziona Slot',
                             'title'               => 'Slot',
                         ],
-    
+
                         'table'       => [
                             'book-a-table'       => 'Prenota un Tavolo',
                             'closed'             => 'Chiuso',

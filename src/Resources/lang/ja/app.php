@@ -275,7 +275,7 @@ return [
                             'closed'             => '閉じています',
                             'today-availability' => '今日の利用可能性',
                         ],
-    
+
                         'event'       => [
                             'book-your-ticket' => 'チケットを予約する',
                         ],
@@ -307,7 +307,7 @@ return [
                             'select-slot'         => 'スロットを選択する',
                             'title'               => 'スロット',
                         ],
-    
+
                         'table'       => [
                             'book-a-table'       => 'テーブルを予約する',
                             'closed'             => '閉じています',

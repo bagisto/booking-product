@@ -37,8 +37,7 @@ class Booking extends Virtual
         protected ProductCustomerGroupPriceRepository $productCustomerGroupPriceRepository,
         protected BookingProductRepository $bookingProductRepository,
         protected BookingHelper $bookingHelper
-    ) {
-    }
+    ) {}
 
     /**
      * @param  int  $id
@@ -218,7 +217,7 @@ class Booking extends Virtual
      */
     public function validateCartItem(CartItem $item): CartItemValidationResult
     {
-        $result = new CartItemValidationResult();
+        $result = new CartItemValidationResult;
 
         if (parent::isCartItemInactive($item)) {
             $result->itemIsInactive();

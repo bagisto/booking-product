@@ -11,9 +11,7 @@ class Order
      *
      * @return void
      */
-    public function __construct(protected BookingRepository $bookingRepository)
-    {
-    }
+    public function __construct(protected BookingRepository $bookingRepository) {}
 
     /**
      * After sales order creation, add entry to bookings table

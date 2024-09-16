@@ -1,10 +1,3 @@
-@push('styles')
-    @bagistoVite([
-        'src/Resources/assets/css/app.css',
-        'src/Resources/assets/js/app.js'
-    ], 'booking')
-@endpush
-
 <v-calendar></v-calendar>
 
 @pushOnce('scripts')
@@ -45,11 +38,11 @@
                         <div
                             class="slot relative h-full cursor-pointer rounded-l border-l-4 text-left text-xs"
                             :class="[
-                                event.status === 'pending' ? 'bg-yellow-100 border-yellow-500' :
-                                event.status === 'completed' ? 'bg-green-100 border-green-500' :
-                                event.status === 'closed' ? 'bg-blue-100 border-blue-500' :
-                                event.status === 'canceled' ? 'bg-red-100 border-red-500' :
-                                'bg-green-100 border-green-600',
+                                event.status === 'pending' ? 'bg-yellow-100 border-yellow-500 hover:bg-yellow-200 hover:border-yellow-600' :
+                                event.status === 'completed' ? 'bg-green-100 border-green-500 hover:border-green-600 hover:bg-green-200' :
+                                event.status === 'closed' ? 'bg-blue-100 border-blue-500 hover:border-blue-600 hover:bg-blue-200' :
+                                event.status === 'canceled' ? 'bg-red-100 border-red-500 hover:border-red-600 hover:bg-red-200' :
+                                'bg-green-100 border-green-600 hover:border-green-600 hover:bg-green-200',
                                 event.time_difference ? 'p-2' : 'p-1'
                             ]"
                             @click="showTooltip($event)"
@@ -337,5 +330,6 @@
             text-transform: uppercase;
             color: #1F2937;
         }
+
     </style>
 @endPushOnce

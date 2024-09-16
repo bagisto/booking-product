@@ -275,7 +275,7 @@ return [
                             'closed'             => '已关闭',
                             'today-availability' => '今日可预订',
                         ],
-    
+
                         'event'       => [
                             'book-your-ticket' => '预订您的门票',
                         ],
@@ -307,7 +307,7 @@ return [
                             'select-slot'         => '选择时间段',
                             'title'               => '时间段',
                         ],
-    
+
                         'table'       => [
                             'book-a-table'       => '预订桌位',
                             'closed'             => '已关闭',

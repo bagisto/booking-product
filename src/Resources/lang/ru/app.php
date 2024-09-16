@@ -275,7 +275,7 @@ return [
                             'closed'             => 'Закрыто',
                             'today-availability' => 'Доступность сегодня',
                         ],
-    
+
                         'event'       => [
                             'book-your-ticket' => 'Забронируйте свой билет',
                         ],
@@ -307,7 +307,7 @@ return [
                             'select-slot'         => 'Выбрать слот',
                             'title'               => 'Слот',
                         ],
-    
+
                         'table'       => [
                             'book-a-table'       => 'Забронировать стол',
                             'closed'             => 'Закрыто',

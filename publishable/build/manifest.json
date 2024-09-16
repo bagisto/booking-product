@@ -1,4 +1,172 @@
 {
+  "../Admin/src/Resources/assets/fonts/bagisto-admin.woff": {
+    "file": "assets/bagisto-admin-37c2feba.woff",
+    "src": "../Admin/src/Resources/assets/fonts/bagisto-admin.woff"
+  },
+  "../Admin/src/Resources/assets/images/average-orders.svg": {
+    "file": "assets/average-orders-71c4bf9a.svg",
+    "src": "../Admin/src/Resources/assets/images/average-orders.svg"
+  },
+  "../Admin/src/Resources/assets/images/customers.svg": {
+    "file": "assets/customers-199df769.svg",
+    "src": "../Admin/src/Resources/assets/images/customers.svg"
+  },
+  "../Admin/src/Resources/assets/images/dark-logo.svg": {
+    "file": "assets/dark-logo-ea7984e7.svg",
+    "src": "../Admin/src/Resources/assets/images/dark-logo.svg"
+  },
+  "../Admin/src/Resources/assets/images/empty-placeholders/customers.svg": {
+    "file": "assets/customers-57f8166b.svg",
+    "src": "../Admin/src/Resources/assets/images/empty-placeholders/customers.svg"
+  },
+  "../Admin/src/Resources/assets/images/empty-placeholders/default.svg": {
+    "file": "assets/default-2c56169a.svg",
+    "src": "../Admin/src/Resources/assets/images/empty-placeholders/default.svg"
+  },
+  "../Admin/src/Resources/assets/images/empty-placeholders/orders.svg": {
+    "file": "assets/orders-5dd62d9d.svg",
+    "src": "../Admin/src/Resources/assets/images/empty-placeholders/orders.svg"
+  },
+  "../Admin/src/Resources/assets/images/empty-placeholders/report-empty.svg": {
+    "file": "assets/report-empty-c3bb4a01.svg",
+    "src": "../Admin/src/Resources/assets/images/empty-placeholders/report-empty.svg"
+  },
+  "../Admin/src/Resources/assets/images/empty-placeholders/reviews.svg": {
+    "file": "assets/reviews-17309002.svg",
+    "src": "../Admin/src/Resources/assets/images/empty-placeholders/reviews.svg"
+  },
+  "../Admin/src/Resources/assets/images/error.svg": {
+    "file": "assets/error-4179d5c7.svg",
+    "src": "../Admin/src/Resources/assets/images/error.svg"
+  },
+  "../Admin/src/Resources/assets/images/favicon.ico": {
+    "file": "assets/favicon-a4003609.ico",
+    "src": "../Admin/src/Resources/assets/images/favicon.ico"
+  },
+  "../Admin/src/Resources/assets/images/icon-add-product.svg": {
+    "file": "assets/icon-add-product-e3232d62.svg",
+    "src": "../Admin/src/Resources/assets/images/icon-add-product.svg"
+  },
+  "../Admin/src/Resources/assets/images/icon-discount.svg": {
+    "file": "assets/icon-discount-e37d1aed.svg",
+    "src": "../Admin/src/Resources/assets/images/icon-discount.svg"
+  },
+  "../Admin/src/Resources/assets/images/icon-options.svg": {
+    "file": "assets/icon-options-ebfcd268.svg",
+    "src": "../Admin/src/Resources/assets/images/settings/shipping-method.svg"
+  },
+  "../Admin/src/Resources/assets/images/logo.svg": {
+    "file": "assets/logo-f02a1643.svg",
+    "src": "../Admin/src/Resources/assets/images/logo.svg"
+  },
+  "../Admin/src/Resources/assets/images/product-placeholders/front.svg": {
+    "file": "assets/front-93490c30.svg",
+    "src": "../Admin/src/Resources/assets/images/product-placeholders/front.svg"
+  },
+  "../Admin/src/Resources/assets/images/product-placeholders/next-1.svg": {
+    "file": "assets/next-1-91bb148a.svg",
+    "src": "../Admin/src/Resources/assets/images/product-placeholders/next-1.svg"
+  },
+  "../Admin/src/Resources/assets/images/product-placeholders/next-2.svg": {
+    "file": "assets/next-2-6aace5ca.svg",
+    "src": "../Admin/src/Resources/assets/images/product-placeholders/next-2.svg"
+  },
+  "../Admin/src/Resources/assets/images/product-placeholders/size.svg": {
+    "file": "assets/size-04e2a252.svg",
+    "src": "../Admin/src/Resources/assets/images/product-placeholders/size.svg"
+  },
+  "../Admin/src/Resources/assets/images/product-placeholders/use-cases.svg": {
+    "file": "assets/use-cases-4a33de1a.svg",
+    "src": "../Admin/src/Resources/assets/images/product-placeholders/use-cases.svg"
+  },
+  "../Admin/src/Resources/assets/images/product-placeholders/zoom.svg": {
+    "file": "assets/zoom-0c75bed3.svg",
+    "src": "../Admin/src/Resources/assets/images/product-placeholders/zoom.svg"
+  },
+  "../Admin/src/Resources/assets/images/settings/address.svg": {
+    "file": "assets/address-c3d46b29.svg",
+    "src": "../Admin/src/Resources/assets/images/settings/address.svg"
+  },
+  "../Admin/src/Resources/assets/images/settings/captcha.svg": {
+    "file": "assets/captcha-061d77ab.svg",
+    "src": "../Admin/src/Resources/assets/images/settings/captcha.svg"
+  },
+  "../Admin/src/Resources/assets/images/settings/checkout.svg": {
+    "file": "assets/checkout-e5efdb8e.svg",
+    "src": "../Admin/src/Resources/assets/images/settings/checkout.svg"
+  },
+  "../Admin/src/Resources/assets/images/settings/email.svg": {
+    "file": "assets/email-5653e8d5.svg",
+    "src": "../Admin/src/Resources/assets/images/settings/email.svg"
+  },
+  "../Admin/src/Resources/assets/images/settings/inventory.svg": {
+    "file": "assets/inventory-d69907d8.svg",
+    "src": "../Admin/src/Resources/assets/images/settings/inventory.svg"
+  },
+  "../Admin/src/Resources/assets/images/settings/invoice.svg": {
+    "file": "assets/invoice-bbc6d6a8.svg",
+    "src": "../Admin/src/Resources/assets/images/settings/invoice.svg"
+  },
+  "../Admin/src/Resources/assets/images/settings/magic-ai.svg": {
+    "file": "assets/magic-ai-2b88cb86.svg",
+    "src": "../Admin/src/Resources/assets/images/settings/magic-ai.svg"
+  },
+  "../Admin/src/Resources/assets/images/settings/order.svg": {
+    "file": "assets/order-c8714dda.svg",
+    "src": "../Admin/src/Resources/assets/images/settings/order.svg"
+  },
+  "../Admin/src/Resources/assets/images/settings/payment-method.svg": {
+    "file": "assets/payment-method-10ea91e1.svg",
+    "src": "../Admin/src/Resources/assets/images/settings/payment-method.svg"
+  },
+  "../Admin/src/Resources/assets/images/settings/product.svg": {
+    "file": "assets/product-357134fb.svg",
+    "src": "../Admin/src/Resources/assets/images/settings/product.svg"
+  },
+  "../Admin/src/Resources/assets/images/settings/settings.svg": {
+    "file": "assets/settings-26b93165.svg",
+    "src": "../Admin/src/Resources/assets/images/settings/settings.svg"
+  },
+  "../Admin/src/Resources/assets/images/settings/shipping-method.svg": {
+    "file": "assets/icon-options-ebfcd268.svg",
+    "src": "../Admin/src/Resources/assets/images/settings/shipping-method.svg"
+  },
+  "../Admin/src/Resources/assets/images/settings/shipping.svg": {
+    "file": "assets/shipping-ceb1cb37.svg",
+    "src": "../Admin/src/Resources/assets/images/settings/shipping.svg"
+  },
+  "../Admin/src/Resources/assets/images/settings/store-information.svg": {
+    "file": "assets/store-information-a7d64429.svg",
+    "src": "../Admin/src/Resources/assets/images/settings/store-information.svg"
+  },
+  "../Admin/src/Resources/assets/images/settings/store.svg": {
+    "file": "assets/store-8d27c0df.svg",
+    "src": "../Admin/src/Resources/assets/images/settings/store.svg"
+  },
+  "../Admin/src/Resources/assets/images/settings/tax.svg": {
+    "file": "assets/tax-20f847de.svg",
+    "src": "../Admin/src/Resources/assets/images/settings/tax.svg"
+  },
+  "../Admin/src/Resources/assets/images/settings/theme.svg": {
+    "file": "assets/theme-f4d870b8.svg",
+    "src": "../Admin/src/Resources/assets/images/settings/theme.svg"
+  },
+  "../Admin/src/Resources/assets/images/spinner.svg": {
+    "file": "assets/spinner-08c27ad5.svg",
+    "src": "../Admin/src/Resources/assets/images/spinner.svg"
+  },
+  "../Admin/src/Resources/assets/images/total-orders.svg": {
+    "file": "assets/total-orders-f1b2017e.svg",
+    "src": "../Admin/src/Resources/assets/images/total-orders.svg"
+  },
+  "../Admin/src/Resources/assets/images/total-sales.svg": {
+    "file": "assets/total-sales-5b2c7b58.svg",
+    "src": "../Admin/src/Resources/assets/images/total-sales.svg"
+  },
+  "../Admin/src/Resources/assets/images/unpaid-invoices.svg": {
+    "file": "assets/unpaid-invoices-6c51662d.svg",
+    "src": "../Admin/src/Resources/assets/images/unpaid-invoices.svg"
+  },
   "node_modules/vue-cal/dist/drag-and-drop.es.js": {
     "file": "assets/drag-and-drop.es-0df93f71.js",
     "isDynamicEntry": true,
@@ -220,7 +388,7 @@
     "src": "node_modules/vue-cal/dist/i18n/zh-hk.es.js"
   },
   "src/Resources/assets/css/app.css": {
-    "file": "assets/app-d587aec7.css",
+    "file": "assets/app-e0d6a8bb.css",
     "isEntry": true,
     "src": "src/Resources/assets/css/app.css"
   },
@@ -229,12 +397,12 @@
     "src": "src/Resources/assets/fonts/booking.woff"
   },
   "src/Resources/assets/js/app.css": {
-    "file": "assets/app-43990e2b.css",
+    "file": "assets/app-06ae2a33.css",
     "src": "src/Resources/assets/js/app.css"
   },
   "src/Resources/assets/js/app.js": {
     "css": [
-      "assets/app-43990e2b.css"
+      "assets/app-06ae2a33.css"
     ],
     "dynamicImports": [
       "node_modules/vue-cal/dist/i18n/en.es.js",
@@ -283,7 +451,7 @@
       "node_modules/vue-cal/dist/i18n/zh-hk.es.js",
       "node_modules/vue-cal/dist/drag-and-drop.es.js"
     ],
-    "file": "assets/app-9162ddf6.js",
+    "file": "assets/app-ea20f86b.js",
     "isEntry": true,
     "src": "src/Resources/assets/js/app.js"
   }

@@ -1,3 +1,10 @@
+@push('styles')
+    @bagistoVite([
+        'src/Resources/assets/css/app.css',
+        'src/Resources/assets/js/app.js'
+    ], 'booking')
+@endpush
+
 <x-admin::layouts>
     <!-- Page Title -->
     <x-slot:title>
@@ -5,10 +12,6 @@
     </x-slot>
 
     <v-booking-products></v-booking-products>
-
-    @push('styles')
-        @bagistoVite(['src/Resources/assets/css/app.css'], 'booking')
-    @endpush
 
     @pushOnce('scripts')
         <script type="text/x-template" id="v-booking-products-template">

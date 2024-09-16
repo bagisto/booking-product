@@ -275,7 +275,7 @@ return [
                             'closed'             => 'Cerrado',
                             'today-availability' => 'Disponibilidad de Hoy',
                         ],
-    
+
                         'event'       => [
                             'book-your-ticket' => 'Reserve su Boleto',
                         ],
@@ -307,7 +307,7 @@ return [
                             'select-slot'         => 'Seleccionar Ranura',
                             'title'               => 'Ranura',
                         ],
-    
+
                         'table'       => [
                             'book-a-table'       => 'Reservar una Mesa',
                             'closed'             => 'Cerrado',
