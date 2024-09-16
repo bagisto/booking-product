@@ -2,7 +2,7 @@
 
 This changelog consists of the bug & security fixes and new features being included in the releases listed below.
 
-## **v2.0.0 (16th of September 2024)** - *Release*
+## **v1.1.0 (16th of September 2024)** - *Release*
 
 ### **Code Quality Improvements:** 
 Enhanced code structure and optimized performance for better maintainability and efficiency.
