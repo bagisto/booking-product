@@ -4,9 +4,11 @@ namespace Webkul\BookingProduct\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use Webkul\Admin\DataGrids\Catalog\ProductDataGrid as BaseProductDataGrid;
+use Webkul\Admin\DataGrids\Catalog\ProductDataGrid as baseProductDataGrid;
 use Webkul\BookingProduct\Console\Commands\Booking as BookingCommand;
 use Webkul\BookingProduct\DataGrids\Admin\Catalog\ProductDataGrid;
+use Webkul\BookingProduct\Models\Cart;
+use Webkul\Checkout\Models\Cart as BaseCart;
 
 class BookingProductServiceProvider extends ServiceProvider
 {
@@ -25,7 +27,9 @@ class BookingProductServiceProvider extends ServiceProvider
 
         Blade::anonymousComponentPath(__DIR__.'/../Resources/views/components', 'booking');
 
-        $this->app->bind(BaseProductDataGrid::class, ProductDataGrid::class);
+        $this->app->bind(baseProductDataGrid::class, ProductDataGrid::class);
+
+        $this->app->bind(BaseCart::class, Cart::class);
 
         $this->app->register(EventServiceProvider::class);
 
