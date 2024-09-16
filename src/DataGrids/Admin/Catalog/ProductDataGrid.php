@@ -52,9 +52,7 @@ class ProductDataGrid extends baseProductDataGrid
                 'product_flat.url_key',
                 'product_flat.visible_individually',
                 'af.name as attribute_family',
-                // DB::raw('SUM(DISTINCT '.$tablePrefix.'product_inventories.qty) as quantity'),
                 DB::raw('COUNT(DISTINCT '.$tablePrefix.'product_images.id) as images_count'),
-                // DB::raw('IF(booking_products.type = "event", SUM(booking_product_event_tickets.qty), booking_products.qty) as booking_qty')
                 DB::raw('IF(
                     product_flat.type = "booking", 
                     IF(booking_products.type = "event", 
@@ -66,36 +64,6 @@ class ProductDataGrid extends baseProductDataGrid
             )
             ->where('product_flat.locale', app()->getLocale())
             ->groupBy('product_flat.product_id');
-
-        // ->select(
-        //     'product_flat.locale',
-        //     'product_flat.channel',
-        //     'product_images.path as base_image',
-        //     'pc.category_id',
-        //     'ct.name as category_name',
-        //     'product_flat.product_id',
-        //     'product_flat.sku',
-        //     'product_flat.name',
-        //     'product_flat.type',
-        //     'product_flat.status',
-        //     'product_flat.price',
-        //     'product_flat.url_key',
-        //     'product_flat.visible_individually',
-        //     'af.name as attribute_family',
-        //     DB::raw('SUM(DISTINCT product_inventories.qty) as quantity'),
-        //     DB::raw('COUNT(DISTINCT product_images.id) as images_count'),
-        //     // Conditional quantity based on product type and event/booking
-        //      DB::raw('IF(
-        //     product_flat.type = "booking",
-        //     IF(booking_products.type = "event",
-        //         SUM(booking_product_event_tickets.qty),
-        //         booking_products.qty
-        //     ),
-        //     SUM(DISTINCT product_inventories.qty)
-        // ) as quantity')
-        // )
-        // ->where('product_flat.locale', app()->getLocale())
-        // ->groupBy('product_flat.product_id');
 
         $this->addFilter('product_id', 'product_flat.product_id');
         $this->addFilter('channel', 'product_flat.channel');
