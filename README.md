@@ -4,7 +4,7 @@
 
 ### Requirements:
 
--   **Bagisto**: v2.2.0
+-   **Bagisto**: v2.2.x
 
 ### Installation:
 
