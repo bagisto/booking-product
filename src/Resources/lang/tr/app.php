@@ -275,7 +275,7 @@ return [
                             'closed'             => 'Kapalı',
                             'today-availability' => 'Bugün Kullanılabilirlik',
                         ],
-    
+
                         'event'       => [
                             'book-your-ticket' => 'Biletinizi Ayırın',
                         ],
@@ -307,7 +307,7 @@ return [
                             'select-slot'         => 'Yuva Seç',
                             'title'               => 'Yuva',
                         ],
-    
+
                         'table'       => [
                             'book-a-table'       => 'Bir masa rezervasyonu',
                             'closed'             => 'Kapalı',

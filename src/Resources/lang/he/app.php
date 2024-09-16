@@ -275,7 +275,7 @@ return [
                             'closed'             => 'סגור',
                             'today-availability' => 'זמינות היום',
                         ],
-    
+
                         'event' => [
                             'book-your-ticket' => 'הזמן כרטיס',
                         ],
@@ -307,7 +307,7 @@ return [
                             'select-slot'         => 'בחר מקטע',
                             'title'               => 'מקטע',
                         ],
-    
+
                         'table' => [
                             'book-a-table'       => 'הזמן שולחן',
                             'closed'             => 'סגור',

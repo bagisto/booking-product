@@ -275,7 +275,7 @@ return [
                             'closed'             => 'بسته شده',
                             'today-availability' => 'دسترسی امروز',
                         ],
-    
+
                         'event' => [
                             'book-your-ticket' => 'رزرو بلیط خود را',
                         ],
@@ -307,7 +307,7 @@ return [
                             'select-slot'         => 'انتخاب شکاف',
                             'title'               => 'شکاف',
                         ],
-    
+
                         'table' => [
                             'book-a-table'       => 'رزرو یک میز',
                             'closed'             => 'بسته شده',

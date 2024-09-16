@@ -10,10 +10,8 @@ class BookingProductEventTicketFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
-     *
-     * @var string
      */
-    protected $model = BookingProductEventTicket::class;
+    protected string $model = BookingProductEventTicket::class;
 
     /**
      * Define the model's default state.

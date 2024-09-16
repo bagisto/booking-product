@@ -277,7 +277,7 @@ class Booking
     /**
      * Returns get booked quantity.
      *
-     * @param array $data
+     * @param  array  $data
      */
     public function getBookedQuantity($data): int
     {
@@ -416,7 +416,7 @@ class Booking
      */
     public function validateCartItem(CartItem $item): CartItemValidationResult
     {
-        $result = new CartItemValidationResult();
+        $result = new CartItemValidationResult;
 
         if ($this->isCartItemInactive($item)) {
             $result->itemIsInactive();
@@ -443,7 +443,7 @@ class Booking
 
     /**
      * Returns true if the cart item is inactive.
-     * 
+     *
      * @param  \Webkul\Checkout\Contracts\CartItem|array  $cartItem
      */
     public function isCartItemInactive($item): bool

@@ -11,12 +11,12 @@
                     @lang('booking::app.shop.products.view.types.booking.rental.choose-rent-option')
                 </x-shop::form.control-group.label>
 
-                <div class="grid grid-cols-2 gap-2.5 mb-3">
+                <div class="mb-3 grid grid-cols-2 gap-2.5">
                     <!-- Daily Radio Button -->
                     <span class="flex gap-x-4">
                         <input
                             type="radio"
-                            class="hidden peer"
+                            class="peer hidden"
                             id="booking[daily]"
                             name="booking[renting_type]"
                             value="daily"
@@ -24,13 +24,13 @@
                         >
 
                         <label
-                            class="icon-radio-unselect text-2xl text-navyBlue peer-checked:icon-radio-select"
+                            class="icon-radio-unselect text-navyBlue peer-checked:icon-radio-select text-2xl"
                             for="booking[daily]"
                         >
                         </label>
 
                         <label
-                            class="text-[#6E6E6E] cursor-pointer"
+                            class="cursor-pointer text-[#6E6E6E]"
                             for="booking[daily]"
                         >
                             @lang('booking::app.shop.products.view.types.booking.rental.daily-basis')
@@ -41,7 +41,7 @@
                     <span class="flex gap-x-4">
                         <input
                             type="radio"
-                            class="hidden peer"
+                            class="peer hidden"
                             id="booking[hourly]"
                             name="booking[renting_type]"
                             value="hourly"
@@ -49,13 +49,13 @@
                         >
 
                         <label
-                            class="icon-radio-unselect text-2xl text-navyBlue peer-checked:icon-radio-select"
+                            class="icon-radio-unselect text-navyBlue peer-checked:icon-radio-select text-2xl"
                             for="booking[hourly]"
                         >
                         </label>
 
                         <label
-                            class="text-[#6E6E6E] cursor-pointer"
+                            class="cursor-pointer text-[#6E6E6E]"
                             for="booking[hourly]"
                         >
                             @lang('booking::app.shop.products.view.types.booking.rental.hourly-basis')
@@ -64,15 +64,15 @@
                 </div>
             </template>
 
-            <div v-if="renting_type != 'daily' && sub_renting_type == 'hourly'">
-                <div>
+            <div class="flex flex-col gap-2.5" v-if="renting_type != 'daily' && sub_renting_type == 'hourly'">
+                <div  class="grid gap-1.5">
                     <label class="required">
                         @lang('booking::app.shop.products.view.types.booking.rental.select-slot')
                     </label>
 
                     <div class="flex gap-2.5">
                         <!-- Select Slot Date -->
-                        <x-shop::form.control-group class="w-full !mb-0">
+                        <x-shop::form.control-group class="!mb-0 w-full">
                             <x-shop::form.control-group.label class="hidden">
                                 @lang('booking::app.shop.products.view.types.booking.rental.select-date')
                             </x-shop::form.control-group.label>
@@ -80,6 +80,7 @@
                             <x-shop::form.control-group.control
                                 type="date"
                                 name="booking[date]"
+                                class="max-sm!px-2 max-sm!text-xs"
                                 rules="required"
                                 :label="trans('booking::app.shop.products.view.types.booking.rental.select-date')"
                                 :placeholder="trans('booking::app.shop.products.view.types.booking.rental.select-date')"
@@ -91,7 +92,7 @@
                         </x-shop::form.control-group>
 
                         <!-- Select Slot -->
-                        <x-shop::form.control-group class="w-full !mb-0">
+                        <x-shop::form.control-group class="!mb-0 w-full">
                             <x-shop::form.control-group.label class="hidden">
                                 @lang('booking::app.shop.products.view.types.booking.rental.select-slot')
                             </x-shop::form.control-group.label>
@@ -126,14 +127,17 @@
                     </div>
                 </div>
 
-                <div v-if="parseInt(slots[selected_slot] && slots[selected_slot]?.slots?.length)">
+                <div
+                    class="grid gap-1.5"
+                    v-if="parseInt(slots[selected_slot] && slots[selected_slot]?.slots?.length)"
+                >
                     <label class="required">
                         @lang('booking::app.shop.products.view.types.booking.rental.select-rent-time')
                     </label>
 
                     <div class="flex gap-2.5">
                         <!-- Select Time Slot From -->
-                        <x-shop::form.control-group class="w-full !mb-0">
+                        <x-shop::form.control-group class="!mb-0 w-full">
                             <x-shop::form.control-group.label class="hidden">
                                 @lang('booking::app.shop.products.view.types.booking.rental.select-date')
                             </x-shop::form.control-group.label>
@@ -161,7 +165,7 @@
                         </x-shop::form.control-group>
 
                         <!-- Select Time Slot To -->
-                        <x-shop::form.control-group class="w-full !mb-0">
+                        <x-shop::form.control-group class="!mb-0 w-full">
                             <x-shop::form.control-group.label class="hidden">
                                 @lang('booking::app.shop.products.view.types.booking.rental.slot')
                             </x-shop::form.control-group.label>
@@ -198,7 +202,7 @@
 
                 <div class="flex gap-2.5">
                     <!-- Select Date From -->
-                    <x-shop::form.control-group class="w-full !mb-0">
+                    <x-shop::form.control-group class="!mb-0 w-full">
                         <x-shop::form.control-group.label class="hidden">
                             @lang('booking::app.shop.products.view.types.booking.rental.from')
                         </x-shop::form.control-group.label>
@@ -217,7 +221,7 @@
                     </x-shop::form.control-group>
 
                     <!-- Select Date To -->
-                    <x-shop::form.control-group class="w-full !mb-0">
+                    <x-shop::form.control-group class="!mb-0 w-full">
                         <x-shop::form.control-group.label class="hidden">
                             @lang('booking::app.shop.products.view.types.booking.rental.to')
                         </x-shop::form.control-group.label>

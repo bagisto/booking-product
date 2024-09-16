@@ -275,7 +275,7 @@ return [
                             'closed'             => 'Gesloten',
                             'today-availability' => 'Vandaag Beschikbaarheid',
                         ],
-    
+
                         'event'       => [
                             'book-your-ticket' => 'Boek Uw Ticket',
                         ],
@@ -307,7 +307,7 @@ return [
                             'select-slot'         => 'Selecteer Slot',
                             'title'               => 'Slot',
                         ],
-    
+
                         'table'       => [
                             'book-a-table'       => 'Boek een Tafel',
                             'closed'             => 'Gesloten',

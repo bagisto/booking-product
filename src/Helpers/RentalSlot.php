@@ -29,7 +29,7 @@ class RentalSlot extends Booking
     /**
      * Returns get booked quantity.
      *
-     * @param array $data
+     * @param  array  $data
      */
     public function getBookedQuantity($data): int
     {
@@ -145,7 +145,7 @@ class RentalSlot extends Booking
      */
     public function validateCartItem($item): CartItemValidationResult
     {
-        $result = new CartItemValidationResult();
+        $result = new CartItemValidationResult;
 
         if (parent::isCartItemInactive($item)) {
             $result->itemIsInactive();

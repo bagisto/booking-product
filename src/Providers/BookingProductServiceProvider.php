@@ -4,7 +4,9 @@ namespace Webkul\BookingProduct\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Webkul\Admin\DataGrids\Catalog\ProductDataGrid as baseProductDataGrid;
 use Webkul\BookingProduct\Console\Commands\Booking as BookingCommand;
+use Webkul\BookingProduct\DataGrids\Admin\Catalog\ProductDataGrid;
 
 class BookingProductServiceProvider extends ServiceProvider
 {
@@ -23,13 +25,13 @@ class BookingProductServiceProvider extends ServiceProvider
 
         Blade::anonymousComponentPath(__DIR__.'/../Resources/views/components', 'booking');
 
-        $this->publishes([
-            __DIR__.'/../../publishable/build' => public_path('themes/booking/build'),
-        ], 'public');
+        $this->app->bind(baseProductDataGrid::class, ProductDataGrid::class);
 
         $this->app->register(EventServiceProvider::class);
 
         $this->app->register(ModuleServiceProvider::class);
+
+        $this->publishAssets();
     }
 
     /**
@@ -39,10 +41,14 @@ class BookingProductServiceProvider extends ServiceProvider
     {
         $this->registerCommands();
 
-        $this->mergeConfigFrom(dirname(__DIR__).'/Config/product_types.php', 'product_types');
+        $this->mergeConfigFrom(
+            dirname(__DIR__).'/Config/product_types.php',
+            'product_types'
+        );
 
         $this->mergeConfigFrom(
-            dirname(__DIR__).'/Config/menu.php', 'menu.admin'
+            dirname(__DIR__).'/Config/menu.php',
+            'menu.admin'
         );
     }
 
@@ -56,5 +62,15 @@ class BookingProductServiceProvider extends ServiceProvider
                 BookingCommand::class,
             ]);
         }
+    }
+
+    /**
+     * publishing Assets.
+     */
+    protected function publishAssets(): void
+    {
+        $this->publishes([
+            __DIR__.'/../../publishable/build' => public_path('themes/booking/build'),
+        ], 'public');
     }
 }

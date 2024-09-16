@@ -4,6 +4,4 @@ namespace Webkul\BookingProduct\Models;
 
 use Konekt\Concord\Proxies\ModelProxy;
 
-class BookingProductTableSlotProxy extends ModelProxy
-{
-}
+class BookingProductTableSlotProxy extends ModelProxy {}

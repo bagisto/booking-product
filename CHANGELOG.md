@@ -2,6 +2,20 @@
 
 This changelog consists of the bug & security fixes and new features being included in the releases listed below.
 
+## **v2.0.0 (16th of September 2024)** - *Release*
+
+### **Code Quality Improvements:** 
+Enhanced code structure and optimized performance for better maintainability and efficiency.
+
+### **Product Quantity System:** 
+
+Updated the product quantity management system for more accurate and reliable inventory tracking.
+
+### **UI Enhancements:** 
+
+Refined the user interface for improved usability and a more seamless user experience.
+
+
 ## **v1.0.0 (13th of September 2024)** - *Release*
 
 * #2 [Fixed] - Update Readme file -> Remove Storage folder details.

@@ -275,7 +275,7 @@ return [
                             'closed'             => 'مغلق',
                             'today-availability' => 'التوافر اليوم',
                         ],
-    
+
                         'event'       => [
                             'book-your-ticket' => 'احجز تذكرتك',
                         ],
@@ -307,7 +307,7 @@ return [
                             'select-slot'         => 'اختر الفترة',
                             'title'               => 'الفترة',
                         ],
-    
+
                         'table'       => [
                             'book-a-table'       => 'احجز طاولة',
                             'closed'             => 'مغلق',
