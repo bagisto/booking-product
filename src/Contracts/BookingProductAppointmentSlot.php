@@ -2,6 +2,4 @@
 
 namespace Webkul\BookingProduct\Contracts;
 
-interface BookingProductAppointmentSlot
-{
-}
+interface BookingProductAppointmentSlot {}

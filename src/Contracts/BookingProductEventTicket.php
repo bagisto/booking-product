@@ -2,6 +2,4 @@
 
 namespace Webkul\BookingProduct\Contracts;
 
-interface BookingProductEventTicket
-{
-}
+interface BookingProductEventTicket {}

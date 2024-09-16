@@ -275,7 +275,7 @@ return [
                             'closed'             => 'Closed',
                             'today-availability' => 'Today Availability',
                         ],
-    
+
                         'event'       => [
                             'book-your-ticket' => 'Book Your Ticket',
                         ],
@@ -307,7 +307,7 @@ return [
                             'select-slot'         => 'Select Slot',
                             'title'               => 'Slot',
                         ],
-    
+
                         'table'       => [
                             'book-a-table'       => 'Book a Table',
                             'closed'             => 'Closed',

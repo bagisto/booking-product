@@ -25,7 +25,7 @@
         id="v-event-tickets-template"
     >
         <div class="grid grid-cols-1 gap-4">
-            <div class="text-xl font-medium">
+            <div class="text-xl font-medium max-sm:text-base">
                 @lang('booking::app.shop.products.view.types.booking.event.book-your-ticket')
             </div>
 
@@ -37,14 +37,14 @@
                 <div class="grid gap-1.5">
                     <!-- Name -->
                     <p  
-                        class="font-medium"
+                        class="font-medium max-sm:text-sm"
                         v-text="ticket.name"
                     >
                     </p>
 
                     <div
                         v-if="ticket.original_formatted_price"
-                        class="text-[#6E6E6E]"
+                        class="text-[#6E6E6E] max-sm:text-sm"
                     >
                         <p
                             class="mr-1.5 line-through"
@@ -53,7 +53,7 @@
                         </p>
 
                         <p
-                            class="text-lg"
+                            class="text-lg max-sm:text-sm"
                             v-text="ticket.formatted_price_text"
                         >
                         </p>
@@ -72,7 +72,7 @@
 
                 <div class="place-items-end">
                     <x-shop::quantity-changer
-                        class="gap-x-4 w-max mt-5 py-2.5 px-4 rounded-xl !border-[#E9E9E9]"
+                        class="mt-5 w-max gap-x-4 rounded-xl !border-[#E9E9E9] px-4 py-2.5 max-sm:p-1.5"
                         ::name="'booking[qty][' + ticket.id + ']'"
                         rules="required|numeric|min_value:0"
                         ::value="defaultQty"

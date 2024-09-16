@@ -34,7 +34,7 @@
             <x-admin::form.control-group.error control-name="booking[booking_type]" />
         </x-admin::form.control-group>
 
-        <div v-if="default_booking.booking_type == 'many'">
+        <template v-if="default_booking.booking_type == 'many'">
             <!-- Slot Duration -->
             <x-admin::form.control-group class="w-full">
                 <x-admin::form.control-group.label class="required">
@@ -68,23 +68,23 @@
 
                 <x-admin::form.control-group.error control-name="booking[break_time]" />
             </x-admin::form.control-group>
-        </div>
+        </template>
 
         <!-- Slots Component -->
-        <div class="flex gap-5 justify-between items-center py-2">
+        <div class="flex items-center justify-between gap-5 py-2">
             <div class="flex flex-col gap-2">
-                <p class="text-base text-gray-800 dark:text-white font-semibold">
+                <p class="text-base font-semibold text-gray-800 dark:text-white">
                     @lang('booking::app.admin.catalog.products.edit.types.booking.default.slot-title')
                 </p>
 
-                <p class="text-xs text-gray-500 dark:text-gray-300 font-medium">
+                <p class="text-xs font-medium text-gray-500 dark:text-gray-300">
                     @lang('booking::app.admin.catalog.products.edit.types.booking.default.description-info')
                  </p>
             </div>
 
             <!-- Add Slot Button -->
             <div
-                class="flex gap-x-1 items-center"
+                class="flex items-center gap-x-1"
                 v-if="default_booking.booking_type != 'many'"
             >
                 <div
@@ -102,7 +102,7 @@
                 <template v-if="slots.one?.length">
                     <div class="flex flex-wrap gap-x-2.5">
                         <div
-                            class="flex flex-wrap gap-1 items-center min-h-[38px] dark:border-gray-800"
+                            class="flex min-h-[38px] flex-wrap items-center gap-1 dark:border-gray-800"
                             v-for="(slot, index) in slots.one"
                         >
                             <!-- Hidden Inputs -->
@@ -137,11 +137,11 @@
                             />
 
                             <!-- Pannel detailes -->
-                            <p class="flex items-center py-1 px-2 bg-gray-600 rounded text-white font-semibold">
+                            <p class="flex items-center rounded bg-gray-600 px-2 py-1 font-semibold text-white">
                                 @{{ convertIndexToDay(slot.from_day) }} @{{ slot.from }} - @{{ convertIndexToDay(slot.to_day) }} @{{ slot.to }}
 
                                 <span
-                                    class="icon-cross text-white text-lg ltr:ml-1.5 rtl:mr-1.5 cursor-pointer"
+                                    class="icon-cross cursor-pointer text-lg text-white ltr:ml-1.5 rtl:mr-1.5"
                                     @click="removeIndex(index)"
                                 >
                                 </span>
@@ -159,7 +159,7 @@
              <!-- For Not Same Slot All Days -->
              <template v-else>
                 <div
-                    class="grid grid-cols-[0.5fr_2fr] gap-2.5  items-center py-2 border-b border-slate-300 dark:border-gray-800 last:border-b-0"
+                    class="grid grid-cols-[0.5fr_2fr] items-center gap-2.5 border-b border-slate-300 py-2 last:border-b-0 dark:border-gray-800"
                     v-for="(day, dayIndex) in week_days"
                 >
                     <div class="flex gap-2">
@@ -181,7 +181,7 @@
                     </div>
 
                     <div class="flex grid-cols-2 items-center justify-between">
-                        <div class="flex flex-wrap gap-1 items-center min-h-[38px] dark:border-gray-800">
+                        <div class="flex min-h-[38px] flex-wrap items-center gap-1 dark:border-gray-800">
                             <template v-if="slots['many'][dayIndex]?.length">
                                 <template v-for="(slot, slotIndex) in slots['many'][dayIndex]">
                                     <!-- Hidden Inputs -->
@@ -209,11 +209,11 @@
                                         :value="slot.status"
                                     />
 
-                                    <p class="flex items-center py-1 px-2 bg-gray-600 rounded text-white font-semibold">
+                                    <p class="flex items-center rounded bg-gray-600 px-2 py-1 font-semibold text-white">
                                         @{{ slot.from }} - @{{ slot.to }}
         
                                         <span
-                                            class="icon-cross text-white text-lg ltr:ml-1.5 rtl:mr-1.5 cursor-pointer"
+                                            class="icon-cross cursor-pointer text-lg text-white ltr:ml-1.5 rtl:mr-1.5"
                                             @click="removeIndex(dayIndex,slotIndex)"
                                         >
                                         </span>
@@ -229,7 +229,7 @@
                         </div>
 
                         <p
-                            class="place-content-start text-right text-blue-600 cursor-pointer transition-all hover:underline"
+                            class="cursor-pointer place-content-start text-right text-blue-600 transition-all hover:underline"
                             v-if="! slots['many'][dayIndex]?.length"
                             @click="currentIndex=dayIndex;toggle()"
                         >
@@ -237,7 +237,7 @@
                         </p>
 
                         <p
-                            class="place-content-start text-right text-red-600 cursor-pointer transition-all hover:underline"
+                            class="cursor-pointer place-content-start text-right text-red-600 transition-all hover:underline"
                             v-else
                             @click="currentIndex=dayIndex;toggle(dayIndex)"
                         >
@@ -260,9 +260,9 @@
             >
                 <x-admin::drawer ref="drawerform">
                     <x-slot:header>
-                        <div class="flex justify-between items-center">
+                        <div class="flex items-center justify-between">
                             <p
-                                class="text-lg text-gray-800 dark:text-white font-bold"
+                                class="text-lg font-bold text-gray-800 dark:text-white"
                                 v-text="slots['many'][currentIndex]?.length 
                                     ? '@lang('booking::app.admin.catalog.products.edit.types.booking.default.modal.slot.edit-title')'
                                     : '@lang('booking::app.admin.catalog.products.edit.types.booking.default.modal.slot.add-title')'"
@@ -283,7 +283,7 @@
                     <x-slot:content>
                        <!-- Booking Type One -->
                         <template v-if="default_booking.booking_type == 'one'">
-                            <div class="grid grid-cols-2 gap-4 mb-2.5 border-b dark:border-gray-800">
+                            <div class="mb-2.5 grid grid-cols-2 gap-4 border-b dark:border-gray-800">
                                 <!-- From Day -->
                                 <x-admin::form.control-group class="w-full">
                                     <x-admin::form.control-group.label class="required">

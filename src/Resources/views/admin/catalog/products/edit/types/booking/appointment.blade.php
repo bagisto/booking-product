@@ -89,15 +89,18 @@
 
             data() {
                 return {
-                    appointment_booking: @json($bookingProduct && $bookingProduct?->appointment_slot) ? @json($bookingProduct?->appointment_slot) : {
-                        duration: 45,
+                    appointment_booking: {!! json_encode($bookingProduct && $bookingProduct->appointment_slot
+                        ? $bookingProduct->appointment_slot 
+                        : [
+                            'duration' => 45,
 
-                        break_time: 15,
+                            'break_time' => 15,
 
-                        same_slot_all_days: 1,
+                            'same_slot_all_days' => 1,
 
-                        slots: []
-                    }
+                            'slots' => [],
+                        ]
+                    ) !!}
                 }
             },
         });

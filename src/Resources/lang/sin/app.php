@@ -275,7 +275,7 @@ return [
                             'closed'             => 'වසා දමා ඇත',
                             'today-availability' => 'අද ලබාදීම්',
                         ],
-    
+
                         'event'       => [
                             'book-your-ticket' => 'ඔබගේ ප්‍රවේශය නිර්මාණය කරන්න',
                         ],
@@ -307,7 +307,7 @@ return [
                             'select-slot'         => 'ස්ලොට් තෝරන්න',
                             'title'               => 'ස්ලොට්',
                         ],
-    
+
                         'table'       => [
                             'book-a-table'       => 'වගාව නිර්මාණය කරන්න',
                             'closed'             => 'වසා දමා ඇත',

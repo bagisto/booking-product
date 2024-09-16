@@ -1,3 +1,10 @@
+@push('styles')
+    @bagistoVite([
+        'src/Resources/assets/css/app.css',
+        'src/Resources/assets/js/app.js'
+    ], 'booking')
+@endpush
+
 <x-admin::layouts>
     <!-- Page Title -->
     <x-slot:title>
@@ -8,12 +15,12 @@
 
     @pushOnce('scripts')
         <script type="text/x-template" id="v-booking-products-template">
-            <div class="flex gap-[16px] justify-between items-center max-sm:flex-wrap">
-                <p class="py-3 text-xl text-gray-800 dark:text-white font-bold">
+            <div class="flex items-center justify-between gap-[16px] max-sm:flex-wrap">
+                <p class="py-3 text-xl font-bold text-gray-800 dark:text-white">
                     @lang('booking::app.admin.sales.bookings.index.title')
                 </p>
         
-                <div class="flex gap-2.5 items-center">
+                <div class="flex items-center gap-2.5">
                     <!-- Export Modal -->
                     <x-admin::datagrid.export
                         v-if="viewType == 'table'"
@@ -24,7 +31,7 @@
                     <div class="grid grid-cols-2 border border-gray-300 dark:border-gray-700">
                         <!-- List Icon -->
                         <button
-                            class="icon-list p-1.5 text-xl cursor-pointer"
+                            class="icon-list cursor-pointer p-1.5 text-xl"
                             :class="{'bg-blue-700 text-white' : viewType == 'table'}"
                             @click="viewType ='table'"
                         >
@@ -32,7 +39,7 @@
         
                         <!-- Calender Icon -->
                         <button
-                            class="icon-calendar p-1.5 text-xl cursor-pointer"
+                            class="icon-calendar cursor-pointer p-1.5 text-xl"
                             :class="{'bg-blue-700 text-white' : viewType == 'calendar'}"
                             @click="viewType ='calendar'"
                         >

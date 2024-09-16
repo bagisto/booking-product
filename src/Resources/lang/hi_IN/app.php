@@ -275,7 +275,7 @@ return [
                             'closed'             => 'बंद',
                             'today-availability' => 'आज की उपलब्धता',
                         ],
-    
+
                         'event'       => [
                             'book-your-ticket' => 'अपना टिकट बुक करें',
                         ],
@@ -307,7 +307,7 @@ return [
                             'select-slot'         => 'स्लॉट चुनें',
                             'title'               => 'स्लॉट',
                         ],
-    
+
                         'table'       => [
                             'book-a-table'       => 'तालिका बुक करें',
                             'closed'             => 'बंद',
